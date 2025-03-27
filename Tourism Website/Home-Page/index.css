@@ -1,0 +1,44 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+}
+
+header {
+    background-color: #f8f9fa;
+    padding: 15px;
+}
+
+.navbar ul {
+    display: flex;
+    list-style: none;
+    padding: 0;
+}
+
+.navbar ul li {
+    margin-right: 20px;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: #007bff;
+}
+
+.search-container {
+    display: flex;
+}
+
+.search-container input {
+    border: 1px solid #ccc;
+    padding: 5px;
+    border-radius: 4px;
+}
+
+.auth-buttons button {
+    margin-left: 10px;
+    padding: 5px 10px;
+    border: none;
+    background-color: #007bff;
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+}

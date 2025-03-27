@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tourism Website</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-white">
+    <header class="bg-black text-white shadow-md">
+        <div class="container mx-auto px-4 py-3 flex items-center justify-between">
+            <!-- Logo -->
+            <div class="flex items-center">
+                <span class="text-2xl font-bold">Tourism</span>
+            </div>
+
+            <!-- Navigation -->
+            <nav class="hidden md:flex space-x-8">
+                <a href="#" class="relative hover:text-gray-300 transition duration-300 transform hover:scale-105 after:content-[''] after:absolute after:left-0 after:bottom-[-4px] after:w-0 after:h-[2px] after:bg-white after:transition-all after:duration-300 hover:after:w-full">Home</a>
+                <a href="#" class="relative hover:text-gray-300 transition duration-300 transform hover:scale-105 after:content-[''] after:absolute after:left-0 after:bottom-[-4px] after:w-0 after:h-[2px] after:bg-white after:transition-all after:duration-300 hover:after:w-full">Book</a>
+                <a href="#" class="relative hover:text-gray-300 transition duration-300 transform hover:scale-105 after:content-[''] after:absolute after:left-0 after:bottom-[-4px] after:w-0 after:h-[2px] after:bg-white after:transition-all after:duration-300 hover:after:w-full">Events</a>
+                <a href="#" class="relative hover:text-gray-300 transition duration-300 transform hover:scale-105 after:content-[''] after:absolute after:left-0 after:bottom-[-4px] after:w-0 after:h-[2px] after:bg-white after:transition-all after:duration-300 hover:after:w-full">News</a>
+                <a href="#" class="relative hover:text-gray-300 transition duration-300 transform hover:scale-105 after:content-[''] after:absolute after:left-0 after:bottom-[-4px] after:w-0 after:h-[2px] after:bg-white after:transition-all after:duration-300 hover:after:w-full">About</a>
+                <a href="#" class="relative hover:text-gray-300 transition duration-300 transform hover:scale-105 after:content-[''] after:absolute after:left-0 after:bottom-[-4px] after:w-0 after:h-[2px] after:bg-white after:transition-all after:duration-300 hover:after:w-full">Contact</a>
+                <a href="#" class="relative hover:text-gray-300 transition duration-300 transform hover:scale-105 after:content-[''] after:absolute after:left-0 after:bottom-[-4px] after:w-0 after:h-[2px] after:bg-white after:transition-all after:duration-300 hover:after:w-full">Resources</a>
+                <a href="#" class="relative hover:text-gray-300 transition duration-300 transform hover:scale-105 after:content-[''] after:absolute after:left-0 after:bottom-[-4px] after:w-0 after:h-[2px] after:bg-white after:transition-all after:duration-300 hover:after:w-full">Marketplace</a>
+            </nav>
+
+            <!-- Search and Auth -->
+            <div class="flex items-center space-x-4">
+                <div class="relative">
+                    <input type="text" placeholder="Search..." class="bg-gray-800 text-white px-4 py-2 rounded-full w-64 focus:outline-none focus:ring-2 focus:ring-gray-600">
+                    <button class="absolute right-3 top-2.5 text-gray-400 hover:text-white transition-transform duration-300 hover:translate-x-1 hover:scale-110">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </div>
+                
+                <div class="relative group">
+                    <!-- Account Button -->
+                    <button class="bg-gray-900 text-white px-4 py-2 rounded-md hover:bg-gray-800 transition flex items-center space-x-2">
+                        <i class="fas fa-user"></i>
+                        <span>Account</span>
+                        <i class="fas fa-chevron-down text-sm transition-transform duration-300 group-hover:rotate-180"></i>
+                    </button>
+                    
+                    <!-- Minimalist Dropdown -->
+                    <div class="absolute right-0 mt-2 w-48 bg-gray-900/90 backdrop-blur-xl shadow-lg rounded-lg border border-gray-700  
+                                opacity-0 invisible transform scale-95 -translate-y-4 transition-all duration-500 ease-out  
+                                group-hover:opacity-100 group-hover:visible group-hover:scale-100 group-hover:translate-y-0">
+                        
+                        <a href="#" class="block px-5 py-3 text-gray-300 font-medium transition-all duration-300 rounded-t-lg  
+                                         hover:bg-gray-800 hover:text-white hover:shadow-md hover:scale-105">
+                            Login
+                        </a>
+                        <a href="#" class="block px-5 py-3 text-gray-300 font-medium transition-all duration-300 rounded-b-lg  
+                                         hover:bg-gray-800 hover:text-white hover:shadow-md hover:scale-105">
+                            Register
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+</body>
+</html>
