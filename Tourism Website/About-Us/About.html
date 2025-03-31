@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tourism Website</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .about-hero {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.4)), url('https://unsplash.com/photos/group-of-elephant-walking-on-snow-covered-field-during-daytime--QVP-79SeVE');
+            background-size: cover;
+            background-position: center;
+        }
+        .team-card:hover img {
+            transform: scale(1.05);
+        }
+        .team-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body class="bg-white flex flex-col min-h-screen">
+    <header class="bg-black text-white shadow-md">
+        <div class="container mx-auto px-4 py-3 flex items-center justify-between">
+            <div class="flex items-center">
+                <span class="text-2xl font-bold">Tourism</span>
+            </div>
+            <nav class="hidden md:flex space-x-8">
+                <a href="#" class="relative hover:text-gray-300 transition duration-300 transform hover:scale-105 after:content-[''] after:absolute after:left-0 after:bottom-[-4px] after:w-0 after:h-[2px] after:bg-white after:transition-all after:duration-300 hover:after:w-full">Home</a>
+                <a href="#" class="relative hover:text-gray-300 transition duration-300 transform hover:scale-105 after:content-[''] after:absolute after:left-0 after:bottom-[-4px] after:w-0 after:h-[2px] after:bg-white after:transition-all after:duration-300 hover:after:w-full">Book</a>
+                <a href="#" class="relative hover:text-gray-300 transition duration-300 transform hover:scale-105 after:content-[''] after:absolute after:left-0 after:bottom-[-4px] after:w-0 after:h-[2px] after:bg-white after:transition-all after:duration-300 hover:after:w-full">Events</a>
+                <a href="../Current-Affairs/news.html" class="relative hover:text-gray-300 transition duration-300 transform hover:scale-105 after:content-[''] after:absolute after:left-0 after:bottom-[-4px] after:w-0 after:h-[2px] after:bg-white after:transition-all after:duration-300 hover:after:w-full">News</a>
+                <a href="../About-Us/About.html" class="relative hover:text-gray-300 transition duration-300 transform hover:scale-105 after:content-[''] after:absolute after:left-0 after:bottom-[-4px] after:w-0 after:h-[2px] after:bg-white after:transition-all after:duration-300 hover:after:w-full">About</a>
+                <a href="#" class="relative hover:text-gray-300 transition duration-300 transform hover:scale-105 after:content-[''] after:absolute after:left-0 after:bottom-[-4px] after:w-0 after:h-[2px] after:bg-white after:transition-all after:duration-300 hover:after:w-full">Resources</a>
+                <a href="#" class="relative hover:text-gray-300 transition duration-300 transform hover:scale-105 after:content-[''] after:absolute after:left-0 after:bottom-[-4px] after:w-0 after:h-[2px] after:bg-white after:transition-all after:duration-300 hover:after:w-full">Marketplace</a>
+            </nav>
+            <div class="flex items-center space-x-4">
+                <div class="relative">
+                    <input type="text" placeholder="Search..." class="bg-gray-800 text-white px-4 py-2 rounded-full w-64 focus:outline-none focus:ring-2 focus:ring-gray-600">
+                    <button class="absolute right-3 top-2.5 text-gray-400 hover:text-white transition-transform duration-300 hover:translate-x-1 hover:scale-110">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </div>
+                <div class="relative group">
+                    <button class="bg-gray-900 text-white px-4 py-2 rounded-md hover:bg-gray-800 transition flex items-center space-x-2">
+                        <i class="fas fa-user"></i>
+                        <span>Account</span>
+                        <i class="fas fa-chevron-down text-sm transition-transform duration-300 group-hover:rotate-180"></i>
+                    </button>
+                    <div class="absolute right-0 mt-2 w-48 bg-gray-900/90 backdrop-blur-xl shadow-lg rounded-lg border border-gray-700 opacity-0 invisible transform scale-95 -translate-y-4 transition-all duration-500 ease-out group-hover:opacity-100 group-hover:visible group-hover:scale-100 group-hover:translate-y-0">
+                        <a href="#" class="block px-5 py-3 text-gray-300 font-medium transition-all duration-300 rounded-t-lg hover:bg-gray-800 hover:text-white hover:shadow-md hover:scale-105">Login</a>
+                        <a href="#" class="block px-5 py-3 text-gray-300 font-medium transition-all duration-300 rounded-b-lg hover:bg-gray-800 hover:text-white hover:shadow-md hover:scale-105">Register</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <main class="flex-grow">
+        <!-- Hero Section -->
+        <section class="about-hero text-white py-32 px-4 flex items-center">
+            <div class="container mx-auto max-w-6xl">
+                <div class="max-w-2xl">
+                    <h1 class="text-4xl md:text-6xl font-bold mb-6">Our <span class="text-yellow-400">Story</span></h1>
+                    <p class="text-xl mb-8">Connecting travelers with Botswana's breathtaking landscapes and rich cultural heritage since 2010</p>
+                    <a href="#our-mission" class="inline-flex items-center text-yellow-400 hover:text-yellow-300 font-medium">
+                        Explore Our Journey <i class="fas fa-arrow-down ml-2"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Mission Section -->
+        <section id="our-mission" class="py-20 bg-white">
+            <div class="container mx-auto px-4">
+                <div class="flex flex-col md:flex-row items-center gap-12">
+                    <div class="md:w-1/2">
+                        <img src="https://images.unsplash.com/photo-1581430872224-2c82b1976c12?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" 
+                             alt="Our Mission" 
+                             class="rounded-xl shadow-2xl w-full h-auto">
+                    </div>
+                    <div class="md:w-1/2">
+                        <span class="text-yellow-500 font-semibold">OUR PURPOSE</span>
+                        <h2 class="text-3xl md:text-4xl font-bold mt-2 mb-6">More Than Just Tourism</h2>
+                        <p class="text-gray-600 mb-6">We believe in creating meaningful connections between travelers and the incredible landscapes, wildlife, and cultures of Botswana. Our mission is to deliver transformative experiences that benefit both our guests and local communities.</p>
+                        <div class="space-y-4">
+                            <div class="flex items-start">
+                                <div class="bg-yellow-100 p-2 rounded-full mr-4">
+                                    <i class="fas fa-leaf text-yellow-600"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold">Sustainable Travel</h4>
+                                    <p class="text-gray-600">We prioritize eco-friendly practices that protect Botswana's natural wonders</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="bg-yellow-100 p-2 rounded-full mr-4">
+                                    <i class="fas fa-hands-helping text-yellow-600"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold">Community Impact</h4>
+                                    <p class="text-gray-600">30% of our profits directly support local conservation and education</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Stats Section -->
+        <section class="py-16 bg-gray-900 text-white">
+            <div class="container mx-auto px-4">
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+                    <div class="stat-card p-8 rounded-xl border border-gray-700 text-center">
+                        <div class="text-4xl font-bold text-yellow-400 mb-2">13+</div>
+                        <div class="text-gray-300">Years Experience</div>
+                    </div>
+                    <div class="stat-card p-8 rounded-xl border border-gray-700 text-center">
+                        <div class="text-4xl font-bold text-yellow-400 mb-2">5,200+</div>
+                        <div class="text-gray-300">Happy Travelers</div>
+                    </div>
+                    <div class="stat-card p-8 rounded-xl border border-gray-700 text-center">
+                        <div class="text-4xl font-bold text-yellow-400 mb-2">98%</div>
+                        <div class="text-gray-300">Positive Reviews</div>
+                    </div>
+                    <div class="stat-card p-8 rounded-xl border border-gray-700 text-center">
+                        <div class="text-4xl font-bold text-yellow-400 mb-2">15</div>
+                        <div class="text-gray-300">Awards Won</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Team Section -->
+        <section id="our-team" class="py-20 bg-gray-50">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-16">
+                    <span class="text-blue-500 font-semibold">MEET THE TEAM</span>
+                    <h2 class="text-3xl md:text-4xl font-bold mt-2">The Students Behind This Project</h2>
+                    <p class="text-gray-600 max-w-2xl mx-auto mt-4">Bachelor of Science in Computer Science, Year 3</p>
+                </div>
+                
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8">
+                    <!-- Student 1 -->
+                    <div class="team-card bg-white rounded-xl overflow-hidden shadow-lg transition-all duration-300">
+                        <div class="overflow-hidden h-64">
+                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80" 
+                                 alt="Team Member" 
+                                 class="w-full h-full object-cover transition-transform duration-500">
+                        </div>
+                        <div class="p-6 text-center">
+                            <h3 class="text-xl font-bold">Kagiso Molefe</h3>
+                            <p class="text-blue-600 mb-2">Project Lead</p>
+                            <p class="text-gray-600 text-sm">Frontend Developer</p>
+                            <div class="flex justify-center space-x-3 mt-3">
+                                <a href="#" class="text-gray-400 hover:text-blue-500"><i class="fab fa-github"></i></a>
+                                <a href="#" class="text-gray-400 hover:text-blue-700"><i class="fab fa-linkedin-in"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Student 2 -->
+                    <div class="team-card bg-white rounded-xl overflow-hidden shadow-lg transition-all duration-300">
+                        <div class="overflow-hidden h-64">
+                            <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" 
+                                 alt="Team Member" 
+                                 class="w-full h-full object-cover transition-transform duration-500">
+                        </div>
+                        <div class="p-6 text-center">
+                            <h3 class="text-xl font-bold">Amogelang Seboni</h3>
+                            <p class="text-blue-600 mb-2">UI/UX Designer</p>
+                            <p class="text-gray-600 text-sm">Content Creator</p>
+                            <div class="flex justify-center space-x-3 mt-3">
+                                <a href="#" class="text-gray-400 hover:text-blue-500"><i class="fab fa-github"></i></a>
+                                <a href="#" class="text-gray-400 hover:text-blue-700"><i class="fab fa-linkedin-in"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Student 3 -->
+                    <div class="team-card bg-white rounded-xl overflow-hidden shadow-lg transition-all duration-300">
+                        <div class="overflow-hidden h-64">
+                            <img src="https://images.unsplash.com/photo-1544725176-7c40e5a71c5e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1167&q=80" 
+                                 alt="Team Member" 
+                                 class="w-full h-full object-cover transition-transform duration-500">
+                        </div>
+                        <div class="p-6 text-center">
+                            <h3 class="text-xl font-bold">Tumelo Phiri</h3>
+                            <p class="text-blue-600 mb-2">Backend Developer</p>
+                            <p class="text-gray-600 text-sm">Database Specialist</p>
+                            <div class="flex justify-center space-x-3 mt-3">
+                                <a href="#" class="text-gray-400 hover:text-blue-500"><i class="fab fa-github"></i></a>
+                                <a href="#" class="text-gray-400 hover:text-blue-700"><i class="fab fa-linkedin-in"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Student 4 -->
+                    <div class="team-card bg-white rounded-xl overflow-hidden shadow-lg transition-all duration-300">
+                        <div class="overflow-hidden h-64">
+                            <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=776&q=80" 
+                                 alt="Team Member" 
+                                 class="w-full h-full object-cover transition-transform duration-500">
+                        </div>
+                        <div class="p-6 text-center">
+                            <h3 class="text-xl font-bold">Boipelo Kgosi</h3>
+                            <p class="text-blue-600 mb-2">Frontend Developer</p>
+                            <p class="text-gray-600 text-sm">Testing Specialist</p>
+                            <div class="flex justify-center space-x-3 mt-3">
+                                <a href="#" class="text-gray-400 hover:text-blue-500"><i class="fab fa-github"></i></a>
+                                <a href="#" class="text-gray-400 hover:text-blue-700"><i class="fab fa-linkedin-in"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Student 5 -->
+                    <div class="team-card bg-white rounded-xl overflow-hidden shadow-lg transition-all duration-300">
+                        <div class="overflow-hidden h-64">
+                            <img src="https://images.unsplash.com/photo-1552058544-f2b08422138a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=798&q=80" 
+                                 alt="Team Member" 
+                                 class="w-full h-full object-cover transition-transform duration-500">
+                        </div>
+                        <div class="p-6 text-center">
+                            <h3 class="text-xl font-bold">Onalenna Mosweu</h3>
+                            <p class="text-blue-600 mb-2">Documentation Lead</p>
+                            <p class="text-gray-600 text-sm">Content Editor</p>
+                            <div class="flex justify-center space-x-3 mt-3">
+                                <a href="#" class="text-gray-400 hover:text-blue-500"><i class="fab fa-github"></i></a>
+                                <a href="#" class="text-gray-400 hover:text-blue-700"><i class="fab fa-linkedin-in"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Timeline Section -->
+        <section class="py-20 bg-gray-50">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-16">
+                    <span class="text-yellow-500 font-semibold">OUR JOURNEY</span>
+                    <h2 class="text-3xl md:text-4xl font-bold mt-2">Milestones & Achievements</h2>
+                </div>
+                
+                <div class="relative max-w-3xl mx-auto">
+                    <div class="absolute left-8 md:left-1/2 h-full w-0.5 bg-gray-200 transform -translate-x-1/2"></div>
+                    
+                    <div class="mb-12 flex items-center w-full timeline-item">
+                        <div class="w-5/12 px-4 py-2 text-right hidden md:block">
+                            <p class="text-sm text-gray-500">June 2010</p>
+                        </div>
+                        <div class="z-10 w-8 h-8 flex-shrink-0"></div>
+                        <div class="bg-white rounded-lg shadow-lg w-full md:w-5/12 px-6 py-4">
+                            <h3 class="font-bold text-lg mb-1">Founded in Gaborone</h3>
+                            <p class="text-gray-600">Started with just 3 employees and one safari vehicle</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Add more timeline items following the same pattern -->
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="py-20 bg-yellow-500 text-center">
+            <div class="container mx-auto px-4">
+                <h2 class="text-3xl md:text-4xl font-bold mb-6">Ready to Experience Botswana With Us?</h2>
+                <p class="text-xl mb-8 max-w-2xl mx-auto">Let our team craft your perfect African adventure</p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="#" class="bg-black text-white hover:bg-gray-900 font-bold py-4 px-8 rounded-full inline-block transition transform hover:scale-105">
+                        Contact Our Team
+                    </a>
+                    <a href="#" class="bg-white text-black hover:bg-gray-100 font-bold py-4 px-8 rounded-full inline-block transition transform hover:scale-105">
+                        Browse Safaris
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <footer class="bg-black text-gray-300 py-10 mt-10">
+        <div class="container mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div>
+                <h3 class="text-lg font-semibold mb-4">Travel Tips</h3>
+    <ul class="text-sm space-y-2">
+        <li><a href="#" class="relative hover:text-gray-300 transition duration-300 transform hover:scale-105 after:content-[''] after:absolute after:left-0 after:bottom-[-4px] after:w-0 after:h-[2px] after:bg-white after:transition-all after:duration-1000 hover:after:w-full">Packing Essentials</a></li>
+        <li><a href="#" class="relative hover:text-gray-300 transition duration-300 transform hover:scale-105 after:content-[''] after:absolute after:left-0 after:bottom-[-4px] after:w-0 after:h-[2px] after:bg-white after:transition-all after:duration-1000 hover:after:w-full">Travel Safety Tips</a></li>
+        <li><a href="#" class="relative hover:text-gray-300 transition duration-300 transform hover:scale-105 after:content-[''] after:absolute after:left-0 after:bottom-[-4px] after:w-0 after:h-[2px] after:bg-white after:transition-all after:duration-1000 hover:after:w-full">Budget Travel Advice</a></li>
+        <li><a href="#" class="relative hover:text-gray-300 transition duration-300 transform hover:scale-105 after:content-[''] after:absolute after:left-0 after:bottom-[-4px] after:w-0 after:h-[2px] after:bg-white after:transition-all after:duration-1000 hover:after:w-full">Best Time to Visit</a></li>
+    </ul>
+            </div>
+            <div>
+                <h3 class="text-lg font-semibold mb-4">Quick Links</h3>
+                <ul class="text-sm space-y-2">
+                    <li>
+                        <a href="#" class="relative hover:text-gray-300 transition duration-300 transform hover:scale-105 after:content-[''] after:absolute after:left-0 after:bottom-[-4px] after:w-0 after:h-[2px] after:bg-white after:transition-all after:duration-300 hover:after:w-full">Marketplace</a>
+                    </li>
+                    <li>
+                        <a href="#" class="relative hover:text-gray-300 transition duration-300 transform hover:scale-105 after:content-[''] after:absolute after:left-0 after:bottom-[-4px] after:w-0 after:h-[2px] after:bg-white after:transition-all after:duration-300 hover:after:w-full">Book</a>
+                    </li>
+                    <li>
+                        <a href="#" class="relative hover:text-gray-300 transition duration-300 transform hover:scale-105 after:content-[''] after:absolute after:left-0 after:bottom-[-4px] after:w-0 after:h-[2px] after:bg-white after:transition-all after:duration-300 hover:after:w-full">Events</a>
+                    </li>
+                    <li>
+                        <a href="#" class="relative hover:text-gray-300 transition duration-300 transform hover:scale-105 after:content-[''] after:absolute after:left-0 after:bottom-[-4px] after:w-0 after:h-[2px] after:bg-white after:transition-all after:duration-300 hover:after:w-full">Resources</a>
+                    </li>
+                </ul>
+            </div>
+            <div>
+                <h3 class="text-lg font-semibold mb-4">Contact Us</h3>
+                <p class="text-sm">Email: support@tourism.com</p>
+                <p class="text-sm">Phone: +267 234 567 890</p>
+                <p class="text-sm">Address: 123 Travel Street, Gaborone, Botswana</p>
+            </div>
+        </div>
+        <div class="mt-8 flex justify-center space-x-6">
+            <a href="#" class="text-gray-400 hover:text-[#1877F2] transition transform hover:scale-125">
+                <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="#" class="text-gray-400 hover:text-[#1DA1F2] transition transform hover:scale-125">
+                <i class="fab fa-twitter"></i>
+            </a>
+            <a href="#" class="text-gray-400 hover:text-[#E4405F] transition transform hover:scale-125">
+                <i class="fab fa-instagram"></i>
+            </a>
+            <a href="#" class="text-gray-400 hover:text-[#0077B5] transition transform hover:scale-125">
+                <i class="fab fa-linkedin-in"></i>
+            </a>
+            <a href="#" class="text-gray-400 hover:text-[#FF0000] transition transform hover:scale-125">
+                <i class="fab fa-youtube"></i>
+            </a>
+            <a href="#" class="text-gray-400 hover:text-[#E60023] transition transform hover:scale-125">
+                <i class="fab fa-pinterest"></i>
+            </a>
+        </div>
+        <div class="mt-8 text-center text-sm text-gray-500">&copy; 2025 Tourism. All rights reserved.</div>
+    </footer>
+</body>
+</html>
