@@ -1,0 +1,12 @@
+@keyframes slide {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(20px); /* Adjust the distance as needed */
+    }
+}
+
+.animate-slide {
+    animation: slide 5s infinite alternate;
+}
