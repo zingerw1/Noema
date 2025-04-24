@@ -57,10 +57,157 @@
       </div>
   </header>
     
-    <main class="flex-grow container mx-auto px-4 py-10">
-        <!-- Content Goes Here -->
-         
-    </main>
+  <main class="flex-grow container mx-auto px-4 py-10">
+    <!-- Hero Banner -->
+    <section class="relative bg-cover bg-center h-96 mb-12" style="background-image: url('https://images.unsplash.com/photo-1506929562872-bb421503ef21?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2560&q=80');">
+        <div class="absolute inset-0 bg-black opacity-50"></div>
+        <div class="relative z-10 text-center text-white pt-32">
+            <h1 class="text-4xl md:text-5xl font-bold">Book Your Next Adventure</h1>
+            <p class="mt-4 text-lg">Find the best places to stay, dine, and experience.</p>
+            <a href="#booking" class="mt-6 inline-block bg-yellow-500 text-white px-6 py-3 rounded-full font-semibold text-lg hover:bg-yellow-600 transition duration-300">Get Started</a>
+        </div>
+    </section>
+
+    <!-- Booking Options -->
+<section id="booking" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 mb-16">
+  <!-- Hotels -->
+  <div class="relative group">
+      <img src="https://cf.bstatic.com/xdata/images/hotel/max1024x768/144517935.jpg?k=9d3e11e4dc01b867dfeb4c0edd5e4546c1aae6d6acd6f8f04a2816729094c32f&o=&hp=1" alt="Hotel Booking" class="w-full h-80 object-cover rounded-lg shadow-lg">
+      <div class="absolute inset-0 bg-black opacity-40"></div>
+      <div class="absolute inset-0 flex items-center justify-center text-center text-white px-4 py-6 flex-col">
+          <h2 class="text-xl font-semibold">Hotels</h2>
+          <div class="mt-2 text-sm">
+              <p>Browse top-rated hotels and make your booking.</p>
+              <a href="#game-drive-booking-form" class="mt-4 inline-block bg-yellow-500 text-white px-6 py-3 rounded-full font-semibold text-sm transition-transform transform hover:scale-105 hover:bg-yellow-400"> Browse</a>
+          </div>
+      </div>
+  </div>
+
+  <!-- Restaurants -->
+  <div class="relative group">
+      <img src="https://images.myguide-cdn.com/botswana/companies/mahoganys-restaurant/large/mahoganys-restaurant-475009.jpg" alt="Restaurant Booking" class="w-full h-80 object-cover rounded-lg shadow-lg">
+      <div class="absolute inset-0 bg-black opacity-40"></div>
+      <div class="absolute inset-0 flex items-center justify-center text-center text-white px-4 py-6 flex-col">
+          <h2 class="text-xl font-semibold">Restaurants</h2>
+          <div class="mt-2 text-sm">
+              <p>Reserve your table at the finest restaurants.</p>
+              <a href="#game-drive-booking-form" class="mt-4 inline-block bg-yellow-500 text-white px-6 py-3 rounded-full font-semibold text-sm transition-transform transform hover:scale-105 hover:bg-yellow-400"> Browse</a>
+          </div>
+      </div>
+  </div>
+
+  <!-- Game Drives -->
+  <div class="relative group">
+      <img src="https://www.matriarchafrica.com/wp-content/uploads/2018/07/Chobe-National-Park-Game-Drives.jpg" alt="Game Drive Booking" class="w-full h-80 object-cover rounded-lg shadow-lg">
+      <div class="absolute inset-0 bg-black opacity-40"></div>
+      <div class="absolute inset-0 flex items-center justify-center text-center text-white px-4 py-6 flex-col">
+          <h2 class="text-xl font-semibold">Game Drives</h2>
+          <div class="mt-2 text-sm">
+              <p>Experience thrilling safaris and wildlife adventures.</p>
+              <a href="#game-drive-booking-form" class="mt-4 inline-block bg-yellow-500 text-white px-6 py-3 rounded-full font-semibold text-sm transition-transform transform hover:scale-105 hover:bg-yellow-400"> Browse</a>
+          </div>
+      </div>
+  </div>
+</section>
+
+    <!-- How It Works -->
+    <section class="bg-gray-50 py-16">
+        <div class="text-center mb-12">
+            <h2 class="text-3xl font-bold text-gray-800">How It Works</h2>
+            <p class="text-lg text-gray-600 mt-4 max-w-2xl mx-auto">Booking your next experience is easy and hassle-free. Follow these simple steps to get started!</p>
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12">
+            <!-- Step 1 -->
+            <div class="text-center p-8 bg-white shadow-lg rounded-lg">
+                <div class="text-4xl text-yellow-500 mb-4">
+                    <i class="fas fa-search"></i>
+                </div>
+                <h3 class="text-xl font-semibold text-gray-800 mb-2">Search</h3>
+                <p class="text-gray-600">Use our search bar to find hotels, restaurants, and game drives that match your preferences.</p>
+            </div>
+            <!-- Step 2 -->
+            <div class="text-center p-8 bg-white shadow-lg rounded-lg">
+                <div class="text-4xl text-yellow-500 mb-4">
+                    <i class="fas fa-calendar-alt"></i>
+                </div>
+                <h3 class="text-xl font-semibold text-gray-800 mb-2">Select Dates</h3>
+                <p class="text-gray-600">Choose your preferred dates for your booking and check availability.</p>
+            </div>
+            <!-- Step 3 -->
+            <div class="text-center p-8 bg-white shadow-lg rounded-lg">
+                <div class="text-4xl text-yellow-500 mb-4">
+                    <i class="fas fa-credit-card"></i>
+                </div>
+                <h3 class="text-xl font-semibold text-gray-800 mb-2">Pay Securely</h3>
+                <p class="text-gray-600">Make your payment through our secure platform and confirm your booking.</p>
+            </div>
+        </div>
+    </section>
+
+     <!-- Video Section -->
+     <section class="mb-16">
+      <div class="text-center mb-8">
+          <h2 class="text-3xl font-bold text-gray-800">Experience the Adventure</h2>
+          <p class="text-lg text-gray-600 mt-4 max-w-2xl mx-auto">Watch our quick video and get a glimpse of the exciting experiences waiting for you!</p>
+      </div>
+      <div class="relative">
+          <div class="relative w-full h-80 md:h-[450px] bg-black">
+              <!-- Video from Unsplash -->
+              <video autoplay loop muted class="w-full h-full object-cover">
+                  <source src="https://videos.pexels.com/video-files/4275176/4275176-uhd_2560_1440_30fps.mp4" type="video/mp4">
+                  Your browser does not support the video tag.
+              </video>
+          </div>
+      </div>
+  </section>
+
+    <!-- Booking Forms Section -->
+    <section class="py-16 bg-gray-100">
+        <div class="text-center mb-8">
+            <h2 class="text-3xl font-bold text-gray-800">Choose Your Booking Option</h2>
+            <p class="text-lg text-gray-600 mt-4 max-w-2xl mx-auto">Fill out the form below to reserve your spot for the perfect experience!</p>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12">
+            <!-- Hotel Booking Form -->
+            <div id="hotel-booking-form" class="bg-white p-8 shadow-lg rounded-lg">
+                <h3 class="text-xl font-semibold text-gray-800 mb-4">Hotel Booking</h3>
+                <form action="#" method="POST" class="space-y-4">
+                    <input type="text" placeholder="Full Name" class="w-full px-4 py-2 border border-gray-300 rounded-md">
+                    <input type="email" placeholder="Email" class="w-full px-4 py-2 border border-gray-300 rounded-md">
+                    <input type="date" class="w-full px-4 py-2 border border-gray-300 rounded-md">
+                    <input type="text" placeholder="Hotel Name" class="w-full px-4 py-2 border border-gray-300 rounded-md">
+                    <button type="submit" class="w-full bg-yellow-500 text-white py-3 rounded-full font-semibold text-lg hover:bg-yellow-600 transition duration-300">Book Now</button>
+                </form>
+            </div>
+
+            <!-- Restaurant Booking Form -->
+            <div id="restaurant-booking-form" class="bg-white p-8 shadow-lg rounded-lg">
+                <h3 class="text-xl font-semibold text-gray-800 mb-4">Restaurant Booking</h3>
+                <form action="#" method="POST" class="space-y-4">
+                    <input type="text" placeholder="Full Name" class="w-full px-4 py-2 border border-gray-300 rounded-md">
+                    <input type="email" placeholder="Email" class="w-full px-4 py-2 border border-gray-300 rounded-md">
+                    <input type="date" class="w-full px-4 py-2 border border-gray-300 rounded-md">
+                    <input type="text" placeholder="Restaurant Name" class="w-full px-4 py-2 border border-gray-300 rounded-md">
+                    <button type="submit" class="w-full bg-yellow-500 text-white py-3 rounded-full font-semibold text-lg hover:bg-yellow-600 transition duration-300">Book Now</button>
+                </form>
+            </div>
+
+            <!-- Game Drive Booking Form -->
+            <div id="game-drive-booking-form" class="bg-white p-8 shadow-lg rounded-lg">
+                <h3 class="text-xl font-semibold text-gray-800 mb-4">Game Drive Booking</h3>
+                <form action="#" method="POST" class="space-y-4">
+                    <input type="text" placeholder="Full Name" class="w-full px-4 py-2 border border-gray-300 rounded-md">
+                    <input type="email" placeholder="Email" class="w-full px-4 py-2 border border-gray-300 rounded-md">
+                    <input type="date" class="w-full px-4 py-2 border border-gray-300 rounded-md">
+                    <input type="text" placeholder="Game Drive Location" class="w-full px-4 py-2 border border-gray-300 rounded-md">
+                    <button type="submit" class="w-full bg-yellow-500 text-white py-3 rounded-full font-semibold text-lg hover:bg-yellow-600 transition duration-300">Book Now</button>
+                </form>
+            </div>
+        </div>
+    </section>
+</main>
+
     
     <footer class="bg-black text-gray-300 py-10 px-6 mt-auto">
         <div class="container mx-auto grid grid-cols-1 md:grid-cols-4 gap-8 items-start">
