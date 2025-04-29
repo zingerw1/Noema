@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tourism Website</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <link rel="stylesheet" href="PageLayout.css"> <!-- Link to external CSS -->
+    <link rel="website icon" type="jpg" href="Photos/Screenshot 2025-03-22 153746.png">
+
+
+
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+        body {
+          font-family: 'Poppins', sans-serif;
+          line-height: 1.5;
+          overflow-x: hidden;
+          position: relative;
+        }
+    
+        input::placeholder {
+          color: white;
+          opacity: 1;
+        }
+    
+        .footer-logo img {
+          width: 150px;
+          height: auto;
+          margin-left: 15px;
+        }
+    
+        .footer, .footer-logo, .copyright {
+          background-color: #000;
+          color: #fff;
+        }
+    
+        .location a:hover, .footer-col ul li a:hover {
+          color: #ffffff;
+        }
+    
+        .social-links a:hover {
+          color: #000;
+          background-color: #fff;
+        }
+    
+        video.bg-video {
+          position: fixed;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          z-index: -2;
+        }
+    
+        .video-overlay {
+          position: fixed;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background-color: rgba(0,0,0,0.1); /* Optional dark overlay */
+          z-index: -1;
+        }
+      </style>
+</head>
+<body class="bg-white text-black">
+
+
+      <!-- Background Video -->
+  <video autoplay muted loop playsinline class="bg-video">
+    <source src="https://videos.pexels.com/video-files/6168935/6168935-uhd_2560_1440_30fps.mp4" type="video/mp4" />
+    Your browser does not support the video tag.
+  </video>
+
+  <!-- Optional Overlay -->
+  <div class="video-overlay"></div>
+
+
+    <!-- HEADER -->
+    <header class="bg-black text-white shadow-md">
+        <div class="container mx-auto px-4 py-3 flex items-center justify-between">
+            <!-- Logo -->
+            <div class="flex items-center mr-5">
+                <img src="Photos/Screenshot 2025-03-22 153746.png" alt="Logo" class="h-500" width="100">
+            </div>
+
+            <!-- Navigation -->
+            <nav class="hidden md:flex space-x-8 mr-4">
+              <a href="index.html" class="relative hover:text-gray-300 transition duration-300 transform hover:scale-105 after:content-[''] after:absolute after:left-0 after:bottom-[-4px] after:w-0 after:h-[2px] after:bg-white after:transition-all after:duration-300 hover:after:w-full">Home</a>
+              <a href="Booking.html" class="relative hover:text-gray-300 transition duration-300 transform hover:scale-105 after:content-[''] after:absolute after:left-0 after:bottom-[-4px] after:w-0 after:h-[2px] after:bg-white after:transition-all after:duration-300 hover:after:w-full">Book</a>
+              <a href="Events.html" class="relative hover:text-gray-300 transition duration-300 transform hover:scale-105 after:content-[''] after:absolute after:left-0 after:bottom-[-4px] after:w-0 after:h-[2px] after:bg-white after:transition-all after:duration-300 hover:after:w-full">Events</a>
+              <a href="News.html" class="relative hover:text-gray-300 transition duration-300 transform hover:scale-105 after:content-[''] after:absolute after:left-0 after:bottom-[-4px] after:w-0 after:h-[2px] after:bg-white after:transition-all after:duration-300 hover:after:w-full">News</a>
+              <a href="About.html" class="relative hover:text-gray-300 transition duration-300 transform hover:scale-105 after:content-[''] after:absolute after:left-0 after:bottom-[-4px] after:w-0 after:h-[2px] after:bg-white after:transition-all after:duration-300 hover:after:w-full">About</a>
+              <a href="Contact.html" class="relative hover:text-gray-300 transition duration-300 transform hover:scale-105 after:content-[''] after:absolute after:left-0 after:bottom-[-4px] after:w-0 after:h-[2px] after:bg-white after:transition-all after:duration-300 hover:after:w-full">Contact</a>
+              <a href="Resources.html" class="relative hover:text-gray-300 transition duration-300 transform hover:scale-105 after:content-[''] after:absolute after:left-0 after:bottom-[-4px] after:w-0 after:h-[2px] after:bg-white after:transition-all after:duration-300 hover:after:w-full">Resources</a>
+              <a href="Marketplace.html" class="relative hover:text-gray-300 transition duration-300 transform hover:scale-105 after:content-[''] after:absolute after:left-0 after:bottom-[-4px] after:w-0 after:h-[2px] after:bg-white after:transition-all after:duration-300 hover:after:w-full">Marketplace</a>
+          </nav>
+
+            <!-- Search and Auth -->
+            <div class="flex items-center space-x-4">
+                <div class="relative">
+                    <input type="text" placeholder="Search" class="bg-white text-black px-4 py-2 rounded-full w-64 focus:outline-none focus:ring-2 focus:ring-white">
+                    <button class="absolute right-3 top-2.5 text-black hover:text-gray-600 transition-transform duration-300 hover:translate-x-1 hover:scale-110">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </div>
+                <div class="relative group">
+                  <button class="bg-white text-black px-4 py-2 rounded-md hover:bg-gray-200 transition flex items-center space-x-2 hover:shadow-black">
+                    <i class="fas fa-user"></i>
+                    <span>Account</span>
+                    <i class="fas fa-chevron-down text-sm transition-transform duration-300 group-hover:rotate-180"></i>
+                  </button>
+                
+                  <!-- Dropdown Menu -->
+                  <div class="absolute right-0 mt-2 w-48 bg-white/90 backdrop-blur-xl shadow-lg rounded-lg border border-gray-700 opacity-0 invisible transform scale-95 -translate-y-4 transition-all duration-500 ease-out group-hover:opacity-100 group-hover:visible group-hover:scale-100 group-hover:translate-y-0 z-50">
+                    <a href="Login.html" class="block px-5 py-3 text-black font-medium transition-all duration-300 rounded-t-lg hover:bg-black hover:text-white hover:shadow-white hover:scale-100">Login</a>
+                    <a href="Register.html" class="block px-5 py-3 text-black font-medium transition-all duration-300 rounded-b-lg hover:bg-black hover:text-white hover:shadow-white hover:scale-100">Register</a>
+                  </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+
+    <!-- LOGIN FORM -->
+<section class="flex items-center justify-center min-h-screen py-20 px-4 relative z-10">
+  <div class="bg-white shadow-2xl rounded-xl p-12 w-full max-w-2xl">
+    <h2 class="text-3xl font-bold text-center text-black mb-8">Login to Your Account</h2>
+    <form id="login-form" action="#" method="POST" class="space-y-6">
+      <div>
+        <label for="email" class="block text-base font-medium text-gray-700 mb-2">Email or Username</label>
+        <input type="text" id="email" name="email" placeholder="Enter your email or username" class="w-full px-5 py-3 border border-gray-300 rounded-lg text-lg focus:ring-2 focus:ring-black focus:outline-none">
+      </div>
+      <div>
+        <label for="password" class="block text-base font-medium text-gray-700 mb-2">Password</label>
+        <input type="password" id="password" name="password" placeholder="Enter your password" class="w-full px-5 py-3 border border-gray-300 rounded-lg text-lg focus:ring-2 focus:ring-black focus:outline-none">
+      </div>
+      <div class="flex items-center justify-between text-sm">
+        <label class="flex items-center">
+          <input type="checkbox" class="mr-2">
+          Remember me
+        </label>
+        <a href="#" class="text-black hover:underline">Forgot password?</a>
+      </div>
+      <button id="login-button" type="submit" class="w-full bg-black text-white py-3 text-lg rounded-lg hover:bg-gray-900 transition duration-300">
+        Login
+      </button>
+    </form>
+    <p class="mt-8 text-center text-base text-gray-600">
+      Don't have an account?
+      <a href="Register.html" class="text-black font-medium hover:underline">Register here</a>
+    </p>
+  </div>
+</section>
+
+
+
+
+
+    <!-- FOOTER LOGO -->
+    <div class="footer-logo">
+        <div class="container">
+            <img src="Photos/Screenshot 2025-03-22 153746.png" alt="Company Logo">
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="footer-col">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="#">about us</a></li>
+                        <li><a href="#">our services</a></li>
+                        <li><a href="#">privacy policy</a></li>
+                        <li><a href="#">Terms and Conditions</a></li>
+                        <li><a href="#">Login</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Explore</h4>
+                    <ul>
+                        <li><a href="#">Collaboration</a></li>
+                        <li><a href="#">Connect</a></li>
+                        <li><a href="#">Refunds</a></li>
+                        <li><a href="#">Accommodation Feedback</a></li>
+                        <li><a href="#">Payment Options</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Location</h4>
+                    <address class="location">
+                        <p><strong>Noema Tourism Services</strong></p>
+                        <p>EastLondon Block 9, Plot 20994</p>
+                        <p><a href="mailto:marketing@noemaservices.co.bw">marketing@noemaservices.co.bw</a></p>
+                        <p><a href="tel:+2739133922">Tel: +27 391 33922</a> | <a href="tel:+273947978">Fax: +27 394 7978</a></p>
+                    </address>
+                </div>
+                <div class="footer-col">
+                    <h4>follow us</h4>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-tiktok"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <div class="copyright">
+        <p>&copy; 2025 Noema Tourism Services Inc. All rights reserved.</p>
+    </div>
+   
