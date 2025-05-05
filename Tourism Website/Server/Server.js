@@ -86,6 +86,42 @@ app.post('/register', async (req, res) => {
   }
 });
 
+// Login Route
+app.post('/login', (req, res) => {
+  const { email, password } = req.body;
+
+  if (!email || !password) {
+    return res.status(400).json({ message: 'Please enter email and password.' });
+  }
+
+  // Relaxed email validation to accept all valid emails
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  if (!emailRegex.test(email)) {
+    return res.status(400).json({ message: 'Email must be a valid email address.' });
+  }
+
+  const sql = 'SELECT * FROM users WHERE email = ?';
+  db.query(sql, [email], async (err, results) => {
+    if (err) {
+      console.error('Database error:', err);
+      return res.status(500).json({ message: 'Server error' });
+    }
+
+    if (results.length === 0) {
+      return res.status(401).json({ message: 'Invalid email or password.' });
+    }
+
+    const user = results[0];
+    const passwordMatch = await bcrypt.compare(password, user.password);
+
+    if (!passwordMatch) {
+      return res.status(401).json({ message: 'Invalid email or password.' });
+    }
+
+    return res.status(200).json({ message: 'Login successful' });
+  });
+});
+
 // Start Server
 app.listen(port, () => {
   console.log(`Server running on http://localhost:${port}`);
