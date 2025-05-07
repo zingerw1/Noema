@@ -3,21 +3,40 @@ const mysql = require('mysql2');
 const bodyParser = require('body-parser');
 const bcrypt = require('bcrypt');
 const cors = require('cors');
+const session = require('express-session');
 
 const app = express();
 const port = 3000;
 
 // CORS configuration
+const allowedOrigins = ['http://127.0.0.1:5500', 'http://localhost:5500'];
+
 const corsOptions = {
-  origin: 'http://127.0.0.1:5500',  // Allow requests from your frontend
+  origin: function(origin, callback) {
+    if (!origin) return callback(null, true); // Allow non-browser requests like Postman or curl
+    if (allowedOrigins.indexOf(origin) !== -1) {
+      callback(null, true);
+    } else {
+      callback(new Error('Not allowed by CORS'));
+    }
+  },
   methods: 'GET,POST',
-  allowedHeaders: 'Content-Type'
+  allowedHeaders: 'Content-Type',
+  credentials: true
 };
 app.use(cors(corsOptions));  // Use custom CORS configuration
 
 // Middleware
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
+
+// Session middleware
+app.use(session({
+  secret: 'your-secret-key', // replace with a strong secret in production
+  resave: false,
+  saveUninitialized: false,
+  cookie: { secure: false } // set secure: true if using HTTPS
+}));
 
 // Database Connection
 const db = mysql.createConnection({
@@ -118,7 +137,47 @@ app.post('/login', (req, res) => {
       return res.status(401).json({ message: 'Invalid email or password.' });
     }
 
-    return res.status(200).json({ message: 'Login successful' });
+    // Store user ID in session
+    req.session.userId = user.id;
+
+    console.log('Login success for user:', user);
+    return res.status(200).json({ message: 'Login successful', name: user.name, surname: user.surname });
+  });
+});
+
+// User profile route
+app.get('/user/profile', (req, res) => {
+  if (!req.session.userId) {
+    return res.status(401).json({ message: 'Unauthorized' });
+  }
+
+  const sql = 'SELECT name, surname FROM users WHERE id = ?';
+  db.query(sql, [req.session.userId], (err, results) => {
+    if (err) {
+      console.error('Database error:', err);
+      return res.status(500).json({ message: 'Server error' });
+    }
+
+    if (results.length === 0) {
+      return res.status(404).json({ message: 'User not found' });
+    }
+
+    const user = results[0];
+    return res.status(200).json({ name: user.name, surname: user.surname });
+  });
+});
+
+//Logout Implementation
+app.post("/logout", (req, res) => {
+  req.session.destroy(err => {
+    if (err) {
+      console.error('Logout error:', err);
+      return res.status(500).send('Logout failed');
+    }
+    res.clearCookie('connect.sid');
+    console.log("User logged out");
+    // Redirect to index.html after logout
+    res.redirect('../Home-Page/index.html');
   });
 });
 

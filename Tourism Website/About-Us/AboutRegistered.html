@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tourism Website</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+        .about-hero {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.4)), url('https://unsplash.com/photos/group-of-elephant-walking-on-snow-covered-field-during-daytime--QVP-79SeVE');
+            background-size: cover;
+            background-position: center;
+        }
+        .team-card:hover img {
+            transform: scale(1.05);
+        }
+        .team-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body class="bg-white flex flex-col min-h-screen">
+    <header class="bg-black text-white shadow-md">
+        <div class="container mx-auto px-4 py-3 flex items-center justify-between">
+            <div class="flex items-center">
+                <img src="../Logo1.png" alt="Tourism Logo" class="h-10 w-auto">
+            </div>
+            <nav class="hidden md:flex space-x-8">
+              <a href="../Home-Page/indexRegistered.html" class="relative hover:text-gray-300 transition duration-300 transform hover:scale-105 after:content-[''] after:absolute after:left-0 after:bottom-[-4px] after:w-0 after:h-[2px] after:bg-white after:transition-all after:duration-300 hover:after:w-full">Home</a>
+              <a href="../Book/BookRegistered.html" class="relative hover:text-gray-300 transition duration-300 transform hover:scale-105 after:content-[''] after:absolute after:left-0 after:bottom-[-4px] after:w-0 after:h-[2px] after:bg-white after:transition-all after:duration-300 hover:after:w-full">Book</a>
+              <a href="../Events/EventsRegistered.html" class="relative hover:text-gray-300 transition duration-300 transform hover:scale-105 after:content-[''] after:absolute after:left-0 after:bottom-[-4px] after:w-0 after:h-[2px] after:bg-white after:transition-all after:duration-300 hover:after:w-full">Events</a>
+              <a href="../Current-Affairs/newsRegistered.html" class="relative hover:text-gray-300 transition duration-300 transform hover:scale-105 after:content-[''] after:absolute after:left-0 after:bottom-[-4px] after:w-0 after:h-[2px] after:bg-white after:transition-all after:duration-300 hover:after:w-full">News</a>
+              <a href="../About-Us/AboutRegistered.html" class="relative hover:text-gray-300 transition duration-300 transform hover:scale-105 after:content-[''] after:absolute after:left-0 after:bottom-[-4px] after:w-0 after:h-[2px] after:bg-white after:transition-all after:duration-300 hover:after:w-full">About</a>
+              <a href="../Resources/ResourcesRegistered.html" class="relative hover:text-gray-300 transition duration-300 transform hover:scale-105 after:content-[''] after:absolute after:left-0 after:bottom-[-4px] after:w-0 after:h-[2px] after:bg-white after:transition-all after:duration-300 hover:after:w-full">Resources</a>
+              <a href="../Marketplace/MarketplaceRegistered.html" class="relative hover:text-gray-300 transition duration-300 transform hover:scale-105 after:content-[''] after:absolute after:left-0 after:bottom-[-4px] after:w-0 after:h-[2px] after:bg-white after:transition-all after:duration-300 hover:after:w-full">Marketplace</a>
+          </nav>
+            <div class="flex items-center space-x-4">
+                <!-- Search -->
+              <div class="relative">
+                <input 
+                  type="text" 
+                  placeholder="Search news..." 
+                  class="bg-white text-gray-900 px-4 py-2 rounded-full w-64 focus:outline-none focus:ring-2 focus:ring-gray-400">
+                <button class="absolute right-3 top-2.5 text-gray-500 hover:text-black transition-transform duration-300 hover:translate-x-1 hover:scale-110">
+                  <i class="fas fa-search"></i>
+                </button>
+              </div>
+              
+              <!-- Cart Icon -->
+              <div class="relative">
+                <a href="/cart.html" aria-label="Shopping Cart" class="text-white hover:text-gray-300 relative">
+                  <i class="fas fa-shopping-cart fa-lg"></i>
+                  <span class="absolute -top-2 -right-2 bg-red-600 text-white rounded-full text-xs w-5 h-5 flex items-center justify-center">0</span>
+                </a>
+              </div>
+              
+              <!-- Account Dropdown -->
+              <div class="relative group">
+                <button class="bg-white text-black px-4 py-2 rounded-md hover:bg-gray-100 transition flex items-center space-x-2">
+                  <i class="fas fa-user"></i>
+                  <span>Account</span>
+                  <i class="fas fa-chevron-down text-sm transition-transform duration-300 group-hover:rotate-180"></i>
+                </button>
+                <div class="absolute right-0 mt-2 w-48 bg-white/90 backdrop-blur-xl shadow-lg rounded-lg border border-gray-300 opacity-0 invisible transform scale-95 -translate-y-4 transition-all duration-500 ease-out group-hover:opacity-100 group-hover:visible group-hover:scale-100 group-hover:translate-y-0">
+                  <a href="#" class="block px-5 py-3 text-gray-700 font-medium transition-all duration-300 rounded-t-lg hover:bg-black hover:text-white hover:shadow-md hover:scale-105">Login</a>
+                  <a href="#" class="block px-5 py-3 text-gray-700 font-medium transition-all duration-300 rounded-b-lg hover:bg-black hover:text-white hover:shadow-md hover:scale-105">Register</a>
+                </div>
+              </div>
+            </div>
+            
+        </div>
+    </header>
+    
+    <main class="flex-grow">
+        <!-- Hero Section -->
+    <section class="about-hero text-white py-32 px-4 flex items-center" style="background-image: url('https://images.unsplash.com/photo-1612434133072-633382f6ca25?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'); background-size: cover; background-position: center 60%;">
+        <div class="container mx-auto max-w-6xl">
+            <div class="max-w-2xl">
+                <h1 class="text-4xl md:text-6xl font-bold mb-6">Our <span class="text-yellow-400">Story</span></h1>
+                <p class="text-xl mb-8">Connecting travelers with Botswana's breathtaking landscapes and rich cultural heritage</p>
+                <a href="#our-mission" class="inline-flex items-center text-yellow-400 hover:text-yellow-300 font-medium">
+                    Explore Our Journey <i class="fas fa-arrow-down ml-2"></i>
+            </a>
+            </div>
+        </div>
+    </section>
+
+        <!-- Mission Section -->
+<section id="our-mission" class="py-20 bg-white">
+    <div class="container mx-auto px-4">
+        <div class="flex flex-col md:flex-row items-center gap-12">
+            <div class="md:w-1/2 flex justify-start relative"> <!-- Added relative positioning -->
+                <div class="w-full max-w-lg overflow-hidden rounded-xl shadow-2xl"> <!-- Container box for the image -->
+                    <img src="https://plus.unsplash.com/premium_photo-1694475403770-a84bc706ebc3?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" 
+                         alt="Our Mission" 
+                         class="w-full h-96 object-cover transition-transform duration-500 transform hover:scale-105"> <!-- Added hover effect -->
+                </div>
+            </div>
+            <div class="md:w-1/2">
+                <span class="text-yellow-500 font-semibold">OUR PURPOSE</span>
+                <h2 class="text-3xl md:text-4xl font-bold mt-2 mb-6">More Than Just Tourism</h2>
+                <p class="text-gray-600 mb-6">We believe in creating meaningful connections between travelers and the incredible landscapes, wildlife, and cultures of Botswana. Our mission is to deliver transformative experiences that benefit both our guests and local communities.</p>
+                <div class="space-y-4">
+                    <div class="flex items-start">
+                        <div class="bg-yellow-100 p-2 rounded-full mr-4">
+                            <i class="fas fa-leaf text-yellow-600"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold">Sustainable Travel</h4>
+                            <p class="text-gray-600">We prioritize eco-friendly practices that protect Botswana's natural wonders</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start">
+                        <div class="bg-yellow-100 p-2 rounded-full mr-4">
+                            <i class="fas fa-hands-helping text-yellow-600"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold">Community Impact</h4>
+                            <p class="text-gray-600">30% of our profits directly support local conservation and education</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+        <!-- Team Section -->
+        <section id="our-team" class="py-20 bg-gray-50">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-16">
+                    <span class="text-blue-500 font-semibold">MEET THE TEAM</span>
+                    <h2 class="text-3xl md:text-4xl font-bold mt-2">The Team Behind This Project</h2>
+                    <p class="text-gray-600 max-w-2xl mx-auto mt-4">Bachelor of Science in Computer Systems Engineering, Year 2</p>
+                </div>
+                
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8">
+                    <!-- Student 1 -->
+                    <div class="team-card bg-white rounded-xl overflow-hidden shadow-lg transition-all duration-300">
+                        <div class="overflow-hidden h-64">
+                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80" 
+                                 alt="Team Member" 
+                                 class="w-full h-full object-cover transition-transform duration-500">
+                        </div>
+                        <div class="p-6 text-center">
+                            <h3 class="text-xl font-bold">Kagiso Setwaba</h3>
+                            <p class="text-blue-600 mb-2">Documentation & Content Lead</p>
+                            <p class="text-gray-600 text-sm">Documentation Lead, Content Strategist</p>
+                            <div class="flex justify-center space-x-3 mt-3">
+                                <a href="#" class="text-gray-400 hover:text-blue-500"><i class="fab fa-github"></i></a>
+                                <a href="#" class="text-gray-400 hover:text-blue-700"><i class="fab fa-linkedin-in"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Student 2 -->
+                    <div class="team-card bg-white rounded-xl overflow-hidden shadow-lg transition-all duration-300">
+                        <div class="overflow-hidden h-64">
+                            <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" 
+                                 alt="Team Member" 
+                                 class="w-full h-full object-cover transition-transform duration-500">
+                        </div>
+                        <div class="p-6 text-center">
+                            <h3 class="text-xl font-bold">Katlego Simon</h3>
+                            <p class="text-blue-600 mb-2">Marketing & Communications Lead</p>
+                            <p class="text-gray-600 text-sm">Marketing Lead, Head of Growth, Communications Manage</p>
+                            <div class="flex justify-center space-x-3 mt-3">
+                                <a href="#" class="text-gray-400 hover:text-blue-500"><i class="fab fa-github"></i></a>
+                                <a href="#" class="text-gray-400 hover:text-blue-700"><i class="fab fa-linkedin-in"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Student 3 -->
+                    <div class="team-card bg-white rounded-xl overflow-hidden shadow-lg transition-all duration-300">
+                        <div class="overflow-hidden h-64">
+                            <img src="https://images.unsplash.com/photo-1544725176-7c40e5a71c5e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1167&q=80" 
+                                 alt="Team Member" 
+                                 class="w-full h-full object-cover transition-transform duration-500">
+                        </div>
+                        <div class="p-6 text-center">
+                            <h3 class="text-xl font-bold">Mosa Seeletso</h3>
+                            <p class="text-blue-600 mb-2">Design & Branding Lead</p>
+                            <p class="text-gray-600 text-sm">UI/UX, branding, visuals, social media creatives</p>
+                            <div class="flex justify-center space-x-3 mt-3">
+                                <a href="#" class="text-gray-400 hover:text-blue-500"><i class="fab fa-github"></i></a>
+                                <a href="#" class="text-gray-400 hover:text-blue-700"><i class="fab fa-linkedin-in"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Student 4 -->
+                    <div class="team-card bg-white rounded-xl overflow-hidden shadow-lg transition-all duration-300">
+                        <div class="overflow-hidden h-64">
+                            <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=776&q=80" 
+                                 alt="Team Member" 
+                                 class="w-full h-full object-cover transition-transform duration-500">
+                        </div>
+                        <div class="p-6 text-center">
+                            <h3 class="text-xl font-bold">Bonolo Masekamela</h3>
+                            <p class="text-blue-600 mb-2">Product / Tech Lead</p>
+                            <p class="text-gray-600 text-sm">Leads technical development (website, mobile app, backend)</p>
+                            <div class="flex justify-center space-x-3 mt-3">
+                                <a href="#" class="text-gray-400 hover:text-blue-500"><i class="fab fa-github"></i></a>
+                                <a href="#" class="text-gray-400 hover:text-blue-700"><i class="fab fa-linkedin-in"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Student 5 -->
+                    <div class="team-card bg-white rounded-xl overflow-hidden shadow-lg transition-all duration-300">
+                        <div class="overflow-hidden h-64">
+                            <img src="https://images.unsplash.com/photo-1552058544-f2b08422138a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=798&q=80" 
+                                 alt="Team Member" 
+                                 class="w-full h-full object-cover transition-transform duration-500">
+                        </div>
+                        <div class="p-6 text-center">
+                            <h3 class="text-xl font-bold">Shadrack Modise</h3>
+                            <p class="text-blue-600 mb-2">Team Lead / Operations Lead </p>
+                            <p class="text-gray-600 text-sm">Founder & CEO, Operations Lead, Managing Directorr</p>
+                            <div class="flex justify-center space-x-3 mt-3">
+                                <a href="#" class="text-gray-400 hover:text-blue-500"><i class="fab fa-github"></i></a>
+                                <a href="#" class="text-gray-400 hover:text-blue-700"><i class="fab fa-linkedin-in"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Horizontal Timeline Section -->
+        <section class="py-24 bg-gradient-to-r from-yellow-50 via-gray-50 to-yellow-100">
+            <div class="container mx-auto px-4">
+              <!-- Updated Banner Header -->
+              <div class="text-center mb-16">
+                <span class="text-yellow-500 font-semibold text-sm tracking-wider uppercase">Our Journey</span>
+                <h2 class="text-4xl md:text-5xl font-extrabold text-gray-800 mt-4 leading-tight">
+                  Milestones & Achievements
+                </h2>
+                <p class="mt-4 text-gray-600 max-w-2xl mx-auto text-lg">
+                  A look at the highlights and growth moments that shaped our company. From humble beginnings to impactful progress.
+                </p>
+              </div>
+      
+      <div class="overflow-x-auto">
+        <div class="flex md:justify-between gap-8 md:gap-16 min-w-[900px] px-4 relative">
+          <!-- Timeline Line -->
+          <div class="absolute top-8 left-0 w-full h-0.5 bg-gray-300 z-0"></div>
+  
+          <!-- Timeline Item -->
+          <div class="relative flex flex-col items-center z-10 min-w-[200px]">
+            <div class="bg-yellow-500 w-3 h-3 rounded-full mb-4"></div>
+            <div class="bg-white shadow-lg rounded-lg p-4 text-center w-full max-w-xs">
+              <p class="text-sm text-gray-500 mb-1">March 2025</p>
+              <h3 class="font-bold text-lg">Website Project</h3>
+              <p class="text-gray-600">Over 1000 Trips Provided To Batswana</p>
+            </div>
+          </div>
+  
+          <!-- Timeline Item -->
+          <div class="relative flex flex-col items-center z-10 min-w-[200px]">
+            <div class="bg-yellow-500 w-3 h-3 rounded-full mb-4"></div>
+            <div class="bg-white shadow-lg rounded-lg p-4 text-center w-full max-w-xs">
+              <p class="text-sm text-gray-500 mb-1">June 2025</p>
+              <h3 class="font-bold text-lg">Mobile App Launch</h3>
+              <p class="text-gray-600">Launched our web application to make bookings easier for our customers.</p>
+            </div>
+          </div>
+  
+          <!-- Timeline Item -->
+          <div class="relative flex flex-col items-center z-10 min-w-[200px]">
+            <div class="bg-yellow-500 w-3 h-3 rounded-full mb-4"></div>
+            <div class="bg-white shadow-lg rounded-lg p-4 text-center w-full max-w-xs">
+              <p class="text-sm text-gray-500 mb-1">Sept 2025</p>
+              <h3 class="font-bold text-lg">Team Expansion</h3>
+              <p class="text-gray-600">Grew from 3 to 10 members, reaching more areas in Botswana.</p>
+            </div>
+          </div>
+  
+          <!-- Timeline Item -->
+          <div class="relative flex flex-col items-center z-10 min-w-[200px]">
+            <div class="bg-yellow-500 w-3 h-3 rounded-full mb-4"></div>
+            <div class="bg-white shadow-lg rounded-lg p-4 text-center w-full max-w-xs">
+              <p class="text-sm text-gray-500 mb-1">Dec 2025</p>
+              <h3 class="font-bold text-lg">Award Recognition</h3>
+              <p class="text-gray-600">Recognized for innovation in tourism sector.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+
+        <!-- CTA Section -->
+        <section class="py-20 bg-yellow-500 text-center">
+            <div class="container mx-auto px-4">
+                <h2 class="text-3xl md:text-4xl font-bold mb-6">Ready to Experience Botswana With Us?</h2>
+                <p class="text-xl mb-8 max-w-2xl mx-auto">Let our team craft your perfect African adventure</p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="#" class="bg-black text-white hover:bg-gray-900 font-bold py-4 px-8 rounded-full inline-block transition transform hover:scale-105">
+                        Contact Our Team
+                    </a>
+                    <a href="#" class="bg-white text-black hover:bg-gray-100 font-bold py-4 px-8 rounded-full inline-block transition transform hover:scale-105">
+                        Browse Safaris
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <footer class="bg-black text-gray-300 py-10 px-6 mt-auto">
+        <div class="container mx-auto grid grid-cols-1 md:grid-cols-4 gap-8 items-start">
+      
+          <!-- Logo -->
+          <div class="flex flex-col items-start space-y-4">
+            <img src="../Logo1.png" alt="Noema Tourism Logo" class="h-14 w-auto">
+            <p class="text-sm text-gray-400">Your gateway to unforgettable travel experiences.</p>
+          </div>
+      
+          <!-- Support -->
+          <div>
+            <h4 class="text-white font-semibold mb-2 relative pb-1 after:content-[''] after:block after:w-16 after:h-[2px] after:bg-white after:mt-1">Support</h4>
+            <ul class="space-y-1 text-sm">
+              <li><a href="#" class="hover:text-white transition">About Us</a></li>
+              <li><a href="#" class="hover:text-white transition">Our Services</a></li>
+              <li><a href="#" class="hover:text-white transition">Privacy Policy</a></li>
+              <li><a href="#" class="hover:text-white transition">Terms & Conditions</a></li>
+            </ul>
+          </div>
+      
+          <!-- Explore -->
+          <div>
+            <h4 class="text-white font-semibold mb-2 relative pb-1 after:content-[''] after:block after:w-16 after:h-[2px] after:bg-white after:mt-1">Explore</h4>
+            <ul class="space-y-1 text-sm">
+              <li><a href="#" class="hover:text-white transition">Collaboration</a></li>
+              <li><a href="#" class="hover:text-white transition">Connect</a></li>
+              <li><a href="#" class="hover:text-white transition">Refunds</a></li>
+              <li><a href="#" class="hover:text-white transition">Accommodation Feedback</a></li>
+              <li><a href="#" class="hover:text-white transition">Payment Options</a></li>
+            </ul>
+          </div>
+      
+          <!-- Contact & Social -->
+          <div>
+            <h4 class="text-white font-semibold mb-2 relative pb-1 after:content-[''] after:block after:w-16 after:h-[2px] after:bg-white after:mt-1">Contact</h4>
+            <address class="not-italic text-sm text-gray-400 mb-4 leading-relaxed">
+              <p><strong class="text-white">Noema Tourism Services</strong></p>
+              <p>EastLondon Block 9, Plot 20994</p>
+              <p><a href="mailto:marketing@noemaservices.co.bw" class="hover:text-white transition">marketing@noemaservices.co.bw</a></p>
+              <p><a href="tel:+2739133922" class="hover:text-white transition">Tel: +27 391 33922</a> | 
+                 <a href="tel:+273947978" class="hover:text-white transition">Fax: +27 394 7978</a></p>
+            </address>
+            <div class="flex space-x-4 mt-2">
+              <a href="#" class="text-gray-400 hover:text-white transition transform hover:scale-125"><i class="fab fa-facebook-f"></i></a>
+              <a href="#" class="text-gray-400 hover:text-white transition transform hover:scale-125"><i class="fab fa-twitter"></i></a>
+              <a href="#" class="text-gray-400 hover:text-white transition transform hover:scale-125"><i class="fab fa-instagram"></i></a>
+              <a href="#" class="text-gray-400 hover:text-white transition transform hover:scale-125"><i class="fab fa-tiktok"></i></a>
+            </div>
+          </div>
+      
+        </div>
+     
+        <div class="mt-8 text-center text-xs text-gray-500 border-t border-gray-700 pt-4">
+          &copy; 2025 <span class="text-white font-semibold">Noema Tourism Services Inc.</span> All rights reserved.
+        </div>
+      </footer>  
+</body>
+</html>

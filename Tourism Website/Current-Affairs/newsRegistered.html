@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tourism News</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+        .news-card:hover .news-image {
+            transform: scale(1.03);
+        }
+        .news-card:hover .news-title {
+            color: #3b82f6;
+        }
+    </style>
+</head>
+<body class="bg-white flex flex-col min-h-screen">
+    <header class="bg-black text-white shadow-md">
+        <div class="container mx-auto px-4 py-3 flex items-center justify-between">
+            <div class="flex items-center">
+                <img src="../Logo1.png" alt="Tourism Logo" class="h-10 w-auto">
+            </div>
+            <nav class="hidden md:flex space-x-8">
+                <a href="../Home-Page/indexRegistered.html" class="relative hover:text-gray-300 transition duration-300 transform hover:scale-105 after:content-[''] after:absolute after:left-0 after:bottom-[-4px] after:w-0 after:h-[2px] after:bg-white after:transition-all after:duration-300 hover:after:w-full">Home</a>
+                <a href="../Book/BookRegistered.html" class="relative hover:text-gray-300 transition duration-300 transform hover:scale-105 after:content-[''] after:absolute after:left-0 after:bottom-[-4px] after:w-0 after:h-[2px] after:bg-white after:transition-all after:duration-300 hover:after:w-full">Book</a>
+                <a href="../Events/EventsRegistered.html" class="relative hover:text-gray-300 transition duration-300 transform hover:scale-105 after:content-[''] after:absolute after:left-0 after:bottom-[-4px] after:w-0 after:h-[2px] after:bg-white after:transition-all after:duration-300 hover:after:w-full">Events</a>
+                <a href="../Current-Affairs/newsRegistered.html" class="relative hover:text-gray-300 transition duration-300 transform hover:scale-105 after:content-[''] after:absolute after:left-0 after:bottom-[-4px] after:w-0 after:h-[2px] after:bg-white after:transition-all after:duration-300 hover:after:w-full">News</a>
+                <a href="../About-Us/AboutRegistered.html" class="relative hover:text-gray-300 transition duration-300 transform hover:scale-105 after:content-[''] after:absolute after:left-0 after:bottom-[-4px] after:w-0 after:h-[2px] after:bg-white after:transition-all after:duration-300 hover:after:w-full">About</a>
+                <a href="../Resources/ResourcesRegistered.html" class="relative hover:text-gray-300 transition duration-300 transform hover:scale-105 after:content-[''] after:absolute after:left-0 after:bottom-[-4px] after:w-0 after:h-[2px] after:bg-white after:transition-all after:duration-300 hover:after:w-full">Resources</a>
+                <a href="../Marketplace/MarketplaceRegistered.html" class="relative hover:text-gray-300 transition duration-300 transform hover:scale-105 after:content-[''] after:absolute after:left-0 after:bottom-[-4px] after:w-0 after:h-[2px] after:bg-white after:transition-all after:duration-300 hover:after:w-full">Marketplace</a>
+            </nav>
+            <div class="flex items-center space-x-4">
+                <!-- Search -->
+              <div class="relative">
+                <input 
+                  type="text" 
+                  placeholder="Search news..." 
+                  class="bg-white text-gray-900 px-4 py-2 rounded-full w-64 focus:outline-none focus:ring-2 focus:ring-gray-400">
+                <button class="absolute right-3 top-2.5 text-gray-500 hover:text-black transition-transform duration-300 hover:translate-x-1 hover:scale-110">
+                  <i class="fas fa-search"></i>
+                </button>
+              </div>
+            
+              <!-- Cart Icon -->
+              <div class="relative">
+                <a href="/cart.html" aria-label="Shopping Cart" class="text-white hover:text-gray-300 relative">
+                  <i class="fas fa-shopping-cart fa-lg"></i>
+                  <span class="absolute -top-2 -right-2 bg-red-600 text-white rounded-full text-xs w-5 h-5 flex items-center justify-center">0</span>
+                </a>
+              </div>
+              
+              <!-- Account Dropdown -->
+              <div class="relative group">
+                <button class="bg-white text-black px-4 py-2 rounded-md hover:bg-gray-100 transition flex items-center space-x-2">
+                  <i class="fas fa-user"></i>
+                  <span>Account</span>
+                  <i class="fas fa-chevron-down text-sm transition-transform duration-300 group-hover:rotate-180"></i>
+                </button>
+                <div class="absolute right-0 mt-2 w-48 bg-white/90 backdrop-blur-xl shadow-lg rounded-lg border border-gray-300 opacity-0 invisible transform scale-95 -translate-y-4 transition-all duration-500 ease-out group-hover:opacity-100 group-hover:visible group-hover:scale-100 group-hover:translate-y-0">
+                  <a href="#" class="block px-5 py-3 text-gray-700 font-medium transition-all duration-300 rounded-t-lg hover:bg-black hover:text-white hover:shadow-md hover:scale-105">Login</a>
+                  <a href="#" class="block px-5 py-3 text-gray-700 font-medium transition-all duration-300 rounded-b-lg hover:bg-black hover:text-white hover:shadow-md hover:scale-105">Register</a>
+                </div>
+              </div>
+            </div>
+            
+        </div>
+    </header>
+    
+    <main class="flex-grow container mx-auto px-4 py-10">
+        <div class="w-full mx-auto">
+            <!-- Hero Section -->
+            <section class="mb-16">
+                <div class="relative overflow-hidden rounded-xl shadow-lg">
+                    <img src="https://images.unsplash.com/photo-1506929562872-bb421503ef21?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2560&q=80" 
+                         alt="Featured travel destination" 
+                         class="w-full h-96 object-cover brightness-90">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent flex items-end p-8">
+                        <div class="max-w-2xl">
+                            <span class="text-blue-400 font-medium text-sm uppercase tracking-wider">Featured Story</span>
+                            <h1 class="text-4xl font-bold text-white mt-2 mb-4">Botswana Named Top Sustainable Destination for 2025</h1>
+                            <p class="text-gray-200 mb-4">The Okavango Delta's conservation efforts earn global recognition as Botswana leads the way in eco-tourism initiatives.</p>
+                            <div class="flex items-center text-sm text-gray-300">
+                                <span>By Sarah Johnson</span>
+                                <span class="mx-2">•</span>
+                                <span>June 15, 2025</span>
+                                <span class="mx-2">•</span>
+                                <span>5 min read</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- News Grid -->
+            <section>
+                <div class="flex justify-between items-center mb-8">
+                    <h2 class="text-2xl font-bold">Latest News</h2>
+                    <div class="flex space-x-2">
+                        <button class="px-4 py-2 bg-black text-white rounded-md hover:bg-gray-800 transition">All</button>
+                        <button class="px-4 py-2 bg-gray-100 rounded-md hover:bg-gray-200 transition">Destinations</button>
+                        <button class="px-4 py-2 bg-gray-100 rounded-md hover:bg-gray-200 transition">Trends</button>
+                        <button class="px-4 py-2 bg-gray-100 rounded-md hover:bg-gray-200 transition">Tips</button>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- News Card 1 -->
+                    <article class="news-card bg-white rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300">
+                        <div class="overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1501594907352-04cda38ebc29?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" 
+                                 alt="New flight routes" 
+                                 class="news-image w-full h-48 object-cover transition-transform duration-500">
+                        </div>
+                        <div class="p-6">
+                            <div class="flex justify-between items-center mb-2 text-sm text-gray-500">
+                                <span>Travel Updates</span>
+                                <span>June 12, 2025</span>
+                            </div>
+                            <h3 class="news-title text-xl font-semibold mb-3 transition-colors duration-300">Air Botswana Announces New Direct Flights to Victoria Falls</h3>
+                            <p class="text-gray-600 mb-4">Starting September, travelers can enjoy convenient direct flights between Gaborone and one of Africa's most spectacular natural wonders.</p>
+                            <a href="#" class="text-blue-500 font-medium hover:text-blue-700 transition flex items-center">
+                                Read more
+                                <i class="fas fa-arrow-right ml-2 text-sm"></i>
+                            </a>
+                        </div>
+                    </article>
+
+                    <!-- News Card 2 -->
+                    <article class="news-card bg-white rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300">
+                        <div class="overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" 
+                                 alt="Luxury lodge" 
+                                 class="news-image w-full h-48 object-cover transition-transform duration-500">
+                        </div>
+                        <div class="p-6">
+                            <div class="flex justify-between items-center mb-2 text-sm text-gray-500">
+                                <span>Accommodation</span>
+                                <span>June 8, 2025</span>
+                            </div>
+                            <h3 class="news-title text-xl font-semibold mb-3 transition-colors duration-300">New Eco-Luxury Lodge Opens in the Kalahari</h3>
+                            <p class="text-gray-600 mb-4">Experience the untouched beauty of the Kalahari Desert with minimal environmental impact at this groundbreaking new property.</p>
+                            <a href="#" class="text-blue-500 font-medium hover:text-blue-700 transition flex items-center">
+                                Read more
+                                <i class="fas fa-arrow-right ml-2 text-sm"></i>
+                            </a>
+                        </div>
+                    </article>
+
+                    <!-- News Card 3 -->
+                    <article class="news-card bg-white rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300">
+                        <div class="overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1506197603052-3cc9c3a201bd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" 
+                                 alt="Cultural festival" 
+                                 class="news-image w-full h-48 object-cover transition-transform duration-500">
+                        </div>
+                        <div class="p-6">
+                            <div class="flex justify-between items-center mb-2 text-sm text-gray-500">
+                                <span>Events</span>
+                                <span>June 5, 2025</span>
+                            </div>
+                            <h3 class="news-title text-xl font-semibold mb-3 transition-colors duration-300">Maun Cultural Festival Returns With Expanded Program</h3>
+                            <p class="text-gray-600 mb-4">The annual celebration of Botswana's diverse heritage will feature new performances, workshops, and culinary experiences this July.</p>
+                            <a href="#" class="text-blue-500 font-medium hover:text-blue-700 transition flex items-center">
+                                Read more
+                                <i class="fas fa-arrow-right ml-2 text-sm"></i>
+                            </a>
+                        </div>
+                    </article>
+
+                    <!-- News Card 4 -->
+                    <article class="news-card bg-white rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300">
+                        <div class="overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1503917988258-f87a78e3c995?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" 
+                                 alt="Travel technology" 
+                                 class="news-image w-full h-48 object-cover transition-transform duration-500">
+                        </div>
+                        <div class="p-6">
+                            <div class="flex justify-between items-center mb-2 text-sm text-gray-500">
+                                <span>Technology</span>
+                                <span>May 30, 2025</span>
+                            </div>
+                            <h3 class="news-title text-xl font-semibold mb-3 transition-colors duration-300">New App Simplifies Safari Bookings Across Southern Africa</h3>
+                            <p class="text-gray-600 mb-4">This innovative platform connects travelers directly with local operators, offering real-time availability and instant confirmation.</p>
+                            <a href="#" class="text-blue-500 font-medium hover:text-blue-700 transition flex items-center">
+                                Read more
+                                <i class="fas fa-arrow-right ml-2 text-sm"></i>
+                            </a>
+                        </div>
+                    </article>
+
+                    <!-- News Card 5 -->
+                    <article class="news-card bg-white rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300">
+                        <div class="overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1464037866556-6812c9d1c72e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" 
+                                 alt="Wildlife conservation" 
+                                 class="news-image w-full h-48 object-cover transition-transform duration-500">
+                        </div>
+                        <div class="p-6">
+                            <div class="flex justify-between items-center mb-2 text-sm text-gray-500">
+                                <span>Conservation</span>
+                                <span>May 25, 2025</span>
+                            </div>
+                            <h3 class="news-title text-xl font-semibold mb-3 transition-colors duration-300">Record Rhino Births Reported in Moremi Game Reserve</h3>
+                            <p class="text-gray-600 mb-4">Conservation efforts pay off as the endangered species shows promising population growth in protected areas.</p>
+                            <a href="#" class="text-blue-500 font-medium hover:text-blue-700 transition flex items-center">
+                                Read more
+                                <i class="fas fa-arrow-right ml-2 text-sm"></i>
+                            </a>
+                        </div>
+                    </article>
+
+                    <!-- News Card 6 -->
+                    <article class="news-card bg-white rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300">
+                        <div class="overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1501555088652-021faa71b9a3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" 
+                                 alt="Travel trends" 
+                                 class="news-image w-full h-48 object-cover transition-transform duration-500">
+                        </div>
+                        <div class="p-6">
+                            <div class="flex justify-between items-center mb-2 text-sm text-gray-500">
+                                <span>Trends</span>
+                                <span>May 20, 2025</span>
+                            </div>
+                            <h3 class="news-title text-xl font-semibold mb-3 transition-colors duration-300">Survey Reveals Growing Demand for Authentic Cultural Experiences</h3>
+                            <p class="text-gray-600 mb-4">Modern travelers are seeking deeper connections with local communities, according to new tourism research.</p>
+                            <a href="#" class="text-blue-500 font-medium hover:text-blue-700 transition flex items-center">
+                                Read more
+                                <i class="fas fa-arrow-right ml-2 text-sm"></i>
+                            </a>
+                        </div>
+                    </article>
+                </div>
+
+        <!-- Pagination Section -->
+    <section class="mt-12 text-center">
+        <div class="inline-flex items-center space-x-2">
+            <!-- Previous Button -->
+            <button id="prev-btn" class="px-4 py-2 bg-black text-white rounded-md hover:bg-gray-800 transition font-medium" onclick="changePage('prev')">
+                &lt; 
+            </button>
+            
+            <!-- Page 1 Button -->
+            <button id="page-1" class="px-4 py-2 bg-gray-200 text-black rounded-md hover:bg-gray-300 transition font-medium" onclick="goToPage(1)">
+                1
+            </button>
+            
+            <!-- Page 2 Button -->
+            <button id="page-2" class="px-4 py-2 bg-gray-200 text-black rounded-md hover:bg-gray-300 transition font-medium" onclick="goToPage(2)">
+                2
+            </button>
+            
+            <!-- Page 3 Button -->
+            <button id="page-3" class="px-4 py-2 bg-gray-200 text-black rounded-md hover:bg-gray-300 transition font-medium" onclick="goToPage(3)">
+                3
+            </button>
+            
+            <!-- Next Button -->
+            <button id="next-btn" class="px-4 py-2 bg-black text-white rounded-md hover:bg-gray-800 transition font-medium" onclick="changePage('next')">
+                 &gt;
+            </button>
+        </div>
+    </section>
+
+            <!-- Newsletter Section -->
+            <section class="mt-16 bg-gray-50 rounded-xl p-8 shadow-inner">
+                <div class="max-w-2xl mx-auto text-center">
+                    <h2 class="text-2xl font-bold mb-2">Stay Updated</h2>
+                    <p class="text-gray-600 mb-6">Subscribe to our newsletter for the latest travel news and exclusive offers.</p>
+                    <div class="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
+                        <input type="email" placeholder="Your email address" class="flex-grow px-4 py-3 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        <button class="px-6 py-3 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition font-medium whitespace-nowrap">
+                            Subscribe
+                        </button>
+                    </div>
+                    <p class="text-xs text-gray-500 mt-3">We respect your privacy. Unsubscribe at any time.</p>
+                </div>
+            </section>
+        </div>
+    </main>
+    
+    <footer class="bg-black text-gray-300 py-10 px-6 mt-auto">
+        <div class="container mx-auto grid grid-cols-1 md:grid-cols-4 gap-8 items-start">
+      
+          <!-- Logo -->
+          <div class="flex flex-col items-start space-y-4">
+            <img src="../Logo1.png" alt="Noema Tourism Logo" class="h-14 w-auto">
+            <p class="text-sm text-gray-400">Your gateway to unforgettable travel experiences.</p>
+          </div>
+      
+          <!-- Support -->
+          <div>
+            <h4 class="text-white font-semibold mb-2 relative pb-1 after:content-[''] after:block after:w-16 after:h-[2px] after:bg-white after:mt-1">Support</h4>
+            <ul class="space-y-1 text-sm">
+              <li><a href="#" class="hover:text-white transition">About Us</a></li>
+              <li><a href="#" class="hover:text-white transition">Our Services</a></li>
+              <li><a href="#" class="hover:text-white transition">Privacy Policy</a></li>
+              <li><a href="#" class="hover:text-white transition">Terms & Conditions</a></li>
+            </ul>
+          </div>
+      
+          <!-- Explore -->
+          <div>
+            <h4 class="text-white font-semibold mb-2 relative pb-1 after:content-[''] after:block after:w-16 after:h-[2px] after:bg-white after:mt-1">Explore</h4>
+            <ul class="space-y-1 text-sm">
+              <li><a href="#" class="hover:text-white transition">Collaboration</a></li>
+              <li><a href="#" class="hover:text-white transition">Connect</a></li>
+              <li><a href="#" class="hover:text-white transition">Refunds</a></li>
+              <li><a href="#" class="hover:text-white transition">Accommodation Feedback</a></li>
+              <li><a href="#" class="hover:text-white transition">Payment Options</a></li>
+            </ul>
+          </div>
+      
+          <!-- Contact & Social -->
+          <div>
+            <h4 class="text-white font-semibold mb-2 relative pb-1 after:content-[''] after:block after:w-16 after:h-[2px] after:bg-white after:mt-1">Contact</h4>
+            <address class="not-italic text-sm text-gray-400 mb-4 leading-relaxed">
+              <p><strong class="text-white">Noema Tourism Services</strong></p>
+              <p>EastLondon Block 9, Plot 20994</p>
+              <p><a href="mailto:marketing@noemaservices.co.bw" class="hover:text-white transition">marketing@noemaservices.co.bw</a></p>
+              <p><a href="tel:+2739133922" class="hover:text-white transition">Tel: +27 391 33922</a> | 
+                 <a href="tel:+273947978" class="hover:text-white transition">Fax: +27 394 7978</a></p>
+            </address>
+            <div class="flex space-x-4 mt-2">
+              <a href="#" class="text-gray-400 hover:text-white transition transform hover:scale-125"><i class="fab fa-facebook-f"></i></a>
+              <a href="#" class="text-gray-400 hover:text-white transition transform hover:scale-125"><i class="fab fa-twitter"></i></a>
+              <a href="#" class="text-gray-400 hover:text-white transition transform hover:scale-125"><i class="fab fa-instagram"></i></a>
+              <a href="#" class="text-gray-400 hover:text-white transition transform hover:scale-125"><i class="fab fa-tiktok"></i></a>
+            </div>
+          </div>
+      
+        </div>
+     
+        <div class="mt-8 text-center text-xs text-gray-500 border-t border-gray-700 pt-4">
+          &copy; 2025 <span class="text-white font-semibold">Noema Tourism Services Inc.</span> All rights reserved.
+        </div>
+      </footer>  
+</body>
+</html>

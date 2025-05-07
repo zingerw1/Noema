@@ -120,6 +120,7 @@ function handleLogin(event) {
     headers: {
       'Content-Type': 'application/json'
     },
+    credentials: 'include',
     body: JSON.stringify({ email, password })
   })
   .then(async response => {
@@ -133,7 +134,14 @@ function handleLogin(event) {
 
     // Login successful
     if (data.message === 'Login successful') {
-      window.location.href = '../Home-Page/indexRegistered.html';  // Updated path with forward slashes
+      console.log('Login response data:', data);
+      // Store the logged-in user's name and surname in localStorage
+      localStorage.setItem('loggedInUserName', data.name);
+      localStorage.setItem('loggedInUserSurname', data.surname || '');
+      console.log('Stored loggedInUserName:', localStorage.getItem('loggedInUserName'));
+      console.log('Stored loggedInUserSurname:', localStorage.getItem('loggedInUserSurname'));
+      // Redirect to indexRegistered.html as dashboard
+      window.location.href = '../Home-Page/indexRegistered.html';
     }
   })
   .catch(error => {
@@ -141,3 +149,14 @@ function handleLogin(event) {
     alert('Server error. Please try again later.');
   });
 }
+
+// Logout button event
+document.addEventListener("DOMContentLoaded", () => {
+  const logoutBtn = document.getElementById("logoutBtn");
+  if (logoutBtn) {
+    logoutBtn.addEventListener("click", async () => {
+      await fetch("/logout", { method: "POST" });
+      window.location.href = "index.html";
+    });
+  }
+});
