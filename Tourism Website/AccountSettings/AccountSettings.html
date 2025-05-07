@@ -57,17 +57,205 @@
                 </button>
                 <div class="absolute right-0 mt-2 w-48 bg-white/90 backdrop-blur-xl shadow-lg rounded-lg border border-gray-300 opacity-0 invisible transform scale-95 -translate-y-4 transition-all duration-500 ease-out group-hover:opacity-100 group-hover:visible group-hover:scale-100 group-hover:translate-y-0">
                   <a href="../AccountSettings/AccountSettings.html" class="block px-5 py-3 text-gray-700 font-medium transition-all duration-300 rounded-t-lg hover:bg-black hover:text-white hover:shadow-md hover:scale-105">Account Settings</a>
-                  <a href="#" id="logoutBtn" class="block px-5 py-3 text-gray-700 font-medium transition-all duration-300 rounded-b-lg hover:bg-black hover:text-white hover:shadow-md hover:scale-105 cursor-pointer">Logout</a>
+<a href="#" id="logoutBtn" class="block px-5 py-3 text-gray-700 font-medium transition-all duration-300 rounded-b-lg hover:bg-black hover:text-white hover:shadow-md hover:scale-105 cursor-pointer">Logout</a>
+
                 </div>
               </div>
-            </div>   
+            </div>
+            
         </div>
     </header>
     
     <main class="flex-grow container mx-auto px-4 py-10">
-        <!-- Content Goes Here -->
+        <section class="max-w-3xl mx-auto bg-white shadow-md rounded-xl p-8 space-y-6">
+            <h2 class="text-2xl font-semibold text-gray-800 border-b pb-2">Account Details</h2>
+          
+            <form id="accountDetailsForm" class="grid grid-cols-1 md:grid-cols-2 gap-6 text-gray-700 text-sm">
+              <div>
+                <label for="fullName" class="block font-medium mb-1">Full Name</label>
+                <input type="text" id="fullName" name="fullName" class="w-full border border-gray-300 rounded px-3 py-2" />
+              </div>
+              <div>
+                <label for="age" class="block font-medium mb-1">Age</label>
+                <input type="number" id="age" name="age" min="1" max="120" class="w-full border border-gray-300 rounded px-3 py-2" />
+              </div>
+          
+              <div>
+                <label for="gender" class="block font-medium mb-1">Gender</label>
+                <select id="gender" name="gender" class="w-full border border-gray-300 rounded px-3 py-2">
+                  <option value="">Select Gender</option>
+                  <option value="male">Male</option>
+                  <option value="female">Female</option>
+                  <option value="nonbinary">Nonbinary</option>
+                  <option value="other">Other</option>
+                  <option value="prefer_not_to_say">Prefer not to say</option>
+                </select>
+              </div>
+              <div>
+                <label for="phone" class="block font-medium mb-1">Phone</label>
+                <input type="text" id="phone" name="phone" pattern="\\d{8}" title="8 digit phone number" class="w-full border border-gray-300 rounded px-3 py-2" />
+              </div>
+          
+              <div>
+                <label for="email" class="block font-medium mb-1">Email</label>
+                <input type="email" id="email" name="email" class="w-full border border-gray-300 rounded px-3 py-2" />
+              </div>
+              <div>
+                <label for="country" class="block font-medium mb-1">Country</label>
+                <input type="text" id="country" name="country" class="w-full border border-gray-300 rounded px-3 py-2" />
+              </div>
+          
+              <div>
+                <label for="marital_status" class="block font-medium mb-1">Marital Status</label>
+                <select id="marital_status" name="marital_status" class="w-full border border-gray-300 rounded px-3 py-2">
+                  <option value="">Select Marital Status</option>
+                  <option value="single">Single</option>
+                  <option value="married">Married</option>
+                  <option value="divorced">Divorced</option>
+                  <option value="widowed">Widowed</option>
+                </select>
+              </div>
+              <div>
+                <label for="next_of_kin" class="block font-medium mb-1">Next of Kin</label>
+                <input type="text" id="next_of_kin" name="next_of_kin" class="w-full border border-gray-300 rounded px-3 py-2" />
+              </div>
+          
+          
+              <div class="md:col-span-2 flex justify-end space-x-4 mt-4">
+                <button type="submit" class="bg-black text-white px-4 py-2 rounded hover:bg-gray-800 transition">Update Profile</button>
+                <div id="message" class="text-center mt-2"></div>
+              </div>
+            </form>
+          
+            <div class="text-xs text-gray-400">
+              <strong>Note:</strong> Your password is securely hashed and not shown here.
+            </div>
+          </section>
          
     </main>
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        const form = document.getElementById('accountDetailsForm');
+        const messageDiv = document.getElementById('message');
+        const usernameDisplay = document.getElementById('usernameDisplay');
+
+        // Fetch current user profile data and fill form fields and username display
+        fetch('http://localhost:3000/user/profile', {
+          method: 'GET',
+          credentials: 'include'
+        })
+        .then(response => {
+          if (!response.ok) throw new Error('Failed to fetch profile');
+          return response.json();
+        })
+        .then(data => {
+          // Fill form fields
+          form.fullName.value = data.name && data.surname ? data.name + ' ' + data.surname : data.name || '';
+          form.age.value = data.age || '';
+          form.gender.value = data.gender || '';
+          form.phone.value = data.phone || '';
+          form.email.value = data.email || '';
+          form.country.value = data.country || '';
+          form.marital_status.value = data.marital_status || '';
+          form.next_of_kin.value = data.next_of_kin || '';
+          form.account_created.value = new Date(data.created_at).toLocaleDateString() || '';
+
+          // Set username display
+          if (usernameDisplay) {
+            const fullName = data.surname ? data.name + ' ' + data.surname : data.name;
+            usernameDisplay.textContent = fullName;
+          }
+        })
+        .catch(err => {
+          messageDiv.textContent = 'Error loading profile data.';
+          messageDiv.className = 'text-red-600';
+          if (usernameDisplay) {
+            usernameDisplay.textContent = 'Guest';
+          }
+        });
+
+        form.addEventListener('submit', async (e) => {
+          e.preventDefault();
+          messageDiv.textContent = '';
+          messageDiv.className = '';
+
+          // Split fullName into name and surname
+          const fullName = form.fullName.value.trim();
+          const nameParts = fullName.split(' ');
+          const name = nameParts[0] || '';
+          const surname = nameParts.slice(1).join(' ') || '';
+
+          const formData = {
+            name,
+            surname,
+            age: form.age.value ? Number(form.age.value) : null,
+            gender: form.gender.value,
+            phone: form.phone.value.trim(),
+            email: form.email.value.trim(),
+            country: form.country.value.trim(),
+            marital_status: form.marital_status.value,
+            next_of_kin: form.next_of_kin.value.trim()
+          };
+
+          try {
+            const response = await fetch('http://localhost:3000/user/profile/update', {
+              method: 'PUT',
+              headers: { 'Content-Type': 'application/json' },
+              credentials: 'include',
+              body: JSON.stringify(formData)
+            });
+
+            const result = await response.json();
+            if (response.ok) {
+              messageDiv.textContent = result.message || 'Profile updated successfully.';
+              messageDiv.className = 'text-green-600';
+            } else {
+              messageDiv.textContent = result.message || 'Update failed.';
+              messageDiv.className = 'text-red-600';
+            }
+          } catch (error) {
+            messageDiv.textContent = 'Server error. Please try again later.';
+            messageDiv.className = 'text-red-600';
+          }
+        });
+      });
+    </script>
+
+    <script>
+      // JavaScript to dynamically set the username in the account dropdown from backend profile API
+      document.addEventListener('DOMContentLoaded', () => {
+        const usernameDisplay = document.getElementById('usernameDisplay');
+        fetch('http://localhost:3000/user/profile', {
+          method: 'GET',
+          credentials: 'include'
+        })
+        .then(response => {
+          if (!response.ok) {
+            throw new Error('Not authenticated');
+          }
+          return response.json();
+        })
+        .then(data => {
+          if (usernameDisplay) {
+            const fullName = data.surname ? data.name + ' ' + data.surname : data.name;
+            usernameDisplay.textContent = fullName;
+          }
+        })
+        .catch(error => {
+          console.error('Error fetching user profile:', error);
+          if (usernameDisplay) {
+            // Fallback to localStorage username if available
+            const storedName = localStorage.getItem('loggedInUserName');
+            const storedSurname = localStorage.getItem('loggedInUserSurname');
+            if (storedName) {
+              usernameDisplay.textContent = storedSurname ? storedName + ' ' + storedSurname : storedName;
+            } else {
+              usernameDisplay.textContent = 'Guest';
+            }
+          }
+        });
+      });
+    </script>
   
     
     <footer class="bg-black text-gray-300 py-10 px-6 mt-auto">
@@ -126,42 +314,5 @@
           &copy; 2025 <span class="text-white font-semibold">Noema Tourism Services Inc.</span> All rights reserved.
         </div>
       </footer>  
-
-      <script>
-        // JavaScript to dynamically set the username in the account dropdown from backend profile API
-        document.addEventListener('DOMContentLoaded', () => {
-          const usernameDisplay = document.getElementById('usernameDisplay');
-          fetch('http://localhost:3000/user/profile', {
-            method: 'GET',
-            credentials: 'include'
-          })
-          .then(response => {
-            if (!response.ok) {
-              throw new Error('Not authenticated');
-            }
-            return response.json();
-          })
-          .then(data => {
-            if (usernameDisplay) {
-              const fullName = data.surname ? data.name + ' ' + data.surname : data.name;
-              usernameDisplay.textContent = fullName;
-            }
-          })
-          .catch(error => {
-            console.error('Error fetching user profile:', error);
-            if (usernameDisplay) {
-              // Fallback to localStorage username if available
-              const storedName = localStorage.getItem('loggedInUserName');
-              const storedSurname = localStorage.getItem('loggedInUserSurname');
-              if (storedName) {
-                usernameDisplay.textContent = storedSurname ? storedName + ' ' + storedSurname : storedName;
-              } else {
-                usernameDisplay.textContent = 'Guest';
-              }
-            }
-          });
-        });
-      </script>
-    <script src="../Login&Register/Fetch.js"></script>
 </body>
 </html>

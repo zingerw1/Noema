@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Account Settings</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 min-h-screen flex flex-col">
+  <header class="bg-black text-white p-4">
+    <h1 class="text-xl font-semibold">Account Settings</h1>
+  </header>
+  <main class="flex-grow container mx-auto p-6">
+    <form id="accountSettingsForm" class="bg-white p-6 rounded shadow-md max-w-lg mx-auto space-y-4">
+      <div>
+        <label for="name" class="block font-medium mb-1">Name</label>
+        <input type="text" id="name" name="name" required class="w-full border border-gray-300 rounded px-3 py-2" />
+      </div>
+      <div>
+        <label for="surname" class="block font-medium mb-1">Surname</label>
+        <input type="text" id="surname" name="surname" required class="w-full border border-gray-300 rounded px-3 py-2" />
+      </div>
+      <div>
+        <label for="age" class="block font-medium mb-1">Age</label>
+        <input type="number" id="age" name="age" min="1" max="120" class="w-full border border-gray-300 rounded px-3 py-2" />
+      </div>
+      <div>
+        <label for="gender" class="block font-medium mb-1">Gender</label>
+        <select id="gender" name="gender" class="w-full border border-gray-300 rounded px-3 py-2">
+          <option value="">Select Gender</option>
+          <option value="male">Male</option>
+          <option value="female">Female</option>
+          <option value="nonbinary">Nonbinary</option>
+          <option value="other">Other</option>
+          <option value="prefer_not_to_say">Prefer not to say</option>
+        </select>
+      </div>
+      <div>
+        <label for="phone" class="block font-medium mb-1">Phone</label>
+        <input type="text" id="phone" name="phone" pattern="\\d{8}" title="8 digit phone number" class="w-full border border-gray-300 rounded px-3 py-2" />
+      </div>
+      <div>
+        <label for="email" class="block font-medium mb-1">Email</label>
+        <input type="email" id="email" name="email" required class="w-full border border-gray-300 rounded px-3 py-2" />
+      </div>
+      <div>
+        <label for="country" class="block font-medium mb-1">Country</label>
+        <input type="text" id="country" name="country" class="w-full border border-gray-300 rounded px-3 py-2" />
+      </div>
+      <div>
+        <label for="marital_status" class="block font-medium mb-1">Marital Status</label>
+        <select id="marital_status" name="marital_status" class="w-full border border-gray-300 rounded px-3 py-2">
+          <option value="">Select Marital Status</option>
+          <option value="single">Single</option>
+          <option value="married">Married</option>
+          <option value="divorced">Divorced</option>
+          <option value="widowed">Widowed</option>
+        </select>
+      </div>
+      <div>
+        <label for="next_of_kin" class="block font-medium mb-1">Next of Kin</label>
+        <input type="text" id="next_of_kin" name="next_of_kin" class="w-full border border-gray-300 rounded px-3 py-2" />
+      </div>
+      <div>
+        <label for="password" class="block font-medium mb-1">New Password (leave blank to keep current)</label>
+        <input type="password" id="password" name="password" class="w-full border border-gray-300 rounded px-3 py-2" />
+      </div>
+      <div>
+        <button type="submit" class="bg-black text-white px-4 py-2 rounded hover:bg-gray-800 transition">Update Profile</button>
+      </div>
+      <div id="message" class="text-center mt-2"></div>
+    </form>
+  </main>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const form = document.getElementById('accountSettingsForm');
+      const messageDiv = document.getElementById('message');
+
+      // Fetch current user profile data
+      fetch('/user/profile', { credentials: 'include' })
+        .then(res => {
+          if (!res.ok) throw new Error('Failed to fetch profile');
+          return res.json();
+        })
+        .then(data => {
+          form.name.value = data.name || '';
+          form.surname.value = data.surname || '';
+          form.age.value = data.age || '';
+          form.gender.value = data.gender || '';
+          form.phone.value = data.phone || '';
+          form.email.value = data.email || '';
+          form.country.value = data.country || '';
+          form.marital_status.value = data.marital_status || '';
+          form.next_of_kin.value = data.next_of_kin || '';
+        })
+        .catch(err => {
+          messageDiv.textContent = 'Error loading profile data.';
+          messageDiv.className = 'text-red-600';
+        });
+
+      form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        messageDiv.textContent = '';
+        messageDiv.className = '';
+
+        const formData = {
+          name: form.name.value.trim(),
+          surname: form.surname.value.trim(),
+          age: form.age.value ? Number(form.age.value) : null,
+          gender: form.gender.value,
+          phone: form.phone.value.trim(),
+          email: form.email.value.trim(),
+          country: form.country.value.trim(),
+          marital_status: form.marital_status.value,
+          next_of_kin: form.next_of_kin.value.trim(),
+          password: form.password.value
+        };
+
+        try {
+          const response = await fetch('/user/profile/update', {
+            method: 'PUT',
+            headers: { 'Content-Type': 'application/json' },
+            credentials: 'include',
+            body: JSON.stringify(formData)
+          });
+
+          const result = await response.json();
+          if (response.ok) {
+            messageDiv.textContent = result.message || 'Profile updated successfully.';
+            messageDiv.className = 'text-green-600';
+            form.password.value = '';
+          } else {
+            messageDiv.textContent = result.message || 'Update failed.';
+            messageDiv.className = 'text-red-600';
+          }
+        } catch (error) {
+          messageDiv.textContent = 'Server error. Please try again later.';
+          messageDiv.className = 'text-red-600';
+        }
+      });
+    });
+  </script>
+</body>
+</html>

@@ -9,7 +9,7 @@ const app = express();
 const port = 3000;
 
 // CORS configuration
-const allowedOrigins = ['http://127.0.0.1:5500', 'http://localhost:5500'];
+const allowedOrigins = ['http://127.0.0.1:5500', 'http://localhost:5500', 'http://localhost:3000'];
 
 const corsOptions = {
   origin: function(origin, callback) {
@@ -151,7 +151,7 @@ app.get('/user/profile', (req, res) => {
     return res.status(401).json({ message: 'Unauthorized' });
   }
 
-  const sql = 'SELECT name, surname FROM users WHERE id = ?';
+  const sql = 'SELECT name, surname, age, gender, phone, email, country, marital_status, next_of_kin FROM users WHERE id = ?';
   db.query(sql, [req.session.userId], (err, results) => {
     if (err) {
       console.error('Database error:', err);
@@ -163,8 +163,55 @@ app.get('/user/profile', (req, res) => {
     }
 
     const user = results[0];
-    return res.status(200).json({ name: user.name, surname: user.surname });
+    return res.status(200).json(user);
   });
+});
+
+// User profile update route
+app.put('/user/profile/update', async (req, res) => {
+  if (!req.session.userId) {
+    return res.status(401).json({ message: 'Unauthorized' });
+  }
+
+  const { name, surname, age, gender, phone, email, country, marital_status, next_of_kin, password } = req.body;
+
+  if (!name || !surname || !email) {
+    return res.status(400).json({ message: 'Name, surname, and email are required.' });
+  }
+
+  try {
+    let hashedPassword = null;
+    if (password && password.trim() !== '') {
+      const bcrypt = require('bcrypt');
+      hashedPassword = await bcrypt.hash(password, 10);
+    }
+
+    let updateSql;
+    let values;
+
+    if (hashedPassword) {
+      updateSql = `
+        UPDATE users SET name = ?, surname = ?, age = ?, gender = ?, phone = ?, email = ?, country = ?, marital_status = ?, next_of_kin = ?, password = ? WHERE id = ?
+      `;
+      values = [name, surname, age, gender, phone, email, country, marital_status, next_of_kin, hashedPassword, req.session.userId];
+    } else {
+      updateSql = `
+        UPDATE users SET name = ?, surname = ?, age = ?, gender = ?, phone = ?, email = ?, country = ?, marital_status = ?, next_of_kin = ? WHERE id = ?
+      `;
+      values = [name, surname, age, gender, phone, email, country, marital_status, next_of_kin, req.session.userId];
+    }
+
+    db.query(updateSql, values, (err, result) => {
+      if (err) {
+        console.error('Error updating user:', err);
+        return res.status(500).json({ message: 'Update failed' });
+      }
+      return res.status(200).json({ message: 'Profile updated successfully' });
+    });
+  } catch (error) {
+    console.error('Update error:', error);
+    return res.status(500).json({ message: 'Server error' });
+  }
 });
 
 //Logout Implementation

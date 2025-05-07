@@ -14,7 +14,7 @@
     </style>
 </head>
 <body class="bg-white flex flex-col min-h-screen">
-    <header class="bg-black text-white shadow-md">
+<header class="bg-black text-white shadow-md">
         <div class="container mx-auto px-4 py-3 flex items-center justify-between">
             <div class="flex items-center">
                 <img src="../Logo1.png" alt="Tourism Logo" class="h-10 w-auto">
@@ -50,18 +50,17 @@
 
               <!-- Account Dropdown -->
               <div class="relative group">
-                <button class="bg-white text-black px-4 py-2 rounded-md hover:bg-gray-100 transition flex items-center space-x-2">
+                <button id="accountButton" class="bg-white text-black px-4 py-2 rounded-md hover:bg-gray-100 transition flex items-center space-x-2">
                   <i class="fas fa-user"></i>
-                  <span>Account</span>
+                  <span id="usernameDisplay">UserName</span>
                   <i class="fas fa-chevron-down text-sm transition-transform duration-300 group-hover:rotate-180"></i>
                 </button>
                 <div class="absolute right-0 mt-2 w-48 bg-white/90 backdrop-blur-xl shadow-lg rounded-lg border border-gray-300 opacity-0 invisible transform scale-95 -translate-y-4 transition-all duration-500 ease-out group-hover:opacity-100 group-hover:visible group-hover:scale-100 group-hover:translate-y-0">
-                  <a href="#" class="block px-5 py-3 text-gray-700 font-medium transition-all duration-300 rounded-t-lg hover:bg-black hover:text-white hover:shadow-md hover:scale-105">Login</a>
-                  <a href="#" class="block px-5 py-3 text-gray-700 font-medium transition-all duration-300 rounded-b-lg hover:bg-black hover:text-white hover:shadow-md hover:scale-105">Register</a>
+                  <a href="../AccountSettings/AccountSettings.html" class="block px-5 py-3 text-gray-700 font-medium transition-all duration-300 rounded-t-lg hover:bg-black hover:text-white hover:shadow-md hover:scale-105">Account Settings</a>
+                  <a href="#" id="logoutBtn" class="block px-5 py-3 text-gray-700 font-medium transition-all duration-300 rounded-b-lg hover:bg-black hover:text-white hover:shadow-md hover:scale-105 cursor-pointer">Logout</a>
                 </div>
               </div>
-            </div>
-            
+            </div>   
         </div>
     </header>
     
@@ -174,5 +173,6 @@
           &copy; 2025 <span class="text-white font-semibold">Noema Tourism Services Inc.</span> All rights reserved.
         </div>
       </footer>  
+    <script src="../Login&Register/Fetch.js"></script>
 </body>
 </html>

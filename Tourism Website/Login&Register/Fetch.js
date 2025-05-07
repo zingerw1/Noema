@@ -155,8 +155,54 @@ document.addEventListener("DOMContentLoaded", () => {
   const logoutBtn = document.getElementById("logoutBtn");
   if (logoutBtn) {
     logoutBtn.addEventListener("click", async () => {
+      // Clear localStorage keys related to user
+      localStorage.removeItem('loggedInUserName');
+      localStorage.removeItem('loggedInUserSurname');
+
+      // Clear all cookies by setting expiry date in the past
+      document.cookie.split(";").forEach(function(c) {
+        document.cookie = c.trim().split("=")[0] + "=;expires=Thu, 01 Jan 1970 00:00:00 UTC;path=/;";
+      });
+
+      // Send logout request to server
       await fetch("/logout", { method: "POST" });
-      window.location.href = "index.html";
+
+      // Redirect to index.html (home page)
+      window.location.href = "../Home-Page/index.html";
     });
   }
+});
+
+// JavaScript to dynamically set the username in the account dropdown from backend profile API
+document.addEventListener('DOMContentLoaded', () => {
+  const usernameDisplay = document.getElementById('usernameDisplay');
+  fetch('http://localhost:3000/user/profile', {
+    method: 'GET',
+    credentials: 'include'
+  })
+  .then(response => {
+    if (!response.ok) {
+      throw new Error('Not authenticated');
+    }
+    return response.json();
+  })
+  .then(data => {
+    if (usernameDisplay) {
+      const fullName = data.surname ? data.name + ' ' + data.surname : data.name;
+      usernameDisplay.textContent = fullName;
+    }
+  })
+  .catch(error => {
+    console.error('Error fetching user profile:', error);
+    if (usernameDisplay) {
+      // Fallback to localStorage username if available
+      const storedName = localStorage.getItem('loggedInUserName');
+      const storedSurname = localStorage.getItem('loggedInUserSurname');
+      if (storedName) {
+        usernameDisplay.textContent = storedSurname ? storedName + ' ' + storedSurname : storedName;
+      } else {
+        usernameDisplay.textContent = 'Guest';
+      }
+    }
+  });
 });
