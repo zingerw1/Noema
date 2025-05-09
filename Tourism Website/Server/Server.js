@@ -8,6 +8,8 @@ const session = require('express-session');
 const app = express();
 const port = 3000;
 
+/* app.set('trust proxy', 1); // trust first proxy */
+
 // CORS configuration
 const allowedOrigins = ['http://127.0.0.1:5500', 'http://localhost:5500', 'http://localhost:3000'];
 
@@ -20,10 +22,11 @@ const corsOptions = {
       callback(new Error('Not allowed by CORS'));
     }
   },
-  methods: 'GET,POST',
+  methods: 'GET,POST,PUT',
   allowedHeaders: 'Content-Type',
   credentials: true
 };
+
 app.use(cors(corsOptions));  // Use custom CORS configuration
 
 // Middleware
@@ -35,7 +38,7 @@ app.use(session({
   secret: 'your-secret-key', // replace with a strong secret in production
   resave: false,
   saveUninitialized: false,
-  cookie: { secure: false } // set secure: true if using HTTPS
+  cookie: { secure: false, sameSite: 'lax', httpOnly: true } // Changed sameSite to 'lax' for testing
 }));
 
 // Database Connection
@@ -140,14 +143,22 @@ app.post('/login', (req, res) => {
     // Store user ID in session
     req.session.userId = user.id;
 
-    console.log('Login success for user:', user);
-    return res.status(200).json({ message: 'Login successful', name: user.name, surname: user.surname });
+    req.session.save(err => {
+      if (err) {
+        console.error('Session save error:', err);
+        return res.status(500).json({ message: 'Server error' });
+      }
+      console.log('Login success for user:', user);
+      return res.status(200).json({ message: 'Login successful', name: user.name, surname: user.surname });
+    });
   });
 });
 
 // User profile route
 app.get('/user/profile', (req, res) => {
+  console.log('GET /user/profile called, session userId:', req.session.userId);
   if (!req.session.userId) {
+    console.log('Unauthorized access to /user/profile');
     return res.status(401).json({ message: 'Unauthorized' });
   }
 

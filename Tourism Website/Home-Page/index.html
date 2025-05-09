@@ -11,10 +11,15 @@
         body {
             font-family: 'Poppins', sans-serif;
         }
+        .blend-text {
+        background: linear-gradient(90deg, #ff7e5f, #feb47b, #86a8e7);
+        -webkit-text-fill-color: transparent;
+        -webkit-background-clip: text;
+      }
     </style>
 </head>
 <body class="bg-white flex flex-col min-h-screen">
-    <header class="bg-black text-white shadow-md">
+    <header class="bg-black text-white shadow-md z-50">
         <div class="container mx-auto px-4 py-3 flex items-center justify-between">
             <div class="flex items-center">
                 <img src="../Logo1.png" alt="Tourism Logo" class="h-10 w-auto">
@@ -57,9 +62,197 @@
         </div>
     </header>
     
-    <main class="flex-grow container mx-auto px-4 py-10">
-        <!-- Content Goes Here -->
+    <main class="flex-grow ">
+        <!-- Hero Section with Background Video and Welcome Text -->
+<section class="relative h-screen overflow-hidden">
+  <!-- Background Video -->
+  <video autoplay muted loop playsinline class="absolute top-0 left-0 w-full h-full object-cover z-[-5] pointer-events-none">
+    <source src="https://cdn.pixabay.com/video/2022/07/31/126210-735676459_large.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+
+  <!-- Overlay -->
+  <div class="absolute inset-0 bg-black bg-opacity-20 z-0"></div>
+
+  <!-- Welcome Text and CTA -->
+  <div class="absolute top-0 left-0 w-full h-full flex flex-col justify-center items-start px-12 z-10">
+    <h1 class="text-white text-5xl md:text-6xl font-bold mb-6 blend-text">
+      Welcome to <span class="logo">Noema</span>
+    </h1>
+    <p class="text-white text-xl md:text-2xl font-light mb-8 max-w-xl blend-text">
+      Discover your next unforgettable journey with Noema.
+    </p>
+    <a href="../Book/Book.html" class="bg-white text-black px-6 py-3 rounded-full font-semibold text-lg hover:bg-black hover:text-white transition">
+      Explore Bookings
+    </a>
+  </div>
+</section>
+
+
+
+<section class="py-16 bg-gray-200">
+  <div class="container mx-auto text-center">
+      <h2 class="text-3xl font-semibold mb-4">Explore Botswana</h2>
+      <p class="text-lg font-light mb-8">
+          From the Okavango to the Kgalagadi Desert to the salt pans, explore never before seen beauty and wonder.
+      </p>
+     
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+
          
+
+          <!-- Image 1 -->
+          <div class="relative group col-span-2 row-span-1">
+              <img src="https://images.unsplash.com/photo-1519659528534-7fd733a832a0?q=80&w=1926&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Okavango Delta" class="w-full h-full object-cover rounded-lg shadow-lg transition-transform transform group-hover:scale-102">
+          </div>
+          <!-- Image 2 -->
+          <div class="relative group col-span-1 row-span-2">
+              <img src="https://images.unsplash.com/photo-1507461476191-0ed4f9f18533?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Chobe National Park" class="w-full h-full object-cover rounded-lg shadow-lg transition-transform transform group-hover:scale-102">
+          </div>
+          <!-- Image 3 -->
+          <div class="relative group col-span-1 row-span-1">
+              <img src="https://images.unsplash.com/photo-1570463863076-2651f8aa55e9?q=80&w=1854&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Makgadikgadi Pans" class="w-full h-full object-cover rounded-lg shadow-lg transition-transform transform group-hover:scale-102">
+          </div>
+          <!-- Image 4 -->
+          <div class="relative group col-span-1 row-span-1">
+              <img src="https://images.unsplash.com/photo-1550547050-744447052329?q=80&w=1852&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Tsodilo Hills" class="w-full h-full object-cover rounded-lg shadow-lg transition-transform transform group-hover:scale-102">
+          </div>
+      </div>
+
+      <!-- Button to Booking Page -->
+      <div class="mt-8">
+          <a href="../Book/Book.html" class="bg-black text-white px-6 py-3 rounded-full font-semibold text-lg hover:bg-white hover:text-black border-2 border-black transition">
+              Book Your Adventure
+          </a>
+      </div>
+  </div>
+</section>
+
+
+
+
+
+
+<section class="py-16 bg-gray-0">
+  <div class="container mx-auto text-center">
+    <h2 class="text-3xl font-semibold mb-8">Supa Ngwao Museum</h2>
+    <p class="text-lg mb-8">Discover the rich history and culture of the Kalanga people at the Supa Ngwao Museum in Francistown.</p>
+    <a href="museum_link" class="bg-black text-white px-6 py-3 rounded-full font-semibold text-lg hover:bg-white hover:text-black border-2 border-black transition">Learn More</a>
+  </div>
+</section>
+
+
+
+<section class="py-16 bg-gray-100 relative">
+  <!-- Video Background -->
+  <div class="absolute inset-0 z-0">
+      <video class="w-full h-full object-cover" autoplay loop muted>
+          <source src="https://cdn.pixabay.com/video/2019/08/16/26085-354651392_large.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+      </video>
+  </div>
+
+  <!-- Content -->
+  <div class="container mx-auto text-center relative z-10">
+      <h2 class="text-3xl font-semibold mb-8 text-white">Discover Our Heritage</h2>
+      <p class="text-lg font-light mb-4 text-white">
+          Botswana's history dates back thousands of years, with evidence of early human habitation in the form of rock paintings and artifacts, especially in regions like Tsodilo Hills, often referred to as the "Louvre of the Desert." The first inhabitants were the San people, followed by the Bantu-speaking tribes who migrated from central Africa around 2,000 years ago.
+      </p>
+      <p class="text-lg font-light mb-4 text-white">
+          In the late 19th century, the region was colonized by the British and was known as the British Protectorate of Bechuanaland. The British government took control to prevent the expansion of German and Boer territories. Despite this, the people of Botswana maintained a sense of identity and resisted exploitation.
+      </p>
+      <p class="text-lg font-light mb-4 text-white">
+          Known for its large elephant population, Chobe National Park is a popular destination for wildlife enthusiasts. It offers spectacular boat safaris on the Chobe River and excellent game drives where visitors can spot lions, leopards, and numerous bird species. The park is also home to over 120,000 elephants, the largest concentration of elephants in Africa.
+      </p>
+      <p class="text-lg font-light mb-4 text-white">
+          The Makgadikgadi Pans, remnants of a once vast lake, are another fascinating part of Botswana’s landscape. The salt pans cover a vast area and provide a unique, almost otherworldly experience. They are home to the San people and feature incredible wildlife migrations, including the zebra and wildebeest herds, and the chance to spot meerkats in their natural habitat.
+      </p>
+      <p class="text-lg font-light mb-4 text-white">
+          Tsodilo Hills is a UNESCO World Heritage site known for its ancient rock art, believed to be over 20,000 years old. These sacred hills are a significant archaeological and cultural site, and they hold deep meaning for local communities. The site attracts both history buffs and spiritual seekers who want to explore one of Africa’s oldest and most important cultural landmarks.
+      </p>
+     
+      <!-- Learn More Button -->
+      <div class="mt-8">
+          <a href="../About-Us/About.html" class="bg-black text-white px-6 py-3 rounded-full font-semibold text-lg hover:bg-gray-800 transition duration-300">
+              Learn More
+          </a>
+      </div>
+  </div>
+</section>
+
+<section class="py-16">
+  <div class="container mx-auto text-center">
+    <h2 class="text-3xl font-semibold mb-8">Interactive Map</h2>
+    <div id="map" class="w-full h-96 bg-gray-200 rounded-lg"></div>
+    <script>
+      // Initialize and add the map
+      function initMap() {
+        const botswana = { lat: -22.3285, lng: 24.6849 };
+        const map = new google.maps.Map(document.getElementById("map"), {
+          zoom: 6,
+          center: botswana,
+        });
+
+        // Add markers for key attractions
+        new google.maps.Marker({
+          position: { lat: -19.5, lng: 22.5 },
+          map,
+          title: "Okavango Delta",
+        });
+        new google.maps.Marker({
+          position: { lat: -18.2982, lng: 25.1555 },
+          map,
+          title: "Chobe National Park",
+        });
+        new google.maps.Marker({
+          position: { lat: -21.9761, lng: 26.7493 },
+          map,
+          title: "Makgadikgadi Pans",
+        });
+        new google.maps.Marker({
+          position: { lat: -19.5442, lng: 25.4911 },
+          map,
+          title: "Tsodilo Hills",
+        });
+        new google.maps.Marker({
+          position: { lat: -20.4531, lng: 25.2900 },
+          map,
+          title: "Kubu Island",
+        });
+        new google.maps.Marker({
+          position: { lat: -20.4447, lng: 22.9849 },
+          map,
+          title: "Nxai Pan National Park",
+        });
+      }
+    </script>
+    <!-- Replace 'YOUR_API_KEY' with your valid Google Maps API key -->
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap"
+      async
+      defer
+    ></script>
+  </div>
+</section>
+
+<!-- Travel Quote Section -->
+<section class="bg-black text-white py-16 text-center mt-3 mb-3" style="background-image: url('https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'); background-size: cover; background-position: center;">
+  <div class="container mx-auto px-6">
+      <h2 class="text-3xl md:text-4xl font-semibold italic">“A journey of a thousand miles begins with a single step”</h2>
+      <p class="mt-4 text-xl font-light">– Lao Tzu</p>
+  </div>
+</section>
+
+<!-- Register for Our Services Banner -->
+<section class="bg-white text-black py-12 text-center mt-3 mb-3">
+  <div class="container mx-auto px-6">
+    <h2 class="text-3xl md:text-4xl font-semibold mb-4">Register for Our Services</h2>
+    <p class="text-lg mb-6">Join Noema and unlock access to exclusive travel experiences and personalized adventures.</p>
+    <a href="../Login&Register/Register.html" class="bg-black text-white px-6 py-3 rounded-full font-bold text-lg hover:bg-white hover:text-black border-2 border-black transition duration-300">
+      Register Now
+    </a>
+  </div>
+</section>       
     </main>
   
     

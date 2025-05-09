@@ -57,8 +57,110 @@
       </div>
   </header>
     
-    <main class="flex-grow container mx-auto px-4 py-10">
-        <!-- Content Goes Here -->
+    <main class="flex-grow">
+         <!-- Hero Section with Video Background -->
+         <section class="relative h-[60vh] overflow-hidden">
+          <!-- Looping Videos -->
+          <video autoplay muted loop playsinline class="absolute inset-0 w-full h-full object-cover">
+            <source src="https://videos.pexels.com/video-files/4746935/4746935-uhd_2560_1440_30fps.mp4" type="video/mp4">
+            <source src="https://videos.pexels.com/video-files/6821157/6821157-uhd_2560_1440_30fps.mp4" type="video/mp4">
+            <!-- Add or replace with your own high-res clips -->
+          </video>
+          <!-- Dark overlay for contrast -->
+          <div class="absolute inset-0 bg-black bg-opacity-50"></div>
+          <!-- Text Overlay with Gradient Clip -->
+          <div class="relative z-10 flex items-center justify-center h-full">
+            <h1 class="blend-text text-5xl md:text-7xl font-extrabold text-center px-4">Explore.<br/>Stay Safe.<br/>Experience Culture.</h1>
+          </div>
+        </section>
+   
+
+                    <!-- No Results Message -->
+                    <div id="noResultsMessage" class="text-center text-gray-600 text-lg my-10 hidden">
+                      No products match your search.
+                    </div>
+           
+                    <!-- No Results Message -->
+            <div id="noResultsMessage" class="hidden" style="color: red; text-align: center; margin-top: 20px;">
+              No results found.
+            </div>
+     
+
+
+        <div class="container mx-auto px-4 py-12">
+          <!-- Travel Guide Tips -->
+          <section class="mb-16">
+            <h2 class="text-3xl font-semibold mb-6">Travel Guide Tips</h2>
+            <div class="tip-card p-6 bg-white rounded-xl shadow-2xl text-lg relative overflow-hidden">
+              <img src="https://plus.unsplash.com/premium_photo-1666695512218-72b628a0a6a5?q=80&w=1964&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="absolute inset-0 w-full h-full object-cover opacity-30 z-0" />
+              <div id="travelTips" class="relative z-10 text-black font-medium"></div>
+            </div>
+          </section>
+   
+          <!-- Safety Tips -->
+          <section class="mb-16">
+            <h2 class="text-3xl font-semibold mb-6">Safety Tips</h2>
+            <div class="tip-card p-6 bg-white rounded-xl shadow-2xl text-lg relative overflow-hidden">
+              <img src="https://images.unsplash.com/photo-1574451966652-62debbb4c221?q=80&w=1829&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="absolute inset-0 w-full h-full object-cover opacity-30 z-0" />
+              <div id="safetyTips" class="relative z-10 text-black font-medium"></div>
+            </div>
+          </section>
+   
+          <!-- Maps -->
+          <section class="mb-16">
+            <h2 class="text-3xl font-semibold mb-6">Explore the Area</h2>
+            <div id="map" class="w-full h-[400px] rounded-lg shadow-2xl"></div>
+          </section>
+   
+          <!-- Local Customs -->
+          <section>
+            <h2 class="text-3xl font-semibold mb-6">Local Customs & Culture</h2>
+            <div class="bg-white p-8 rounded-xl shadow-2xl text-gray-800 space-y-4">
+              <p>🇧🇼 In Botswana, a respectful greeting is everything. A handshake with a right-hand clasp and left hand on your elbow is common.</p>
+              <p>🧥 Dress modestly for ceremonies and avoid pointing—considered impolite.</p>
+              <p>📸 Request permission before photographing locals or traditional events.</p>
+              <p>🎶 Join local music and dance to fully immerse in culture.</p>
+            </div>
+          </section>
+        </div>
+      </main>
+   
+     
+   
+      <script>
+        // Rotating Tips Logic
+        const travelTips = [
+          "Book tours with licensed local guides for authentic experiences.",
+          "Carry a refillable bottle to stay hydrated and eco-friendly.",
+          "Use offline maps when heading into remote areas.",
+          "Explore early mornings for the best light and fewer crowds."
+        ];
+        const safetyTips = [
+          "Don't flash expensive gear or cash.",
+          "Check local advisories before heading out.",
+          "Stick to well-lit areas and trust your instincts.",
+          "Keep emergency contacts both physical and digital."
+        ];
+        let travelIndex = 0, safetyIndex = 0;
+        const travelDiv = document.getElementById("travelTips"), safetyDiv = document.getElementById("safetyTips");
+        function rotate() {
+          travelDiv.style.opacity = 0; safetyDiv.style.opacity = 0;
+          setTimeout(() => {
+            travelDiv.textContent = travelTips[travelIndex];
+            safetyDiv.textContent = safetyTips[safetyIndex];
+            travelDiv.style.opacity = 1; safetyDiv.style.opacity = 1;
+            travelIndex = (travelIndex + 1) % travelTips.length;
+            safetyIndex = (safetyIndex + 1) % safetyTips.length;
+          }, 500);
+        }
+        rotate(); setInterval(rotate, 10000);
+   
+        // Leaflet Map
+        const map = L.map('map').setView([-24.658, 25.912], 13);
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { attribution: '&copy; OpenStreetMap contributors' }).addTo(map);
+        L.marker([-24.658, 25.912]).addTo(map).bindPopup("Welcome to Gaborone!").openPopup();
+      </script>
+
          
     </main>
     

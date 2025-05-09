@@ -135,13 +135,12 @@ function handleLogin(event) {
     // Login successful
     if (data.message === 'Login successful') {
       console.log('Login response data:', data);
-      // Store the logged-in user's name and surname in localStorage
       localStorage.setItem('loggedInUserName', data.name);
       localStorage.setItem('loggedInUserSurname', data.surname || '');
       console.log('Stored loggedInUserName:', localStorage.getItem('loggedInUserName'));
       console.log('Stored loggedInUserSurname:', localStorage.getItem('loggedInUserSurname'));
-      // Redirect to indexRegistered.html as dashboard
-      window.location.href = '../Home-Page/indexRegistered.html';
+      document.getElementById("success-modal").style.display = "flex";
+
     }
   })
   .catch(error => {

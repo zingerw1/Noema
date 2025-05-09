@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Restaurant Catalogue - Tourism Website</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+      body {
+        font-family: "Poppins", sans-serif;
+      }
+    </style>
+</head>
+<body class="bg-white flex flex-col min-h-screen">
+    <header class="bg-black text-white shadow-md z-50">
+        <div class="container mx-auto px-4 py-3 flex items-center justify-between">
+            <div class="flex items-center">
+                <img src="../Logo1.png" alt="Tourism Logo" class="h-10 w-auto" />
+            </div>
+            <nav class="hidden md:flex space-x-8">
+                <a href="../Home-Page/indexRegistered.html" class="relative hover:text-gray-300 transition duration-300 transform hover:scale-105 after:content-[''] after:absolute after:left-0 after:bottom-[-4px] after:w-0 after:h-[2px] after:bg-white after:transition-all after:duration-300 hover:after:w-full">Home</a>
+                <a href="../Book/BookRegistered.html" class="relative hover:text-gray-300 transition duration-300 transform hover:scale-105 after:content-[''] after:absolute after:left-0 after:bottom-[-4px] after:w-0 after:h-[2px] after:bg-white after:transition-all after:duration-300 hover:after:w-full">Book</a>
+                <a href="../Events/EventsRegistered.html" class="relative hover:text-gray-300 transition duration-300 transform hover:scale-105 after:content-[''] after:absolute after:left-0 after:bottom-[-4px] after:w-0 after:h-[2px] after:bg-white after:transition-all after:duration-300 hover:after:w-full">Events</a>
+                <a href="../Current-Affairs/newsRegistered.html" class="relative hover:text-gray-300 transition duration-300 transform hover:scale-105 after:content-[''] after:absolute after:left-0 after:bottom-[-4px] after:w-0 after:h-[2px] after:bg-white after:transition-all after:duration-300 hover:after:w-full">News</a>
+                <a href="../About-Us/AboutRegistered.html" class="relative hover:text-gray-300 transition duration-300 transform hover:scale-105 after:content-[''] after:absolute after:left-0 after:bottom-[-4px] after:w-0 after:h-[2px] after:bg-white after:transition-all after:duration-300 hover:after:w-full">About</a>
+                <a href="../Resources/ResourcesRegistered.html" class="relative hover:text-gray-300 transition duration-300 transform hover:scale-105 after:content-[''] after:absolute after:left-0 after:bottom-[-4px] after:w-0 after:h-[2px] after:bg-white after:transition-all after:duration-300 hover:after:w-full">Resources</a>
+                <a href="../Marketplace/MarketplaceRegistered.html" class="relative hover:text-gray-300 transition duration-300 transform hover:scale-105 after:content-[''] after:absolute after:left-0 after:bottom-[-4px] after:w-0 after:h-[2px] after:bg-white after:transition-all after:duration-300 hover:after:w-full">Marketplace</a>
+            </nav>
+            <div class="flex items-center space-x-4">
+                <!-- Search -->
+                <div class="relative">
+                    <input
+                      type="text"
+                      placeholder="Search news..."
+                      class="bg-white text-gray-900 px-4 py-2 rounded-full w-64 focus:outline-none focus:ring-2 focus:ring-gray-400"
+                    />
+                    <button
+                      class="absolute right-3 top-2.5 text-gray-500 hover:text-black transition-transform duration-300 hover:translate-x-1 hover:scale-110"
+                    >
+                      <i class="fas fa-search"></i>
+                    </button>
+                </div>
+
+                <!-- Cart Icon -->
+                <div class="relative">
+                    <a
+                      href="/cart.html"
+                      aria-label="Shopping Cart"
+                      class="text-white hover:text-gray-300 relative"
+                    >
+                      <i class="fas fa-shopping-cart fa-lg"></i>
+                      <span
+                        class="absolute -top-2 -right-2 bg-red-600 text-white rounded-full text-xs w-5 h-5 flex items-center justify-center"
+                        >0</span
+                      >
+                    </a>
+                </div>
+
+                <!-- Account Dropdown -->
+                <div class="relative group">
+                    <button
+                      id="accountButton"
+                      class="bg-white text-black px-4 py-2 rounded-md hover:bg-gray-100 transition flex items-center space-x-2"
+                    >
+                      <i class="fas fa-user"></i>
+                      <span id="usernameDisplay">UserName</span>
+                      <i
+                        class="fas fa-chevron-down text-sm transition-transform duration-300 group-hover:rotate-180"
+                      ></i>
+                    </button>
+                    <div
+                      class="absolute right-0 mt-2 w-48 bg-white/90 backdrop-blur-xl shadow-lg rounded-lg border border-gray-300 opacity-0 invisible transform scale-95 -translate-y-4 transition-all duration-500 ease-out group-hover:opacity-100 group-hover:visible group-hover:scale-100 group-hover:translate-y-0"
+                    >
+                      <a
+                        href="../AccountSettings/AccountSettings.html"
+                        class="block px-5 py-3 text-gray-700 font-medium transition-all duration-300 rounded-t-lg hover:bg-black hover:text-white hover:shadow-md hover:scale-105"
+                        >Account Settings</a
+                      >
+                      <a
+                        href="#"
+                        id="logoutBtn"
+                        class="block px-5 py-3 text-gray-700 font-medium transition-all duration-300 rounded-b-lg hover:bg-black hover:text-white hover:shadow-md hover:scale-105 cursor-pointer"
+                        >Logout</a
+                      >
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section
+      class="relative bg-cover bg-center h-80 flex items-center justify-center text-white text-center"
+      style="background-image: url('https://images.unsplash.com/photo-1504674900247-0877df9cc836?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80')"
+    >
+      <div class="absolute inset-0 bg-black bg-opacity-50 z-0"></div>
+      <div class="z-10 px-4">
+        <h2 class="text-4xl font-bold">Discover Our Finest Restaurants</h2>
+        <p class="text-lg mt-2">
+          Reserve your table at the best dining spots around.
+        </p>
+      </div>
+    </section>
+
+    <!-- Restaurant Listings -->
+    <section id="restaurants" class="py-16">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl font-bold">Our Restaurants</h2>
+        <p class="text-gray-600 mt-4 max-w-2xl mx-auto">
+          Explore a variety of cuisines and dining experiences.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 px-6">
+        <!-- Restaurant 1: Mahogany's Restaurant -->
+        <div
+          class="bg-white rounded-lg shadow-md overflow-hidden transform transition duration-300 hover:-translate-y-1 hover:shadow-lg"
+        >
+          <img
+            src="https://images.myguide-cdn.com/botswana/companies/mahoganys-restaurant/large/mahoganys-restaurant-475009.jpg"
+            alt="Mahogany's Restaurant"
+            class="w-full h-56 object-cover"
+          />
+          <div class="p-6">
+            <h3 class="text-xl font-semibold">Mahogany's Restaurant</h3>
+            <p class="text-gray-600 text-sm mt-2">
+              Enjoy fine dining with a variety of local and international dishes.
+            </p>
+            <button
+              onclick="document.getElementById('restaurant-name').value='Mahogany\'s Restaurant'; document.getElementById('booking-form').scrollIntoView({behavior:'smooth'})"
+              class="mt-4 bg-black text-white px-4 py-2 rounded hover:bg-white hover:text-black border border-black transition duration-300 mx-auto block"
+            >
+              Book Now
+            </button>
+          </div>
+        </div>
+
+        <!-- Restaurant 2: The Blue Elephant -->
+        <div
+          class="bg-white rounded-lg shadow-md overflow-hidden transform transition duration-300 hover:-translate-y-1 hover:shadow-lg"
+        >
+          <img
+            src="https://images.unsplash.com/photo-1555992336-03a23c4a7a3a?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80"
+            alt="The Blue Elephant"
+            class="w-full h-56 object-cover"
+          />
+          <div class="p-6">
+            <h3 class="text-xl font-semibold">The Blue Elephant</h3>
+            <p class="text-gray-600 text-sm mt-2">
+              Experience exquisite Asian cuisine in a stylish setting.
+            </p>
+            <button
+              onclick="document.getElementById('restaurant-name').value='The Blue Elephant'; document.getElementById('booking-form').scrollIntoView({behavior:'smooth'})"
+              class="mt-4 bg-black text-white px-4 py-2 rounded hover:bg-white hover:text-black border border-black transition duration-300 mx-auto block"
+            >
+              Book Now
+            </button>
+          </div>
+        </div>
+
+        <!-- Restaurant 3: The Savanna Grill -->
+        <div
+          class="bg-white rounded-lg shadow-md overflow-hidden transform transition duration-300 hover:-translate-y-1 hover:shadow-lg"
+        >
+          <img
+            src="https://images.unsplash.com/photo-1541544181930-1b1a1a1a1a1a?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80"
+            alt="The Savanna Grill"
+            class="w-full h-56 object-cover"
+          />
+          <div class="p-6">
+            <h3 class="text-xl font-semibold">The Savanna Grill</h3>
+            <p class="text-gray-600 text-sm mt-2">
+              Savor grilled specialties and local flavors in a cozy atmosphere.
+            </p>
+            <button
+              onclick="document.getElementById('restaurant-name').value='The Savanna Grill'; document.getElementById('booking-form').scrollIntoView({behavior:'smooth'})"
+              class="mt-4 bg-black text-white px-4 py-2 rounded hover:bg-white hover:text-black border border-black transition duration-300 mx-auto block"
+            >
+              Book Now
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Booking Form -->
+    <section id="booking-form" class="bg-gray-200 py-16">
+      <div class="max-w-xl mx-auto bg-white p-8 rounded-lg shadow-lg">
+        <h2 class="text-2xl font-bold text-center mb-6">Book Your Table</h2>
+        <form id="restaurantBookingForm" class="space-y-4">
+          <input
+            type="text"
+            placeholder="Full Name"
+            class="w-full px-4 py-2 border border-gray-300 rounded-md"
+            required
+          />
+          <input
+            type="email"
+            placeholder="Email"
+            class="w-full px-4 py-2 border border-gray-300 rounded-md"
+            required
+          />
+          <input
+            type="tel"
+            placeholder="Phone Number"
+            class="w-full px-4 py-2 border border-gray-300 rounded-md"
+            required
+          />
+          <input
+            type="date"
+            class="w-full px-4 py-2 border border-gray-300 rounded-md"
+            required
+          />
+          <input
+            type="number"
+            placeholder="Number of Guests"
+            class="w-full px-4 py-2 border border-gray-300 rounded-md"
+            required
+          />
+
+          <select
+            id="restaurant-name"
+            class="w-full px-4 py-2 border border-gray-300 rounded-md"
+            required
+          >
+            <option value="" disabled selected>Select a Restaurant</option>
+            <option value="Mahogany's Restaurant">Mahogany's Restaurant</option>
+            <option value="The Blue Elephant">The Blue Elephant</option>
+            <option value="The Savanna Grill">The Savanna Grill</option>
+          </select>
+
+          <div class="flex gap-4">
+            <button
+              type="submit"
+              class="w-full bg-black text-white py-3 rounded-full font-semibold hover:bg-white hover:text-black border border-black transition duration-300"
+            >
+              Book Now
+            </button>
+            <button
+              type="button"
+              onclick="cancelBooking()"
+              class="w-full bg-gray-500 text-white py-3 rounded-full font-semibold hover:bg-white hover:text-gray-700 border border-gray-500 transition duration-300"
+            >
+              Cancel
+            </button>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <!-- Modal Popup -->
+    <div
+      id="popupModal"
+      class="hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50"
+    >
+      <div class="bg-white p-6 rounded-lg shadow-lg text-center max-w-sm">
+        <img
+          src="Photos/Screenshot 2025-03-22 153746.png"
+          alt="Logo"
+          class="w-24 mx-auto mb-4"
+        />
+        <p id="popupMessage" class="text-lg font-semibold"></p>
+        <button onclick="closePopup()" class="mt-4 bg-black text-white px-4 py-2 rounded-full">
+          OK
+        </button>
+      </div>
+    </div>
+
+    <script>
+      const form = document.getElementById("restaurantBookingForm");
+      const popupModal = document.getElementById("popupModal");
+      const popupMessage = document.getElementById("popupMessage");
+
+      form.addEventListener("submit", function (e) {
+        e.preventDefault();
+
+        // Simulate sending email (replace this with backend logic if needed)
+        const email = form.querySelector('input[type="email"]').value;
+        console.log(`Sending confirmation email to ${email}...`);
+
+        showPopup("Booking Successful! A confirmation email has been sent.");
+        form.reset();
+      });
+
+      function cancelBooking() {
+        form.reset();
+        showPopup("Booking Cancelled.");
+      }
+
+      function showPopup(message) {
+        popupMessage.textContent = message;
+        popupModal.classList.remove("hidden");
+      }
+
+      function closePopup() {
+        popupModal.classList.add("hidden");
+      }
+    </script>
+
+    <footer class="bg-black text-gray-300 py-10 px-6 mt-auto">
+      <div class="container mx-auto grid grid-cols-1 md:grid-cols-4 gap-8 items-start">
+        <!-- Logo -->
+        <div class="flex flex-col items-start space-y-4">
+          <img src="../Logo1.png" alt="Noema Tourism Logo" class="h-14 w-auto" />
+          <p class="text-sm text-gray-400">Your gateway to unforgettable travel experiences.</p>
+        </div>
+
+        <!-- Support -->
+        <div>
+          <h4
+            class="text-white font-semibold mb-2 relative pb-1 after:content-[''] after:block after:w-16 after:h-[2px] after:bg-white after:mt-1"
+          >
+            Support
+          </h4>
+          <ul class="space-y-1 text-sm">
+            <li><a href="#" class="hover:text-white transition">About Us</a></li>
+            <li><a href="#" class="hover:text-white transition">Our Services</a></li>
+            <li><a href="#" class="hover:text-white transition">Privacy Policy</a></li>
+            <li><a href="#" class="hover:text-white transition">Terms & Conditions</a></li>
+          </ul>
+        </div>
+
+        <!-- Explore -->
+        <div>
+          <h4
+            class="text-white font-semibold mb-2 relative pb-1 after:content-[''] after:block after:w-16 after:h-[2px] after:bg-white after:mt-1"
+          >
+            Explore
+          </h4>
+          <ul class="space-y-1 text-sm">
+            <li><a href="#" class="hover:text-white transition">Collaboration</a></li>
+            <li><a href="#" class="hover:text-white transition">Connect</a></li>
+            <li><a href="#" class="hover:text-white transition">Refunds</a></li>
+            <li><a href="#" class="hover:text-white transition">Accommodation Feedback</a></li>
+            <li><a href="#" class="hover:text-white transition">Payment Options</a></li>
+          </ul>
+        </div>
+
+        <!-- Contact & Social -->
+        <div>
+          <h4
+            class="text-white font-semibold mb-2 relative pb-1 after:content-[''] after:block after:w-16 after:h-[2px] after:bg-white after:mt-1"
+          >
+            Contact
+          </h4>
+          <address class="not-italic text-sm text-gray-400 mb-4 leading-relaxed">
+            <p><strong class="text-white">Noema Tourism Services</strong></p>
+            <p>EastLondon Block 9, Plot 20994</p>
+            <p>
+              <a href="mailto:marketing@noemaservices.co.bw" class="hover:text-white transition"
+                >marketing@noemaservices.co.bw</a
+              >
+            </p>
+            <p>
+              <a href="tel:+2739133922" class="hover:text-white transition">Tel: +27 391 33922</a> |
+              <a href="tel:+273947978" class="hover:text-white transition">Fax: +27 394 7978</a>
+            </p>
+          </address>
+          <div class="flex space-x-4 mt-2">
+            <a href="#" class="text-gray-400 hover:text-white transition transform hover:scale-125"
+              ><i class="fab fa-facebook-f"></i
+            ></a>
+            <a href="#" class="text-gray-400 hover:text-white transition transform hover:scale-125"
+              ><i class="fab fa-twitter"></i
+            ></a>
+            <a href="#" class="text-gray-400 hover:text-white transition transform hover:scale-125"
+              ><i class="fab fa-instagram"></i
+            ></a>
+            <a href="#" class="text-gray-400 hover:text-white transition transform hover:scale-125"
+              ><i class="fab fa-tiktok"></i
+            ></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="mt-8 text-center text-xs text-gray-500 border-t border-gray-700 pt-4">
+        &copy; 2025 <span class="text-white font-semibold">Noema Tourism Services Inc.</span> All rights reserved.
+      </div>
+    </footer>
+</body>
+</html>
