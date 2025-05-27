@@ -8,13 +8,14 @@ const session = require('express-session');
 const app = express();
 const port = 3000;
 
-/* app.set('trust proxy', 1); // trust first proxy */
+app.set('trust proxy', 1); // trust first proxy
 
 // CORS configuration
-const allowedOrigins = ['http://127.0.0.1:5500', 'http://localhost:5500', 'http://localhost:3000'];
+const allowedOrigins = ['http://127.0.0.1:5501', 'http://localhost:5501', 'http://localhost:3000'];
 
 const corsOptions = {
   origin: function(origin, callback) {
+    console.log('CORS origin:', origin); // Log origin for debugging
     if (!origin) return callback(null, true); // Allow non-browser requests like Postman or curl
     if (allowedOrigins.indexOf(origin) !== -1) {
       callback(null, true);
@@ -35,11 +36,28 @@ app.use(bodyParser.json());
 
 // Session middleware
 app.use(session({
-  secret: 'your-secret-key', // replace with a strong secret in production
+  // Use default cookie name 'connect.sid' for compatibility
+  secret: 'your_secret_key',
   resave: false,
   saveUninitialized: false,
-  cookie: { secure: false, sameSite: 'lax', httpOnly: true } // Changed sameSite to 'lax' for testing
+  cookie: {
+    secure: false,
+    sameSite: 'none', // Allow cross-origin cookies for localhost testing
+    httpOnly: true
+  }
 }));
+
+// Middleware to log Set-Cookie header for debugging
+app.use((req, res, next) => {
+  const originalSetHeader = res.setHeader;
+  res.setHeader = function(name, value) {
+    if (name.toLowerCase() === 'set-cookie') {
+      console.log('Set-Cookie header:', value);
+    }
+    originalSetHeader.apply(this, arguments);
+  };
+  next();
+});
 
 // Database Connection
 const db = mysql.createConnection({
@@ -134,6 +152,10 @@ app.post('/login', (req, res) => {
     }
 
     const user = results[0];
+    console.log('Login attempt with credentials:', { email: email });
+    console.log('Hashed password from DB:', user.password);
+    console.log('Login time:', new Date().toISOString());
+
     const passwordMatch = await bcrypt.compare(password, user.password);
 
     if (!passwordMatch) {
@@ -148,7 +170,7 @@ app.post('/login', (req, res) => {
         console.error('Session save error:', err);
         return res.status(500).json({ message: 'Server error' });
       }
-      console.log('Login success for user:', user);
+      console.log('Session saved, user ID:', req.session.userId); // ✅ New helpful log
       return res.status(200).json({ message: 'Login successful', name: user.name, surname: user.surname });
     });
   });
@@ -157,6 +179,7 @@ app.post('/login', (req, res) => {
 // User profile route
 app.get('/user/profile', (req, res) => {
   console.log('GET /user/profile called, session userId:', req.session.userId);
+  console.log('Request cookies:', req.headers.cookie); // Log cookies for debugging
   if (!req.session.userId) {
     console.log('Unauthorized access to /user/profile');
     return res.status(401).json({ message: 'Unauthorized' });
@@ -232,12 +255,13 @@ app.post("/logout", (req, res) => {
       console.error('Logout error:', err);
       return res.status(500).send('Logout failed');
     }
-    res.clearCookie('connect.sid');
+    res.clearCookie('user_sid');
     console.log("User logged out");
     // Redirect to index.html after logout
     res.redirect('../Home-Page/index.html');
   });
 });
+
 
 // Start Server
 app.listen(port, () => {
