@@ -3,9 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tourism Website</title>
+    <title>Tourism Website - Events</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="events.css">
     <style>
          @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
         body {
@@ -72,7 +73,7 @@
       </div>
       
   
-      <!-- Search Bar -->
+      <!-- Search and Filter Section -->
       <div class="mb-6 flex justify-center">
           <input type="text" id="eventSearch" placeholder="Search events..." 
               class="w-full max-w-xl px-4 py-2 border border-gray-300 rounded-full shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-400" 
@@ -82,34 +83,112 @@
       
       <!-- Events Grid -->
       <div id="eventsGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          <!-- Example Event -->
-          <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition p-4 event-card">
-            <img src="https://africageographic.com/wp-content/uploads/2016/09/ostrich-hunt-dance.jpg" >
-            <h3 class="text-xl font-semibold text-gray-800 event-title"> Kuru Dance Festival (D’Kar Village) </h3>
-            <p class="text-sm text-gray-500 mb-2">April 25 – May 10, 2025</p>
-            <p class="text-gray-600 text-sm">  Witness one of the world’s great natural migrations in the salt pans of Makgadikgadi. </p>
-            <div class="mt-4 flex justify-center">
-              <a href="/register" class="text-black hover:text-blue-600 transition duration-300" > Register Now </a>
+          <!-- Kuru Dance Festival -->
+          <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition p-4 event-card relative">
+            <div class="badge-upcoming event-badge">Upcoming</div>
+            <img src="https://africageographic.com/wp-content/uploads/2016/09/ostrich-hunt-dance.jpg" 
+                 class="w-full h-48 object-cover rounded-lg" 
+                 alt="Kuru Dance Festival">
+            <div class="mt-4">
+                <div class="flex items-center justify-between">
+                    <h3 class="text-xl font-semibold text-gray-800 event-title">Kuru Dance Festival</h3>
+                    <span class="text-green-600 font-semibold">P200</span>
+                </div>
+                <div class="flex items-center gap-2 mt-2 text-sm text-gray-500">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span>D'Kar Village, Ghanzi</span>
+                </div>
+                <div class="flex items-center gap-2 mt-1 text-sm text-gray-500">
+                    <i class="far fa-calendar-alt"></i>
+                    <span>April 25 – May 10, 2025</span>
+                </div>
+                <p class="text-gray-600 text-sm mt-3">Experience the rich cultural heritage of the San people through traditional dance performances, art exhibitions, and storytelling.</p>
+                <div class="flex items-center justify-between mt-4">
+
+                    <div class="share-buttons flex gap-2">
+                        <button class="text-gray-400 hover:text-blue-500"><i class="fab fa-facebook"></i></button>
+                        <button class="text-gray-400 hover:text-blue-400"><i class="fab fa-twitter"></i></button>
+                        <button class="text-gray-400 hover:text-green-500"><i class="far fa-calendar-plus"></i></button>
+                    </div>
+                </div>
+                <div class="mt-4 flex justify-center">
+                    <button class="bg-black text-white px-6 py-2 rounded-full hover:bg-gray-800 transition duration-300">
+                        Register Now
+                    </button>
+                </div>
             </div>
           </div>
 
-          <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition p-4 event-card">
-            <img src="https://cdn4.premiumread.com/?url=https://www.mmegi.bw/mmegi/uploads/images/2023/01/23/62088.jpg&w=800&q=72&f=jpg" >
-            <h3 class="text-xl font-semibold text-gray-800 event-title"> Toyota Desert Race (Mantshwabisi) </h3>
-            <p class="text-sm text-gray-500 mb-2">April 25 – May 10, 2025</p>
-            <p class="text-gray-600 text-sm">  Witness one of the world’s great natural migrations in the salt pans of Makgadikgadi. </p>
-            <div class="mt-4 flex justify-center">
-              <a href="/register" class="text-black hover:text-blue-600 transition duration-300" > Register Now </a>
+          <!-- Toyota Desert Race -->
+          <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition p-4 event-card relative">
+            <div class="badge-few-seats event-badge">Few Seats Left</div>
+            <img src="https://cdn4.premiumread.com/?url=https://www.mmegi.bw/mmegi/uploads/images/2023/01/23/62088.jpg&w=800&q=72&f=jpg" 
+                 class="w-full h-48 object-cover rounded-lg"
+                 alt="Toyota Desert Race">
+            <div class="mt-4">
+                <div class="flex items-center justify-between">
+                    <h3 class="text-xl font-semibold text-gray-800 event-title">Toyota Desert Race</h3>
+                    <span class="text-green-600 font-semibold">P350</span>
+                </div>
+                <div class="flex items-center gap-2 mt-2 text-sm text-gray-500">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span>Mantshwabisi</span>
+                </div>
+                <div class="flex items-center gap-2 mt-1 text-sm text-gray-500">
+                    <i class="far fa-calendar-alt"></i>
+                    <span>June 15 – June 17, 2025</span>
+                </div>
+                <p class="text-gray-600 text-sm mt-3">Experience the thrill of Southern Africa's biggest off-road race through Botswana's challenging terrain.</p>
+                <div class="flex items-center justify-between mt-4">
+                    <div class="share-buttons flex gap-2">
+                        <button class="text-gray-400 hover:text-blue-500"><i class="fab fa-facebook"></i></button>
+                        <button class="text-gray-400 hover:text-blue-400"><i class="fab fa-twitter"></i></button>
+                        <button class="text-gray-400 hover:text-green-500"><i class="far fa-calendar-plus"></i></button>
+                    </div>
+                </div>
+                <div class="mt-4 flex justify-center">
+                    <button class="bg-black text-white px-6 py-2 rounded-full hover:bg-gray-800 transition duration-300">
+                        Register Now
+                    </button>
+                </div>
             </div>
           </div>
 
-          <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition p-4 event-card">
-            <img src="https://www.mmegi.bw/uploads/imported_images/2016/september/05/phpLimTSn.jpg" >
-            <h3 class="text-xl font-semibold text-gray-800 event-title"> Dithubaruba Cultural Festival </h3>
-            <p class="text-sm text-gray-500 mb-2">April 25 – May 10, 2025</p>
-            <p class="text-gray-600 text-sm">  Witness one of the world’s great natural migrations in the salt pans of Makgadikgadi. </p>
-            <div class="mt-4 flex justify-center">
-              <a href="/register" class="text-black hover:text-blue-600 transition duration-300" > Register Now </a>
+          <!-- Dithubaruba Cultural Festival -->
+          <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition p-4 event-card relative">
+            <div class="badge-sold-out event-badge">Sold Out</div>
+            <img src="https://www.mmegi.bw/uploads/imported_images/2016/september/05/phpLimTSn.jpg" 
+                 class="w-full h-48 object-cover rounded-lg"
+                 alt="Dithubaruba Cultural Festival">
+            <div class="mt-4">
+                <div class="flex items-center justify-between">
+                    <h3 class="text-xl font-semibold text-gray-800 event-title">Dithubaruba Cultural Festival</h3>
+                    <span class="text-gray-400 font-semibold line-through">P150</span>
+                </div>
+                <div class="flex items-center gap-2 mt-2 text-sm text-gray-500">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span>Gaborone</span>
+                </div>
+                <div class="flex items-center gap-2 mt-1 text-sm text-gray-500">
+                    <i class="far fa-calendar-alt"></i>
+                    <span>July 10 – July 15, 2025</span>
+                </div>
+                <p class="text-gray-600 text-sm mt-3">Celebrate Botswana's rich cultural diversity with traditional music, dance, and crafts.</p>
+                <div class="flex items-center justify-between mt-4">
+                    <span class="text-sm text-red-600 font-semibold">
+                        <i class="fas fa-times-circle"></i> Sold Out
+                    </span>
+                    <div class="share-buttons flex gap-2">
+                        <button class="text-gray-400 hover:text-blue-500"><i class="fab fa-facebook"></i></button>
+                        <button class="text-gray-400 hover:text-blue-400"><i class="fab fa-twitter"></i></button>
+                        <button class="text-gray-400 hover:text-green-500"><i class="far fa-calendar-plus"></i></button>
+                    </div>
+                </div>
+                <div class="mt-4 flex justify-center">
+                    <button disabled class="bg-gray-400 text-white px-6 py-2 rounded-full cursor-not-allowed">
+                        Sold Out
+                    </button>
+                </div>
             </div>
           </div>
 
