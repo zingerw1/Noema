@@ -135,105 +135,55 @@
 
 <section class="py-16 bg-gray-0">
   <div class="container mx-auto text-center">
-    <h2 class="text-3xl font-semibold mb-8">Supa Ngwao Museum</h2>
-    <p class="text-lg mb-8">Discover the rich history and culture of the Kalanga people at the Supa Ngwao Museum in Francistown.</p>
-    <a href="museum_link" class="bg-black text-white px-6 py-3 rounded-full font-semibold text-lg hover:bg-white hover:text-black border-2 border-black transition">Learn More</a>
+    <h2 class="text-3xl font-semibold mb-8">Botswana's Hidden Heritage Site</h2>
+    <p class="text-lg mb-8">Discover the rich history and culture of the Tsodilo Hills located within Ngamiland District</p>
   </div>
 </section>
 
-
-
 <section class="py-16 bg-gray-100 relative">
-  <!-- Video Background -->
-  <div class="absolute inset-0 z-0">
-      <video class="w-full h-full object-cover" autoplay loop muted>
-          <source src="https://cdn.pixabay.com/video/2019/08/16/26085-354651392_large.mp4" type="video/mp4">
-          Your browser does not support the video tag.
-      </video>
-  </div>
+  <!-- Image Background -->
+<div class="absolute inset-0 z-0">
+  <img 
+    src="https://www.xflow.eu/wp-content/uploads/2015/03/150111_XFLO7894_Namibia-Twyfelfontain_1200.jpg" 
+    alt="Supa Ngwao Museum" 
+    class="w-full h-full object-cover"
+  />
+</div>
 
   <!-- Content -->
   <div class="container mx-auto text-center relative z-10">
-      <h2 class="text-3xl font-semibold mb-8 text-white">Discover Our Heritage</h2>
+      <h2 class="text-3xl font-semibold mb-8 text-white">Tsodilo Hills</h2>
       <p class="text-lg font-light mb-4 text-white">
-          Botswana's history dates back thousands of years, with evidence of early human habitation in the form of rock paintings and artifacts, especially in regions like Tsodilo Hills, often referred to as the "Louvre of the Desert." The first inhabitants were the San people, followed by the Bantu-speaking tribes who migrated from central Africa around 2,000 years ago.
+          Botswana's history dates back thousands of years, with evidence of early human habitation in the form of rock paintings and artifacts, especially in regions like Tsodilo Hills, often referred to as the "Louvre of the Desert." 
       </p>
       <p class="text-lg font-light mb-4 text-white">
-          In the late 19th century, the region was colonized by the British and was known as the British Protectorate of Bechuanaland. The British government took control to prevent the expansion of German and Boer territories. Despite this, the people of Botswana maintained a sense of identity and resisted exploitation.
+          In the late 19th century, the region was colonized by the British and was known as the British Protectorate of Bechuanaland. The British government took control to prevent the expansion of German and Boer territories. 
       </p>
       <p class="text-lg font-light mb-4 text-white">
-          Known for its large elephant population, Chobe National Park is a popular destination for wildlife enthusiasts. It offers spectacular boat safaris on the Chobe River and excellent game drives where visitors can spot lions, leopards, and numerous bird species. The park is also home to over 120,000 elephants, the largest concentration of elephants in Africa.
+          Known for its large elephant population, Chobe National Park is a popular destination for wildlife enthusiasts. 
       </p>
       <p class="text-lg font-light mb-4 text-white">
-          The Makgadikgadi Pans, remnants of a once vast lake, are another fascinating part of Botswana’s landscape. The salt pans cover a vast area and provide a unique, almost otherworldly experience. They are home to the San people and feature incredible wildlife migrations, including the zebra and wildebeest herds, and the chance to spot meerkats in their natural habitat.
+          The Makgadikgadi Pans, remnants of a once vast lake, are another fascinating part of Botswana’s landscape. 
       </p>
       <p class="text-lg font-light mb-4 text-white">
-          Tsodilo Hills is a UNESCO World Heritage site known for its ancient rock art, believed to be over 20,000 years old. These sacred hills are a significant archaeological and cultural site, and they hold deep meaning for local communities. The site attracts both history buffs and spiritual seekers who want to explore one of Africa’s oldest and most important cultural landmarks.
+          Tsodilo Hills is a UNESCO World Heritage site known for its ancient rock art, believed to be over 20,000 years old. 
       </p>
      
-      <!-- Learn More Button -->
-      <div class="mt-8">
-          <a href="../About-Us/About.html" class="bg-black text-white px-6 py-3 rounded-full font-semibold text-lg hover:bg-gray-800 transition duration-300">
-              Learn More
-          </a>
-      </div>
   </div>
 </section>
 
 <section class="py-16">
   <div class="container mx-auto text-center">
-    <h2 class="text-3xl font-semibold mb-8">Interactive Map</h2>
-    <div id="map" class="w-full h-96 bg-gray-200 rounded-lg"></div>
-    <script>
-      // Initialize and add the map
-      function initMap() {
-        const botswana = { lat: -22.3285, lng: 24.6849 };
-        const map = new google.maps.Map(document.getElementById("map"), {
-          zoom: 6,
-          center: botswana,
-        });
-
-        // Add markers for key attractions
-        new google.maps.Marker({
-          position: { lat: -19.5, lng: 22.5 },
-          map,
-          title: "Okavango Delta",
-        });
-        new google.maps.Marker({
-          position: { lat: -18.2982, lng: 25.1555 },
-          map,
-          title: "Chobe National Park",
-        });
-        new google.maps.Marker({
-          position: { lat: -21.9761, lng: 26.7493 },
-          map,
-          title: "Makgadikgadi Pans",
-        });
-        new google.maps.Marker({
-          position: { lat: -19.5442, lng: 25.4911 },
-          map,
-          title: "Tsodilo Hills",
-        });
-        new google.maps.Marker({
-          position: { lat: -20.4531, lng: 25.2900 },
-          map,
-          title: "Kubu Island",
-        });
-        new google.maps.Marker({
-          position: { lat: -20.4447, lng: 22.9849 },
-          map,
-          title: "Nxai Pan National Park",
-        });
-      }
-    </script>
-    <!-- Replace 'YOUR_API_KEY' with your valid Google Maps API key -->
-    <script
-      src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap"
-      async
-      defer
-    ></script>
+    <h2 class="text-3xl font-semibold mb-8">Botswana Map</h2>
+    <img 
+      src="https://upload.wikimedia.org/wikipedia/commons/5/5b/Botswana_NSC_extension_map.svg" 
+      alt="Map of Botswana" 
+      class="mx-auto rounded-lg shadow-md max-w-md w-full h-auto"
+    >
+    <p class="mt-4 text-gray-600">A static map showing major regions of Botswana.</p>
   </div>
 </section>
+
 
 <!-- Travel Quote Section -->
 <section class="bg-black text-white py-16 text-center mt-3 mb-3" style="background-image: url('https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'); background-size: cover; background-position: center;">
@@ -267,12 +217,12 @@
       
           <!-- Support -->
           <div>
-            <h4 class="text-white font-semibold mb-2 relative pb-1 after:content-[''] after:block after:w-16 after:h-[2px] after:bg-white after:mt-1">Support</h4>
+            <h4 class="text-white font-semibold mb-2 relative pb-1 after:content-[''] after:block after:w-16 after:h-[2px] after:bg-white after:mt-1">Resources</h4>
             <ul class="space-y-1 text-sm">
-              <li><a href="#" class="hover:text-white transition">About Us</a></li>
-              <li><a href="#" class="hover:text-white transition">Our Services</a></li>
-              <li><a href="#" class="hover:text-white transition">Privacy Policy</a></li>
-              <li><a href="#" class="hover:text-white transition">Terms & Conditions</a></li>
+              <li><a href="../Resources/Resources.html" class="hover:text-white transition">Currency Guide</a></li>
+              <li><a href="../Resources/Resources.html" class="hover:text-white transition">Transportation Guide</a></li>
+              <li><a href="../Resources/Resources.html" class="hover:text-white transition">Safari & Wildlife Guide</a></li>
+              <li><a href="../Resources/Resources.html" class="hover:text-white transition">Travel Documents & Visa Guide</a></li>
             </ul>
           </div>
       
@@ -280,13 +230,14 @@
           <div>
             <h4 class="text-white font-semibold mb-2 relative pb-1 after:content-[''] after:block after:w-16 after:h-[2px] after:bg-white after:mt-1">Explore</h4>
             <ul class="space-y-1 text-sm">
-              <li><a href="#" class="hover:text-white transition">Collaboration</a></li>
-              <li><a href="#" class="hover:text-white transition">Connect</a></li>
-              <li><a href="#" class="hover:text-white transition">Refunds</a></li>
-              <li><a href="#" class="hover:text-white transition">Accommodation Feedback</a></li>
-              <li><a href="#" class="hover:text-white transition">Payment Options</a></li>
+              <li><a href="../Marketplace/Marketplace.html" class="hover:text-white transition">Marketplace</a></li>
+              <li><a href="../Current-Affairs/news.html" class="hover:text-white transition">News</a></li>
+              <li><a href="../Book/Book.html" class="hover:text-white transition">Booking</a></li>
+              <li><a href="../About-Us/About.html" class="hover:text-white transition">About-Us</a></li>
+              <li><a href="../Events/Events.html" class="hover:text-white transition">Events</a></li>
             </ul>
           </div>
+      
       
           <!-- Contact & Social -->
           <div>

@@ -75,39 +75,488 @@
       
       <!-- Events Grid -->
       <div id="eventsGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          <!-- Example Event -->
-          <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition p-4 event-card">
-            <img src="https://africageographic.com/wp-content/uploads/2016/09/ostrich-hunt-dance.jpg" >
-            <h3 class="text-xl font-semibold text-gray-800 event-title"> Kuru Dance Festival (D’Kar Village) </h3>
-            <p class="text-sm text-gray-500 mb-2">April 25 – May 10, 2025</p>
-            <p class="text-gray-600 text-sm">  Witness one of the world’s great natural migrations in the salt pans of Makgadikgadi. </p>
-            <div class="mt-4 flex justify-center">
-              <a href="/register" class="text-black hover:text-blue-600 transition duration-300" > Register Now </a>
+          <!-- Kuru Dance Festival -->
+          <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition p-4 event-card relative">
+            <div class="badge-upcoming event-badge">Upcoming</div>
+            <img src="https://africageographic.com/wp-content/uploads/2016/09/ostrich-hunt-dance.jpg" 
+                 class="w-full h-48 object-cover rounded-lg" 
+                 alt="Kuru Dance Festival">
+            <div class="mt-4">
+                <div class="flex items-center justify-between">
+                    <h3 class="text-xl font-semibold text-gray-800 event-title">Kuru Dance Festival</h3>
+                    <span class="text-green-600 font-semibold">P200</span>
+                </div>
+                <div class="flex items-center gap-2 mt-2 text-sm text-gray-500">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span>D'Kar Village, Ghanzi</span>
+                </div>
+                <div class="flex items-center gap-2 mt-1 text-sm text-gray-500">
+                    <i class="far fa-calendar-alt"></i>
+                    <span>April 25 – May 10, 2025</span>
+                </div>
+                <p class="text-gray-600 text-sm mt-3">Experience the rich cultural heritage of the San people through traditional dance performances, art exhibitions, and storytelling.</p>
+                <p class="text-sm text-gray-500 mb-2">Tickets left: 50</p>
+                <div class="flex items-center justify-between mt-4">
+
+                    <div class="share-buttons flex gap-2">
+                        <button class="text-gray-400 hover:text-blue-500"><i class="fab fa-facebook"></i></button>
+                        <button class="text-gray-400 hover:text-blue-400"><i class="fab fa-twitter"></i></button>
+                        <button class="text-gray-400 hover:text-green-500"><i class="far fa-calendar-plus"></i></button>
+                    </div>
+                </div>
+                <div class="mt-4 flex justify-center">
+                    <button onclick="openModal('event1Modal')" class="bg-black text-white px-6 py-2 rounded-full hover:bg-gray-800 transition duration-300">
+                        Buy Ticket
+                    </button>
+                </div>
+            </div>
+            <!-- Event 1 Modal -->
+            <div id="event1Modal" class="modal-overlay fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center z-50 p-4">
+              <div class="bg-white rounded-xl max-w-4xl w-full max-h-[90vh] overflow-y-auto relative">
+                <!-- Close button -->
+                <button onclick="closeModal('event1Modal')" class="absolute top-4 right-4 text-gray-500 hover:text-gray-700 transition">
+                  <i class="fas fa-times text-xl"></i>
+                </button>
+                <!-- Modal content -->
+                <div class="p-8">
+                  <div class="mb-6">
+                    <span class="text-blue-500 font-medium text-sm uppercase tracking-wider">Cultural Event</span>
+                    <h2 class="text-3xl font-bold mt-2 mb-4">Kuru Dance Festival (D’Kar Village)</h2>
+                    <div class="flex items-center text-sm text-gray-500 mb-6">
+                      <span>April 25 – May 10, 2025</span>
+                      <span class="mx-2">•</span>
+                      <span>Experience Botswana's rich San culture through traditional dance and storytelling.</span>
+                    </div>
+                  </div>
+                  <img src="https://africageographic.com/wp-content/uploads/2016/09/ostrich-hunt-dance.jpg" 
+                       alt="Kuru Dance Festival" 
+                       class="w-full h-96 object-cover rounded-lg mb-8">
+                  <div class="prose max-w-none">
+                    <p>The Kuru Dance Festival in D’Kar Village is a vibrant celebration of the San people's cultural heritage. Visitors can enjoy traditional dances, storytelling sessions, and workshops that highlight the community's history and way of life.</p>
+                    <h3 class="text-xl font-semibold mt-6 mb-3">Festival Highlights</h3>
+                    <ul class="list-disc pl-6 space-y-2">
+                      <li>Traditional dance performances</li>
+                      <li>Storytelling by community elders</li>
+                      <li>Workshops on San crafts and traditions</li>
+                      <li>Local food and crafts market</li>
+                    </ul>
+                    <h3 class="text-xl font-semibold mt-6 mb-3">Visitor Information</h3>
+                    <p>Open daily from 9 AM to 6 PM. Admission is free, with donations welcome to support community projects.</p>
+                    <h3 class="text-xl font-semibold mt-6 mb-3">Tickets Available</h3>
+                    <p>50 tickets left</p>
+                    <button class="buy-ticket-btn bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition mt-4">
+  Buy Ticket
+</button>
+
+<div class="error-msg hidden mt-2 p-2 bg-red-100 border border-red-400 text-red-700 rounded relative">
+  You must be logged in to buy tickets.
+  <button class="close-error-btn absolute top-1 right-2 text-red-700 hover:text-red-900 font-bold">&times;</button>
+</div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
+          
 
-          <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition p-4 event-card">
-            <img src="https://cdn4.premiumread.com/?url=https://www.mmegi.bw/mmegi/uploads/images/2023/01/23/62088.jpg&w=800&q=72&f=jpg" >
-            <h3 class="text-xl font-semibold text-gray-800 event-title"> Toyota Desert Race (Mantshwabisi) </h3>
-            <p class="text-sm text-gray-500 mb-2">April 25 – May 10, 2025</p>
-            <p class="text-gray-600 text-sm">  Witness one of the world’s great natural migrations in the salt pans of Makgadikgadi. </p>
-            <div class="mt-4 flex justify-center">
-              <a href="/register" class="text-black hover:text-blue-600 transition duration-300" > Register Now </a>
-            </div>
-          </div>
-
-          <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition p-4 event-card">
-            <img src="https://www.mmegi.bw/uploads/imported_images/2016/september/05/phpLimTSn.jpg" >
-            <h3 class="text-xl font-semibold text-gray-800 event-title"> Dithubaruba Cultural Festival </h3>
-            <p class="text-sm text-gray-500 mb-2">April 25 – May 10, 2025</p>
-            <p class="text-gray-600 text-sm">  Witness one of the world’s great natural migrations in the salt pans of Makgadikgadi. </p>
-            <div class="mt-4 flex justify-center">
-              <a href="/register" class="text-black hover:text-blue-600 transition duration-300" > Register Now </a>
-            </div>
-          </div>
-
+        <!-- Toyota Desert Race -->
+<div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition p-4 event-card relative">
+  <div class="badge-upcoming event-badge">Upcoming</div>
+  <img src="https://cdn4.premiumread.com/?url=https://www.mmegi.bw/mmegi/uploads/images/2023/01/23/62088.jpg&w=800&q=72&f=jpg" 
+       class="w-full h-48 object-cover rounded-lg" 
+       alt="Toyota Desert Race">
+  <div class="mt-4">
+    <div class="flex items-center justify-between">
+      <h3 class="text-xl font-semibold text-gray-800 event-title">Toyota Desert Race</h3>
+      <span class="text-green-600 font-semibold">P150</span>
+    </div>
+    <div class="flex items-center gap-2 mt-2 text-sm text-gray-500">
+      <i class="fas fa-map-marker-alt"></i>
+      <span>Mantshwabisi</span>
+    </div>
+    <div class="flex items-center gap-2 mt-1 text-sm text-gray-500">
+      <i class="far fa-calendar-alt"></i>
+      <span>April 25 – May 10, 2025</span>
+    </div>
+    <p class="text-gray-600 text-sm mt-3">Feel the adrenaline at Botswana's most thrilling motorsport event with desert racing and off-road action.</p>
+    <p class="text-sm text-gray-500 mb-2">Tickets left: 30</p>
+    <div class="flex items-center justify-between mt-4">
+      <div class="share-buttons flex gap-2">
+        <button class="text-gray-400 hover:text-blue-500"><i class="fab fa-facebook"></i></button>
+        <button class="text-gray-400 hover:text-blue-400"><i class="fab fa-twitter"></i></button>
+        <button class="text-gray-400 hover:text-green-500"><i class="far fa-calendar-plus"></i></button>
       </div>
- 
+    </div>
+    <div class="mt-4 flex justify-center">
+      <button onclick="openModal('event2Modal')" class="bg-black text-white px-6 py-2 rounded-full hover:bg-gray-800 transition duration-300">
+        Buy Ticket
+      </button>
+    </div>
+  </div>
+
+  <!-- Event 2 Modal -->
+  <div id="event2Modal" class="modal-overlay fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center z-50 p-4">
+    <div class="bg-white rounded-xl max-w-4xl w-full max-h-[90vh] overflow-y-auto relative">
+      <!-- Close button -->
+      <button onclick="closeModal('event2Modal')" class="absolute top-4 right-4 text-gray-500 hover:text-gray-700 transition">
+        <i class="fas fa-times text-xl"></i>
+      </button>
+      <!-- Modal content -->
+      <div class="p-8">
+        <div class="mb-6">
+          <span class="text-blue-500 font-medium text-sm uppercase tracking-wider">Motorsport Event</span>
+          <h2 class="text-3xl font-bold mt-2 mb-4">Toyota Desert Race (Mantshwabisi)</h2>
+          <div class="flex items-center text-sm text-gray-500 mb-6">
+            <span>April 25 – May 10, 2025</span>
+            <span class="mx-2">•</span>
+            <span>Join Botswana’s biggest off-road race and experience desert excitement like never before.</span>
+          </div>
+        </div>
+        <img src="https://cdn4.premiumread.com/?url=https://www.mmegi.bw/mmegi/uploads/images/2023/01/23/62088.jpg&w=800&q=72&f=jpg" 
+             alt="Toyota Desert Race" 
+             class="w-full h-96 object-cover rounded-lg mb-8">
+        <div class="prose max-w-none">
+          <p>The Toyota Desert Race is a spectacular off-road motorsport event held annually in Botswana. This thrilling race across the Kalahari Desert features rugged terrain, intense competition, and scenic desert landscapes that attract motorsport fans from around the region.</p>
+          <h3 class="text-xl font-semibold mt-6 mb-3">Race Highlights</h3>
+          <ul class="list-disc pl-6 space-y-2">
+            <li>Powerful 4x4 racing vehicles</li>
+            <li>Extreme desert driving challenges</li>
+            <li>Spectator zones with food and entertainment</li>
+            <li>Meet the drivers and racing teams</li>
+          </ul>
+          <h3 class="text-xl font-semibold mt-6 mb-3">Visitor Information</h3>
+          <p>The event runs daily from 8 AM to 6 PM. Ample parking and shaded viewing areas are available. Local vendors will provide refreshments and souvenirs.</p>
+          <h3 class="text-xl font-semibold mt-6 mb-3">Tickets Available</h3>
+          <p>30 tickets left</p>
+          <button class="buy-ticket-btn bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition mt-4">
+  Buy Ticket
+</button>
+
+<div class="error-msg hidden mt-2 p-2 bg-red-100 border border-red-400 text-red-700 rounded relative">
+  You must be logged in to buy tickets.
+  <button class="close-error-btn absolute top-1 right-2 text-red-700 hover:text-red-900 font-bold">&times;</button>
+</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+          <!-- Dithubaruba Cultural Festival -->
+          <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition p-4 event-card relative">
+            <div class="badge-sold-out event-badge">Sold Out</div>
+            <img src="https://www.mmegi.bw/uploads/imported_images/2016/september/05/phpLimTSn.jpg" 
+                 class="w-full h-48 object-cover rounded-lg"
+                 alt="Dithubaruba Cultural Festival">
+            <div class="mt-4">
+                <div class="flex items-center justify-between">
+                    <h3 class="text-xl font-semibold text-gray-800 event-title">Dithubaruba Cultural Festival</h3>
+                    <span class="text-gray-400 font-semibold line-through">P150</span>
+                </div>
+                <div class="flex items-center gap-2 mt-2 text-sm text-gray-500">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span>Gaborone</span>
+                </div>
+                <div class="flex items-center gap-2 mt-1 text-sm text-gray-500">
+                    <i class="far fa-calendar-alt"></i>
+                    <span>July 10 – July 15, 2025</span>
+                </div>
+                <p class="text-gray-600 text-sm mt-3">Celebrate Botswana's rich cultural diversity with traditional music, dance, and crafts.</p>
+                <p class="text-sm text-gray-500 mb-2">Tickets left: 0</p>
+                <div class="flex items-center justify-between mt-4">
+                    <span class="text-sm text-red-600 font-semibold">
+                        <i class="fas fa-times-circle"></i> Sold Out
+                    </span>
+                    <div class="share-buttons flex gap-2">
+                        <button class="text-gray-400 hover:text-blue-500"><i class="fab fa-facebook"></i></button>
+                        <button class="text-gray-400 hover:text-blue-400"><i class="fab fa-twitter"></i></button>
+                        <button class="text-gray-400 hover:text-green-500"><i class="far fa-calendar-plus"></i></button>
+                    </div>
+                </div>
+                <div class="mt-4 flex justify-center">
+                    <button disabled class="bg-gray-400 text-white px-6 py-2 rounded-full cursor-not-allowed">
+                        Sold Out
+                    </button>
+                </div>
+            </div>
+          </div>
+
+
+          <!-- Okavango Delta Safari -->
+<div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition p-4 event-card relative">
+  <div class="badge-upcoming event-badge">Upcoming</div>
+  <img src="https://travelbeyond.com/wp-content/uploads/2024/06/Botswana_Okavango-Delta_Mokoro-Ride_Elle-Kyllo_Cropped-2-scaled-e1686856235860.jpg" 
+       class="w-full h-48 object-cover rounded-lg" 
+       alt="Okavango Delta Safari">
+  <div class="mt-4">
+    <div class="flex items-center justify-between">
+      <h3 class="text-xl font-semibold text-gray-800 event-title">Okavango Delta Safari</h3>
+      <span class="text-green-600 font-semibold">P350</span>
+    </div>
+    <div class="flex items-center gap-2 mt-2 text-sm text-gray-500">
+      <i class="fas fa-map-marker-alt"></i>
+      <span>Okavango Delta</span>
+    </div>
+    <div class="flex items-center gap-2 mt-1 text-sm text-gray-500">
+      <i class="far fa-calendar-alt"></i>
+      <span>June 1 – June 15, 2025</span>
+    </div>
+    <p class="text-gray-600 text-sm mt-3">Explore the breathtaking Okavango Delta on guided safaris, witnessing diverse wildlife and stunning landscapes.</p>
+    <p class="text-sm text-gray-500 mb-2">Tickets left: 40</p>
+    <div class="flex items-center justify-between mt-4">
+      <div class="share-buttons flex gap-2">
+        <button class="text-gray-400 hover:text-blue-500"><i class="fab fa-facebook"></i></button>
+        <button class="text-gray-400 hover:text-blue-400"><i class="fab fa-twitter"></i></button>
+        <button class="text-gray-400 hover:text-green-500"><i class="far fa-calendar-plus"></i></button>
+      </div>
+    </div>
+    <div class="mt-4 flex justify-center">
+      <button onclick="openModal('event4Modal')" class="bg-black text-white px-6 py-2 rounded-full hover:bg-gray-800 transition duration-300">
+        Buy Ticket
+      </button>
+    </div>
+  </div>
+
+  <!-- Event 4 Modal -->
+  <div id="event4Modal" class="modal-overlay fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center z-50 p-4">
+    <div class="bg-white rounded-xl max-w-4xl w-full max-h-[90vh] overflow-y-auto relative">
+      <!-- Close button -->
+      <button onclick="closeModal('event4Modal')" class="absolute top-4 right-4 text-gray-500 hover:text-gray-700 transition">
+        <i class="fas fa-times text-xl"></i>
+      </button>
+      <!-- Modal content -->
+      <div class="p-8">
+        <div class="mb-6">
+          <span class="text-blue-500 font-medium text-sm uppercase tracking-wider">Nature Safari</span>
+          <h2 class="text-3xl font-bold mt-2 mb-4">Okavango Delta Safari (Okavango Delta)</h2>
+          <div class="flex items-center text-sm text-gray-500 mb-6">
+            <span>June 1 – June 15, 2025</span>
+            <span class="mx-2">•</span>
+            <span>Discover one of Africa’s premier wildlife destinations through immersive safari experiences.</span>
+          </div>
+        </div>
+        <img src="https://travelbeyond.com/wp-content/uploads/2024/06/Botswana_Okavango-Delta_Mokoro-Ride_Elle-Kyllo_Cropped-2-scaled-e1686856235860.jpg" 
+             alt="Okavango Delta Safari" 
+             class="w-full h-96 object-cover rounded-lg mb-8">
+        <div class="prose max-w-none">
+          <p>The Okavango Delta Safari offers a once-in-a-lifetime adventure through Botswana’s pristine wetlands. Experience daily game drives, mokoro excursions, bird watching, and photography tours led by expert guides.</p>
+          <h3 class="text-xl font-semibold mt-6 mb-3">Safari Highlights</h3>
+          <ul class="list-disc pl-6 space-y-2">
+            <li>Morning and evening game drives</li>
+            <li>Guided mokoro canoe trips</li>
+            <li>Wildlife photography opportunities</li>
+            <li>Luxury tented accommodations</li>
+          </ul>
+          <h3 class="text-xl font-semibold mt-6 mb-3">Visitor Information</h3>
+          <p>Daily safari times: 6 AM – 6 PM. Meals and accommodation included in the package. Advanced booking recommended due to limited availability.</p>
+          <h3 class="text-xl font-semibold mt-6 mb-3">Tickets Available</h3>
+          <p>40 tickets left</p>
+          <button class="buy-ticket-btn bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition mt-4">
+  Buy Ticket
+</button>
+
+<div class="error-msg hidden mt-2 p-2 bg-red-100 border border-red-400 text-red-700 rounded relative">
+  You must be logged in to buy tickets.
+  <button class="close-error-btn absolute top-1 right-2 text-red-700 hover:text-red-900 font-bold">&times;</button>
+</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+          <!-- Chobe River Boat Cruise -->
+<div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition p-4 event-card relative">
+  <div class="badge-upcoming event-badge">Upcoming</div>
+  <img src="https://www.monkeytrails.net/wp-content/uploads/2021/03/BOT-FL-boatCruise.jpg" 
+       class="w-full h-48 object-cover rounded-lg" 
+       alt="Chobe River Boat Cruise">
+  <div class="mt-4">
+    <div class="flex items-center justify-between">
+      <h3 class="text-xl font-semibold text-gray-800 event-title">Chobe River Boat Cruise</h3>
+      <span class="text-green-600 font-semibold">P180</span>
+    </div>
+    <div class="flex items-center gap-2 mt-2 text-sm text-gray-500">
+      <i class="fas fa-map-marker-alt"></i>
+      <span>Chobe National Park</span>
+    </div>
+    <div class="flex items-center gap-2 mt-1 text-sm text-gray-500">
+      <i class="far fa-calendar-alt"></i>
+      <span>July 5 – July 20, 2025</span>
+    </div>
+    <p class="text-gray-600 text-sm mt-3">Enjoy a relaxing boat cruise along the Chobe River, spotting elephants, hippos, and a variety of bird species.</p>
+    <p class="text-sm text-gray-500 mb-2">Tickets left: 60</p>
+    <div class="flex items-center justify-between mt-4">
+      <div class="share-buttons flex gap-2">
+        <button class="text-gray-400 hover:text-blue-500"><i class="fab fa-facebook"></i></button>
+        <button class="text-gray-400 hover:text-blue-400"><i class="fab fa-twitter"></i></button>
+        <button class="text-gray-400 hover:text-green-500"><i class="far fa-calendar-plus"></i></button>
+      </div>
+    </div>
+    <div class="mt-4 flex justify-center">
+      <button onclick="openModal('event5Modal')" class="bg-black text-white px-6 py-2 rounded-full hover:bg-gray-800 transition duration-300">
+        Buy Ticket
+      </button>
+    </div>
+  </div>
+
+  <!-- Event 5 Modal -->
+  <div id="event5Modal" class="modal-overlay fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center z-50 p-4">
+    <div class="bg-white rounded-xl max-w-4xl w-full max-h-[90vh] overflow-y-auto relative">
+      <!-- Close button -->
+      <button onclick="closeModal('event5Modal')" class="absolute top-4 right-4 text-gray-500 hover:text-gray-700 transition">
+        <i class="fas fa-times text-xl"></i>
+      </button>
+      <!-- Modal content -->
+      <div class="p-8">
+        <div class="mb-6">
+          <span class="text-blue-500 font-medium text-sm uppercase tracking-wider">Scenic Cruise</span>
+          <h2 class="text-3xl font-bold mt-2 mb-4">Chobe River Boat Cruise (Chobe National Park)</h2>
+          <div class="flex items-center text-sm text-gray-500 mb-6">
+            <span>July 5 – July 20, 2025</span>
+            <span class="mx-2">•</span>
+            <span>Experience the tranquility of the Chobe River and the majestic wildlife it attracts.</span>
+          </div>
+        </div>
+        <img src="https://www.monkeytrails.net/wp-content/uploads/2021/03/BOT-FL-boatCruise.jpg" 
+             alt="Chobe River Boat Cruise" 
+             class="w-full h-96 object-cover rounded-lg mb-8">
+        <div class="prose max-w-none">
+          <p>Drift along the serene waters of the Chobe River on a luxury boat cruise. Enjoy sightings of elephants, hippos, crocodiles, and vibrant birdlife from the unique perspective of the river. This tour offers guided commentary, refreshments, and breathtaking sunset views.</p>
+          <h3 class="text-xl font-semibold mt-6 mb-3">Cruise Highlights</h3>
+          <ul class="list-disc pl-6 space-y-2">
+            <li>Sunset and sunrise cruises available</li>
+            <li>Ideal for photographers and nature lovers</li>
+            <li>Comfortable seating and refreshments on board</li>
+            <li>Birdwatching and wildlife spotting</li>
+          </ul>
+          <h3 class="text-xl font-semibold mt-6 mb-3">Visitor Information</h3>
+          <p>Boats depart hourly from 7 AM to 6 PM daily. Bring sunscreen, binoculars, and a camera. Life jackets provided on board.</p>
+          <h3 class="text-xl font-semibold mt-6 mb-3">Tickets Available</h3>
+          <p>60 tickets left</p>
+          <button class="buy-ticket-btn bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition mt-4">
+  Buy Ticket
+</button>
+
+<div class="error-msg hidden mt-2 p-2 bg-red-100 border border-red-400 text-red-700 rounded relative">
+  You must be logged in to buy tickets.
+  <button class="close-error-btn absolute top-1 right-2 text-red-700 hover:text-red-900 font-bold">&times;</button>
+</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+          <!-- Makgadikgadi Pans Stargazing Night -->
+<div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition p-4 event-card relative">
+  <div class="badge-upcoming event-badge">Upcoming</div>
+  <img src="https://s3.amazonaws.com/cdn.micato.com/wp-content/uploads/2018/09/07230453/mgadigadi-pans-1.jpg" 
+       class="w-full h-48 object-cover rounded-lg" 
+       alt="Makgadikgadi Pans Stargazing Night">
+  <div class="mt-4">
+    <div class="flex items-center justify-between">
+      <h3 class="text-xl font-semibold text-gray-800 event-title">Makgadikgadi Pans Stargazing Night</h3>
+      <span class="text-green-600 font-semibold">P100</span>
+    </div>
+    <div class="flex items-center gap-2 mt-2 text-sm text-gray-500">
+      <i class="fas fa-map-marker-alt"></i>
+      <span>Makgadikgadi Pans</span>
+    </div>
+    <div class="flex items-center gap-2 mt-1 text-sm text-gray-500">
+      <i class="far fa-calendar-alt"></i>
+      <span>August 15 – August 16, 2025</span>
+    </div>
+    <p class="text-gray-600 text-sm mt-3">Experience the breathtaking night sky in one of the darkest places on Earth with guided stargazing sessions.</p>
+    <p class="text-sm text-gray-500 mb-2">Tickets left: 80</p>
+    <div class="flex items-center justify-between mt-4">
+      <div class="share-buttons flex gap-2">
+        <button class="text-gray-400 hover:text-blue-500"><i class="fab fa-facebook"></i></button>
+        <button class="text-gray-400 hover:text-blue-400"><i class="fab fa-twitter"></i></button>
+        <button class="text-gray-400 hover:text-green-500"><i class="far fa-calendar-plus"></i></button>
+      </div>
+    </div>
+    <div class="mt-4 flex justify-center">
+      <button onclick="openModal('event6Modal')" class="bg-black text-white px-6 py-2 rounded-full hover:bg-gray-800 transition duration-300">
+        Buy Ticket
+      </button>
+    </div>
+  </div>
+
+  <!-- Event 6 Modal -->
+  <div id="event6Modal" class="modal-overlay fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center z-50 p-4">
+    <div class="bg-white rounded-xl max-w-4xl w-full max-h-[90vh] overflow-y-auto relative">
+      <!-- Close button -->
+      <button onclick="closeModal('event6Modal')" class="absolute top-4 right-4 text-gray-500 hover:text-gray-700 transition">
+        <i class="fas fa-times text-xl"></i>
+      </button>
+      <!-- Modal content -->
+      <div class="p-8">
+        <div class="mb-6">
+          <span class="text-blue-500 font-medium text-sm uppercase tracking-wider">Night Sky Experience</span>
+          <h2 class="text-3xl font-bold mt-2 mb-4">Makgadikgadi Pans Stargazing Night</h2>
+          <div class="flex items-center text-sm text-gray-500 mb-6">
+            <span>August 15 – August 16, 2025</span>
+            <span class="mx-2">•</span>
+            <span>One of the best stargazing spots on Earth under the African sky.</span>
+          </div>
+        </div>
+        <img src="https://s3.amazonaws.com/cdn.micato.com/wp-content/uploads/2018/09/07230453/mgadigadi-pans-1.jpg" 
+             alt="Makgadikgadi Pans Stargazing" 
+             class="w-full h-96 object-cover rounded-lg mb-8">
+        <div class="prose max-w-none">
+          <p>Join professional astronomers and fellow stargazers in the vast salt flats of Makgadikgadi Pans. With little to no light pollution, this destination offers an unparalleled view of the Milky Way and other celestial wonders.</p>
+          <h3 class="text-xl font-semibold mt-6 mb-3">Experience Highlights</h3>
+          <ul class="list-disc pl-6 space-y-2">
+            <li>Use of high-powered telescopes and star maps</li>
+            <li>Guided night sky tours with laser pointers</li>
+            <li>Campfire stories and light refreshments</li>
+            <li>Overnight camping under the stars (optional)</li>
+          </ul>
+          <h3 class="text-xl font-semibold mt-6 mb-3">Visitor Tips</h3>
+          <p>Bring warm clothing, sleeping bags if camping, and your own camera for astrophotography. Stargazing begins at sunset.</p>
+          <h3 class="text-xl font-semibold mt-6 mb-3">Tickets Available</h3>
+          <p>80 tickets left</p>
+           
+          <button class="buy-ticket-btn bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition mt-4">
+  Buy Ticket
+</button>
+
+<div class="error-msg hidden mt-2 p-2 bg-red-100 border border-red-400 text-red-700 rounded relative">
+  You must be logged in to buy tickets.
+  <button class="close-error-btn absolute top-1 right-2 text-red-700 hover:text-red-900 font-bold">&times;</button>
+</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    <script>
+  // For all buy ticket buttons
+  document.querySelectorAll('.buy-ticket-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      // Show the error message inside the same modal container
+      const modalContent = btn.closest('.prose');  // or some common container in the modal
+      const errorMsg = modalContent.querySelector('.error-msg');
+      if (errorMsg) {
+        errorMsg.classList.remove('hidden');
+      }
+    });
+  });
+
+  // For all close error buttons
+  document.querySelectorAll('.close-error-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const errorMsg = btn.closest('.error-msg');
+      if (errorMsg) {
+        errorMsg.classList.add('hidden');
+      }
+    });
+  });
+</script>
   </main>
     
 <footer class="bg-black text-gray-300 py-10 px-6 mt-auto">
@@ -119,14 +568,14 @@
             <p class="text-sm text-gray-400">Your gateway to unforgettable travel experiences.</p>
           </div>
       
-          <!-- Support -->
+         <!-- Support -->
           <div>
-            <h4 class="text-white font-semibold mb-2 relative pb-1 after:content-[''] after:block after:w-16 after:h-[2px] after:bg-white after:mt-1">Support</h4>
+            <h4 class="text-white font-semibold mb-2 relative pb-1 after:content-[''] after:block after:w-16 after:h-[2px] after:bg-white after:mt-1">Resources</h4>
             <ul class="space-y-1 text-sm">
-              <li><a href="#" class="hover:text-white transition">About Us</a></li>
-              <li><a href="#" class="hover:text-white transition">Our Services</a></li>
-              <li><a href="#" class="hover:text-white transition">Privacy Policy</a></li>
-              <li><a href="#" class="hover:text-white transition">Terms & Conditions</a></li>
+              <li><a href="../Resources/Resources.html" class="hover:text-white transition">Currency Guide</a></li>
+              <li><a href="../Resources/Resources.html" class="hover:text-white transition">Transportation Guide</a></li>
+              <li><a href="../Resources/Resources.html" class="hover:text-white transition">Safari & Wildlife Guide</a></li>
+              <li><a href="../Resources/Resources.html" class="hover:text-white transition">Travel Documents & Visa Guide</a></li>
             </ul>
           </div>
       
@@ -134,13 +583,14 @@
           <div>
             <h4 class="text-white font-semibold mb-2 relative pb-1 after:content-[''] after:block after:w-16 after:h-[2px] after:bg-white after:mt-1">Explore</h4>
             <ul class="space-y-1 text-sm">
-              <li><a href="#" class="hover:text-white transition">Collaboration</a></li>
-              <li><a href="#" class="hover:text-white transition">Connect</a></li>
-              <li><a href="#" class="hover:text-white transition">Refunds</a></li>
-              <li><a href="#" class="hover:text-white transition">Accommodation Feedback</a></li>
-              <li><a href="#" class="hover:text-white transition">Payment Options</a></li>
+              <li><a href="../Marketplace/Marketplace.html" class="hover:text-white transition">Marketplace</a></li>
+              <li><a href="../Current-Affairs/news.html" class="hover:text-white transition">News</a></li>
+              <li><a href="../Book/Book.html" class="hover:text-white transition">Booking</a></li>
+              <li><a href="../About-Us/About.html" class="hover:text-white transition">About-Us</a></li>
+              <li><a href="../Events/Events.html" class="hover:text-white transition">Events</a></li>
             </ul>
           </div>
+      
       
           <!-- Contact & Social -->
           <div>
@@ -153,11 +603,20 @@
                  <a href="tel:+273947978" class="hover:text-white transition">Fax: +27 394 7978</a></p>
             </address>
             <div class="flex space-x-4 mt-2">
-              <a href="#" class="text-gray-400 hover:text-white transition transform hover:scale-125"><i class="fab fa-facebook-f"></i></a>
-              <a href="#" class="text-gray-400 hover:text-white transition transform hover:scale-125"><i class="fab fa-twitter"></i></a>
-              <a href="#" class="text-gray-400 hover:text-white transition transform hover:scale-125"><i class="fab fa-instagram"></i></a>
-              <a href="#" class="text-gray-400 hover:text-white transition transform hover:scale-125"><i class="fab fa-tiktok"></i></a>
-            </div>
+  <a href="https://www.facebook.com/YourPageName" target="_blank" class="text-gray-400 hover:text-white transition transform hover:scale-125">
+    <i class="fab fa-facebook-f"></i>
+  </a>
+  <a href="https://twitter.com/YourHandle" target="_blank" class="text-gray-400 hover:text-white transition transform hover:scale-125">
+    <i class="fab fa-twitter"></i>
+  </a>
+  <a href="https://www.instagram.com/YourUsername" target="_blank" class="text-gray-400 hover:text-white transition transform hover:scale-125">
+    <i class="fab fa-instagram"></i>
+  </a>
+  <a href="https://www.tiktok.com/@YourUsername" target="_blank" class="text-gray-400 hover:text-white transition transform hover:scale-125">
+    <i class="fab fa-tiktok"></i>
+  </a>
+</div>
+
           </div>
       
         </div>
@@ -166,5 +625,6 @@
           &copy; 2025 <span class="text-white font-semibold">Noema Tourism Services Inc.</span> All rights reserved.
         </div>
       </footer>  
+<script src="../Current-Affairs/ArticleModal.js"></script>
 </body>
 </html>

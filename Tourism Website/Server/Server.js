@@ -4,9 +4,10 @@ const bodyParser = require('body-parser');
 const bcrypt = require('bcrypt');
 const cors = require('cors');
 const session = require('express-session');
-
+const nodemailer = require('nodemailer');
 const app = express();
 const port = 3000;
+app.use(express.json());
 
 app.set('trust proxy', 1); // trust first proxy
 

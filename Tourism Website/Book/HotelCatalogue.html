@@ -14,20 +14,20 @@
     </style>
 </head>
 <body class="bg-white flex flex-col min-h-screen">
-    <header class="bg-black text-white shadow-md z-50">
+    <header class="bg-black text-white shadow-md">
         <div class="container mx-auto px-4 py-3 flex items-center justify-between">
             <div class="flex items-center">
                 <img src="../Logo1.png" alt="Tourism Logo" class="h-10 w-auto">
             </div>
             <nav class="hidden md:flex space-x-8">
-              <a href="../Home-Page/indexRegistered.html" class="relative hover:text-gray-300 transition duration-300 transform hover:scale-105 after:content-[''] after:absolute after:left-0 after:bottom-[-4px] after:w-0 after:h-[2px] after:bg-white after:transition-all after:duration-300 hover:after:w-full">Home</a>
-              <a href="../Book/BookRegistered.html" class="relative hover:text-gray-300 transition duration-300 transform hover:scale-105 after:content-[''] after:absolute after:left-0 after:bottom-[-4px] after:w-0 after:h-[2px] after:bg-white after:transition-all after:duration-300 hover:after:w-full">Book</a>
-              <a href="../Events/EventsRegistered.html" class="relative hover:text-gray-300 transition duration-300 transform hover:scale-105 after:content-[''] after:absolute after:left-0 after:bottom-[-4px] after:w-0 after:h-[2px] after:bg-white after:transition-all after:duration-300 hover:after:w-full">Events</a>
-              <a href="../Current-Affairs/newsRegistered.html" class="relative hover:text-gray-300 transition duration-300 transform hover:scale-105 after:content-[''] after:absolute after:left-0 after:bottom-[-4px] after:w-0 after:h-[2px] after:bg-white after:transition-all after:duration-300 hover:after:w-full">News</a>
-              <a href="../About-Us/AboutRegistered.html" class="relative hover:text-gray-300 transition duration-300 transform hover:scale-105 after:content-[''] after:absolute after:left-0 after:bottom-[-4px] after:w-0 after:h-[2px] after:bg-white after:transition-all after:duration-300 hover:after:w-full">About</a>
-              <a href="../Resources/ResourcesRegistered.html" class="relative hover:text-gray-300 transition duration-300 transform hover:scale-105 after:content-[''] after:absolute after:left-0 after:bottom-[-4px] after:w-0 after:h-[2px] after:bg-white after:transition-all after:duration-300 hover:after:w-full">Resources</a>
-              <a href="../Marketplace/MarketplaceRegistered.html" class="relative hover:text-gray-300 transition duration-300 transform hover:scale-105 after:content-[''] after:absolute after:left-0 after:bottom-[-4px] after:w-0 after:h-[2px] after:bg-white after:transition-all after:duration-300 hover:after:w-full">Marketplace</a>
-          </nav>
+                <a href="../Home-Page/index.html" class="relative hover:text-gray-300 transition duration-300 transform hover:scale-105 after:content-[''] after:absolute after:left-0 after:bottom-[-4px] after:w-0 after:h-[2px] after:bg-white after:transition-all after:duration-300 hover:after:w-full">Home</a>
+                <a href="../Book/Book.html" class="relative hover:text-gray-300 transition duration-300 transform hover:scale-105 after:content-[''] after:absolute after:left-0 after:bottom-[-4px] after:w-0 after:h-[2px] after:bg-white after:transition-all after:duration-300 hover:after:w-full">Book</a>
+                <a href="../Events/Events.html" class="relative hover:text-gray-300 transition duration-300 transform hover:scale-105 after:content-[''] after:absolute after:left-0 after:bottom-[-4px] after:w-0 after:h-[2px] after:bg-white after:transition-all after:duration-300 hover:after:w-full">Events</a>
+                <a href="../Current-Affairs/news.html" class="relative hover:text-gray-300 transition duration-300 transform hover:scale-105 after:content-[''] after:absolute after:left-0 after:bottom-[-4px] after:w-0 after:h-[2px] after:bg-white after:transition-all after:duration-300 hover:after:w-full">News</a>
+                <a href="../About-Us/About.html" class="relative hover:text-gray-300 transition duration-300 transform hover:scale-105 after:content-[''] after:absolute after:left-0 after:bottom-[-4px] after:w-0 after:h-[2px] after:bg-white after:transition-all after:duration-300 hover:after:w-full">About</a>
+                <a href="../Resources/Resources.html" class="relative hover:text-gray-300 transition duration-300 transform hover:scale-105 after:content-[''] after:absolute after:left-0 after:bottom-[-4px] after:w-0 after:h-[2px] after:bg-white after:transition-all after:duration-300 hover:after:w-full">Resources</a>
+                <a href="../Marketplace/Marketplace.html" class="relative hover:text-gray-300 transition duration-300 transform hover:scale-105 after:content-[''] after:absolute after:left-0 after:bottom-[-4px] after:w-0 after:h-[2px] after:bg-white after:transition-all after:duration-300 hover:after:w-full">Marketplace</a>
+            </nav>
             <div class="flex items-center space-x-4">
                 <!-- Search -->
               <div class="relative">
@@ -40,27 +40,20 @@
                 </button>
               </div>
             
-              <!-- Cart Icon -->
-              <div class="relative">
-                <a href="/cart.html" aria-label="Shopping Cart" class="text-white hover:text-gray-300 relative">
-                  <i class="fas fa-shopping-cart fa-lg"></i>
-                  <span class="absolute -top-2 -right-2 bg-red-600 text-white rounded-full text-xs w-5 h-5 flex items-center justify-center">0</span>
-                </a>
-              </div>
-              
               <!-- Account Dropdown -->
               <div class="relative group">
-                <button id="accountButton" class="bg-white text-black px-4 py-2 rounded-md hover:bg-gray-100 transition flex items-center space-x-2">
+                <button class="bg-white text-black px-4 py-2 rounded-md hover:bg-gray-100 transition flex items-center space-x-2">
                   <i class="fas fa-user"></i>
-                  <span id="usernameDisplay">UserName</span>
+                  <span>Account</span>
                   <i class="fas fa-chevron-down text-sm transition-transform duration-300 group-hover:rotate-180"></i>
                 </button>
                 <div class="absolute right-0 mt-2 w-48 bg-white/90 backdrop-blur-xl shadow-lg rounded-lg border border-gray-300 opacity-0 invisible transform scale-95 -translate-y-4 transition-all duration-500 ease-out group-hover:opacity-100 group-hover:visible group-hover:scale-100 group-hover:translate-y-0">
-                  <a href="../AccountSettings/AccountSettings.html" class="block px-5 py-3 text-gray-700 font-medium transition-all duration-300 rounded-t-lg hover:bg-black hover:text-white hover:shadow-md hover:scale-105">Account Settings</a>
-                  <a href="#" id="logoutBtn" class="block px-5 py-3 text-gray-700 font-medium transition-all duration-300 rounded-b-lg hover:bg-black hover:text-white hover:shadow-md hover:scale-105 cursor-pointer">Logout</a>
+                  <a href="#" class="block px-5 py-3 text-gray-700 font-medium transition-all duration-300 rounded-t-lg hover:bg-black hover:text-white hover:shadow-md hover:scale-105">Login</a>
+                  <a href="#" class="block px-5 py-3 text-gray-700 font-medium transition-all duration-300 rounded-b-lg hover:bg-black hover:text-white hover:shadow-md hover:scale-105">Register</a>
                 </div>
               </div>
-            </div>   
+            </div>
+            
         </div>
     </header>
     
@@ -77,10 +70,10 @@
 
       <!-- Hero Section -->
 <section class="relative bg-cover bg-center h-80 flex items-center justify-center text-white text-center"
-style="background-image: url('https://images.unsplash.com/photo-1593642532973-d31b6557fa68?crop=entropy&cs=tinysrgb&fit=max&ixid=MnwzNjg2OXwwfDF8c2VhcmNofDg3fHxob3RlbHxlbnwwfDB8fDE2NjI1MTYwNzI&ixlib=rb-1.2.1&q=80');">
+style="background-image: url('https://images.unsplash.com/photo-1611892440504-42a792e24d32?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');">
 <div class="absolute inset-0 bg-black bg-opacity-50 z-0"></div>
 <div class="z-10 px-4">
-    <h2 class="text-4xl font-bold">Welcome to Our Luxury Hotel</h2>
+    <h2 class="text-4xl font-bold">Welcome to Our Luxurious Hotels</h2>
     <p class="text-lg mt-2">Book your dream stay with us today</p>
 </div>
 </section>
@@ -88,27 +81,143 @@ style="background-image: url('https://images.unsplash.com/photo-1593642532973-d3
 <!-- Room Listings -->
 <section id="rooms" class="py-16">
 <div class="text-center mb-12">
-    <h2 class="text-3xl font-bold">Our Hotela</h2>
+    <h2 class="text-3xl font-bold">Available Hotels To Book Your Stay</h2>
     <p class="text-gray-600 mt-4 max-w-2xl mx-auto">
         Explore our luxurious rooms with world-class amenities
     </p>
 </div>
  
 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 px-6">
-    <!-- Hotel 1: Belmond Savute Elephant Lodge -->
-    <div class="bg-white rounded-lg shadow-md overflow-hidden transform transition duration-300 hover:-translate-y-1 hover:shadow-lg">
-        <img src="https://timbuktutravel.imgix.net/lodges/kodak_images/000/000/171/original/exterior-pool-restaurant-view-of-river-belmond-savute-elephant-lodge-chobe-botswana-timbuktu-travel.jpg?w=1420&h=946&auto=format&crop=fit&fit=min&dpr=1&q=50"
-             alt="Belmond Savute Elephant Lodge" class="w-full h-56 object-cover">
-        <div class="p-6">
-            <h3 class="text-xl font-semibold">Belmond Savute Elephant Lodge</h3>
-            <p class="text-gray-600 text-sm mt-2">Luxury tented camp in Chobe National Park, known for up-close elephant encounters.</p>
-            <button
-                onclick="document.getElementById('room-name').value='Deluxe Room'; document.getElementById('hotel-select').value='Belmond Savute Elephant Lodge - Chobe National Park'; document.getElementById('booking-form').scrollIntoView({behavior:'smooth'})"
-                class="mt-4 bg-black text-white px-4 py-2 rounded hover:bg-white hover:text-black border border-black transition duration-300 mx-auto block">
-                Book Now
-            </button>
-        </div>
+   <!-- Hotel Card with Modal -->
+<div class="bg-white/90 backdrop-blur-lg rounded-2xl shadow-xl overflow-hidden transition hover:shadow-2xl hover:-translate-y-1 duration-300 border border-gray-200">
+  <img src="https://timbuktutravel.imgix.net/lodges/kodak_images/000/000/171/original/exterior-pool-restaurant-view-of-river-belmond-savute-elephant-lodge-chobe-botswana-timbuktu-travel.jpg?w=1420&h=946&auto=format&crop=fit&fit=min&dpr=1&q=50"
+       alt="Belmond Savute Elephant Lodge"
+       class="w-full h-56 object-cover transition-transform duration-300 hover:scale-105">
+  
+  <div class="p-6 space-y-4">
+    <div>
+      <h3 class="text-2xl font-bold text-gray-800">Belmond Savute Elephant Lodge</h3>
+      <p class="text-gray-600 text-sm mt-1">Luxury tented camp in Chobe, offering breathtaking elephant sightings by the river.</p>
     </div>
+
+    <div class="grid grid-cols-2 gap-4 text-sm text-gray-700">
+      <div class="flex items-center gap-2">
+        <i class="fas fa-map-marker-alt text-yellow-500"></i>
+        <span>Chobe National Park</span>
+      </div>
+      <div class="flex items-center gap-2">
+        <i class="fas fa-tag text-yellow-500"></i>
+        <span>From BWP 2,500/night</span>
+      </div>
+      <div class="flex items-center gap-2">
+        <i class="fas fa-door-open text-yellow-500"></i>
+        <span>Deluxe, Family Tents</span>
+      </div>
+      <div class="flex items-center gap-2">
+        <i class="fas fa-clock text-yellow-500"></i>
+        <span>Check-in: 2PM / Out: 11AM</span>
+      </div>
+      <div class="flex items-center gap-2 col-span-2">
+        <i class="fas fa-concierge-bell text-yellow-500"></i>
+        <span>Wi-Fi, All Meals, Safari Tours, Pool</span>
+      </div>
+    </div>
+
+    <!-- Modal Trigger Button -->
+    <button
+      onclick="document.getElementById('hotelModal').classList.remove('hidden')"
+      class="w-full bg-black hover:bg-white text-white hover:text-black font-semibold py-2 px-6 rounded-full border border-black transition duration-300">
+      Book Now
+    </button>
+  </div>
+</div>
+
+<!-- Hotel Booking Modal -->
+<div id="hotelModal" class="modal-overlay fixed inset-0 bg-black bg-opacity-50 hidden flex items-center justify-center z-50 p-4">
+  <div class="bg-white rounded-xl max-w-4xl w-full max-h-[90vh] overflow-y-auto relative">
+    <!-- Close button -->
+    <button onclick="closeModal('hotelModal')" class="absolute top-4 right-4 text-gray-500 hover:text-gray-700 transition">
+      <i class="fas fa-times text-xl"></i>
+    </button>
+    <!-- Modal content -->
+    <div class="p-8">
+      <div class="mb-6">
+        <span class="text-yellow-500 font-medium text-sm uppercase tracking-wider">Luxury Safari Lodge</span>
+        <h2 class="text-3xl font-bold mt-2 mb-4">Belmond Savute Elephant Lodge</h2>
+        <div class="flex items-center text-sm text-gray-500 mb-6">
+          <span>Location: Chobe National Park, Botswana</span>
+          <span class="mx-2">•</span>
+          <span>Experience exclusive elephant encounters in the heart of the wilderness.</span>
+        </div>
+      </div>
+      <img src="https://timbuktutravel.imgix.net/lodges/kodak_images/000/000/171/original/exterior-pool-restaurant-view-of-river-belmond-savute-elephant-lodge-chobe-botswana-timbuktu-travel.jpg?w=1420&h=946&auto=format&crop=fit&fit=min&dpr=1&q=50" 
+           alt="Belmond Savute Elephant Lodge" 
+           class="w-full h-96 object-cover rounded-lg mb-8">
+      <div class="prose max-w-none text-gray-700">
+        <p>Immerse yourself in unparalleled luxury amidst Botswana’s wild landscapes. The lodge offers spacious tents with private decks, en-suite bathrooms, and stunning views over the Savute Channel.</p>
+        
+        <h3 class="text-xl font-semibold mt-6 mb-3">Lodge Features</h3>
+        <ul class="list-disc pl-6 space-y-2">
+          <li>Private decks with wildlife views</li>
+          <li>Infinity pool overlooking the river</li>
+          <li>Guided safari drives and walking tours</li>
+          <li>Eco-friendly and sustainable lodge practices</li>
+          <li>On-site gourmet dining and bar</li>
+          <li>Complimentary Wi-Fi</li>
+        </ul>
+        
+        <h3 class="text-xl font-semibold mt-6 mb-3">Rates & Availability</h3>
+        <p>Starting from <strong>BWP 2,500 per night</strong> (includes meals and safari drives).</p>
+
+        <button onclick="showError(this)" class="buy-ticket-btn bg-black text-white px-6 py-3 rounded-lg hover:bg-gray-800 transition mt-6">
+          Book Now
+        </button>
+
+        <div class="error-msg hidden mt-4 p-3 bg-red-100 border border-red-400 text-red-700 rounded relative">
+          You must be logged in to confirm booking.
+          <button onclick="this.parentElement.classList.add('hidden')" class="close-error-btn absolute top-1 right-2 text-red-700 hover:text-red-900 font-bold text-lg">&times;</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  // Open modal
+  function openModal(id) {
+    const modal = document.getElementById(id);
+    modal.classList.remove('hidden');
+    modal.classList.add('flex');
+  }
+
+  // Close modal
+  function closeModal(id) {
+    const modal = document.getElementById(id);
+    modal.classList.add('hidden');
+    modal.classList.remove('flex');
+    // Also hide any error messages inside modal when closing
+    const errorMsg = modal.querySelector('.error-msg');
+    if (errorMsg) {
+      errorMsg.classList.add('hidden');
+    }
+  }
+
+  // Show error message inside modal
+  function showError(button) {
+    const modalContent = button.parentElement;
+    const errorMsg = modalContent.querySelector('.error-msg');
+    if (errorMsg) {
+      errorMsg.classList.remove('hidden');
+    }
+  }
+
+  // Close error message on clicking X button inside error box
+  document.addEventListener('click', (e) => {
+    if (e.target.classList.contains('close-error-btn')) {
+      e.target.parentElement.classList.add('hidden');
+    }
+  });
+</script>
  
     <!-- Hotel 2: Xigera Safari Lodge -->
     <div class="bg-white rounded-lg shadow-md overflow-hidden transform transition duration-300 hover:-translate-y-1 hover:shadow-lg">
@@ -127,7 +236,7 @@ style="background-image: url('https://images.unsplash.com/photo-1593642532973-d3
  
     <!-- Hotel 3: Qorokwe Camp -->
     <div class="bg-white rounded-lg shadow-md overflow-hidden transform transition duration-300 hover:-translate-y-1 hover:shadow-lg">
-        <img src="https://i.pinimg.com/736x/b7/ab/b4/b7abb44df8e2ed4aec92e44953fa290d.jpg"
+        <img src="https://www.africanreservations.com/sites/default/files/2024-04/camp_okavango.jpg"
              alt="Qorokwe Camp" class="w-full h-56 object-cover">
         <div class="p-6">
             <h3 class="text-xl font-semibold">Qorokwe Camp</h3>
@@ -144,7 +253,7 @@ style="background-image: url('https://images.unsplash.com/photo-1593642532973-d3
  
     <!-- Hotel 1: Belmond Savute Elephant Lodge -->
     <div class="bg-white rounded-lg shadow-md overflow-hidden transform transition duration-300 hover:-translate-y-1 hover:shadow-lg">
-        <img src="https://timbuktutravel.imgix.net/lodges/kodak_images/000/000/171/original/exterior-pool-restaurant-view-of-river-belmond-savute-elephant-lodge-chobe-botswana-timbuktu-travel.jpg?w=1420&h=946&auto=format&crop=fit&fit=min&dpr=1&q=50"
+        <img src="https://artofsafari.travel/wp-content/uploads/2016/12/Botswana_OkavangoDelta_andBeyondSandibe_Wildlife_GuestArea6.jpg"
              alt="Belmond Savute Elephant Lodge" class="w-full h-56 object-cover">
         <div class="p-6">
             <h3 class="text-xl font-semibold">Belmond Savute Elephant Lodge</h3>
@@ -159,7 +268,7 @@ style="background-image: url('https://images.unsplash.com/photo-1593642532973-d3
  
     <!-- Hotel 2: Xigera Safari Lodge -->
     <div class="bg-white rounded-lg shadow-md overflow-hidden transform transition duration-300 hover:-translate-y-1 hover:shadow-lg">
-        <img src="https://i.pinimg.com/736x/9b/cc/10/9bcc10e5b667c4091b65cfeabef7401e.jpg"
+        <img src="https://www.travelandleisure.com/thmb/uBICWRGs4_PKVR1Jtx83oH4BKFs=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/jao-camp-SAFARIBOTSWANA0621-3163090965304a6babce46489b50e7f4.jpg"
              alt="Xigera Safari Lodge" class="w-full h-56 object-cover">
         <div class="p-6">
             <h3 class="text-xl font-semibold">Xigera Safari Lodge</h3>
@@ -174,7 +283,7 @@ style="background-image: url('https://images.unsplash.com/photo-1593642532973-d3
  
     <!-- Hotel 3: Qorokwe Camp -->
     <div class="bg-white rounded-lg shadow-md overflow-hidden transform transition duration-300 hover:-translate-y-1 hover:shadow-lg">
-        <img src="https://i.pinimg.com/736x/b7/ab/b4/b7abb44df8e2ed4aec92e44953fa290d.jpg"
+        <img src="https://cdn.adventure-life.com/66/71/9/3y4xeda8/1300x820.webp"
              alt="Qorokwe Camp" class="w-full h-56 object-cover">
         <div class="p-6">
             <h3 class="text-xl font-semibold">Mokete Camp</h3>
@@ -191,60 +300,6 @@ style="background-image: url('https://images.unsplash.com/photo-1593642532973-d3
 </div>
 </section>
  
-<!-- Booking Form -->
-<!-- Booking Form -->
-<section id="booking-form" class="bg-gray-200 py-16">
-    <div class="max-w-xl mx-auto bg-white p-8 rounded-lg shadow-lg">
-      <h2 class="text-2xl font-bold text-center mb-6">Book Your Stay</h2>
-      <form id="stayBookingForm" class="space-y-4">
-        <input type="text" placeholder="Full Name" class="w-full px-4 py-2 border border-gray-300 rounded-md" required>
-        <input type="email" placeholder="Email" class="w-full px-4 py-2 border border-gray-300 rounded-md" required>
-        <input type="tel" placeholder="Phone Number" class="w-full px-4 py-2 border border-gray-300 rounded-md" required>
-        <input type="date" class="w-full px-4 py-2 border border-gray-300 rounded-md" required>
-        <input type="number" placeholder="Number of Guests" class="w-full px-4 py-2 border border-gray-300 rounded-md" required>
- 
-        <select id="hotel-select" class="w-full px-4 py-2 border border-gray-300 rounded-md" required>
-          <option value="" disabled selected>Select a Hotel</option>
-          <option value="Belmond Savute Elephant Lodge - Chobe National Park">
-            Belmond Savute Elephant Lodge – Chobe National Park
-          </option>
-          <option value="Sanctuary Chief’s Camp - Moremi Game Reserve">
-            Sanctuary Chief’s Camp – Moremi Game Reserve
-          </option>
-          <option value="Xigera Safari Lodge - Moremi Game Reserve">
-            Xigera Safari Lodge – Moremi Game Reserve
-          </option>
-          <option value="Mokete Camp - Mababe Depression">
-            Mokete Camp – Mababe Depression
-          </option>
-          <option value="Qorokwe Camp - Okavango Delta">
-            Qorokwe Camp – Okavango Delta
-          </option>
-        </select>
- 
-        <select id="room-name" class="w-full px-4 py-2 border border-gray-300 rounded-md" required>
-          <option value="" disabled selected>Select a Room Type</option>
-          <option value="Single Room">Single Room</option>
-          <option value="Double Room">Double Room</option>
-          <option value="Triple Room">Triple Room</option>
-          <option value="Suite">Suite</option>
-          <option value="Presidential Suite">Presidential Suite</option>
-          <option value="Family Room">Family Room</option>
-          <option value="Pet-Friendly Room">Pet-Friendly Room</option>
-          <option value="Smoking Room">Smoking Room</option>
-        </select>
- 
-        <div class="flex gap-4">
-          <button type="submit" class="w-full bg-black text-white py-3 rounded-full font-semibold hover:bg-white hover:text-black border border-black transition duration-300">
-            Book Now
-          </button>
-          <button type="button" onclick="cancelBooking()" class="w-full bg-gray-500 text-white py-3 rounded-full font-semibold hover:bg-white hover:text-gray-700 border border-gray-500 transition duration-300">
-            Cancel
-          </button>
-        </div>
-      </form>
-    </div>
-  </section>
  
   <!-- Modal Popup -->
   <div id="popupModal" class="hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
@@ -289,91 +344,71 @@ style="background-image: url('https://images.unsplash.com/photo-1593642532973-d3
 </section>
  
 <footer class="bg-black text-gray-300 py-10 px-6 mt-auto">
-  <div class="container mx-auto grid grid-cols-1 md:grid-cols-4 gap-8 items-start">
+        <div class="container mx-auto grid grid-cols-1 md:grid-cols-4 gap-8 items-start">
+      
+          <!-- Logo -->
+          <div class="flex flex-col items-start space-y-4">
+            <img src="../Logo1.png" alt="Noema Tourism Logo" class="h-14 w-auto">
+            <p class="text-sm text-gray-400">Your gateway to unforgettable travel experiences.</p>
+          </div>
+      
+         <!-- Support -->
+          <div>
+            <h4 class="text-white font-semibold mb-2 relative pb-1 after:content-[''] after:block after:w-16 after:h-[2px] after:bg-white after:mt-1">Resources</h4>
+            <ul class="space-y-1 text-sm">
+              <li><a href="../Resources/Resources.html" class="hover:text-white transition">Currency Guide</a></li>
+              <li><a href="../Resources/Resources.html" class="hover:text-white transition">Transportation Guide</a></li>
+              <li><a href="../Resources/Resources.html" class="hover:text-white transition">Safari & Wildlife Guide</a></li>
+              <li><a href="../Resources/Resources.html" class="hover:text-white transition">Travel Documents & Visa Guide</a></li>
+            </ul>
+          </div>
+      
+          <!-- Explore -->
+          <div>
+            <h4 class="text-white font-semibold mb-2 relative pb-1 after:content-[''] after:block after:w-16 after:h-[2px] after:bg-white after:mt-1">Explore</h4>
+            <ul class="space-y-1 text-sm">
+              <li><a href="../Marketplace/Marketplace.html" class="hover:text-white transition">Marketplace</a></li>
+              <li><a href="../Current-Affairs/news.html" class="hover:text-white transition">News</a></li>
+              <li><a href="../Book/Book.html" class="hover:text-white transition">Booking</a></li>
+              <li><a href="../About-Us/About.html" class="hover:text-white transition">About-Us</a></li>
+              <li><a href="../Events/Events.html" class="hover:text-white transition">Events</a></li>
+            </ul>
+          </div>
+      
+      
+          <!-- Contact & Social -->
+          <div>
+            <h4 class="text-white font-semibold mb-2 relative pb-1 after:content-[''] after:block after:w-16 after:h-[2px] after:bg-white after:mt-1">Contact</h4>
+            <address class="not-italic text-sm text-gray-400 mb-4 leading-relaxed">
+              <p><strong class="text-white">Noema Tourism Services</strong></p>
+              <p>EastLondon Block 9, Plot 20994</p>
+              <p><a href="mailto:marketing@noemaservices.co.bw" class="hover:text-white transition">marketing@noemaservices.co.bw</a></p>
+              <p><a href="tel:+2739133922" class="hover:text-white transition">Tel: +27 391 33922</a> | 
+                 <a href="tel:+273947978" class="hover:text-white transition">Fax: +27 394 7978</a></p>
+            </address>
+            <div class="flex space-x-4 mt-2">
+  <a href="https://www.facebook.com/YourPageName" target="_blank" class="text-gray-400 hover:text-white transition transform hover:scale-125">
+    <i class="fab fa-facebook-f"></i>
+  </a>
+  <a href="https://twitter.com/YourHandle" target="_blank" class="text-gray-400 hover:text-white transition transform hover:scale-125">
+    <i class="fab fa-twitter"></i>
+  </a>
+  <a href="https://www.instagram.com/YourUsername" target="_blank" class="text-gray-400 hover:text-white transition transform hover:scale-125">
+    <i class="fab fa-instagram"></i>
+  </a>
+  <a href="https://www.tiktok.com/@YourUsername" target="_blank" class="text-gray-400 hover:text-white transition transform hover:scale-125">
+    <i class="fab fa-tiktok"></i>
+  </a>
+</div>
 
-    <!-- Logo -->
-    <div class="flex flex-col items-start space-y-4">
-      <img src="../Logo1.png" alt="Noema Tourism Logo" class="h-14 w-auto">
-      <p class="text-sm text-gray-400">Your gateway to unforgettable travel experiences.</p>
-    </div>
-
-    <!-- Support -->
-    <div>
-      <h4 class="text-white font-semibold mb-2 relative pb-1 after:content-[''] after:block after:w-16 after:h-[2px] after:bg-white after:mt-1">Support</h4>
-      <ul class="space-y-1 text-sm">
-        <li><a href="#" class="hover:text-white transition">About Us</a></li>
-        <li><a href="#" class="hover:text-white transition">Our Services</a></li>
-        <li><a href="#" class="hover:text-white transition">Privacy Policy</a></li>
-        <li><a href="#" class="hover:text-white transition">Terms & Conditions</a></li>
-      </ul>
-    </div>
-
-    <!-- Explore -->
-    <div>
-      <h4 class="text-white font-semibold mb-2 relative pb-1 after:content-[''] after:block after:w-16 after:h-[2px] after:bg-white after:mt-1">Explore</h4>
-      <ul class="space-y-1 text-sm">
-        <li><a href="#" class="hover:text-white transition">Collaboration</a></li>
-        <li><a href="#" class="hover:text-white transition">Connect</a></li>
-        <li><a href="#" class="hover:text-white transition">Refunds</a></li>
-        <li><a href="#" class="hover:text-white transition">Accommodation Feedback</a></li>
-        <li><a href="#" class="hover:text-white transition">Payment Options</a></li>
-      </ul>
-    </div>
-
-    <!-- Contact & Social -->
-    <div>
-      <h4 class="text-white font-semibold mb-2 relative pb-1 after:content-[''] after:block after:w-16 after:h-[2px] after:bg-white after:mt-1">Contact</h4>
-      <address class="not-italic text-sm text-gray-400 mb-4 leading-relaxed">
-        <p><strong class="text-white">Noema Tourism Services</strong></p>
-        <p>EastLondon Block 9, Plot 20994</p>
-        <p><a href="mailto:marketing@noemaservices.co.bw" class="hover:text-white transition">marketing@noemaservices.co.bw</a></p>
-        <p><a href="tel:+2739133922" class="hover:text-white transition">Tel: +27 391 33922</a> | 
-           <a href="tel:+273947978" class="hover:text-white transition">Fax: +27 394 7978</a></p>
-      </address>
-      <div class="flex space-x-4 mt-2">
-        <a href="#" class="text-gray-400 hover:text-white transition transform hover:scale-125"><i class="fab fa-facebook-f"></i></a>
-        <a href="#" class="text-gray-400 hover:text-white transition transform hover:scale-125"><i class="fab fa-twitter"></i></a>
-        <a href="#" class="text-gray-400 hover:text-white transition transform hover:scale-125"><i class="fab fa-instagram"></i></a>
-        <a href="#" class="text-gray-400 hover:text-white transition transform hover:scale-125"><i class="fab fa-tiktok"></i></a>
-      </div>
-    </div>
-
-  </div>
-
-  <div class="mt-8 text-center text-xs text-gray-500 border-t border-gray-700 pt-4">
-    &copy; 2025 <span class="text-white font-semibold">Noema Tourism Services Inc.</span> All rights reserved.
-  </div>
-</footer>  
-
-<script>
-    // search.js
-document.addEventListener("DOMContentLoaded", () => {
-  const hotelSelect = document.getElementById("hotel-select");
-  const roomSelect = document.getElementById("room-name");
- 
-  const hotelRooms = {
-    "Sunset Resort": ["Standard Room", "Deluxe Room", "Presidential Suite"],
-    "Ocean Paradise": ["Ocean View Room", "Beachfront Bungalow", "Luxury Suite"],
-    "Mountain Escape": ["Cabin Room", "Mountain View Suite", "Family Chalet"]
-  };
- 
-  hotelSelect.addEventListener("change", function () {
-    const selectedHotel = this.value;
-    const rooms = hotelRooms[selectedHotel] || [];
- 
-    // Clear previous options
-    roomSelect.innerHTML = '<option value="" disabled selected>Select a Room Type</option>';
- 
-    rooms.forEach(room => {
-      const option = document.createElement("option");
-      option.value = room;
-      option.textContent = room;
-      roomSelect.appendChild(option);
-    });
-  });
-});
-</script>
- 
+          </div>
+      
+        </div>
+     
+        <div class="mt-8 text-center text-xs text-gray-500 border-t border-gray-700 pt-4">
+          &copy; 2025 <span class="text-white font-semibold">Noema Tourism Services Inc.</span> All rights reserved.
+        </div>
+      </footer>  
+      <script src="../Current-Affairs/ArticleModal.js"></script>
 </body>
 </html>
- 
