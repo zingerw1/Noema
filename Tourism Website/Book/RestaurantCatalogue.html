@@ -74,147 +74,607 @@
     <!-- Restaurant Listings -->
     <section id="restaurants" class="py-16">
       <div class="text-center mb-12">
-        <h2 class="text-3xl font-bold">Our Restaurants</h2>
+        <h2 class="text-3xl font-bold">Need a place to eat?</h2>
         <p class="text-gray-600 mt-4 max-w-2xl mx-auto">
           Explore a variety of cuisines and dining experiences.
         </p>
       </div>
 
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 px-6">
-        <!-- Restaurant 1: Mahogany's Restaurant -->
-        <div
-          class="bg-white rounded-lg shadow-md overflow-hidden transform transition duration-300 hover:-translate-y-1 hover:shadow-lg"
-        >
-          <img
-            src="https://images.myguide-cdn.com/botswana/companies/mahoganys-restaurant/large/mahoganys-restaurant-475009.jpg"
-            alt="Mahogany's Restaurant"
-            class="w-full h-56 object-cover"
-          />
-          <div class="p-6">
-            <h3 class="text-xl font-semibold">Mahogany's Restaurant</h3>
-            <p class="text-gray-600 text-sm mt-2">
-              Enjoy fine dining with a variety of local and international dishes.
-            </p>
-            <button
-              onclick="document.getElementById('restaurant-name').value='Mahogany\'s Restaurant'; document.getElementById('booking-form').scrollIntoView({behavior:'smooth'})"
-              class="mt-4 bg-black text-white px-4 py-2 rounded hover:bg-white hover:text-black border border-black transition duration-300 mx-auto block"
-            >
-              Book Now
-            </button>
-          </div>
-        </div>
+       <!-- Restaurant Card 1: Sanitas Tea Garden -->
+<div class="bg-white/90 backdrop-blur-lg rounded-2xl shadow-xl overflow-hidden transition hover:shadow-2xl hover:-translate-y-1 duration-300 border border-gray-200">
+  <img src="https://d1bb1mccaihlpl.cloudfront.net/variants/7rlinit8hhsu740k2tbmalesu82n/9013f13587dd8661ba8afec2e753cfb4d81ef785d0a2ed63f5292f1f4cb21fb6"
+       alt="Sanitas Tea Garden"
+       class="w-full h-56 object-cover transition-transform duration-300 hover:scale-105">
+  
+  <div class="p-6 space-y-4">
+    <div>
+      <h3 class="text-2xl font-bold text-gray-800">Sanitas Tea Garden</h3>
+      <p class="text-gray-600 text-sm mt-1">Charming café offering artisanal teas and light meals with a serene garden setting.</p>
+    </div>
 
-        <!-- Restaurant 2: The Blue Elephant -->
-        <div
-          class="bg-white rounded-lg shadow-md overflow-hidden transform transition duration-300 hover:-translate-y-1 hover:shadow-lg"
-        >
-          <img
-            src="https://images.unsplash.com/photo-1555992336-03a23c4a7a3a?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80"
-            alt="The Blue Elephant"
-            class="w-full h-56 object-cover"
-          />
-          <div class="p-6">
-            <h3 class="text-xl font-semibold">The Blue Elephant</h3>
-            <p class="text-gray-600 text-sm mt-2">
-              Experience exquisite Asian cuisine in a stylish setting.
-            </p>
-            <button
-              onclick="document.getElementById('restaurant-name').value='The Blue Elephant'; document.getElementById('booking-form').scrollIntoView({behavior:'smooth'})"
-              class="mt-4 bg-black text-white px-4 py-2 rounded hover:bg-white hover:text-black border border-black transition duration-300 mx-auto block"
-            >
-              Book Now
-            </button>
-          </div>
-        </div>
+    <div class="grid grid-cols-2 gap-4 text-sm text-gray-700">
+      <div class="flex items-center gap-2">
+        <i class="fas fa-map-marker-alt text-yellow-500"></i>
+        <span>Maun</span>
+      </div>
+      <div class="flex items-center gap-2">
+        <i class="fas fa-tag text-yellow-500"></i>
+        <span>From BWP 50 per dish</span>
+      </div>
+      <div class="flex items-center gap-2">
+        <i class="fas fa-coffee text-yellow-500"></i>
+        <span>Tea, Pastries, Light Meals</span>
+      </div>
+      <div class="flex items-center gap-2">
+        <i class="fas fa-clock text-yellow-500"></i>
+        <span>Open: 8AM - 6PM</span>
+      </div>
+      <div class="flex items-center gap-2 col-span-2">
+        <i class="fas fa-leaf text-yellow-500"></i>
+        <span>Garden Seating, Free Wi-Fi</span>
+      </div>
+    </div>
 
-        <!-- Restaurant 3: The Savanna Grill -->
-        <div
-          class="bg-white rounded-lg shadow-md overflow-hidden transform transition duration-300 hover:-translate-y-1 hover:shadow-lg"
-        >
-          <img
-            src="https://images.unsplash.com/photo-1541544181930-1b1a1a1a1a1a?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80"
-            alt="The Savanna Grill"
-            class="w-full h-56 object-cover"
-          />
-          <div class="p-6">
-            <h3 class="text-xl font-semibold">The Savanna Grill</h3>
-            <p class="text-gray-600 text-sm mt-2">
-              Savor grilled specialties and local flavors in a cozy atmosphere.
-            </p>
-            <button
-              onclick="document.getElementById('restaurant-name').value='The Savanna Grill'; document.getElementById('booking-form').scrollIntoView({behavior:'smooth'})"
-              class="mt-4 bg-black text-white px-4 py-2 rounded hover:bg-white hover:text-black border border-black transition duration-300 mx-auto block"
-            >
-              Book Now
-            </button>
-          </div>
+    <!-- Modal Trigger Button -->
+    <button
+      onclick="document.getElementById('sanitasModal').classList.remove('hidden')"
+      class="w-full bg-black hover:bg-white text-white hover:text-black font-semibold py-2 px-6 rounded-full border border-black transition duration-300">
+      Book Now
+    </button>
+  </div>
+</div>
+
+<!-- Restaurant Booking Modal: Sanitas Tea Garden -->
+<div id="sanitasModal" class="modal-overlay fixed inset-0 bg-black bg-opacity-50 hidden flex items-center justify-center z-50 p-4">
+  <div class="bg-white rounded-xl max-w-4xl w-full max-h-[90vh] overflow-y-auto relative">
+    <!-- Close button -->
+    <button onclick="closeModal('sanitasModal')" class="absolute top-4 right-4 text-gray-500 hover:text-gray-700 transition">
+      <i class="fas fa-times text-xl"></i>
+    </button>
+    <!-- Modal content -->
+    <div class="p-8">
+      <div class="mb-6">
+        <span class="text-yellow-500 font-medium text-sm uppercase tracking-wider">Charming Café</span>
+        <h2 class="text-3xl font-bold mt-2 mb-4">Sanitas Tea Garden</h2>
+        <div class="flex items-center text-sm text-gray-500 mb-6">
+          <span>Location: Maun, Botswana</span>
+          <span class="mx-2">•</span>
+          <span>Relax with fresh teas and light meals in a tranquil garden setting.</span>
         </div>
       </div>
-    </section>
+      <img src="https://d1bb1mccaihlpl.cloudfront.net/variants/7rlinit8hhsu740k2tbmalesu82n/9013f13587dd8661ba8afec2e753cfb4d81ef785d0a2ed63f5292f1f4cb21fb6" 
+           alt="Sanitas Tea Garden" 
+           class="w-full h-96 object-cover rounded-lg mb-8">
+      <div class="prose max-w-none text-gray-700">
+        <p>Sanitas Tea Garden offers a peaceful escape with a selection of artisanal teas, fresh pastries, and healthy light meals made with local ingredients.</p>
+        
+        <h3 class="text-xl font-semibold mt-6 mb-3">Highlights</h3>
+        <ul class="list-disc pl-6 space-y-2">
+          <li>Organic teas and herbal infusions</li>
+          <li>Beautiful garden seating</li>
+          <li>Freshly baked pastries daily</li>
+          <li>Vegan and gluten-free options available</li>
+          <li>Free Wi-Fi and relaxing atmosphere</li>
+        </ul>
+        
+        <h3 class="text-xl font-semibold mt-6 mb-3">Pricing & Hours</h3>
+        <p>Average dish price: <strong>BWP 50 - 120</strong></p>
+        <p>Open daily from 8AM to 6PM.</p>
 
-    <!-- Booking Form -->
-    <section id="booking-form" class="bg-gray-200 py-16">
-      <div class="max-w-xl mx-auto bg-white p-8 rounded-lg shadow-lg">
-        <h2 class="text-2xl font-bold text-center mb-6">Book Your Table</h2>
-        <form id="restaurantBookingForm" class="space-y-4">
-          <input
-            type="text"
-            placeholder="Full Name"
-            class="w-full px-4 py-2 border border-gray-300 rounded-md"
-            required
-          />
-          <input
-            type="email"
-            placeholder="Email"
-            class="w-full px-4 py-2 border border-gray-300 rounded-md"
-            required
-          />
-          <input
-            type="tel"
-            placeholder="Phone Number"
-            class="w-full px-4 py-2 border border-gray-300 rounded-md"
-            required
-          />
-          <input
-            type="date"
-            class="w-full px-4 py-2 border border-gray-300 rounded-md"
-            required
-          />
-          <input
-            type="number"
-            placeholder="Number of Guests"
-            class="w-full px-4 py-2 border border-gray-300 rounded-md"
-            required
-          />
+        <button onclick="showError(this)" class="buy-ticket-btn bg-black text-white px-6 py-3 rounded-lg hover:bg-gray-800 transition mt-6">
+          Book Now
+        </button>
 
-          <select
-            id="restaurant-name"
-            class="w-full px-4 py-2 border border-gray-300 rounded-md"
-            required
-          >
-            <option value="" disabled selected>Select a Restaurant</option>
-            <option value="Mahogany's Restaurant">Mahogany's Restaurant</option>
-            <option value="The Blue Elephant">The Blue Elephant</option>
-            <option value="The Savanna Grill">The Savanna Grill</option>
-          </select>
-
-          <div class="flex gap-4">
-            <button
-              type="submit"
-              class="w-full bg-black text-white py-3 rounded-full font-semibold hover:bg-white hover:text-black border border-black transition duration-300"
-            >
-              Book Now
-            </button>
-            <button
-              type="button"
-              onclick="cancelBooking()"
-              class="w-full bg-gray-500 text-white py-3 rounded-full font-semibold hover:bg-white hover:text-gray-700 border border-gray-500 transition duration-300"
-            >
-              Cancel
-            </button>
-          </div>
-        </form>
+        <div class="error-msg hidden mt-4 p-3 bg-red-100 border border-red-400 text-red-700 rounded relative">
+          You must be logged in to confirm booking.
+          <button onclick="this.parentElement.classList.add('hidden')" class="close-error-btn absolute top-1 right-2 text-red-700 hover:text-red-900 font-bold text-lg">&times;</button>
+        </div>
       </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  // Open modal
+  function openModal(id) {
+    const modal = document.getElementById(id);
+    modal.classList.remove('hidden');
+    modal.classList.add('flex');
+  }
+
+  // Close modal
+  function closeModal(id) {
+    const modal = document.getElementById(id);
+    modal.classList.add('hidden');
+    modal.classList.remove('flex');
+    // Also hide any error messages inside modal when closing
+    const errorMsg = modal.querySelector('.error-msg');
+    if (errorMsg) {
+      errorMsg.classList.add('hidden');
+    }
+  }
+
+  // Show error message inside modal
+  function showError(button) {
+    const modalContent = button.parentElement;
+    const errorMsg = modalContent.querySelector('.error-msg');
+    if (errorMsg) {
+      errorMsg.classList.remove('hidden');
+    }
+  }
+
+  // Close error message on clicking X button inside error box
+  document.addEventListener('click', (e) => {
+    if (e.target.classList.contains('close-error-btn')) {
+      e.target.parentElement.classList.add('hidden');
+    }
+  });
+</script>
+
+
+<!-- Restaurant Card 2: Bull & Bush Pub -->
+<div class="bg-white/90 backdrop-blur-lg rounded-2xl shadow-xl overflow-hidden transition hover:shadow-2xl hover:-translate-y-1 duration-300 border border-gray-200 ">
+  <img src="https://winecountry-media.s3.amazonaws.com/wp-content/uploads/sites/4/2024/07/11110433/shutterstock_1678594945-1880x880-1.jpg"
+       alt="Bull & Bush Pub"
+       class="w-full h-56 object-cover transition-transform duration-300 hover:scale-105">
+  
+  <div class="p-6 space-y-4">
+    <div>
+      <h3 class="text-2xl font-bold text-gray-800">Bull & Bush Pub</h3>
+      <p class="text-gray-600 text-sm mt-1">Casual pub in Gaborone offering local beers, hearty pub grub, and live music nights.</p>
+    </div>
+
+    <div class="grid grid-cols-2 gap-4 text-sm text-gray-700">
+      <div class="flex items-center gap-2">
+        <i class="fas fa-map-marker-alt text-yellow-500"></i>
+        <span>Gaborone</span>
+      </div>
+      <div class="flex items-center gap-2">
+        <i class="fas fa-tag text-yellow-500"></i>
+        <span>From BWP 60 per dish</span>
+      </div>
+      <div class="flex items-center gap-2">
+        <i class="fas fa-beer text-yellow-500"></i>
+        <span>Local & Craft Beers</span>
+      </div>
+      <div class="flex items-center gap-2">
+        <i class="fas fa-clock text-yellow-500"></i>
+        <span>Open: 11AM - 11PM</span>
+      </div>
+      <div class="flex items-center gap-2 col-span-2">
+        <i class="fas fa-music text-yellow-500"></i>
+        <span>Live Music, Pool Table, Outdoor Seating</span>
+      </div>
+    </div>
+
+    <!-- Modal Trigger Button -->
+    <button
+      onclick="document.getElementById('bullBushModal').classList.remove('hidden')"
+      class="w-full bg-black hover:bg-white text-white hover:text-black font-semibold py-2 px-6 rounded-full border border-black transition duration-300">
+      Book Now
+    </button>
+  </div>
+</div>
+
+<!-- Restaurant Booking Modal: Bull & Bush Pub -->
+<div id="bullBushModal" class="modal-overlay fixed inset-0 bg-black bg-opacity-50 hidden flex items-center justify-center z-50 p-4">
+  <div class="bg-white rounded-xl max-w-4xl w-full max-h-[90vh] overflow-y-auto relative">
+    <!-- Close button -->
+    <button onclick="closeModal('bullBushModal')" class="absolute top-4 right-4 text-gray-500 hover:text-gray-700 transition">
+      <i class="fas fa-times text-xl"></i>
+    </button>
+    <!-- Modal content -->
+    <div class="p-8">
+      <div class="mb-6">
+        <span class="text-yellow-500 font-medium text-sm uppercase tracking-wider">Casual Pub</span>
+        <h2 class="text-3xl font-bold mt-2 mb-4">Bull & Bush Pub</h2>
+        <div class="flex items-center text-sm text-gray-500 mb-6">
+          <span>Location: Gaborone, Botswana</span>
+          <span class="mx-2">•</span>
+          <span>Enjoy local brews, hearty meals, and live entertainment.</span>
+        </div>
+      </div>
+      <img src="https://winecountry-media.s3.amazonaws.com/wp-content/uploads/sites/4/2024/07/11110433/shutterstock_1678594945-1880x880-1.jpg" 
+           alt="Bull & Bush Pub" 
+           class="w-full h-96 object-cover rounded-lg mb-8">
+      <div class="prose max-w-none text-gray-700">
+        <p>The Bull & Bush Pub is a favorite spot for locals and tourists alike, known for its wide selection of local and craft beers, tasty pub grub, and regular live music nights.</p>
+        
+        <h3 class="text-xl font-semibold mt-6 mb-3">Highlights</h3>
+        <ul class="list-disc pl-6 space-y-2">
+          <li>Wide selection of local & imported beers</li>
+          <li>Hearty burgers, steaks, and snacks</li>
+          <li>Live music events and DJ nights</li>
+          <li>Pool table and outdoor seating area</li>
+          <li>Friendly and lively atmosphere</li>
+        </ul>
+        
+        <h3 class="text-xl font-semibold mt-6 mb-3">Pricing & Hours</h3>
+        <p>Average price: <strong>BWP 60 - 150 per dish</strong></p>
+        <p>Open daily from 11AM to 11PM.</p>
+
+        <button onclick="showError(this)" class="buy-ticket-btn bg-black text-white px-6 py-3 rounded-lg hover:bg-gray-800 transition mt-6">
+          Book Now
+        </button>
+
+        <div class="error-msg hidden mt-4 p-3 bg-red-100 border border-red-400 text-red-700 rounded relative">
+          You must be logged in to confirm booking.
+          <button onclick="this.parentElement.classList.add('hidden')" class="close-error-btn absolute top-1 right-2 text-red-700 hover:text-red-900 font-bold text-lg">&times;</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+    <!-- Restaurant Card 3: Moremi Dining Room -->
+<div class="bg-white/90 backdrop-blur-lg rounded-2xl shadow-xl overflow-hidden transition hover:shadow-2xl hover:-translate-y-1 duration-300 border border-gray-200 ">
+  <img src="https://fairgroundholdingsbw.com/wp-content/uploads/2018/03/Fairground-Holdings-1-1.jpg"
+       alt="Moremi Dining Room"
+       class="w-full h-56 object-cover transition-transform duration-300 hover:scale-105">
+  
+  <div class="p-6 space-y-4">
+    <div>
+      <h3 class="text-2xl font-bold text-gray-800">Moremi Dining Room</h3>
+      <p class="text-gray-600 text-sm mt-1">Elegant dining in the Okavango Delta featuring local cuisine with breathtaking views.</p>
+    </div>
+
+    <div class="grid grid-cols-2 gap-4 text-sm text-gray-700">
+      <div class="flex items-center gap-2">
+        <i class="fas fa-map-marker-alt text-yellow-500"></i>
+        <span>Okavango Delta</span>
+      </div>
+      <div class="flex items-center gap-2">
+        <i class="fas fa-tag text-yellow-500"></i>
+        <span>From BWP 150 per meal</span>
+      </div>
+      <div class="flex items-center gap-2">
+        <i class="fas fa-utensils text-yellow-500"></i>
+        <span>Local & International Cuisine</span>
+      </div>
+      <div class="flex items-center gap-2">
+        <i class="fas fa-clock text-yellow-500"></i>
+        <span>Open: 12PM - 10PM</span>
+      </div>
+      <div class="flex items-center gap-2 col-span-2">
+        <i class="fas fa-glass-cheers text-yellow-500"></i>
+        <span>Wine, Scenic Views, Private Dining</span>
+      </div>
+    </div>
+
+    <!-- Modal Trigger Button -->
+    <button
+      onclick="document.getElementById('moremiModal').classList.remove('hidden')"
+      class="w-full bg-black hover:bg-white text-white hover:text-black font-semibold py-2 px-6 rounded-full border border-black transition duration-300">
+      Book Now
+    </button>
+  </div>
+</div>
+
+<!-- Restaurant Booking Modal: Moremi Dining Room -->
+<div id="moremiModal" class="modal-overlay fixed inset-0 bg-black bg-opacity-50 hidden flex items-center justify-center z-50 p-4">
+  <div class="bg-white rounded-xl max-w-4xl w-full max-h-[90vh] overflow-y-auto relative">
+    <!-- Close button -->
+    <button onclick="closeModal('moremiModal')" class="absolute top-4 right-4 text-gray-500 hover:text-gray-700 transition">
+      <i class="fas fa-times text-xl"></i>
+    </button>
+    <!-- Modal content -->
+    <div class="p-8">
+      <div class="mb-6">
+        <span class="text-yellow-500 font-medium text-sm uppercase tracking-wider">Elegant Dining</span>
+        <h2 class="text-3xl font-bold mt-2 mb-4">Moremi Dining Room</h2>
+        <div class="flex items-center text-sm text-gray-500 mb-6">
+          <span>Location: Okavango Delta, Botswana</span>
+          <span class="mx-2">•</span>
+          <span>Experience exquisite local cuisine in a stunning natural setting.</span>
+        </div>
+      </div>
+      <img src="https://fairgroundholdingsbw.com/wp-content/uploads/2018/03/Fairground-Holdings-1-1.jpg" 
+           alt="Moremi Dining Room" 
+           class="w-full h-96 object-cover rounded-lg mb-8">
+      <div class="prose max-w-none text-gray-700">
+        <p>Moremi Dining Room serves a refined menu blending local ingredients with international flavors, all while you enjoy panoramic views of the Okavango Delta.</p>
+        
+        <h3 class="text-xl font-semibold mt-6 mb-3">Highlights</h3>
+        <ul class="list-disc pl-6 space-y-2">
+          <li>Freshly sourced local ingredients</li>
+          <li>Elegant indoor and outdoor seating</li>
+          <li>Extensive wine selection</li>
+          <li>Private dining available</li>
+          <li>Scenic views of the delta wildlife</li>
+        </ul>
+        
+        <h3 class="text-xl font-semibold mt-6 mb-3">Pricing & Hours</h3>
+        <p>Meals start at <strong>BWP 150</strong>. Open from 12PM to 10PM.</p>
+
+        <button onclick="showError(this)" class="buy-ticket-btn bg-black text-white px-6 py-3 rounded-lg hover:bg-gray-800 transition mt-6">
+          Book Now
+        </button>
+
+        <div class="error-msg hidden mt-4 p-3 bg-red-100 border border-red-400 text-red-700 rounded relative">
+          You must be logged in to confirm booking.
+          <button onclick="this.parentElement.classList.add('hidden')" class="close-error-btn absolute top-1 right-2 text-red-700 hover:text-red-900 font-bold text-lg">&times;</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Restaurant Card 3: The Savanna Grill -->
+<div class="bg-white/90 backdrop-blur-lg rounded-2xl shadow-xl overflow-hidden transition hover:shadow-2xl hover:-translate-y-1 duration-300 border border-gray-200 mt-10">
+  <img src="https://images.myguide-cdn.com/auckland/companies/botswana-butchery/large/botswana-butchery-1357339.jpg"
+       alt="The Savanna Grill"
+       class="w-full h-56 object-cover transition-transform duration-300 hover:scale-105">
+  
+  <div class="p-6 space-y-4">
+    <div>
+      <h3 class="text-2xl font-bold text-gray-800">The Savanna Grill</h3>
+      <p class="text-gray-600 text-sm mt-1">Authentic African barbecue with flame-grilled meats and vibrant flavors.</p>
+    </div>
+
+    <div class="grid grid-cols-2 gap-4 text-sm text-gray-700">
+      <div class="flex items-center gap-2">
+        <i class="fas fa-map-marker-alt text-yellow-500"></i>
+        <span>Gaborone</span>
+      </div>
+      <div class="flex items-center gap-2">
+        <i class="fas fa-tag text-yellow-500"></i>
+        <span>From BWP 70 per dish</span>
+      </div>
+      <div class="flex items-center gap-2">
+        <i class="fas fa-drumstick-bite text-yellow-500"></i>
+        <span>Grilled Meats, Sides</span>
+      </div>
+      <div class="flex items-center gap-2">
+        <i class="fas fa-clock text-yellow-500"></i>
+        <span>Open: 12PM - 10PM</span>
+      </div>
+      <div class="flex items-center gap-2 col-span-2">
+        <i class="fas fa-music text-yellow-500"></i>
+        <span>Live DJ, Outdoor Seating</span>
+      </div>
+    </div>
+
+    <button
+      onclick="document.getElementById('savannaModal').classList.remove('hidden')"
+      class="w-full bg-black hover:bg-white text-white hover:text-black font-semibold py-2 px-6 rounded-full border border-black transition duration-300">
+      Book Now
+    </button>
+  </div>
+</div>
+
+<!-- Modal for The Savanna Grill -->
+<div id="savannaModal" class="modal-overlay fixed inset-0 bg-black bg-opacity-50 hidden flex items-center justify-center z-50 p-4">
+  <div class="bg-white rounded-xl max-w-4xl w-full max-h-[90vh] overflow-y-auto relative">
+    <button onclick="closeModal('savannaModal')" class="absolute top-4 right-4 text-gray-500 hover:text-gray-700 transition">
+      <i class="fas fa-times text-xl"></i>
+    </button>
+    <div class="p-8">
+      <div class="mb-6">
+        <span class="text-yellow-500 font-medium text-sm uppercase tracking-wider">African Grill</span>
+        <h2 class="text-3xl font-bold mt-2 mb-4">The Savanna Grill</h2>
+        <div class="flex items-center text-sm text-gray-500 mb-6">
+          <span>Location: Gaborone, Botswana</span>
+          <span class="mx-2">•</span>
+          <span>Flame-grilled meats with authentic African spices.</span>
+        </div>
+      </div>
+      <img src="https://images.myguide-cdn.com/auckland/companies/botswana-butchery/large/botswana-butchery-1357339.jpg"
+           alt="The Savanna Grill" 
+           class="w-full h-96 object-cover rounded-lg mb-8">
+      <div class="prose max-w-none text-gray-700">
+        <p>The Savanna Grill serves up traditional African barbecue with juicy grilled meats, flavorful sides, and a lively atmosphere perfect for gatherings.</p>
+        
+        <h3 class="text-xl font-semibold mt-6 mb-3">Highlights</h3>
+        <ul class="list-disc pl-6 space-y-2">
+          <li>Flame-grilled chicken, beef, and lamb</li>
+          <li>Homemade sauces and sides</li>
+          <li>Live DJ on weekends</li>
+          <li>Spacious outdoor seating</li>
+          <li>Family-friendly environment</li>
+        </ul>
+        
+        <h3 class="text-xl font-semibold mt-6 mb-3">Pricing & Hours</h3>
+        <p>Average dish price: <strong>BWP 70 - 160</strong></p>
+        <p>Open daily from 12PM to 10PM.</p>
+
+        <button onclick="showError(this)" class="buy-ticket-btn bg-black text-white px-6 py-3 rounded-lg hover:bg-gray-800 transition mt-6">
+          Book Now
+        </button>
+
+        <div class="error-msg hidden mt-4 p-3 bg-red-100 border border-red-400 text-red-700 rounded relative">
+          You must be logged in to confirm booking.
+          <button onclick="this.parentElement.classList.add('hidden')" class="close-error-btn absolute top-1 right-2 text-red-700 hover:text-red-900 font-bold text-lg">&times;</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Restaurant Card 4: Kalahari Bistro -->
+<div class="bg-white/90 backdrop-blur-lg rounded-2xl shadow-xl overflow-hidden transition hover:shadow-2xl hover:-translate-y-1 duration-300 border border-gray-200 mt-10">
+  <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=800&q=80"
+       alt="Kalahari Bistro"
+       class="w-full h-56 object-cover transition-transform duration-300 hover:scale-105">
+  
+  <div class="p-6 space-y-4">
+    <div>
+      <h3 class="text-2xl font-bold text-gray-800">Kalahari Bistro</h3>
+      <p class="text-gray-600 text-sm mt-1">Modern bistro blending local flavors with international cuisine in a cozy setting.</p>
+    </div>
+
+    <div class="grid grid-cols-2 gap-4 text-sm text-gray-700">
+      <div class="flex items-center gap-2">
+        <i class="fas fa-map-marker-alt text-yellow-500"></i>
+        <span>Maun</span>
+      </div>
+      <div class="flex items-center gap-2">
+        <i class="fas fa-tag text-yellow-500"></i>
+        <span>From BWP 80 per dish</span>
+      </div>
+      <div class="flex items-center gap-2">
+        <i class="fas fa-utensils text-yellow-500"></i>
+        <span>Local & Global Dishes</span>
+      </div>
+      <div class="flex items-center gap-2">
+        <i class="fas fa-clock text-yellow-500"></i>
+        <span>Open: 10AM - 9PM</span>
+      </div>
+      <div class="flex items-center gap-2 col-span-2">
+        <i class="fas fa-wine-glass text-yellow-500"></i>
+        <span>Wine Bar, Craft Cocktails</span>
+      </div>
+    </div>
+
+    <button
+      onclick="document.getElementById('kalahariModal').classList.remove('hidden')"
+      class="w-full bg-black hover:bg-white text-white hover:text-black font-semibold py-2 px-6 rounded-full border border-black transition duration-300">
+      Book Now
+    </button>
+  </div>
+</div>
+
+<!-- Modal for Kalahari Bistro -->
+<div id="kalahariModal" class="modal-overlay fixed inset-0 bg-black bg-opacity-50 hidden flex items-center justify-center z-50 p-4">
+  <div class="bg-white rounded-xl max-w-4xl w-full max-h-[90vh] overflow-y-auto relative">
+    <button onclick="closeModal('kalahariModal')" class="absolute top-4 right-4 text-gray-500 hover:text-gray-700 transition">
+      <i class="fas fa-times text-xl"></i>
+    </button>
+    <div class="p-8">
+      <div class="mb-6">
+        <span class="text-yellow-500 font-medium text-sm uppercase tracking-wider">Modern Bistro</span>
+        <h2 class="text-3xl font-bold mt-2 mb-4">Kalahari Bistro</h2>
+        <div class="flex items-center text-sm text-gray-500 mb-6">
+          <span>Location: Maun, Botswana</span>
+          <span class="mx-2">•</span>
+          <span>Creative fusion of local and international cuisine.</span>
+        </div>
+      </div>
+      <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=800&q=80" 
+           alt="Kalahari Bistro" 
+           class="w-full h-96 object-cover rounded-lg mb-8">
+      <div class="prose max-w-none text-gray-700">
+        <p>Kalahari Bistro offers a relaxed dining experience with innovative dishes, a wine bar, and craft cocktails to complement your meal.</p>
+        
+        <h3 class="text-xl font-semibold mt-6 mb-3">Highlights</h3>
+        <ul class="list-disc pl-6 space-y-2">
+          <li>Local game and fresh produce</li>
+          <li>International fusion dishes</li>
+          <li>Extensive wine selection</li>
+          <li>Craft cocktails and mocktails</li>
+          <li>Cozy and elegant atmosphere</li>
+        </ul>
+        
+        <h3 class="text-xl font-semibold mt-6 mb-3">Pricing & Hours</h3>
+        <p>Average dish price: <strong>BWP 80 - 180</strong></p>
+        <p>Open daily from 10AM to 9PM.</p>
+
+        <button onclick="showError(this)" class="buy-ticket-btn bg-black text-white px-6 py-3 rounded-lg hover:bg-gray-800 transition mt-6">
+          Book Now
+        </button>
+
+        <div class="error-msg hidden mt-4 p-3 bg-red-100 border border-red-400 text-red-700 rounded relative">
+          You must be logged in to confirm booking.
+          <button onclick="this.parentElement.classList.add('hidden')" class="close-error-btn absolute top-1 right-2 text-red-700 hover:text-red-900 font-bold text-lg">&times;</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Restaurant Card 5: Okavango Seafood House -->
+<div class="bg-white/90 backdrop-blur-lg rounded-2xl shadow-xl overflow-hidden transition hover:shadow-2xl hover:-translate-y-1 duration-300 border border-gray-200 mt-10">
+  <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=800&q=80"
+       alt="Okavango Seafood House"
+       class="w-full h-56 object-cover transition-transform duration-300 hover:scale-105">
+  
+  <div class="p-6 space-y-4">
+    <div>
+      <h3 class="text-2xl font-bold text-gray-800">Okavango Seafood House</h3>
+      <p class="text-gray-600 text-sm mt-1">Fresh seafood specialties served with views of the Okavango Delta.</p>
+    </div>
+
+    <div class="grid grid-cols-2 gap-4 text-sm text-gray-700">
+      <div class="flex items-center gap-2">
+        <i class="fas fa-map-marker-alt text-yellow-500"></i>
+        <span>Maun</span>
+      </div>
+      <div class="flex items-center gap-2">
+        <i class="fas fa-tag text-yellow-500"></i>
+        <span>From BWP 90 per dish</span>
+      </div>
+      <div class="flex items-center gap-2">
+        <i class="fas fa-fish text-yellow-500"></i>
+        <span>Seafood, Sushi</span>
+      </div>
+      <div class="flex items-center gap-2">
+        <i class="fas fa-clock text-yellow-500"></i>
+        <span>Open: 11AM - 10PM</span>
+      </div>
+      <div class="flex items-center gap-2 col-span-2">
+        <i class="fas fa-water text-yellow-500"></i>
+        <span>Waterfront Seating, Fresh Catch Daily</span>
+      </div>
+    </div>
+
+    <button
+      onclick="document.getElementById('okavangoModal').classList.remove('hidden')"
+      class="w-full bg-black hover:bg-white text-white hover:text-black font-semibold py-2 px-6 rounded-full border border-black transition duration-300">
+      Book Now
+    </button>
+  </div>
+</div>
+
+<!-- Modal for Okavango Seafood House -->
+<div id="okavangoModal" class="modal-overlay fixed inset-0 bg-black bg-opacity-50 hidden flex items-center justify-center z-50 p-4">
+  <div class="bg-white rounded-xl max-w-4xl w-full max-h-[90vh] overflow-y-auto relative">
+    <button onclick="closeModal('okavangoModal')" class="absolute top-4 right-4 text-gray-500 hover:text-gray-700 transition">
+      <i class="fas fa-times text-xl"></i>
+    </button>
+    <div class="p-8">
+      <div class="mb-6">
+        <span class="text-yellow-500 font-medium text-sm uppercase tracking-wider">Seafood Specialties</span>
+        <h2 class="text-3xl font-bold mt-2 mb-4">Okavango Seafood House</h2>
+        <div class="flex items-center text-sm text-gray-500 mb-6">
+          <span>Location: Maun, Botswana</span>
+          <span class="mx-2">•</span>
+          <span>Fresh, locally sourced seafood served daily.</span>
+        </div>
+      </div>
+      <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=800&q=80" 
+           alt="Okavango Seafood House" 
+           class="w-full h-96 object-cover rounded-lg mb-8">
+      <div class="prose max-w-none text-gray-700">
+        <p>Enjoy an unforgettable dining experience with fresh fish, sushi, and seafood dishes overlooking the serene Okavango Delta.</p>
+        
+        <h3 class="text-xl font-semibold mt-6 mb-3">Highlights</h3>
+        <ul class="list-disc pl-6 space-y-2">
+          <li>Daily fresh catch from local fishermen</li>
+          <li>Sushi and sashimi specials</li>
+          <li>Waterfront dining with scenic views</li>
+          <li>Seasonal seafood platters</li>
+          <li>Friendly, relaxed atmosphere</li>
+        </ul>
+        
+        <h3 class="text-xl font-semibold mt-6 mb-3">Pricing & Hours</h3>
+        <p>Average dish price: <strong>BWP 90 - 200</strong></p>
+        <p>Open daily from 11AM to 10PM.</p>
+
+        <button onclick="showError(this)" class="buy-ticket-btn bg-black text-white px-6 py-3 rounded-lg hover:bg-gray-800 transition mt-6">
+          Book Now
+        </button>
+
+        <div class="error-msg hidden mt-4 p-3 bg-red-100 border border-red-400 text-red-700 rounded relative">
+          You must be logged in to confirm booking.
+          <button onclick="this.parentElement.classList.add('hidden')" class="close-error-btn absolute top-1 right-2 text-red-700 hover:text-red-900 font-bold text-lg">&times;</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
     </section>
 
     <!-- Modal Popup -->
