@@ -51,7 +51,7 @@
             
               <!-- Cart Icon -->
               <div class="relative">
-                <a href="/cart.html" aria-label="Shopping Cart" class="text-white hover:text-gray-300 relative">
+                <a href="../Cart/cart.html" aria-label="Shopping Cart" class="text-white hover:text-gray-300 relative">
                   <i class="fas fa-shopping-cart fa-lg"></i>
                   <span class="absolute -top-2 -right-2 bg-red-600 text-white rounded-full text-xs w-5 h-5 flex items-center justify-center">0</span>
                 </a>
@@ -178,7 +178,13 @@
         <p>Average dish price: <strong>BWP 50 - 120</strong></p>
         <p>Open daily from 8AM to 6PM.</p>
 
-        <button onclick="showError(this)" class="buy-ticket-btn bg-black text-white px-6 py-3 rounded-lg hover:bg-gray-800 transition mt-6">
+        <button
+          onclick="addToCart(this)"
+          class="buy-ticket-btn bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition mt-6"
+          data-name="Sanitas Tea Garden"
+          data-price="50"
+          data-image="https://d1bb1mccaihlpl.cloudfront.net/variants/7rlinit8hhsu740k2tbmalesu82n/9013f13587dd8661ba8afec2e753cfb4d81ef785d0a2ed63f5292f1f4cb21fb6"
+        >
           Book Now
         </button>
 
@@ -290,7 +296,13 @@
         <p>Average price: <strong>BWP 60 - 150 per dish</strong></p>
         <p>Open daily from 11AM to 11PM.</p>
 
-        <button onclick="showError(this)" class="buy-ticket-btn bg-black text-white px-6 py-3 rounded-lg hover:bg-gray-800 transition mt-6">
+        <button
+          onclick="addToCart(this)"
+          class="buy-ticket-btn bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition mt-6"
+          data-name="Bull & Bush Pub"
+          data-price="60"
+          data-image="https://winecountry-media.s3.amazonaws.com/wp-content/uploads/sites/4/2024/07/11110433/shutterstock_1678594945-1880x880-1.jpg"
+        >
           Book Now
         </button>
 
@@ -382,7 +394,13 @@
         <h3 class="text-xl font-semibold mt-6 mb-3">Pricing & Hours</h3>
         <p>Meals start at <strong>BWP 150</strong>. Open from 12PM to 10PM.</p>
 
-        <button onclick="showError(this)" class="buy-ticket-btn bg-black text-white px-6 py-3 rounded-lg hover:bg-gray-800 transition mt-6">
+        <button
+          onclick="addToCart(this)"
+          class="buy-ticket-btn bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition mt-6"
+          data-name="Moremi Dining Room"
+          data-price="150"
+          data-image="https://fairgroundholdingsbw.com/wp-content/uploads/2018/03/Fairground-Holdings-1-1.jpg"
+        >
           Book Now
         </button>
 
@@ -470,7 +488,13 @@
         <p>Average dish price: <strong>BWP 70 - 160</strong></p>
         <p>Open daily from 12PM to 10PM.</p>
 
-        <button onclick="showError(this)" class="buy-ticket-btn bg-black text-white px-6 py-3 rounded-lg hover:bg-gray-800 transition mt-6">
+        <button
+          onclick="addToCart(this)"
+          class="buy-ticket-btn bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition mt-6"
+          data-name="The Savanna Grill"
+          data-price="70"
+          data-image="https://images.myguide-cdn.com/auckland/companies/botswana-butchery/large/botswana-butchery-1357339.jpg"
+        >
           Book Now
         </button>
 
@@ -558,7 +582,13 @@
         <p>Average dish price: <strong>BWP 80 - 180</strong></p>
         <p>Open daily from 10AM to 9PM.</p>
 
-        <button onclick="showError(this)" class="buy-ticket-btn bg-black text-white px-6 py-3 rounded-lg hover:bg-gray-800 transition mt-6">
+        <button
+          onclick="addToCart(this)"
+          class="buy-ticket-btn bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition mt-6"
+          data-name="Kalahari Bistro"
+          data-price="80"
+          data-image="https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=800&q=80"
+        >
           Book Now
         </button>
 
@@ -645,7 +675,13 @@
         <p>Average dish price: <strong>BWP 90 - 200</strong></p>
         <p>Open daily from 11AM to 10PM.</p>
 
-        <button onclick="showError(this)" class="buy-ticket-btn bg-black text-white px-6 py-3 rounded-lg hover:bg-gray-800 transition mt-6">
+        <button
+          onclick="addToCart(this)"
+          class="buy-ticket-btn bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition mt-6"
+          data-name="Okavango Seafood House"
+          data-price="90"
+          data-image="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=800&q=80"
+        >
           Book Now
         </button>
 
@@ -801,5 +837,46 @@
       </script>
     <script src="../Login&Register/Fetch.js"></script>
     <script src="../Current-Affairs/ArticleModal.js"></script>
+
+<script>
+  // Cart management functions
+  function addToCart(button) {
+    const name = button.getAttribute('data-name');
+    const price = parseFloat(button.getAttribute('data-price'));
+    const image = button.getAttribute('data-image');
+
+    if (!name || !price) {
+      alert('Invalid product data');
+      return;
+    }
+
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+    // Check if item already in cart
+    const existingItem = cart.find(item => item.name === name);
+    if (existingItem) {
+      existingItem.quantity += 1;
+    } else {
+      cart.push({ name, price, image, quantity: 1 });
+    }
+
+    localStorage.setItem('cart', JSON.stringify(cart));
+    updateCartCount();
+    alert(name + ' added to cart');
+  }
+
+  function updateCartCount() {
+    const cart = JSON.parse(localStorage.getItem('cart')) || [];
+    const count = cart.reduce((acc, item) => acc + item.quantity, 0);
+    const cartCountSpan = document.querySelector('a[aria-label="Shopping Cart"] span');
+    if (cartCountSpan) {
+      cartCountSpan.textContent = count;
+    }
+  }
+
+  document.addEventListener('DOMContentLoaded', () => {
+    updateCartCount();
+  });
+</script>
 </body>
 </html>

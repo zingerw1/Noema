@@ -51,7 +51,7 @@
             
               <!-- Cart Icon -->
               <div class="relative">
-                <a href="/cart.html" aria-label="Shopping Cart" class="text-white hover:text-gray-300 relative">
+                <a href="../Cart/cart.html" aria-label="Shopping Cart" class="text-white hover:text-gray-300 relative">
                   <i class="fas fa-shopping-cart fa-lg"></i>
                   <span class="absolute -top-2 -right-2 bg-red-600 text-white rounded-full text-xs w-5 h-5 flex items-center justify-center">0</span>
                 </a>
@@ -81,9 +81,7 @@
               </div>
      
               <!-- No Results Message -->
-      <div id="noResultsMessage" class="hidden" style="color: red; text-align: center; margin-top: 20px;">
-        No results found.
-      </div>
+      <!-- Removed duplicate noResultsMessage div with inline style -->
 
 <!-- Hero Section -->
 <section
@@ -181,7 +179,13 @@
         <h3 class="text-xl font-semibold mt-6 mb-3">Rates & Availability</h3>
         <p>Starting from <strong>BWP 2,500 per person</strong> (includes transport, meals, and guided tours).</p>
 
-        <button onclick="showError(this)" class="buy-ticket-btn bg-black text-white px-6 py-3 rounded-lg hover:bg-gray-800 transition mt-6">
+        <button
+          onclick="addToCart(this)"
+          class="buy-ticket-btn bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition mt-6"
+          data-name="Okavango Delta Safari"
+          data-price="2500"
+          data-image="https://images.goway.com/production/wordpress_images/Chobe-Game-Sightings-Elephants-and-Jeep-Botswana.jpg"
+        >
           Book Now
         </button>
 
@@ -294,7 +298,13 @@
         <h3 class="text-xl font-semibold mt-6 mb-3">Rates & Availability</h3>
         <p>Starting from <strong>BWP 2,200 per person</strong> (includes game drives and river cruise).</p>
 
-        <button onclick="showError(this)" class="buy-ticket-btn bg-black text-white px-6 py-3 rounded-lg hover:bg-gray-800 transition mt-6">
+        <button
+          onclick="addToCart(this)"
+          class="buy-ticket-btn bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition mt-6"
+          data-name="Chobe National Park Adventure"
+          data-price="2200"
+          data-image="https://cdn.kimkim.com/files/a/content_articles/featured_photos/cb251d2536a1e57b800e5418b68d7d721ac9cc08/big-910ed14b174c61d7947aa04cbc09713e.jpg"
+        >
           Book Now
         </button>
 
@@ -369,7 +379,13 @@
         <h3 class="text-xl font-semibold mt-6 mb-3">Rates & Availability</h3>
         <p>Starting from <strong>BWP 1,800 per person</strong> (includes transport and cultural guide).</p>
 
-        <button onclick="showError(this)" class="buy-ticket-btn bg-black text-white px-6 py-3 rounded-lg hover:bg-gray-800 transition mt-6">
+        <button
+          onclick="addToCart(this)"
+          class="buy-ticket-btn bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition mt-6"
+          data-name="Makgadikgadi Pans Exploration"
+          data-price="1800"
+          data-image="https://www.visit-chobe.com/wp-content/uploads/2025/01/Chobe-Game-Drive-Impala.jpg"
+        >
           Book Now
         </button>
 
@@ -439,7 +455,13 @@
           <li>Floodplains, lagoons, and mopane forests</li>
         </ul>
         <p class="mt-4">Rate: <strong>BWP 2,500 per person</strong></p>
-        <button onclick="showError(this)" class="bg-black text-white px-6 py-3 rounded-lg hover:bg-gray-800 transition mt-6">
+        <button
+          onclick="addToCart(this)"
+          class="buy-ticket-btn bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition mt-6"
+          data-name="Moremi Game Reserve Encounter"
+          data-price="2500"
+          data-image="https://www.safari.com/rewrite/cdn.prod.website-files.com/636e23f049cf12406b2feccd/6757507420f6844ff261ce62_63839cf553712b2a550a63b2_chobe-national-park-game-drive.webp"
+        >
           Book Now
         </button>
 
@@ -509,7 +531,13 @@
           <li>Floodplains, lagoons, and mopane forests</li>
         </ul>
         <p class="mt-4">Rate: <strong>BWP 2,500 per person</strong></p>
-        <button onclick="showError(this)" class="bg-black text-white px-6 py-3 rounded-lg hover:bg-gray-800 transition mt-6">
+        <button
+          onclick="addToCart(this)"
+          class="buy-ticket-btn bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition mt-6"
+          data-name="Savute Game Drive"
+          data-price="2500"
+          data-image="https://www.botswana-experience.com/wp-content/uploads/2021/10/game-drive-vehicle-chobe-national-park.jpg"
+        >
           Book Now
         </button>
 
@@ -579,7 +607,13 @@
           <li>Giraffes, springboks, and cheetahs</li>
         </ul>
         <p class="mt-4">Rate: <strong>BWP 1,900 per person</strong></p>
-        <button onclick="showError(this)" class="bg-black text-white px-6 py-3 rounded-lg hover:bg-gray-800 transition mt-6">
+        <button
+          onclick="addToCart(this)"
+          class="buy-ticket-btn bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition mt-6"
+          data-name="Nxai Pan Safari Trail"
+          data-price="1900"
+          data-image="https://www.andbeyond.com/wp-content/uploads/sites/5/Game-Drive-on-the-Chobe-River.jpg"
+        >
           Book Now
         </button>
 
@@ -735,5 +769,46 @@
       </script>
     <script src="../Login&Register/Fetch.js"></script>
     <script src="../Current-Affairs/ArticleModal.js"></script>
+
+<script>
+  // Cart management functions
+  function addToCart(button) {
+    const name = button.getAttribute('data-name');
+    const price = parseFloat(button.getAttribute('data-price'));
+    const image = button.getAttribute('data-image');
+
+    if (!name || !price) {
+      alert('Invalid product data');
+      return;
+    }
+
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+    // Check if item already in cart
+    const existingItem = cart.find(item => item.name === name);
+    if (existingItem) {
+      existingItem.quantity += 1;
+    } else {
+      cart.push({ name, price, image, quantity: 1 });
+    }
+
+    localStorage.setItem('cart', JSON.stringify(cart));
+    updateCartCount();
+    alert(name + ' added to cart');
+  }
+
+  function updateCartCount() {
+    const cart = JSON.parse(localStorage.getItem('cart')) || [];
+    const count = cart.reduce((acc, item) => acc + item.quantity, 0);
+    const cartCountSpan = document.querySelector('a[aria-label="Shopping Cart"] span');
+    if (cartCountSpan) {
+      cartCountSpan.textContent = count;
+    }
+  }
+
+  document.addEventListener('DOMContentLoaded', () => {
+    updateCartCount();
+  });
+</script>
 </body>
 </html>

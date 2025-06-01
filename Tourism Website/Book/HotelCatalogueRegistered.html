@@ -51,7 +51,7 @@
             
               <!-- Cart Icon -->
               <div class="relative">
-                <a href="/cart.html" aria-label="Shopping Cart" class="text-white hover:text-gray-300 relative">
+                <a href="../Cart/cart.html" aria-label="Shopping Cart" class="text-white hover:text-gray-300 relative">
                   <i class="fas fa-shopping-cart fa-lg"></i>
                   <span class="absolute -top-2 -right-2 bg-red-600 text-white rounded-full text-xs w-5 h-5 flex items-center justify-center">0</span>
                 </a>
@@ -185,7 +185,13 @@ style="background-image: url('https://images.unsplash.com/photo-1611892440504-42
         <h3 class="text-xl font-semibold mt-6 mb-3">Rates & Availability</h3>
         <p>Starting from <strong>BWP 2,500 per night</strong> (includes meals and safari drives).</p>
 
-        <button onclick="showError(this)" class="buy-ticket-btn bg-black text-white px-6 py-3 rounded-lg hover:bg-gray-800 transition mt-6">
+        <button
+          onclick="addToCart(this)"
+          class="buy-ticket-btn bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition mt-6"
+          data-name="Belmond Savute Elephant Lodge"
+          data-price="2500"
+          data-image="https://timbuktutravel.imgix.net/lodges/kodak_images/000/000/171/original/exterior-pool-restaurant-view-of-river-belmond-savute-elephant-lodge-chobe-botswana-timbuktu-travel.jpg?w=1420&h=946&auto=format&crop=fit&fit=min&dpr=1&q=50"
+        >
           Book Now
         </button>
 
@@ -289,7 +295,13 @@ style="background-image: url('https://images.unsplash.com/photo-1611892440504-42
         <h3 class="text-xl font-semibold mt-6 mb-3">Rates & Availability</h3>
         <p>Starting from <strong>BWP 3,200 per night</strong> (includes meals, safaris, and spa access).</p>
 
-        <button onclick="showError(this)" class="buy-ticket-btn bg-black text-white px-6 py-3 rounded-lg hover:bg-gray-800 transition mt-6">
+        <button
+          onclick="addToCart(this)"
+          class="buy-ticket-btn bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition mt-6"
+          data-name="Xigera Safari Lodge"
+          data-price="3200"
+          data-image="https://i.pinimg.com/736x/9b/cc/10/9bcc10e5b667c4091b65cfeabef7401e.jpg"
+        >
           Book Now
         </button>
 
@@ -375,7 +387,13 @@ style="background-image: url('https://images.unsplash.com/photo-1611892440504-42
         <h3 class="text-xl font-semibold mt-6 mb-3">Rates & Availability</h3>
         <p>Starting from <strong>BWP 2,800 per night</strong> (includes meals, activities, and transfers).</p>
 
-        <button onclick="showError(this)" class="buy-ticket-btn bg-black text-white px-6 py-3 rounded-lg hover:bg-gray-800 transition mt-6">
+        <button
+          onclick="addToCart(this)"
+          class="buy-ticket-btn bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition mt-6"
+          data-name="Qorokwe Camp"
+          data-price="2800"
+          data-image="https://www.africanreservations.com/sites/default/files/2024-04/camp_okavango.jpg"
+        >
           Book Now
         </button>
 
@@ -461,7 +479,13 @@ style="background-image: url('https://images.unsplash.com/photo-1611892440504-42
         <h3 class="text-xl font-semibold mt-6 mb-3">Rates & Availability</h3>
         <p>Starting from <strong>BWP 4,500 per night</strong> (includes meals, transfers, and game drives).</p>
 
-        <button onclick="showError(this)" class="buy-ticket-btn bg-black text-white px-6 py-3 rounded-lg hover:bg-gray-800 transition mt-6">
+        <button
+          onclick="addToCart(this)"
+          class="buy-ticket-btn bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition mt-6"
+          data-name="Sanctuary Chief’s Camp"
+          data-price="4500"
+          data-image="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/2a/62/ee/f3/leroo-la-tau.jpg?w=1200&h=-1&s=1"
+        >
           Book Now
         </button>
 
@@ -546,7 +570,13 @@ style="background-image: url('https://images.unsplash.com/photo-1611892440504-42
         <h3 class="text-xl font-semibold mt-6 mb-3">Rates & Availability</h3>
         <p>Starting from <strong>BWP 3,200 per night</strong> (includes meals and game drives).</p>
 
-        <button onclick="showError(this)" class="buy-ticket-btn bg-black text-white px-6 py-3 rounded-lg hover:bg-gray-800 transition mt-6">
+        <button
+          onclick="addToCart(this)"
+          class="buy-ticket-btn bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition mt-6"
+          data-name="Leroo La Tau"
+          data-price="3200"
+          data-image="https://www.botswanatourism.co.bw/sites/default/files/styles/1200/public/2021-07/OASIS-BTO.jpg?itok=qztl5NO9"
+        >
           Book Now
         </button>
 
@@ -630,7 +660,13 @@ style="background-image: url('https://images.unsplash.com/photo-1611892440504-42
         <h3 class="text-xl font-semibold mt-6 mb-3">Rates & Availability</h3>
         <p>Starting from <strong>BWP 3,800 per night</strong> (includes all activities and meals).</p>
 
-        <button onclick="showError(this)" class="buy-ticket-btn bg-black text-white px-6 py-3 rounded-lg hover:bg-gray-800 transition mt-6">
+        <button
+          onclick="addToCart(this)"
+          class="buy-ticket-btn bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition mt-6"
+          data-name="Kanana Camp"
+          data-price="3800"
+          data-image="https://cf.bstatic.com/xdata/images/hotel/max1024x768/568478325.jpg?k=863233f7a850cb5156e0d93b31cb5b818aa9f6f6ef92699dc16663bb4c66f230&o=&hp=1"
+        >
           Book Now
         </button>
 
@@ -817,5 +853,46 @@ style="background-image: url('https://images.unsplash.com/photo-1611892440504-42
       </script>
     <script src="../Login&Register/Fetch.js"></script>
     <script src="../Current-Affairs/ArticleModal.js"></script>
+
+<script>
+  // Cart management functions
+  function addToCart(button) {
+    const name = button.getAttribute('data-name');
+    const price = parseFloat(button.getAttribute('data-price'));
+    const image = button.getAttribute('data-image');
+
+    if (!name || !price) {
+      alert('Invalid product data');
+      return;
+    }
+
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+    // Check if item already in cart
+    const existingItem = cart.find(item => item.name === name);
+    if (existingItem) {
+      existingItem.quantity += 1;
+    } else {
+      cart.push({ name, price, image, quantity: 1 });
+    }
+
+    localStorage.setItem('cart', JSON.stringify(cart));
+    updateCartCount();
+    alert(name + ' added to cart');
+  }
+
+  function updateCartCount() {
+    const cart = JSON.parse(localStorage.getItem('cart')) || [];
+    const count = cart.reduce((acc, item) => acc + item.quantity, 0);
+    const cartCountSpan = document.querySelector('a[aria-label="Shopping Cart"] span');
+    if (cartCountSpan) {
+      cartCountSpan.textContent = count;
+    }
+  }
+
+  document.addEventListener('DOMContentLoaded', () => {
+    updateCartCount();
+  });
+</script>
 </body>
 </html>

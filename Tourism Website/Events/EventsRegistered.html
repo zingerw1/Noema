@@ -47,7 +47,7 @@
               
               <!-- Cart Icon -->
               <div class="relative">
-                <a href="/cart.html" aria-label="Shopping Cart" class="text-white hover:text-gray-300 relative">
+                <a href="../Cart/cart.html" aria-label="Shopping Cart" class="text-white hover:text-gray-300 relative">
                   <i class="fas fa-shopping-cart fa-lg"></i>
                   <span class="absolute -top-2 -right-2 bg-red-600 text-white rounded-full text-xs w-5 h-5 flex items-center justify-center">0</span>
                 </a>
@@ -156,9 +156,15 @@
                     <p>Open daily from 9 AM to 6 PM. Admission is free, with donations welcome to support community projects.</p>
                     <h3 class="text-xl font-semibold mt-6 mb-3">Tickets Available</h3>
                     <p>50 tickets left</p>
-                    <button class="buy-ticket-btn bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition mt-4">
-  Buy Ticket
-</button>
+                <button
+                  onclick="addToCart(this)"
+                  class="buy-ticket-btn bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition mt-4"
+                  data-name="Kuru Dance Festival (D’Kar Village)"
+                  data-price="200"
+                  data-image="https://africageographic.com/wp-content/uploads/2016/09/ostrich-hunt-dance.jpg"
+                >
+                  Buy Ticket
+                </button>
 
 
                   </div>
@@ -237,9 +243,15 @@
           <p>The event runs daily from 8 AM to 6 PM. Ample parking and shaded viewing areas are available. Local vendors will provide refreshments and souvenirs.</p>
           <h3 class="text-xl font-semibold mt-6 mb-3">Tickets Available</h3>
           <p>30 tickets left</p>
-          <button class="buy-ticket-btn bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition mt-4">
-  Buy Ticket
-</button>
+                <button
+                  onclick="addToCart(this)"
+                  class="buy-ticket-btn bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition mt-4"
+                  data-name="Toyota Desert Race (Mantshwabisi)"
+                  data-price="150"
+                  data-image="https://cdn4.premiumread.com/?url=https://www.mmegi.bw/mmegi/uploads/images/2023/01/23/62088.jpg&w=800&q=72&f=jpg"
+                >
+                  Buy Ticket
+                </button>
 
 
         </div>
@@ -358,9 +370,15 @@
           <p>Daily safari times: 6 AM – 6 PM. Meals and accommodation included in the package. Advanced booking recommended due to limited availability.</p>
           <h3 class="text-xl font-semibold mt-6 mb-3">Tickets Available</h3>
           <p>40 tickets left</p>
-          <button class="buy-ticket-btn bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition mt-4">
-  Buy Ticket
-</button>
+          <button
+            onclick="addToCart(this)"
+            class="buy-ticket-btn bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition mt-4"
+            data-name="Dithubaruba Cultural Festival"
+            data-price="150"
+            data-image="https://www.mmegi.bw/uploads/imported_images/2016/september/05/phpLimTSn.jpg"
+          >
+            Buy Ticket
+          </button>
 
 
         </div>
@@ -439,9 +457,15 @@
           <p>Boats depart hourly from 7 AM to 6 PM daily. Bring sunscreen, binoculars, and a camera. Life jackets provided on board.</p>
           <h3 class="text-xl font-semibold mt-6 mb-3">Tickets Available</h3>
           <p>60 tickets left</p>
-          <button class="buy-ticket-btn bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition mt-4">
-  Buy Ticket
-</button>
+          <button
+            onclick="addToCart(this)"
+            class="buy-ticket-btn bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition mt-4"
+            data-name="Okavango Delta Safari (Okavango Delta)"
+            data-price="350"
+            data-image="https://travelbeyond.com/wp-content/uploads/2024/06/Botswana_Okavango-Delta_Mokoro-Ride_Elle-Kyllo_Cropped-2-scaled-e1686856235860.jpg"
+          >
+            Buy Ticket
+          </button>
 
 
         </div>
@@ -451,85 +475,7 @@
 </div>
 
 
-          <!-- Makgadikgadi Pans Stargazing Night -->
-<div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition p-4 event-card relative">
-  <div class="badge-upcoming event-badge">Upcoming</div>
-  <img src="https://s3.amazonaws.com/cdn.micato.com/wp-content/uploads/2018/09/07230453/mgadigadi-pans-1.jpg" 
-       class="w-full h-48 object-cover rounded-lg" 
-       alt="Makgadikgadi Pans Stargazing Night">
-  <div class="mt-4">
-    <div class="flex items-center justify-between">
-      <h3 class="text-xl font-semibold text-gray-800 event-title">Makgadikgadi Pans Stargazing Night</h3>
-      <span class="text-green-600 font-semibold">P100</span>
-    </div>
-    <div class="flex items-center gap-2 mt-2 text-sm text-gray-500">
-      <i class="fas fa-map-marker-alt"></i>
-      <span>Makgadikgadi Pans</span>
-    </div>
-    <div class="flex items-center gap-2 mt-1 text-sm text-gray-500">
-      <i class="far fa-calendar-alt"></i>
-      <span>August 15 – August 16, 2025</span>
-    </div>
-    <p class="text-gray-600 text-sm mt-3">Experience the breathtaking night sky in one of the darkest places on Earth with guided stargazing sessions.</p>
-    <p class="text-sm text-gray-500 mb-2">Tickets left: 80</p>
-    <div class="flex items-center justify-between mt-4">
-      <div class="share-buttons flex gap-2">
-        <button class="text-gray-400 hover:text-blue-500"><i class="fab fa-facebook"></i></button>
-        <button class="text-gray-400 hover:text-blue-400"><i class="fab fa-twitter"></i></button>
-        <button class="text-gray-400 hover:text-green-500"><i class="far fa-calendar-plus"></i></button>
-      </div>
-    </div>
-    <div class="mt-4 flex justify-center">
-      <button onclick="openModal('event6Modal')" class="bg-black text-white px-6 py-2 rounded-full hover:bg-gray-800 transition duration-300">
-        Buy Ticket
-      </button>
-    </div>
-  </div>
 
-  <!-- Event 6 Modal -->
-  <div id="event6Modal" class="modal-overlay fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center z-50 p-4">
-    <div class="bg-white rounded-xl max-w-4xl w-full max-h-[90vh] overflow-y-auto relative">
-      <!-- Close button -->
-      <button onclick="closeModal('event6Modal')" class="absolute top-4 right-4 text-gray-500 hover:text-gray-700 transition">
-        <i class="fas fa-times text-xl"></i>
-      </button>
-      <!-- Modal content -->
-      <div class="p-8">
-        <div class="mb-6">
-          <span class="text-blue-500 font-medium text-sm uppercase tracking-wider">Night Sky Experience</span>
-          <h2 class="text-3xl font-bold mt-2 mb-4">Makgadikgadi Pans Stargazing Night</h2>
-          <div class="flex items-center text-sm text-gray-500 mb-6">
-            <span>August 15 – August 16, 2025</span>
-            <span class="mx-2">•</span>
-            <span>One of the best stargazing spots on Earth under the African sky.</span>
-          </div>
-        </div>
-        <img src="https://s3.amazonaws.com/cdn.micato.com/wp-content/uploads/2018/09/07230453/mgadigadi-pans-1.jpg" 
-             alt="Makgadikgadi Pans Stargazing" 
-             class="w-full h-96 object-cover rounded-lg mb-8">
-        <div class="prose max-w-none">
-          <p>Join professional astronomers and fellow stargazers in the vast salt flats of Makgadikgadi Pans. With little to no light pollution, this destination offers an unparalleled view of the Milky Way and other celestial wonders.</p>
-          <h3 class="text-xl font-semibold mt-6 mb-3">Experience Highlights</h3>
-          <ul class="list-disc pl-6 space-y-2">
-            <li>Use of high-powered telescopes and star maps</li>
-            <li>Guided night sky tours with laser pointers</li>
-            <li>Campfire stories and light refreshments</li>
-            <li>Overnight camping under the stars (optional)</li>
-          </ul>
-          <h3 class="text-xl font-semibold mt-6 mb-3">Visitor Tips</h3>
-          <p>Bring warm clothing, sleeping bags if camping, and your own camera for astrophotography. Stargazing begins at sunset.</p>
-          <h3 class="text-xl font-semibold mt-6 mb-3">Tickets Available</h3>
-          <p>80 tickets left</p>
-           
-          <button class="buy-ticket-btn bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition mt-4">
-  Buy Ticket
-</button>
-
-
-      </div>
-    </div>
-  </div>
-</div>
 
     <script>
   // For all buy ticket buttons
@@ -613,7 +559,47 @@
           &copy; 2025 <span class="text-white font-semibold">Noema Tourism Services Inc.</span> All rights reserved.
         </div>
       </footer>   
-    <script src="../Login&Register/Fetch.js"></script>
-    <script src="../Current-Affairs/ArticleModal.js"></script>
+    <script>
+    // Cart management functions
+    function addToCart(button) {
+      const name = button.getAttribute('data-name');
+      const price = parseFloat(button.getAttribute('data-price'));
+      const image = button.getAttribute('data-image');
+
+      if (!name || !price) {
+        alert('Invalid product data');
+        return;
+      }
+
+      let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+      // Check if item already in cart
+      const existingItem = cart.find(item => item.name === name);
+      if (existingItem) {
+        existingItem.quantity += 1;
+      } else {
+        cart.push({ name, price, image, quantity: 1 });
+      }
+
+      localStorage.setItem('cart', JSON.stringify(cart));
+      updateCartCount();
+      alert(name + ' added to cart');
+    }
+
+    function updateCartCount() {
+      const cart = JSON.parse(localStorage.getItem('cart')) || [];
+      const count = cart.reduce((acc, item) => acc + item.quantity, 0);
+      const cartCountSpan = document.querySelector('a[aria-label="Shopping Cart"] span');
+      if (cartCountSpan) {
+        cartCountSpan.textContent = count;
+      }
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      updateCartCount();
+    });
+  </script>
+  <script src="../Login&Register/Fetch.js"></script>
+  <script src="../Current-Affairs/ArticleModal.js"></script>
 </body>
 </html>
