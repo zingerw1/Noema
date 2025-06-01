@@ -152,9 +152,11 @@
                     <p>Open daily from 9 AM to 6 PM. Admission is free, with donations welcome to support community projects.</p>
                     <h3 class="text-xl font-semibold mt-6 mb-3">Tickets Available</h3>
                     <p>50 tickets left</p>
-                    <div class="mt-6">
-                      <button class="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition">Buy Ticket</button>
-                    </div>
+                    <button class="buy-ticket-btn bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition mt-4">
+  Buy Ticket
+</button>
+
+
                   </div>
                 </div>
               </div>
@@ -231,9 +233,11 @@
           <p>The event runs daily from 8 AM to 6 PM. Ample parking and shaded viewing areas are available. Local vendors will provide refreshments and souvenirs.</p>
           <h3 class="text-xl font-semibold mt-6 mb-3">Tickets Available</h3>
           <p>30 tickets left</p>
-          <div class="mt-6">
-            <button class="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition">Buy Ticket</button>
-          </div>
+          <button class="buy-ticket-btn bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition mt-4">
+  Buy Ticket
+</button>
+
+
         </div>
       </div>
     </div>
@@ -350,11 +354,11 @@
           <p>Daily safari times: 6 AM – 6 PM. Meals and accommodation included in the package. Advanced booking recommended due to limited availability.</p>
           <h3 class="text-xl font-semibold mt-6 mb-3">Tickets Available</h3>
           <p>40 tickets left</p>
-          <div class="mt-6">
-            <a href="/register" class="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition">
-              Buy Ticket
-            </a>
-          </div>
+          <button class="buy-ticket-btn bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition mt-4">
+  Buy Ticket
+</button>
+
+
         </div>
       </div>
     </div>
@@ -431,11 +435,11 @@
           <p>Boats depart hourly from 7 AM to 6 PM daily. Bring sunscreen, binoculars, and a camera. Life jackets provided on board.</p>
           <h3 class="text-xl font-semibold mt-6 mb-3">Tickets Available</h3>
           <p>60 tickets left</p>
-          <div class="mt-6">
-            <a href="/register" class="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition">
-              Buy Ticket
-            </a>
-          </div>
+          <button class="buy-ticket-btn bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition mt-4">
+  Buy Ticket
+</button>
+
+
         </div>
       </div>
     </div>
@@ -512,17 +516,40 @@
           <p>Bring warm clothing, sleeping bags if camping, and your own camera for astrophotography. Stargazing begins at sunset.</p>
           <h3 class="text-xl font-semibold mt-6 mb-3">Tickets Available</h3>
           <p>80 tickets left</p>
-          <div class="mt-6">
-            <a href="/register" class="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition">
-              Buy Ticket
-            </a>
-          </div>
-        </div>
+           
+          <button class="buy-ticket-btn bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition mt-4">
+  Buy Ticket
+</button>
+
+
       </div>
     </div>
   </div>
 </div>
 
+    <script>
+  // For all buy ticket buttons
+  document.querySelectorAll('.buy-ticket-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      // Show the error message inside the same modal container
+      const modalContent = btn.closest('.prose');  // or some common container in the modal
+      const errorMsg = modalContent.querySelector('.error-msg');
+      if (errorMsg) {
+        errorMsg.classList.remove('hidden');
+      }
+    });
+  });
+
+  // For all close error buttons
+  document.querySelectorAll('.close-error-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const errorMsg = btn.closest('.error-msg');
+      if (errorMsg) {
+        errorMsg.classList.add('hidden');
+      }
+    });
+  });
+</script>
   </main>
     
 <footer class="bg-black text-gray-300 py-10 px-6 mt-auto">
@@ -536,12 +563,12 @@
       
           <!-- Support -->
           <div>
-            <h4 class="text-white font-semibold mb-2 relative pb-1 after:content-[''] after:block after:w-16 after:h-[2px] after:bg-white after:mt-1">Support</h4>
+            <h4 class="text-white font-semibold mb-2 relative pb-1 after:content-[''] after:block after:w-16 after:h-[2px] after:bg-white after:mt-1">Resources</h4>
             <ul class="space-y-1 text-sm">
-              <li><a href="#" class="hover:text-white transition">About Us</a></li>
-              <li><a href="#" class="hover:text-white transition">Our Services</a></li>
-              <li><a href="#" class="hover:text-white transition">Privacy Policy</a></li>
-              <li><a href="#" class="hover:text-white transition">Terms & Conditions</a></li>
+              <li><a href="../Resources/ResourcesRegistered.html" class="hover:text-white transition">Currency Guide</a></li>
+              <li><a href="../Resources/ResourcesRegistered.html" class="hover:text-white transition">Transportation Guide</a></li>
+              <li><a href="../Resources/ResourcesRegistered.html" class="hover:text-white transition">Safari & Wildlife Guide</a></li>
+              <li><a href="../Resources/ResourcesRegistered.html" class="hover:text-white transition">Travel Documents & Visa Guide</a></li>
             </ul>
           </div>
       
@@ -549,13 +576,14 @@
           <div>
             <h4 class="text-white font-semibold mb-2 relative pb-1 after:content-[''] after:block after:w-16 after:h-[2px] after:bg-white after:mt-1">Explore</h4>
             <ul class="space-y-1 text-sm">
-              <li><a href="#" class="hover:text-white transition">Collaboration</a></li>
-              <li><a href="#" class="hover:text-white transition">Connect</a></li>
-              <li><a href="#" class="hover:text-white transition">Refunds</a></li>
-              <li><a href="#" class="hover:text-white transition">Accommodation Feedback</a></li>
-              <li><a href="#" class="hover:text-white transition">Payment Options</a></li>
+              <li><a href="../Marketplace/MarketplaceRegistered.html" class="hover:text-white transition">Marketplace</a></li>
+              <li><a href="../Current-Affairs/newsRegistered.html" class="hover:text-white transition">News</a></li>
+              <li><a href="../Book/BookRegistered.html" class="hover:text-white transition">Booking</a></li>
+              <li><a href="../About-Us/AboutRegistered.html" class="hover:text-white transition">About-Us</a></li>
+              <li><a href="../Events/EventsRegistered.html" class="hover:text-white transition">Events</a></li>
             </ul>
           </div>
+      
       
           <!-- Contact & Social -->
           <div>
@@ -580,7 +608,8 @@
         <div class="mt-8 text-center text-xs text-gray-500 border-t border-gray-700 pt-4">
           &copy; 2025 <span class="text-white font-semibold">Noema Tourism Services Inc.</span> All rights reserved.
         </div>
-      </footer>  
+      </footer>   
     <script src="../Login&Register/Fetch.js"></script>
+    <script src="../Current-Affairs/ArticleModal.js"></script>
 </body>
 </html>

@@ -1,0 +1,817 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tourism Website</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+        .blend-text {
+        background: linear-gradient(90deg, #ff7e5f, #feb47b, #86a8e7);
+        -webkit-text-fill-color: transparent;
+        -webkit-background-clip: text;
+      }
+    </style>
+</head>
+<body class="bg-white flex flex-col min-h-screen">
+    <header class="bg-black text-white shadow-md z-50">
+        <div class="container mx-auto px-4 py-3 flex items-center justify-between">
+            <div class="flex items-center">
+                <img src="../Logo1.png" alt="Tourism Logo" class="h-10 w-auto">
+            </div>
+            <nav class="hidden md:flex space-x-8">
+              <a href="../Home-Page/indexRegistered.html" class="relative hover:text-gray-300 transition duration-300 transform hover:scale-105 after:content-[''] after:absolute after:left-0 after:bottom-[-4px] after:w-0 after:h-[2px] after:bg-white after:transition-all after:duration-300 hover:after:w-full">Home</a>
+              <a href="../Book/BookRegistered.html" class="relative hover:text-gray-300 transition duration-300 transform hover:scale-105 after:content-[''] after:absolute after:left-0 after:bottom-[-4px] after:w-0 after:h-[2px] after:bg-white after:transition-all after:duration-300 hover:after:w-full">Book</a>
+              <a href="../Events/EventsRegistered.html" class="relative hover:text-gray-300 transition duration-300 transform hover:scale-105 after:content-[''] after:absolute after:left-0 after:bottom-[-4px] after:w-0 after:h-[2px] after:bg-white after:transition-all after:duration-300 hover:after:w-full">Events</a>
+              <a href="../Current-Affairs/newsRegistered.html" class="relative hover:text-gray-300 transition duration-300 transform hover:scale-105 after:content-[''] after:absolute after:left-0 after:bottom-[-4px] after:w-0 after:h-[2px] after:bg-white after:transition-all after:duration-300 hover:after:w-full">News</a>
+              <a href="../About-Us/AboutRegistered.html" class="relative hover:text-gray-300 transition duration-300 transform hover:scale-105 after:content-[''] after:absolute after:left-0 after:bottom-[-4px] after:w-0 after:h-[2px] after:bg-white after:transition-all after:duration-300 hover:after:w-full">About</a>
+              <a href="../Resources/ResourcesRegistered.html" class="relative hover:text-gray-300 transition duration-300 transform hover:scale-105 after:content-[''] after:absolute after:left-0 after:bottom-[-4px] after:w-0 after:h-[2px] after:bg-white after:transition-all after:duration-300 hover:after:w-full">Resources</a>
+              <a href="../Marketplace/MarketplaceRegistered.html" class="relative hover:text-gray-300 transition duration-300 transform hover:scale-105 after:content-[''] after:absolute after:left-0 after:bottom-[-4px] after:w-0 after:h-[2px] after:bg-white after:transition-all after:duration-300 hover:after:w-full">Marketplace</a>
+          </nav>
+            <div class="flex items-center space-x-4">
+                <!-- Search -->
+              <div class="relative">
+                <input 
+                  type="text" 
+                  placeholder="Search news..." 
+                  class="bg-white text-gray-900 px-4 py-2 rounded-full w-64 focus:outline-none focus:ring-2 focus:ring-gray-400">
+                <button class="absolute right-3 top-2.5 text-gray-500 hover:text-black transition-transform duration-300 hover:translate-x-1 hover:scale-110">
+                  <i class="fas fa-search"></i>
+                </button>
+              </div>
+            
+              <!-- Cart Icon -->
+              <div class="relative">
+                <a href="/cart.html" aria-label="Shopping Cart" class="text-white hover:text-gray-300 relative">
+                  <i class="fas fa-shopping-cart fa-lg"></i>
+                  <span class="absolute -top-2 -right-2 bg-red-600 text-white rounded-full text-xs w-5 h-5 flex items-center justify-center">0</span>
+                </a>
+              </div>
+              
+              <!-- Account Dropdown -->
+              <div class="relative group">
+                <button id="accountButton" class="bg-white text-black px-4 py-2 rounded-md hover:bg-gray-100 transition flex items-center space-x-2">
+                  <i class="fas fa-user"></i>
+                  <span id="usernameDisplay">UserName</span>
+                  <i class="fas fa-chevron-down text-sm transition-transform duration-300 group-hover:rotate-180"></i>
+                </button>
+                <div class="absolute right-0 mt-2 w-48 bg-white/90 backdrop-blur-xl shadow-lg rounded-lg border border-gray-300 opacity-0 invisible transform scale-95 -translate-y-4 transition-all duration-500 ease-out group-hover:opacity-100 group-hover:visible group-hover:scale-100 group-hover:translate-y-0">
+                  <a href="../AccountSettings/AccountSettings.html" class="block px-5 py-3 text-gray-700 font-medium transition-all duration-300 rounded-t-lg hover:bg-black hover:text-white hover:shadow-md hover:scale-105">Account Settings</a>
+                  <a href="#" id="logoutBtn" class="block px-5 py-3 text-gray-700 font-medium transition-all duration-300 rounded-b-lg hover:bg-black hover:text-white hover:shadow-md hover:scale-105 cursor-pointer">Logout</a>
+                </div>
+              </div>
+            </div>   
+        </div>
+    </header>
+    
+
+            <!-- No Results Message -->
+            <div id="noResultsMessage" class="text-center text-gray-600 text-lg my-10 hidden">
+                No products match your search.
+              </div>
+     
+              <!-- No Results Message -->
+      <div id="noResultsMessage" class="hidden" style="color: red; text-align: center; margin-top: 20px;">
+        No results found.
+      </div>
+
+      <!-- Hero Section -->
+<section class="relative bg-cover bg-center h-80 flex items-center justify-center text-white text-center"
+style="background-image: url('https://images.unsplash.com/photo-1611892440504-42a792e24d32?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');">
+<div class="absolute inset-0 bg-black bg-opacity-50 z-0"></div>
+<div class="z-10 px-4">
+    <h2 class="text-4xl font-bold">Welcome to Our Luxurious Hotels</h2>
+    <p class="text-lg mt-2">Book your dream stay with us today</p>
+</div>
+</section>
+ 
+<!-- Room Listings -->
+<section id="rooms" class="py-16">
+<div class="text-center mb-12">
+    <h2 class="text-3xl font-bold">Available Hotels To Book Your Stay</h2>
+    <p class="text-gray-600 mt-4 max-w-2xl mx-auto">
+        Explore our luxurious rooms with world-class amenities
+    </p>
+</div>
+ 
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 px-6">
+   <!-- Hotel Card with Modal -->
+<div class="bg-white/90 backdrop-blur-lg rounded-2xl shadow-xl overflow-hidden transition hover:shadow-2xl hover:-translate-y-1 duration-300 border border-gray-200">
+  <img src="https://timbuktutravel.imgix.net/lodges/kodak_images/000/000/171/original/exterior-pool-restaurant-view-of-river-belmond-savute-elephant-lodge-chobe-botswana-timbuktu-travel.jpg?w=1420&h=946&auto=format&crop=fit&fit=min&dpr=1&q=50"
+       alt="Belmond Savute Elephant Lodge"
+       class="w-full h-56 object-cover transition-transform duration-300 hover:scale-105">
+  
+  <div class="p-6 space-y-4">
+    <div>
+      <h3 class="text-2xl font-bold text-gray-800">Belmond Savute Elephant Lodge</h3>
+      <p class="text-gray-600 text-sm mt-1">Luxury tented camp in Chobe, offering breathtaking elephant sightings by the river.</p>
+    </div>
+
+    <div class="grid grid-cols-2 gap-4 text-sm text-gray-700">
+      <div class="flex items-center gap-2">
+        <i class="fas fa-map-marker-alt text-yellow-500"></i>
+        <span>Chobe National Park</span>
+      </div>
+      <div class="flex items-center gap-2">
+        <i class="fas fa-tag text-yellow-500"></i>
+        <span>From BWP 2,500/night</span>
+      </div>
+      <div class="flex items-center gap-2">
+        <i class="fas fa-door-open text-yellow-500"></i>
+        <span>Deluxe, Family Tents</span>
+      </div>
+      <div class="flex items-center gap-2">
+        <i class="fas fa-clock text-yellow-500"></i>
+        <span>Check-in: 2PM / Out: 11AM</span>
+      </div>
+      <div class="flex items-center gap-2 col-span-2">
+        <i class="fas fa-concierge-bell text-yellow-500"></i>
+        <span>Wi-Fi, All Meals, Safari Tours, Pool</span>
+      </div>
+    </div>
+
+    <!-- Modal Trigger Button -->
+    <button
+      onclick="document.getElementById('hotelModal').classList.remove('hidden')"
+      class="w-full bg-black hover:bg-white text-white hover:text-black font-semibold py-2 px-6 rounded-full border border-black transition duration-300">
+      Book Now
+    </button>
+  </div>
+</div>
+
+<!-- Hotel Booking Modal -->
+<div id="hotelModal" class="modal-overlay fixed inset-0 bg-black bg-opacity-50 hidden flex items-center justify-center z-50 p-4">
+  <div class="bg-white rounded-xl max-w-4xl w-full max-h-[90vh] overflow-y-auto relative">
+    <!-- Close button -->
+    <button onclick="closeModal('hotelModal')" class="absolute top-4 right-4 text-gray-500 hover:text-gray-700 transition">
+      <i class="fas fa-times text-xl"></i>
+    </button>
+    <!-- Modal content -->
+    <div class="p-8">
+      <div class="mb-6">
+        <span class="text-yellow-500 font-medium text-sm uppercase tracking-wider">Luxury Safari Lodge</span>
+        <h2 class="text-3xl font-bold mt-2 mb-4">Belmond Savute Elephant Lodge</h2>
+        <div class="flex items-center text-sm text-gray-500 mb-6">
+          <span>Location: Chobe National Park, Botswana</span>
+          <span class="mx-2">•</span>
+          <span>Experience exclusive elephant encounters in the heart of the wilderness.</span>
+        </div>
+      </div>
+      <img src="https://timbuktutravel.imgix.net/lodges/kodak_images/000/000/171/original/exterior-pool-restaurant-view-of-river-belmond-savute-elephant-lodge-chobe-botswana-timbuktu-travel.jpg?w=1420&h=946&auto=format&crop=fit&fit=min&dpr=1&q=50" 
+           alt="Belmond Savute Elephant Lodge" 
+           class="w-full h-96 object-cover rounded-lg mb-8">
+      <div class="prose max-w-none text-gray-700">
+        <p>Immerse yourself in unparalleled luxury amidst Botswana’s wild landscapes. The lodge offers spacious tents with private decks, en-suite bathrooms, and stunning views over the Savute Channel.</p>
+        
+        <h3 class="text-xl font-semibold mt-6 mb-3">Lodge Features</h3>
+        <ul class="list-disc pl-6 space-y-2">
+          <li>Private decks with wildlife views</li>
+          <li>Infinity pool overlooking the river</li>
+          <li>Guided safari drives and walking tours</li>
+          <li>Eco-friendly and sustainable lodge practices</li>
+          <li>On-site gourmet dining and bar</li>
+          <li>Complimentary Wi-Fi</li>
+        </ul>
+        
+        <h3 class="text-xl font-semibold mt-6 mb-3">Rates & Availability</h3>
+        <p>Starting from <strong>BWP 2,500 per night</strong> (includes meals and safari drives).</p>
+
+        <button onclick="showError(this)" class="buy-ticket-btn bg-black text-white px-6 py-3 rounded-lg hover:bg-gray-800 transition mt-6">
+          Book Now
+        </button>
+
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  // Open modal
+  function openModal(id) {
+    const modal = document.getElementById(id);
+    modal.classList.remove('hidden');
+    modal.classList.add('flex');
+  }
+
+  // Close modal
+  function closeModal(id) {
+    const modal = document.getElementById(id);
+    modal.classList.add('hidden');
+    modal.classList.remove('flex');
+    // Also hide any error messages inside modal when closing
+    const errorMsg = modal.querySelector('.error-msg');
+    if (errorMsg) {
+      errorMsg.classList.add('hidden');
+    }
+  }
+</script>
+ 
+    <!-- Hotel Card: Xigera Safari Lodge -->
+<div class="bg-white/90 backdrop-blur-lg rounded-2xl shadow-xl overflow-hidden transition hover:shadow-2xl hover:-translate-y-1 duration-300 border border-gray-200">
+  <img src="https://i.pinimg.com/736x/9b/cc/10/9bcc10e5b667c4091b65cfeabef7401e.jpg"
+       alt="Xigera Safari Lodge"
+       class="w-full h-56 object-cover transition-transform duration-300 hover:scale-105">
+  
+  <div class="p-6 space-y-4">
+    <div>
+      <h3 class="text-2xl font-bold text-gray-800">Xigera Safari Lodge</h3>
+      <p class="text-gray-600 text-sm mt-1">An art-filled luxury lodge in the Okavango Delta offering immersive nature and design experiences.</p>
+    </div>
+
+    <div class="grid grid-cols-2 gap-4 text-sm text-gray-700">
+      <div class="flex items-center gap-2">
+        <i class="fas fa-map-marker-alt text-yellow-500"></i>
+        <span>Okavango Delta</span>
+      </div>
+      <div class="flex items-center gap-2">
+        <i class="fas fa-tag text-yellow-500"></i>
+        <span>From BWP 3,200/night</span>
+      </div>
+      <div class="flex items-center gap-2">
+        <i class="fas fa-palette text-yellow-500"></i>
+        <span>Art-Inspired Suites</span>
+      </div>
+      <div class="flex items-center gap-2">
+        <i class="fas fa-clock text-yellow-500"></i>
+        <span>Check-in: 3PM / Out: 10AM</span>
+      </div>
+      <div class="flex items-center gap-2 col-span-2">
+        <i class="fas fa-spa text-yellow-500"></i>
+        <span>Private Spa, Gourmet Dining, Guided Safaris</span>
+      </div>
+    </div>
+
+    <button
+      onclick="document.getElementById('xigeraModal').classList.remove('hidden')"
+      class="w-full bg-black hover:bg-white text-white hover:text-black font-semibold py-2 px-6 rounded-full border border-black transition duration-300">
+      Book Now
+    </button>
+  </div>
+</div>
+
+<!-- Modal: Xigera Safari Lodge -->
+<div id="xigeraModal" class="modal-overlay fixed inset-0 bg-black bg-opacity-50 hidden flex items-center justify-center z-50 p-4">
+  <div class="bg-white rounded-xl max-w-4xl w-full max-h-[90vh] overflow-y-auto relative">
+    <button onclick="closeModal('xigeraModal')" class="absolute top-4 right-4 text-gray-500 hover:text-gray-700 transition">
+      <i class="fas fa-times text-xl"></i>
+    </button>
+    <div class="p-8">
+      <span class="text-yellow-500 font-medium text-sm uppercase tracking-wider">Designer Wilderness Lodge</span>
+      <h2 class="text-3xl font-bold mt-2 mb-4">Xigera Safari Lodge</h2>
+      <div class="flex items-center text-sm text-gray-500 mb-6">
+        <span>Location: Okavango Delta, Botswana</span>
+        <span class="mx-2">•</span>
+        <span>Experience a bold fusion of art, architecture, and African nature.</span>
+      </div>
+      <img src="https://i.pinimg.com/736x/9b/cc/10/9bcc10e5b667c4091b65cfeabef7401e.jpg"
+           alt="Xigera Safari Lodge"
+           class="w-full h-96 object-cover rounded-lg mb-8">
+      <div class="prose max-w-none text-gray-700">
+        <p>Xigera offers luxury with purpose. Each suite is a design masterpiece set amidst the wilderness of the Delta.</p>
+        <h3 class="text-xl font-semibold mt-6 mb-3">Lodge Features</h3>
+        <ul class="list-disc pl-6 space-y-2">
+          <li>Art-inspired suites with river views</li>
+          <li>Private plunge pools and spa treatments</li>
+          <li>Custom safari experiences</li>
+          <li>Eco-conscious architecture</li>
+          <li>In-house artists and cultural curation</li>
+        </ul>
+        <h3 class="text-xl font-semibold mt-6 mb-3">Rates & Availability</h3>
+        <p>Starting from <strong>BWP 3,200 per night</strong> (includes meals, safaris, and spa access).</p>
+
+        <button onclick="showError(this)" class="buy-ticket-btn bg-black text-white px-6 py-3 rounded-lg hover:bg-gray-800 transition mt-6">
+          Book Now
+        </button>
+
+     
+      </div>
+    </div>
+  </div>
+</div>
+
+ 
+    <!-- Hotel Card: Qorokwe Camp -->
+<div class="bg-white/90 backdrop-blur-lg rounded-2xl shadow-xl overflow-hidden transition hover:shadow-2xl hover:-translate-y-1 duration-300 border border-gray-200">
+  <img src="https://www.africanreservations.com/sites/default/files/2024-04/camp_okavango.jpg"
+       alt="Qorokwe Camp"
+       class="w-full h-56 object-cover transition-transform duration-300 hover:scale-105">
+  
+  <div class="p-6 space-y-4">
+    <div>
+      <h3 class="text-2xl font-bold text-gray-800">Qorokwe Camp</h3>
+      <p class="text-gray-600 text-sm mt-1">Stylish safari camp in the Okavango Delta offering game drives and mokoro safaris.</p>
+    </div>
+
+    <div class="grid grid-cols-2 gap-4 text-sm text-gray-700">
+      <div class="flex items-center gap-2">
+        <i class="fas fa-map-marker-alt text-yellow-500"></i>
+        <span>Okavango Delta</span>
+      </div>
+      <div class="flex items-center gap-2">
+        <i class="fas fa-tag text-yellow-500"></i>
+        <span>From BWP 2,800/night</span>
+      </div>
+      <div class="flex items-center gap-2">
+        <i class="fas fa-bed text-yellow-500"></i>
+        <span>Luxury Canvas Suites</span>
+      </div>
+      <div class="flex items-center gap-2">
+        <i class="fas fa-clock text-yellow-500"></i>
+        <span>Check-in: 2PM / Out: 10AM</span>
+      </div>
+      <div class="flex items-center gap-2 col-span-2">
+        <i class="fas fa-binoculars text-yellow-500"></i>
+        <span>Mokoro Safaris, Game Drives, All Meals</span>
+      </div>
+    </div>
+
+    <button
+      onclick="document.getElementById('qorokweModal').classList.remove('hidden')"
+      class="w-full bg-black hover:bg-white text-white hover:text-black font-semibold py-2 px-6 rounded-full border border-black transition duration-300">
+      Book Now
+    </button>
+  </div>
+</div>
+
+<!-- Modal: Qorokwe Camp -->
+<div id="qorokweModal" class="modal-overlay fixed inset-0 bg-black bg-opacity-50 hidden flex items-center justify-center z-50 p-4">
+  <div class="bg-white rounded-xl max-w-4xl w-full max-h-[90vh] overflow-y-auto relative">
+    <button onclick="closeModal('qorokweModal')" class="absolute top-4 right-4 text-gray-500 hover:text-gray-700 transition">
+      <i class="fas fa-times text-xl"></i>
+    </button>
+    <div class="p-8">
+      <span class="text-yellow-500 font-medium text-sm uppercase tracking-wider">Delta Safari Camp</span>
+      <h2 class="text-3xl font-bold mt-2 mb-4">Qorokwe Camp</h2>
+      <div class="flex items-center text-sm text-gray-500 mb-6">
+        <span>Location: Okavango Delta, Botswana</span>
+        <span class="mx-2">•</span>
+        <span>Surround yourself with untamed wilderness and watery channels.</span>
+      </div>
+      <img src="https://www.africanreservations.com/sites/default/files/2024-04/camp_okavango.jpg"
+           alt="Qorokwe Camp"
+           class="w-full h-96 object-cover rounded-lg mb-8">
+      <div class="prose max-w-none text-gray-700">
+        <p>Qorokwe Camp merges sophisticated design with the charm of the bush. Guests enjoy exceptional views, wildlife, and immersive experiences in the Okavango Delta.</p>
+
+        <h3 class="text-xl font-semibold mt-6 mb-3">Lodge Features</h3>
+        <ul class="list-disc pl-6 space-y-2">
+          <li>Stylish tented suites with en-suite bathrooms</li>
+          <li>Central pool and deck area</li>
+          <li>Mokoro (dugout canoe) safaris</li>
+          <li>Game drives with expert guides</li>
+          <li>On-site bar and fine dining</li>
+        </ul>
+
+        <h3 class="text-xl font-semibold mt-6 mb-3">Rates & Availability</h3>
+        <p>Starting from <strong>BWP 2,800 per night</strong> (includes meals, activities, and transfers).</p>
+
+        <button onclick="showError(this)" class="buy-ticket-btn bg-black text-white px-6 py-3 rounded-lg hover:bg-gray-800 transition mt-6">
+          Book Now
+        </button>
+
+  
+      </div>
+    </div>
+  </div>
+</div>
+
+ 
+ 
+    <!-- Hotel Card: Sanctuary Chief’s Camp -->
+<div class="bg-white/90 backdrop-blur-lg rounded-2xl shadow-xl overflow-hidden transition hover:shadow-2xl hover:-translate-y-1 duration-300 border border-gray-200">
+  <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/2a/62/ee/f3/leroo-la-tau.jpg?w=1200&h=-1&s=1"
+       alt="Sanctuary Chief’s Camp"
+       class="w-full h-56 object-cover transition-transform duration-300 hover:scale-105">
+
+  <div class="p-6 space-y-4">
+    <div>
+      <h3 class="text-2xl font-bold text-gray-800">Sanctuary Chief’s Camp</h3>
+      <p class="text-gray-600 text-sm mt-1">Located on Chief’s Island, offering premier Big Five game viewing in the heart of Moremi Game Reserve.</p>
+    </div>
+
+    <div class="grid grid-cols-2 gap-4 text-sm text-gray-700">
+      <div class="flex items-center gap-2">
+        <i class="fas fa-map-marker-alt text-yellow-500"></i>
+        <span>Moremi Game Reserve</span>
+      </div>
+      <div class="flex items-center gap-2">
+        <i class="fas fa-tag text-yellow-500"></i>
+        <span>From BWP 4,500/night</span>
+      </div>
+      <div class="flex items-center gap-2">
+        <i class="fas fa-bed text-yellow-500"></i>
+        <span>Luxury Bush Pavilions</span>
+      </div>
+      <div class="flex items-center gap-2">
+        <i class="fas fa-clock text-yellow-500"></i>
+        <span>Check-in: 3PM / Out: 10AM</span>
+      </div>
+      <div class="flex items-center gap-2 col-span-2">
+        <i class="fas fa-tree text-yellow-500"></i>
+        <span>Spa, Fine Dining, Game Drives, Airstrip Access</span>
+      </div>
+    </div>
+
+    <button onclick="document.getElementById('chiefsModal').classList.remove('hidden')"
+      class="w-full bg-black hover:bg-white text-white hover:text-black font-semibold py-2 px-6 rounded-full border border-black transition duration-300">
+      Book Now
+    </button>
+  </div>
+</div>
+
+<!-- Modal: Sanctuary Chief’s Camp -->
+<div id="chiefsModal" class="modal-overlay fixed inset-0 bg-black bg-opacity-50 hidden flex items-center justify-center z-50 p-4">
+  <div class="bg-white rounded-xl max-w-4xl w-full max-h-[90vh] overflow-y-auto relative">
+    <button onclick="closeModal('chiefsModal')" class="absolute top-4 right-4 text-gray-500 hover:text-gray-700 transition">
+      <i class="fas fa-times text-xl"></i>
+    </button>
+    <div class="p-8">
+      <span class="text-yellow-500 font-medium text-sm uppercase tracking-wider">Big Five Luxury Safari</span>
+      <h2 class="text-3xl font-bold mt-2 mb-4">Sanctuary Chief’s Camp</h2>
+      <div class="flex items-center text-sm text-gray-500 mb-6">
+        <span>Location: Moremi Game Reserve, Chief’s Island</span>
+        <span class="mx-2">•</span>
+        <span>Unparalleled luxury in the predator capital of Africa.</span>
+      </div>
+      <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/2a/62/ee/f3/leroo-la-tau.jpg?w=1200&h=-1&s=1"
+           alt="Sanctuary Chief’s Camp"
+           class="w-full h-96 object-cover rounded-lg mb-8">
+      <div class="prose max-w-none text-gray-700">
+        <p>Chief’s Camp blends contemporary comfort with raw wilderness. Enjoy panoramic savannah views, guided safaris, and elegant accommodations with private plunge pools.</p>
+
+        <h3 class="text-xl font-semibold mt-6 mb-3">Lodge Features</h3>
+        <ul class="list-disc pl-6 space-y-2">
+          <li>Private deck & plunge pool</li>
+          <li>All-inclusive gourmet meals</li>
+          <li>Daily game drives with expert guides</li>
+          <li>Airstrip transfers available</li>
+          <li>On-site spa & wellness center</li>
+        </ul>
+
+        <h3 class="text-xl font-semibold mt-6 mb-3">Rates & Availability</h3>
+        <p>Starting from <strong>BWP 4,500 per night</strong> (includes meals, transfers, and game drives).</p>
+
+        <button onclick="showError(this)" class="buy-ticket-btn bg-black text-white px-6 py-3 rounded-lg hover:bg-gray-800 transition mt-6">
+          Book Now
+        </button>
+
+
+      </div>
+    </div>
+  </div>
+</div>
+
+ 
+    <!-- Hotel Card: Leroo La Tau -->
+<div class="bg-white/90 backdrop-blur-lg rounded-2xl shadow-xl overflow-hidden transition hover:shadow-2xl hover:-translate-y-1 duration-300 border border-gray-200">
+  <img src="https://www.botswanatourism.co.bw/sites/default/files/styles/1200/public/2021-07/OASIS-BTO.jpg?itok=qztl5NO9"
+       alt="Leroo La Tau"
+       class="w-full h-56 object-cover transition-transform duration-300 hover:scale-105">
+
+  <div class="p-6 space-y-4">
+    <div>
+      <h3 class="text-2xl font-bold text-gray-800">Leroo La Tau</h3>
+      <p class="text-gray-600 text-sm mt-1">Perched on a cliff above the Boteti River, this lodge offers views of zebra migrations and desert wildlife.</p>
+    </div>
+
+    <div class="grid grid-cols-2 gap-4 text-sm text-gray-700">
+      <div class="flex items-center gap-2">
+        <i class="fas fa-map-marker-alt text-yellow-500"></i>
+        <span>Makgadikgadi Pans NP</span>
+      </div>
+      <div class="flex items-center gap-2">
+        <i class="fas fa-tag text-yellow-500"></i>
+        <span>From BWP 3,200/night</span>
+      </div>
+      <div class="flex items-center gap-2">
+        <i class="fas fa-bed text-yellow-500"></i>
+        <span>River View Chalets</span>
+      </div>
+      <div class="flex items-center gap-2">
+        <i class="fas fa-clock text-yellow-500"></i>
+        <span>Check-in: 2PM / Out: 11AM</span>
+      </div>
+      <div class="flex items-center gap-2 col-span-2">
+        <i class="fas fa-binoculars text-yellow-500"></i>
+        <span>Safari Drives, Cultural Tours, Pool, Wi-Fi</span>
+      </div>
+    </div>
+
+    <button onclick="document.getElementById('lerooModal').classList.remove('hidden')"
+      class="w-full bg-black hover:bg-white text-white hover:text-black font-semibold py-2 px-6 rounded-full border border-black transition duration-300">
+      Book Now
+    </button>
+  </div>
+</div>
+
+<!-- Modal: Leroo La Tau -->
+<div id="lerooModal" class="modal-overlay fixed inset-0 bg-black bg-opacity-50 hidden flex items-center justify-center z-50 p-4">
+  <div class="bg-white rounded-xl max-w-4xl w-full max-h-[90vh] overflow-y-auto relative">
+    <button onclick="closeModal('lerooModal')" class="absolute top-4 right-4 text-gray-500 hover:text-gray-700 transition">
+      <i class="fas fa-times text-xl"></i>
+    </button>
+    <div class="p-8">
+      <span class="text-yellow-500 font-medium text-sm uppercase tracking-wider">Desert River Retreat</span>
+      <h2 class="text-3xl font-bold mt-2 mb-4">Leroo La Tau</h2>
+      <div class="flex items-center text-sm text-gray-500 mb-6">
+        <span>Location: Boteti River, Makgadikgadi</span>
+        <span class="mx-2">•</span>
+        <span>Enjoy dramatic views of the river and seasonal wildlife migrations.</span>
+      </div>
+      <img src="https://www.botswanatourism.co.bw/sites/default/files/styles/1200/public/2021-07/OASIS-BTO.jpg?itok=qztl5NO9"
+           alt="Leroo La Tau"
+           class="w-full h-96 object-cover rounded-lg mb-8">
+      <div class="prose max-w-none text-gray-700">
+        <p>Leroo La Tau offers an elevated safari experience with panoramic views, expert-guided game drives, and traditional Botswana hospitality in a quiet, remote setting.</p>
+
+        <h3 class="text-xl font-semibold mt-6 mb-3">Lodge Features</h3>
+        <ul class="list-disc pl-6 space-y-2">
+          <li>Cliff-top chalets with private balconies</li>
+          <li>Infinity pool with sunset views</li>
+          <li>Daily game drives and riverbed walks</li>
+          <li>Cultural experiences with nearby communities</li>
+          <li>Wi-Fi in common areas</li>
+        </ul>
+
+        <h3 class="text-xl font-semibold mt-6 mb-3">Rates & Availability</h3>
+        <p>Starting from <strong>BWP 3,200 per night</strong> (includes meals and game drives).</p>
+
+        <button onclick="showError(this)" class="buy-ticket-btn bg-black text-white px-6 py-3 rounded-lg hover:bg-gray-800 transition mt-6">
+          Book Now
+        </button>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+ 
+  <!-- Hotel Card: Kanana Camp -->
+<div class="bg-white/90 backdrop-blur-lg rounded-2xl shadow-xl overflow-hidden transition hover:shadow-2xl hover:-translate-y-1 duration-300 border border-gray-200">
+  <img src="https://cf.bstatic.com/xdata/images/hotel/max1024x768/568478325.jpg?k=863233f7a850cb5156e0d93b31cb5b818aa9f6f6ef92699dc16663bb4c66f230&o=&hp=1"
+       alt="Kanana Camp"
+       class="w-full h-56 object-cover transition-transform duration-300 hover:scale-105">
+
+  <div class="p-6 space-y-4">
+    <div>
+      <h3 class="text-2xl font-bold text-gray-800">Kanana Camp</h3>
+      <p class="text-gray-600 text-sm mt-1">A secluded tented camp nestled in a private concession of the Okavango Delta, ideal for birding and mokoro safaris.</p>
+    </div>
+
+    <div class="grid grid-cols-2 gap-4 text-sm text-gray-700">
+      <div class="flex items-center gap-2">
+        <i class="fas fa-map-marker-alt text-yellow-500"></i>
+        <span>Okavango Delta</span>
+      </div>
+      <div class="flex items-center gap-2">
+        <i class="fas fa-tag text-yellow-500"></i>
+        <span>From BWP 3,800/night</span>
+      </div>
+      <div class="flex items-center gap-2">
+        <i class="fas fa-bed text-yellow-500"></i>
+        <span>Luxury Safari Tents</span>
+      </div>
+      <div class="flex items-center gap-2">
+        <i class="fas fa-clock text-yellow-500"></i>
+        <span>Check-in: 1PM / Out: 10AM</span>
+      </div>
+      <div class="flex items-center gap-2 col-span-2">
+        <i class="fas fa-water text-yellow-500"></i>
+        <span>Mokoro Rides, Birdwatching, Night Drives</span>
+      </div>
+    </div>
+
+    <button onclick="document.getElementById('kananaModal').classList.remove('hidden')"
+      class="w-full bg-black hover:bg-white text-white hover:text-black font-semibold py-2 px-6 rounded-full border border-black transition duration-300">
+      Book Now
+    </button>
+  </div>
+</div>
+
+<!-- Modal: Kanana Camp -->
+<div id="kananaModal" class="modal-overlay fixed inset-0 bg-black bg-opacity-50 hidden flex items-center justify-center z-50 p-4">
+  <div class="bg-white rounded-xl max-w-4xl w-full max-h-[90vh] overflow-y-auto relative">
+    <button onclick="closeModal('kananaModal')" class="absolute top-4 right-4 text-gray-500 hover:text-gray-700 transition">
+      <i class="fas fa-times text-xl"></i>
+    </button>
+    <div class="p-8">
+      <span class="text-yellow-500 font-medium text-sm uppercase tracking-wider">Delta Island Escape</span>
+      <h2 class="text-3xl font-bold mt-2 mb-4">Kanana Camp</h2>
+      <div class="flex items-center text-sm text-gray-500 mb-6">
+        <span>Location: Okavango Delta, Private Concession</span>
+        <span class="mx-2">•</span>
+        <span>Peaceful sanctuary ideal for water-based safaris and rare birds.</span>
+      </div>
+      <img src="https://cf.bstatic.com/xdata/images/hotel/max1024x768/568478325.jpg?k=863233f7a850cb5156e0d93b31cb5b818aa9f6f6ef92699dc16663bb4c66f230&o=&hp=1"
+           alt="Kanana Camp"
+           class="w-full h-96 object-cover rounded-lg mb-8">
+      <div class="prose max-w-none text-gray-700">
+        <p>Explore Botswana’s unique inland delta from a luxury base at Kanana. Expect stunning waterways, diverse wildlife, and expert guiding in a tranquil setting.</p>
+
+        <h3 class="text-xl font-semibold mt-6 mb-3">Lodge Features</h3>
+        <ul class="list-disc pl-6 space-y-2">
+          <li>Private tented suites with views</li>
+          <li>Traditional mokoro excursions</li>
+          <li>Seasonal heronry visits</li>
+          <li>All meals and drinks included</li>
+          <li>Optional sleep-out deck experience</li>
+        </ul>
+
+        <h3 class="text-xl font-semibold mt-6 mb-3">Rates & Availability</h3>
+        <p>Starting from <strong>BWP 3,800 per night</strong> (includes all activities and meals).</p>
+
+        <button onclick="showError(this)" class="buy-ticket-btn bg-black text-white px-6 py-3 rounded-lg hover:bg-gray-800 transition mt-6">
+          Book Now
+        </button>
+
+    
+      </div>
+    </div>
+  </div>
+</div>
+
+ 
+</div>
+</section>
+ 
+ 
+  <!-- Modal Popup -->
+  <div id="popupModal" class="hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+    <div class="bg-white p-6 rounded-lg shadow-lg text-center max-w-sm">
+      <img src="Photos/Screenshot 2025-03-22 153746.png" alt="Logo" class="w-24 mx-auto mb-4" />
+      <p id="popupMessage" class="text-lg font-semibold"></p>
+      <button onclick="closePopup()" class="mt-4 bg-black text-white px-4 py-2 rounded-full">OK</button>
+    </div>
+  </div>
+ 
+  <script>
+    const form = document.getElementById("stayBookingForm");
+    const popupModal = document.getElementById("popupModal");
+    const popupMessage = document.getElementById("popupMessage");
+ 
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+     
+      // Simulate sending email (replace this with backend logic if needed)
+      const email = form.querySelector('input[type="email"]').value;
+      console.log(`Sending confirmation email to ${email}...`);
+ 
+      showPopup("Booking Successful! A confirmation email has been sent.");
+      form.reset();
+    });
+ 
+    function cancelBooking() {
+      form.reset();
+      showPopup("Booking Cancelled.");
+    }
+ 
+    function showPopup(message) {
+      popupMessage.textContent = message;
+      popupModal.classList.remove("hidden");
+    }
+ 
+    function closePopup() {
+      popupModal.classList.add("hidden");
+    }
+  </script>
+ 
+  <script>
+        // JavaScript to dynamically set the username in the account dropdown from backend profile API
+        document.addEventListener('DOMContentLoaded', () => {
+          const usernameDisplay = document.getElementById('usernameDisplay');
+          fetch('http://localhost:3000/user/profile', {
+            method: 'GET',
+            credentials: 'include'
+          })
+          .then(response => {
+            if (!response.ok) {
+              throw new Error('Not authenticated');
+            }
+            return response.json();
+          })
+          .then(data => {
+            if (usernameDisplay) {
+              const fullName = data.surname ? data.name + ' ' + data.surname : data.name;
+              usernameDisplay.textContent = fullName;
+            }
+          })
+          .catch(error => {
+            console.error('Error fetching user profile:', error);
+            if (usernameDisplay) {
+              // Fallback to localStorage username if available
+              const storedName = localStorage.getItem('loggedInUserName');
+              const storedSurname = localStorage.getItem('loggedInUserSurname');
+              if (storedName) {
+                usernameDisplay.textContent = storedSurname ? storedName + ' ' + storedSurname : storedName;
+              } else {
+                usernameDisplay.textContent = 'Guest';
+              }
+            }
+          });
+        });
+      </script>
+</section>
+ 
+  <footer class="bg-black text-gray-300 py-10 px-6 mt-auto">
+        <div class="container mx-auto grid grid-cols-1 md:grid-cols-4 gap-8 items-start">
+      
+          <!-- Logo -->
+          <div class="flex flex-col items-start space-y-4">
+            <img src="../Logo1.png" alt="Noema Tourism Logo" class="h-14 w-auto">
+            <p class="text-sm text-gray-400">Your gateway to unforgettable travel experiences.</p>
+          </div>
+      
+          <!-- Support -->
+          <div>
+            <h4 class="text-white font-semibold mb-2 relative pb-1 after:content-[''] after:block after:w-16 after:h-[2px] after:bg-white after:mt-1">Resources</h4>
+            <ul class="space-y-1 text-sm">
+              <li><a href="../Resources/ResourcesRegistered.html" class="hover:text-white transition">Currency Guide</a></li>
+              <li><a href="../Resources/ResourcesRegistered.html" class="hover:text-white transition">Transportation Guide</a></li>
+              <li><a href="../Resources/ResourcesRegistered.html" class="hover:text-white transition">Safari & Wildlife Guide</a></li>
+              <li><a href="../Resources/ResourcesRegistered.html" class="hover:text-white transition">Travel Documents & Visa Guide</a></li>
+            </ul>
+          </div>
+      
+          <!-- Explore -->
+          <div>
+            <h4 class="text-white font-semibold mb-2 relative pb-1 after:content-[''] after:block after:w-16 after:h-[2px] after:bg-white after:mt-1">Explore</h4>
+            <ul class="space-y-1 text-sm">
+              <li><a href="../Marketplace/MarketplaceRegistered.html" class="hover:text-white transition">Marketplace</a></li>
+              <li><a href="../Current-Affairs/newsRegistered.html" class="hover:text-white transition">News</a></li>
+              <li><a href="../Book/BookRegistered.html" class="hover:text-white transition">Booking</a></li>
+              <li><a href="../About-Us/AboutRegistered.html" class="hover:text-white transition">About-Us</a></li>
+              <li><a href="../Events/EventsRegistered.html" class="hover:text-white transition">Events</a></li>
+            </ul>
+          </div>
+      
+      
+          <!-- Contact & Social -->
+          <div>
+            <h4 class="text-white font-semibold mb-2 relative pb-1 after:content-[''] after:block after:w-16 after:h-[2px] after:bg-white after:mt-1">Contact</h4>
+            <address class="not-italic text-sm text-gray-400 mb-4 leading-relaxed">
+              <p><strong class="text-white">Noema Tourism Services</strong></p>
+              <p>EastLondon Block 9, Plot 20994</p>
+              <p><a href="mailto:marketing@noemaservices.co.bw" class="hover:text-white transition">marketing@noemaservices.co.bw</a></p>
+              <p><a href="tel:+2739133922" class="hover:text-white transition">Tel: +27 391 33922</a> | 
+                 <a href="tel:+273947978" class="hover:text-white transition">Fax: +27 394 7978</a></p>
+            </address>
+            <div class="flex space-x-4 mt-2">
+              <a href="#" class="text-gray-400 hover:text-white transition transform hover:scale-125"><i class="fab fa-facebook-f"></i></a>
+              <a href="#" class="text-gray-400 hover:text-white transition transform hover:scale-125"><i class="fab fa-twitter"></i></a>
+              <a href="#" class="text-gray-400 hover:text-white transition transform hover:scale-125"><i class="fab fa-instagram"></i></a>
+              <a href="#" class="text-gray-400 hover:text-white transition transform hover:scale-125"><i class="fab fa-tiktok"></i></a>
+            </div>
+          </div>
+      
+        </div>
+     
+        <div class="mt-8 text-center text-xs text-gray-500 border-t border-gray-700 pt-4">
+          &copy; 2025 <span class="text-white font-semibold">Noema Tourism Services Inc.</span> All rights reserved.
+        </div>
+      </footer>  
+
+      <script>
+        // JavaScript to dynamically set the username in the account dropdown from backend profile API
+        document.addEventListener('DOMContentLoaded', () => {
+          const usernameDisplay = document.getElementById('usernameDisplay');
+          fetch('http://localhost:3000/user/profile', {
+            method: 'GET',
+            credentials: 'include'
+          })
+          .then(response => {
+            if (!response.ok) {
+              throw new Error('Not authenticated');
+            }
+            return response.json();
+          })
+          .then(data => {
+            if (usernameDisplay) {
+              const fullName = data.surname ? data.name + ' ' + data.surname : data.name;
+              usernameDisplay.textContent = fullName;
+            }
+          })
+          .catch(error => {
+            console.error('Error fetching user profile:', error);
+            if (usernameDisplay) {
+              // Fallback to localStorage username if available
+              const storedName = localStorage.getItem('loggedInUserName');
+              const storedSurname = localStorage.getItem('loggedInUserSurname');
+              if (storedName) {
+                usernameDisplay.textContent = storedSurname ? storedName + ' ' + storedSurname : storedName;
+              } else {
+                usernameDisplay.textContent = 'Guest';
+              }
+            }
+          });
+        });
+      </script>
+    <script src="../Login&Register/Fetch.js"></script>
+    <script src="../Current-Affairs/ArticleModal.js"></script>
+</body>
+</html>

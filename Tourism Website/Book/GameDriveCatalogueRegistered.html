@@ -11,6 +11,11 @@
         body {
             font-family: 'Poppins', sans-serif;
         }
+        .blend-text {
+        background: linear-gradient(90deg, #ff7e5f, #feb47b, #86a8e7);
+        -webkit-text-fill-color: transparent;
+        -webkit-background-clip: text;
+      }
     </style>
 </head>
 <body class="bg-white flex flex-col min-h-screen">
@@ -63,6 +68,7 @@
             </div>   
         </div>
     </header>
+
     
 
             <!-- No Results Message -->
@@ -78,7 +84,7 @@
 <!-- Hero Section -->
 <section
   class="relative bg-cover bg-center h-80 flex items-center justify-center text-white text-center"
-  style="background-image: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80')"
+  style="background-image: url('https://www.matriarchafrica.com/wp-content/uploads/2018/07/Chobe-National-Park-Game-Drives.jpg')"
 >
   <div class="absolute inset-0 bg-black bg-opacity-50 z-0"></div>
   <div class="z-10 px-4">
@@ -101,144 +107,485 @@
   </div>
 
   <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 px-6">
-    <!-- Game Drive 1: Okavango Delta Safari -->
-    <div
-      class="bg-white rounded-lg shadow-md overflow-hidden transform transition duration-300 hover:-translate-y-1 hover:shadow-lg"
-    >
-      <img
-        src="https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80"
-        alt="Okavango Delta Safari"
-        class="w-full h-56 object-cover"
-      />
-      <div class="p-6">
-        <h3 class="text-xl font-semibold">Okavango Delta Safari</h3>
-        <p class="text-gray-600 text-sm mt-2">
-          Explore the pristine waterways and diverse wildlife of the Okavango
-          Delta on an unforgettable game drive.
-        </p>
-        <button
-          onclick="document.getElementById('package-name').value='Okavango Delta Safari'; document.getElementById('booking-form').scrollIntoView({behavior:'smooth'})"
-          class="mt-4 bg-black text-white px-4 py-2 rounded hover:bg-white hover:text-black border border-black transition duration-300 mx-auto block"
-        >
-          Book Now
-        </button>
+    <!-- Game Drive Card: Okavango Delta Safari -->
+<div class="bg-white/90 backdrop-blur-lg rounded-2xl shadow-xl overflow-hidden transition hover:shadow-2xl hover:-translate-y-1 duration-300 border border-gray-200">
+  <img src="https://images.goway.com/production/wordpress_images/Chobe-Game-Sightings-Elephants-and-Jeep-Botswana.jpg"
+       alt="Okavango Delta Safari"
+       class="w-full h-56 object-cover transition-transform duration-300 hover:scale-105" />
+  
+  <div class="p-6 space-y-4">
+    <div>
+      <h3 class="text-2xl font-bold text-gray-800">Okavango Delta Safari</h3>
+      <p class="text-gray-600 text-sm mt-1">
+        Explore the pristine waterways and diverse wildlife of the Okavango Delta on an unforgettable game drive.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-2 gap-4 text-sm text-gray-700">
+      <div class="flex items-center gap-2">
+        <i class="fas fa-map-marker-alt text-yellow-500"></i>
+        <span>Okavango Delta</span>
+      </div>
+      <div class="flex items-center gap-2">
+        <i class="fas fa-tag text-yellow-500"></i>
+        <span>From BWP 2,500 per person</span>
+      </div>
+      <div class="flex items-center gap-2 col-span-2">
+        <i class="fas fa-binoculars text-yellow-500"></i>
+        <span>Wildlife Viewing & Scenic Boat Rides</span>
       </div>
     </div>
 
-    <!-- Game Drive 2: Chobe National Park Adventure -->
-    <div
-      class="bg-white rounded-lg shadow-md overflow-hidden transform transition duration-300 hover:-translate-y-1 hover:shadow-lg"
+    <button
+      onclick="document.getElementById('okavangoModal').classList.remove('hidden')"
+      class="w-full bg-black hover:bg-white text-white hover:text-black font-semibold py-2 px-6 rounded-full border border-black transition duration-300"
     >
-      <img
-        src="https://images.unsplash.com/photo-1500534623283-312aade485b7?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80"
-        alt="Chobe National Park Adventure"
-        class="w-full h-56 object-cover"
-      />
-      <div class="p-6">
-        <h3 class="text-xl font-semibold">Chobe National Park Adventure</h3>
-        <p class="text-gray-600 text-sm mt-2">
-          Experience thrilling game drives in Chobe National Park, home to one
-          of the largest elephant populations in Africa.
-        </p>
-        <button
-          onclick="document.getElementById('package-name').value='Chobe National Park Adventure'; document.getElementById('booking-form').scrollIntoView({behavior:'smooth'})"
-          class="mt-4 bg-black text-white px-4 py-2 rounded hover:bg-white hover:text-black border border-black transition duration-300 mx-auto block"
-        >
-          Book Now
-        </button>
-      </div>
-    </div>
+      Book Now
+    </button>
+  </div>
+</div>
 
-    <!-- Game Drive 3: Makgadikgadi Pans Exploration -->
-    <div
-      class="bg-white rounded-lg shadow-md overflow-hidden transform transition duration-300 hover:-translate-y-1 hover:shadow-lg"
-    >
-      <img
-        src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80"
-        alt="Makgadikgadi Pans Exploration"
-        class="w-full h-56 object-cover"
-      />
-      <div class="p-6">
-        <h3 class="text-xl font-semibold">Makgadikgadi Pans Exploration</h3>
-        <p class="text-gray-600 text-sm mt-2">
-          Discover the unique salt pans and wildlife of the Makgadikgadi Pans
-          on an exciting game drive.
-        </p>
-        <button
-          onclick="document.getElementById('package-name').value='Makgadikgadi Pans Exploration'; document.getElementById('booking-form').scrollIntoView({behavior:'smooth'})"
-          class="mt-4 bg-black text-white px-4 py-2 rounded hover:bg-white hover:text-black border border-black transition duration-300 mx-auto block"
-        >
+<!-- Modal: Okavango Delta Safari -->
+<div id="okavangoModal" class="modal-overlay fixed inset-0 bg-black bg-opacity-50 hidden flex items-center justify-center z-50 p-4">
+  <div class="bg-white rounded-xl max-w-4xl w-full max-h-[90vh] overflow-y-auto relative">
+    <button onclick="closeModal('okavangoModal')" class="absolute top-4 right-4 text-gray-500 hover:text-gray-700 transition">
+      <i class="fas fa-times text-xl"></i>
+    </button>
+    <div class="p-8">
+      <span class="text-yellow-500 font-medium text-sm uppercase tracking-wider">Immersive Game Drive Experience</span>
+      <h2 class="text-3xl font-bold mt-2 mb-4">Okavango Delta Safari</h2>
+      <div class="flex items-center text-sm text-gray-500 mb-6">
+        <span>Location: Okavango Delta, Botswana</span>
+        <span class="mx-2">•</span>
+        <span>Explore pristine waterways and diverse wildlife.</span>
+      </div>
+      <img src="https://images.goway.com/production/wordpress_images/Chobe-Game-Sightings-Elephants-and-Jeep-Botswana.jpg"
+           alt="Okavango Delta Safari"
+           class="w-full h-96 object-cover rounded-lg mb-8" />
+      <div class="prose max-w-none text-gray-700">
+        <p>Experience an unforgettable adventure through the unique ecosystem of the Okavango Delta. Enjoy guided game drives, bird watching, and scenic boat rides.</p>
+        
+        <h3 class="text-xl font-semibold mt-6 mb-3">Highlights</h3>
+        <ul class="list-disc pl-6 space-y-2">
+          <li>Expert guides with deep knowledge of local wildlife</li>
+          <li>Boat safaris through waterways</li>
+          <li>Close-up encounters with elephants, hippos, and more</li>
+          <li>Bird watching and photography opportunities</li>
+          <li>Comfortable camps and luxury tents available</li>
+        </ul>
+        
+        <h3 class="text-xl font-semibold mt-6 mb-3">Rates & Availability</h3>
+        <p>Starting from <strong>BWP 2,500 per person</strong> (includes transport, meals, and guided tours).</p>
+
+        <button onclick="showError(this)" class="buy-ticket-btn bg-black text-white px-6 py-3 rounded-lg hover:bg-gray-800 transition mt-6">
           Book Now
         </button>
+
+
       </div>
     </div>
   </div>
-</section>
+</div>
 
-<!-- Booking Form -->
-<section id="booking-form" class="bg-gray-200 py-16">
-  <div class="max-w-xl mx-auto bg-white p-8 rounded-lg shadow-lg">
-    <h2 class="text-2xl font-bold text-center mb-6">Book Your Game Drive</h2>
-    <form id="gameDriveBookingForm" class="space-y-4">
-      <input
-        type="text"
-        placeholder="Full Name"
-        class="w-full px-4 py-2 border border-gray-300 rounded-md"
-        required
-      />
-      <input
-        type="email"
-        placeholder="Email"
-        class="w-full px-4 py-2 border border-gray-300 rounded-md"
-        required
-      />
-      <input
-        type="tel"
-        placeholder="Phone Number"
-        class="w-full px-4 py-2 border border-gray-300 rounded-md"
-        required
-      />
-      <input
-        type="date"
-        class="w-full px-4 py-2 border border-gray-300 rounded-md"
-        required
-      />
-      <input
-        type="number"
-        placeholder="Number of Guests"
-        class="w-full px-4 py-2 border border-gray-300 rounded-md"
-        required
-      />
+<script>
+  // Open modal
+  function openModal(id) {
+    const modal = document.getElementById(id);
+    modal.classList.remove('hidden');
+    modal.classList.add('flex');
+  }
 
-      <select
-        id="package-name"
-        class="w-full px-4 py-2 border border-gray-300 rounded-md"
-        required
-      >
-        <option value="" disabled selected>Select a Game Drive Package</option>
-        <option value="Okavango Delta Safari">Okavango Delta Safari</option>
-        <option value="Chobe National Park Adventure">Chobe National Park Adventure</option>
-        <option value="Makgadikgadi Pans Exploration">Makgadikgadi Pans Exploration</option>
-      </select>
+  // Close modal
+  function closeModal(id) {
+    const modal = document.getElementById(id);
+    modal.classList.add('hidden');
+    modal.classList.remove('flex');
+    // Also hide any error messages inside modal when closing
+    const errorMsg = modal.querySelector('.error-msg');
+    if (errorMsg) {
+      errorMsg.classList.add('hidden');
+    }
+  }
 
-      <div class="flex gap-4">
-        <button
-          type="submit"
-          class="w-full bg-black text-white py-3 rounded-full font-semibold hover:bg-white hover:text-black border border-black transition duration-300"
-        >
+  // Show error message inside modal
+  function showError(button) {
+    const modalContent = button.parentElement;
+    const errorMsg = modalContent.querySelector('.error-msg');
+    if (errorMsg) {
+      errorMsg.classList.remove('hidden');
+    }
+  }
+
+  // Close error message on clicking X button inside error box
+  document.addEventListener('click', (e) => {
+    if (e.target.classList.contains('close-error-btn')) {
+      e.target.parentElement.classList.add('hidden');
+    }
+  });
+</script>
+
+    <!-- Game Drive Card: Chobe National Park Adventure -->
+<div class="bg-white/90 backdrop-blur-lg rounded-2xl shadow-xl overflow-hidden transition hover:shadow-2xl hover:-translate-y-1 duration-300 border border-gray-200">
+  <img src="https://cdn.kimkim.com/files/a/content_articles/featured_photos/cb251d2536a1e57b800e5418b68d7d721ac9cc08/big-910ed14b174c61d7947aa04cbc09713e.jpg"
+       alt="Chobe National Park Adventure"
+       class="w-full h-56 object-cover transition-transform duration-300 hover:scale-105" />
+  
+  <div class="p-6 space-y-4">
+    <div>
+      <h3 class="text-2xl font-bold text-gray-800">Chobe National Park Adventure</h3>
+      <p class="text-gray-600 text-sm mt-1">
+        Experience thrilling game drives in Chobe National Park, home to one of the largest elephant populations in Africa.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-2 gap-4 text-sm text-gray-700">
+      <div class="flex items-center gap-2">
+        <i class="fas fa-map-marker-alt text-yellow-500"></i>
+        <span>Chobe National Park</span>
+      </div>
+      <div class="flex items-center gap-2">
+        <i class="fas fa-tag text-yellow-500"></i>
+        <span>From BWP 2,200 per person</span>
+      </div>
+      <div class="flex items-center gap-2 col-span-2">
+        <i class="fas fa-hippo text-yellow-500"></i>
+        <span>Elephants, Hippos & River Cruises</span>
+      </div>
+    </div>
+
+    <button
+      onclick="document.getElementById('chobeModal').classList.remove('hidden')"
+      class="w-full bg-black hover:bg-white text-white hover:text-black font-semibold py-2 px-6 rounded-full border border-black transition duration-300">
+      Book Now
+    </button>
+  </div>
+</div>
+
+<!-- Modal: Chobe National Park Adventure -->
+<div id="chobeModal" class="modal-overlay fixed inset-0 bg-black bg-opacity-50 hidden flex items-center justify-center z-50 p-4">
+  <div class="bg-white rounded-xl max-w-4xl w-full max-h-[90vh] overflow-y-auto relative">
+    <button onclick="closeModal('chobeModal')" class="absolute top-4 right-4 text-gray-500 hover:text-gray-700 transition">
+      <i class="fas fa-times text-xl"></i>
+    </button>
+    <div class="p-8">
+      <span class="text-yellow-500 font-medium text-sm uppercase tracking-wider">Wildlife Safari & River Cruises</span>
+      <h2 class="text-3xl font-bold mt-2 mb-4">Chobe National Park Adventure</h2>
+      <div class="flex items-center text-sm text-gray-500 mb-6">
+        <span>Location: Chobe National Park, Botswana</span>
+        <span class="mx-2">•</span>
+        <span>Vast elephant herds & riverside game viewing.</span>
+      </div>
+      <img src="https://cdn.kimkim.com/files/a/content_articles/featured_photos/cb251d2536a1e57b800e5418b68d7d721ac9cc08/big-910ed14b174c61d7947aa04cbc09713e.jpg"
+           alt="Chobe National Park Adventure"
+           class="w-full h-96 object-cover rounded-lg mb-8">
+      <div class="prose max-w-none text-gray-700">
+        <p>Chobe National Park is a must-see for wildlife lovers. Enjoy river safaris, big game spotting, and stunning sunsets along the Chobe River.</p>
+        <h3 class="text-xl font-semibold mt-6 mb-3">Highlights</h3>
+        <ul class="list-disc pl-6 space-y-2">
+          <li>Boat safaris on the Chobe River</li>
+          <li>See large herds of elephants and buffalo</li>
+          <li>Bird watching and big cat sightings</li>
+          <li>Professional guides and photographers</li>
+        </ul>
+        <h3 class="text-xl font-semibold mt-6 mb-3">Rates & Availability</h3>
+        <p>Starting from <strong>BWP 2,200 per person</strong> (includes game drives and river cruise).</p>
+
+        <button onclick="showError(this)" class="buy-ticket-btn bg-black text-white px-6 py-3 rounded-lg hover:bg-gray-800 transition mt-6">
           Book Now
         </button>
-        <button
-          type="button"
-          onclick="cancelBooking()"
-          class="w-full bg-gray-500 text-white py-3 rounded-full font-semibold hover:bg-white hover:text-gray-700 border border-gray-500 transition duration-300"
-        >
-          Cancel
-        </button>
+
       </div>
-    </form>
+    </div>
   </div>
+</div>
+
+   <!-- Game Drive Card: Makgadikgadi Pans Exploration -->
+<div class="bg-white/90 backdrop-blur-lg rounded-2xl shadow-xl overflow-hidden transition hover:shadow-2xl hover:-translate-y-1 duration-300 border border-gray-200">
+  <img src="https://www.visit-chobe.com/wp-content/uploads/2025/01/Chobe-Game-Drive-Impala.jpg"
+       alt="Makgadikgadi Pans Exploration"
+       class="w-full h-56 object-cover transition-transform duration-300 hover:scale-105" />
+  
+  <div class="p-6 space-y-4">
+    <div>
+      <h3 class="text-2xl font-bold text-gray-800">Makgadikgadi Pans Exploration</h3>
+      <p class="text-gray-600 text-sm mt-1">
+        Discover the unique salt pans and wildlife of the Makgadikgadi Pans on an exciting game drive.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-2 gap-4 text-sm text-gray-700">
+      <div class="flex items-center gap-2">
+        <i class="fas fa-map-marker-alt text-yellow-500"></i>
+        <span>Makgadikgadi Pans</span>
+      </div>
+      <div class="flex items-center gap-2">
+        <i class="fas fa-tag text-yellow-500"></i>
+        <span>From BWP 1,800 per person</span>
+      </div>
+      <div class="flex items-center gap-2 col-span-2">
+        <i class="fas fa-sun text-yellow-500"></i>
+        <span>Salt Flats, Meerkats, and Epic Sunsets</span>
+      </div>
+    </div>
+
+    <button
+      onclick="document.getElementById('makgadikgadiModal').classList.remove('hidden')"
+      class="w-full bg-black hover:bg-white text-white hover:text-black font-semibold py-2 px-6 rounded-full border border-black transition duration-300">
+      Book Now
+    </button>
+  </div>
+</div>
+
+<!-- Modal: Makgadikgadi Pans Exploration -->
+<div id="makgadikgadiModal" class="modal-overlay fixed inset-0 bg-black bg-opacity-50 hidden flex items-center justify-center z-50 p-4">
+  <div class="bg-white rounded-xl max-w-4xl w-full max-h-[90vh] overflow-y-auto relative">
+    <button onclick="closeModal('makgadikgadiModal')" class="absolute top-4 right-4 text-gray-500 hover:text-gray-700 transition">
+      <i class="fas fa-times text-xl"></i>
+    </button>
+    <div class="p-8">
+      <span class="text-yellow-500 font-medium text-sm uppercase tracking-wider">Salt Pans & Desert Wildlife</span>
+      <h2 class="text-3xl font-bold mt-2 mb-4">Makgadikgadi Pans Exploration</h2>
+      <div class="flex items-center text-sm text-gray-500 mb-6">
+        <span>Location: Makgadikgadi Pans, Botswana</span>
+        <span class="mx-2">•</span>
+        <span>Explore prehistoric salt pans and desert wildlife.</span>
+      </div>
+      <img src="https://www.visit-chobe.com/wp-content/uploads/2025/01/Chobe-Game-Drive-Impala.jpg"
+           alt="Makgadikgadi Pans Exploration"
+           class="w-full h-96 object-cover rounded-lg mb-8">
+      <div class="prose max-w-none text-gray-700">
+        <p>Vast, silent, and stunning. This unique terrain promises sightings of meerkats, flamingos, and surreal sunsets across the salt flats.</p>
+        <h3 class="text-xl font-semibold mt-6 mb-3">Highlights</h3>
+        <ul class="list-disc pl-6 space-y-2">
+          <li>Guided exploration of ancient salt pans</li>
+          <li>See meerkats and zebra migrations</li>
+          <li>Stargazing under the clearest skies</li>
+          <li>Cultural storytelling by local San guides</li>
+        </ul>
+        <h3 class="text-xl font-semibold mt-6 mb-3">Rates & Availability</h3>
+        <p>Starting from <strong>BWP 1,800 per person</strong> (includes transport and cultural guide).</p>
+
+        <button onclick="showError(this)" class="buy-ticket-btn bg-black text-white px-6 py-3 rounded-lg hover:bg-gray-800 transition mt-6">
+          Book Now
+        </button>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Game Drive Card: Moremi Game Reserve Encounter -->
+<div class="bg-white/90 backdrop-blur-lg rounded-2xl shadow-xl overflow-hidden transition hover:shadow-2xl hover:-translate-y-1 duration-300 border border-gray-200">
+  <img src="https://www.safari.com/rewrite/cdn.prod.website-files.com/636e23f049cf12406b2feccd/6757507420f6844ff261ce62_63839cf553712b2a550a63b2_chobe-national-park-game-drive.webp"
+       alt="Moremi Game Reserve Encounter"
+       class="w-full h-56 object-cover transition-transform duration-300 hover:scale-105" />
+  
+  <div class="p-6 space-y-4">
+    <div>
+      <h3 class="text-2xl font-bold text-gray-800">Moremi Game Reserve Encounter</h3>
+      <p class="text-gray-600 text-sm mt-1">
+        Traverse the rich floodplains of Moremi and spot predators, elephants, and birds in this thrilling safari.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-2 gap-4 text-sm text-gray-700">
+      <div class="flex items-center gap-2">
+        <i class="fas fa-map-marker-alt text-yellow-500"></i>
+        <span>Moremi Game Reserve</span>
+      </div>
+      <div class="flex items-center gap-2">
+        <i class="fas fa-tag text-yellow-500"></i>
+        <span>From BWP 2,500</span>
+      </div>
+      <div class="flex items-center gap-2 col-span-2">
+        <i class="fas fa-leopard text-yellow-500"></i>
+        <span>Leopards, Lions & Wetland Wildlife</span>
+      </div>
+    </div>
+
+    <button onclick="document.getElementById('moremiModal').classList.remove('hidden')"
+      class="w-full bg-black hover:bg-white text-white hover:text-black font-semibold py-2 px-6 rounded-full border border-black transition duration-300">
+      Book Now
+    </button>
+  </div>
+</div>
+
+<!-- Modal: Moremi Game Reserve Encounter -->
+<div id="moremiModal" class="modal-overlay fixed inset-0 bg-black bg-opacity-50 hidden flex items-center justify-center z-50 p-4">
+  <div class="bg-white rounded-xl max-w-4xl w-full max-h-[90vh] overflow-y-auto relative">
+    <button onclick="closeModal('moremiModal')" class="absolute top-4 right-4 text-gray-500 hover:text-gray-700 transition">
+      <i class="fas fa-times text-xl"></i>
+    </button>
+    <div class="p-8">
+      <span class="text-yellow-500 font-medium text-sm uppercase tracking-wider">Wetland Predator Safari</span>
+      <h2 class="text-3xl font-bold mt-2 mb-4">Moremi Game Reserve Encounter</h2>
+      <div class="flex items-center text-sm text-gray-500 mb-6">
+        <span>Location: Moremi, Botswana</span>
+        <span class="mx-2">•</span>
+        <span>One of Africa’s best-kept secrets for predators and birdlife.</span>
+      </div>
+      <img src="https://www.safari.com/rewrite/cdn.prod.website-files.com/636e23f049cf12406b2feccd/6757507420f6844ff261ce62_63839cf553712b2a550a63b2_chobe-national-park-game-drive.webp"
+           alt="Moremi Game Reserve"
+           class="w-full h-96 object-cover rounded-lg mb-8">
+      <div class="prose max-w-none text-gray-700">
+        <p>Covering both dry woodland and wetland, Moremi is perfect for those looking to see the Big Five and rare antelope like lechwe.</p>
+        <ul class="list-disc pl-6 space-y-2">
+          <li>Top predator sightings (lion, leopard, hyena)</li>
+          <li>Bird watching paradise with over 400 species</li>
+          <li>Floodplains, lagoons, and mopane forests</li>
+        </ul>
+        <p class="mt-4">Rate: <strong>BWP 2,500 per person</strong></p>
+        <button onclick="showError(this)" class="bg-black text-white px-6 py-3 rounded-lg hover:bg-gray-800 transition mt-6">
+          Book Now
+        </button>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Game Drive Card: Moremi Game Reserve Encounter -->
+<div class="bg-white/90 backdrop-blur-lg rounded-2xl shadow-xl overflow-hidden transition hover:shadow-2xl hover:-translate-y-1 duration-300 border border-gray-200">
+  <img src="https://www.botswana-experience.com/wp-content/uploads/2021/10/game-drive-vehicle-chobe-national-park.jpg"
+       alt="Moremi Game Reserve Encounter"
+       class="w-full h-56 object-cover transition-transform duration-300 hover:scale-105" />
+  
+  <div class="p-6 space-y-4">
+    <div>
+      <h3 class="text-2xl font-bold text-gray-800">Moremi Game Reserve Encounter</h3>
+      <p class="text-gray-600 text-sm mt-1">
+        Traverse the rich floodplains of Moremi and spot predators, elephants, and birds in this thrilling safari.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-2 gap-4 text-sm text-gray-700">
+      <div class="flex items-center gap-2">
+        <i class="fas fa-map-marker-alt text-yellow-500"></i>
+        <span>Moremi Game Reserve</span>
+      </div>
+      <div class="flex items-center gap-2">
+        <i class="fas fa-tag text-yellow-500"></i>
+        <span>From BWP 2,500</span>
+      </div>
+      <div class="flex items-center gap-2 col-span-2">
+        <i class="fas fa-leopard text-yellow-500"></i>
+        <span>Leopards, Lions & Wetland Wildlife</span>
+      </div>
+    </div>
+
+    <button onclick="document.getElementById('moremiModal').classList.remove('hidden')"
+      class="w-full bg-black hover:bg-white text-white hover:text-black font-semibold py-2 px-6 rounded-full border border-black transition duration-300">
+      Book Now
+    </button>
+  </div>
+</div>
+
+<!-- Modal: Moremi Game Reserve Encounter -->
+<div id="moremiModal" class="modal-overlay fixed inset-0 bg-black bg-opacity-50 hidden flex items-center justify-center z-50 p-4">
+  <div class="bg-white rounded-xl max-w-4xl w-full max-h-[90vh] overflow-y-auto relative">
+    <button onclick="closeModal('moremiModal')" class="absolute top-4 right-4 text-gray-500 hover:text-gray-700 transition">
+      <i class="fas fa-times text-xl"></i>
+    </button>
+    <div class="p-8">
+      <span class="text-yellow-500 font-medium text-sm uppercase tracking-wider">Wetland Predator Safari</span>
+      <h2 class="text-3xl font-bold mt-2 mb-4">Savute Game Drive</h2>
+      <div class="flex items-center text-sm text-gray-500 mb-6">
+        <span>Location: Moremi, Botswana</span>
+        <span class="mx-2">•</span>
+        <span>One of Africa’s best-kept secrets for predators and birdlife.</span>
+      </div>
+      <img src="https://www.botswana-experience.com/wp-content/uploads/2021/10/game-drive-vehicle-chobe-national-park.jpg"
+           alt="Moremi Game Reserve"
+           class="w-full h-96 object-cover rounded-lg mb-8">
+      <div class="prose max-w-none text-gray-700">
+        <p>Covering both dry woodland and wetland, Moremi is perfect for those looking to see the Big Five and rare antelope like lechwe.</p>
+        <ul class="list-disc pl-6 space-y-2">
+          <li>Top predator sightings (lion, leopard, hyena)</li>
+          <li>Bird watching paradise with over 400 species</li>
+          <li>Floodplains, lagoons, and mopane forests</li>
+        </ul>
+        <p class="mt-4">Rate: <strong>BWP 2,500 per person</strong></p>
+        <button onclick="showError(this)" class="bg-black text-white px-6 py-3 rounded-lg hover:bg-gray-800 transition mt-6">
+          Book Now
+        </button>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Game Drive Card: Nxai Pan Safari Trail -->
+<div class="bg-white/90 backdrop-blur-lg rounded-2xl shadow-xl overflow-hidden transition hover:shadow-2xl hover:-translate-y-1 duration-300 border border-gray-200">
+  <img src="https://www.andbeyond.com/wp-content/uploads/sites/5/Game-Drive-on-the-Chobe-River.jpg"
+       alt="Nxai Pan Safari Trail"
+       class="w-full h-56 object-cover transition-transform duration-300 hover:scale-105" />
+  
+  <div class="p-6 space-y-4">
+    <div>
+      <h3 class="text-2xl font-bold text-gray-800">Nxai Pan Safari Trail</h3>
+      <p class="text-gray-600 text-sm mt-1">
+        Venture into Nxai Pan’s open plains and witness zebras, giraffes, and iconic baobab trees on a unique safari.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-2 gap-4 text-sm text-gray-700">
+      <div class="flex items-center gap-2">
+        <i class="fas fa-map-marker-alt text-yellow-500"></i>
+        <span>Nxai Pan National Park</span>
+      </div>
+      <div class="flex items-center gap-2">
+        <i class="fas fa-tag text-yellow-500"></i>
+        <span>From BWP 1,900</span>
+      </div>
+      <div class="flex items-center gap-2 col-span-2">
+        <i class="fas fa-tree text-yellow-500"></i>
+        <span>Zebra Migration & Baines' Baobabs</span>
+      </div>
+    </div>
+
+    <button onclick="document.getElementById('nxaiModal').classList.remove('hidden')"
+      class="w-full bg-black hover:bg-white text-white hover:text-black font-semibold py-2 px-6 rounded-full border border-black transition duration-300">
+      Book Now
+    </button>
+  </div>
+</div>
+
+<!-- Modal: Nxai Pan Safari Trail -->
+<div id="nxaiModal" class="modal-overlay fixed inset-0 bg-black bg-opacity-50 hidden flex items-center justify-center z-50 p-4">
+  <div class="bg-white rounded-xl max-w-4xl w-full max-h-[90vh] overflow-y-auto relative">
+    <button onclick="closeModal('nxaiModal')" class="absolute top-4 right-4 text-gray-500 hover:text-gray-700 transition">
+      <i class="fas fa-times text-xl"></i>
+    </button>
+    <div class="p-8">
+      <span class="text-yellow-500 font-medium text-sm uppercase tracking-wider">Migration & Landscapes</span>
+      <h2 class="text-3xl font-bold mt-2 mb-4">Nxai Pan Safari Trail</h2>
+      <div class="flex items-center text-sm text-gray-500 mb-6">
+        <span>Location: Nxai Pan, Botswana</span>
+        <span class="mx-2">•</span>
+        <span>Home to Africa’s second-largest zebra migration.</span>
+      </div>
+      <img src="https://www.andbeyond.com/wp-content/uploads/sites/5/Game-Drive-on-the-Chobe-River.jpg"
+           alt="Nxai Pan"
+           class="w-full h-96 object-cover rounded-lg mb-8">
+      <div class="prose max-w-none text-gray-700">
+        <p>Nxai Pan features vast open grasslands, migrating wildlife, and dramatic baobab landscapes that come alive in the wet season.</p>
+        <ul class="list-disc pl-6 space-y-2">
+          <li>Seasonal zebra migration (Dec–Mar)</li>
+          <li>Photogenic baobabs and sunrise safaris</li>
+          <li>Giraffes, springboks, and cheetahs</li>
+        </ul>
+        <p class="mt-4">Rate: <strong>BWP 1,900 per person</strong></p>
+        <button onclick="showError(this)" class="bg-black text-white px-6 py-3 rounded-lg hover:bg-gray-800 transition mt-6">
+          Book Now
+        </button>
+
+      </div>
+    </div>
+  </div>
+</div>
+
 </section>
+
 
 <!-- Modal Popup -->
 <div
@@ -290,115 +637,99 @@
 </script>
 
 <footer class="bg-black text-gray-300 py-10 px-6 mt-auto">
-  <div class="container mx-auto grid grid-cols-1 md:grid-cols-4 gap-8 items-start">
-    <!-- Logo -->
-    <div class="flex flex-col items-start space-y-4">
-      <img src="../Logo1.png" alt="Noema Tourism Logo" class="h-14 w-auto" />
-      <p class="text-sm text-gray-400">Your gateway to unforgettable travel experiences.</p>
-    </div>
+        <div class="container mx-auto grid grid-cols-1 md:grid-cols-4 gap-8 items-start">
+      
+          <!-- Logo -->
+          <div class="flex flex-col items-start space-y-4">
+            <img src="../Logo1.png" alt="Noema Tourism Logo" class="h-14 w-auto">
+            <p class="text-sm text-gray-400">Your gateway to unforgettable travel experiences.</p>
+          </div>
+      
+          <!-- Support -->
+          <div>
+            <h4 class="text-white font-semibold mb-2 relative pb-1 after:content-[''] after:block after:w-16 after:h-[2px] after:bg-white after:mt-1">Resources</h4>
+            <ul class="space-y-1 text-sm">
+              <li><a href="../Resources/ResourcesRegistered.html" class="hover:text-white transition">Currency Guide</a></li>
+              <li><a href="../Resources/ResourcesRegistered.html" class="hover:text-white transition">Transportation Guide</a></li>
+              <li><a href="../Resources/ResourcesRegistered.html" class="hover:text-white transition">Safari & Wildlife Guide</a></li>
+              <li><a href="../Resources/ResourcesRegistered.html" class="hover:text-white transition">Travel Documents & Visa Guide</a></li>
+            </ul>
+          </div>
+      
+          <!-- Explore -->
+          <div>
+            <h4 class="text-white font-semibold mb-2 relative pb-1 after:content-[''] after:block after:w-16 after:h-[2px] after:bg-white after:mt-1">Explore</h4>
+            <ul class="space-y-1 text-sm">
+              <li><a href="../Marketplace/MarketplaceRegistered.html" class="hover:text-white transition">Marketplace</a></li>
+              <li><a href="../Current-Affairs/newsRegistered.html" class="hover:text-white transition">News</a></li>
+              <li><a href="../Book/BookRegistered.html" class="hover:text-white transition">Booking</a></li>
+              <li><a href="../About-Us/AboutRegistered.html" class="hover:text-white transition">About-Us</a></li>
+              <li><a href="../Events/EventsRegistered.html" class="hover:text-white transition">Events</a></li>
+            </ul>
+          </div>
+      
+      
+          <!-- Contact & Social -->
+          <div>
+            <h4 class="text-white font-semibold mb-2 relative pb-1 after:content-[''] after:block after:w-16 after:h-[2px] after:bg-white after:mt-1">Contact</h4>
+            <address class="not-italic text-sm text-gray-400 mb-4 leading-relaxed">
+              <p><strong class="text-white">Noema Tourism Services</strong></p>
+              <p>EastLondon Block 9, Plot 20994</p>
+              <p><a href="mailto:marketing@noemaservices.co.bw" class="hover:text-white transition">marketing@noemaservices.co.bw</a></p>
+              <p><a href="tel:+2739133922" class="hover:text-white transition">Tel: +27 391 33922</a> | 
+                 <a href="tel:+273947978" class="hover:text-white transition">Fax: +27 394 7978</a></p>
+            </address>
+            <div class="flex space-x-4 mt-2">
+              <a href="#" class="text-gray-400 hover:text-white transition transform hover:scale-125"><i class="fab fa-facebook-f"></i></a>
+              <a href="#" class="text-gray-400 hover:text-white transition transform hover:scale-125"><i class="fab fa-twitter"></i></a>
+              <a href="#" class="text-gray-400 hover:text-white transition transform hover:scale-125"><i class="fab fa-instagram"></i></a>
+              <a href="#" class="text-gray-400 hover:text-white transition transform hover:scale-125"><i class="fab fa-tiktok"></i></a>
+            </div>
+          </div>
+      
+        </div>
+     
+        <div class="mt-8 text-center text-xs text-gray-500 border-t border-gray-700 pt-4">
+          &copy; 2025 <span class="text-white font-semibold">Noema Tourism Services Inc.</span> All rights reserved.
+        </div>
+      </footer>  
 
-    <!-- Support -->
-    <div>
-      <h4
-        class="text-white font-semibold mb-2 relative pb-1 after:content-[''] after:block after:w-16 after:h-[2px] after:bg-white after:mt-1"
-      >
-        Support
-      </h4>
-      <ul class="space-y-1 text-sm">
-        <li><a href="#" class="hover:text-white transition">About Us</a></li>
-        <li><a href="#" class="hover:text-white transition">Our Services</a></li>
-        <li><a href="#" class="hover:text-white transition">Privacy Policy</a></li>
-        <li><a href="#" class="hover:text-white transition">Terms & Conditions</a></li>
-      </ul>
-    </div>
-
-    <!-- Explore -->
-    <div>
-      <h4
-        class="text-white font-semibold mb-2 relative pb-1 after:content-[''] after:block after:w-16 after:h-[2px] after:bg-white after:mt-1"
-      >
-        Explore
-      </h4>
-      <ul class="space-y-1 text-sm">
-        <li><a href="#" class="hover:text-white transition">Collaboration</a></li>
-        <li><a href="#" class="hover:text-white transition">Connect</a></li>
-        <li><a href="#" class="hover:text-white transition">Refunds</a></li>
-        <li><a href="#" class="hover:text-white transition">Accommodation Feedback</a></li>
-        <li><a href="#" class="hover:text-white transition">Payment Options</a></li>
-      </ul>
-    </div>
-
-    <!-- Contact & Social -->
-    <div>
-      <h4
-        class="text-white font-semibold mb-2 relative pb-1 after:content-[''] after:block after:w-16 after:h-[2px] after:bg-white after:mt-1"
-      >
-        Contact
-      </h4>
-      <address class="not-italic text-sm text-gray-400 mb-4 leading-relaxed">
-        <p><strong class="text-white">Noema Tourism Services</strong></p>
-        <p>EastLondon Block 9, Plot 20994</p>
-        <p>
-          <a href="mailto:marketing@noemaservices.co.bw" class="hover:text-white transition"
-            >marketing@noemaservices.co.bw</a
-          >
-        </p>
-        <p>
-          <a href="tel:+2739133922" class="hover:text-white transition">Tel: +27 391 33922</a> |
-          <a href="tel:+273947978" class="hover:text-white transition">Fax: +27 394 7978</a>
-        </p>
-      </address>
-      <div class="flex space-x-4 mt-2">
-        <a href="#" class="text-gray-400 hover:text-white transition transform hover:scale-125"
-          ><i class="fab fa-facebook-f"></i
-        ></a>
-        <a href="#" class="text-gray-400 hover:text-white transition transform hover:scale-125"
-          ><i class="fab fa-twitter"></i
-        ></a>
-        <a href="#" class="text-gray-400 hover:text-white transition transform hover:scale-125"
-          ><i class="fab fa-instagram"></i
-        ></a>
-        <a href="#" class="text-gray-400 hover:text-white transition transform hover:scale-125"
-          ><i class="fab fa-tiktok"></i
-        ></a>
-      </div>
-    </div>
-  </div>
-
-  <div class="mt-8 text-center text-xs text-gray-500 border-t border-gray-700 pt-4">
-    &copy; 2025 <span class="text-white font-semibold">Noema Tourism Services Inc.</span> All rights reserved.
-  </div>
-</footer>
-
-<script>
-    // search.js
-document.addEventListener("DOMContentLoaded", () => {
-  const hotelSelect = document.getElementById("hotel-select");
-  const roomSelect = document.getElementById("room-name");
- 
-  const hotelRooms = {
-    "Sunset Resort": ["Standard Room", "Deluxe Room", "Presidential Suite"],
-    "Ocean Paradise": ["Ocean View Room", "Beachfront Bungalow", "Luxury Suite"],
-    "Mountain Escape": ["Cabin Room", "Mountain View Suite", "Family Chalet"]
-  };
- 
-  hotelSelect.addEventListener("change", function () {
-    const selectedHotel = this.value;
-    const rooms = hotelRooms[selectedHotel] || [];
- 
-    // Clear previous options
-    roomSelect.innerHTML = '<option value="" disabled selected>Select a Room Type</option>';
- 
-    rooms.forEach(room => {
-      const option = document.createElement("option");
-      option.value = room;
-      option.textContent = room;
-      roomSelect.appendChild(option);
-    });
-  });
-});
-</script>
- 
+      <script>
+        // JavaScript to dynamically set the username in the account dropdown from backend profile API
+        document.addEventListener('DOMContentLoaded', () => {
+          const usernameDisplay = document.getElementById('usernameDisplay');
+          fetch('http://localhost:3000/user/profile', {
+            method: 'GET',
+            credentials: 'include'
+          })
+          .then(response => {
+            if (!response.ok) {
+              throw new Error('Not authenticated');
+            }
+            return response.json();
+          })
+          .then(data => {
+            if (usernameDisplay) {
+              const fullName = data.surname ? data.name + ' ' + data.surname : data.name;
+              usernameDisplay.textContent = fullName;
+            }
+          })
+          .catch(error => {
+            console.error('Error fetching user profile:', error);
+            if (usernameDisplay) {
+              // Fallback to localStorage username if available
+              const storedName = localStorage.getItem('loggedInUserName');
+              const storedSurname = localStorage.getItem('loggedInUserSurname');
+              if (storedName) {
+                usernameDisplay.textContent = storedSurname ? storedName + ' ' + storedSurname : storedName;
+              } else {
+                usernameDisplay.textContent = 'Guest';
+              }
+            }
+          });
+        });
+      </script>
+    <script src="../Login&Register/Fetch.js"></script>
+    <script src="../Current-Affairs/ArticleModal.js"></script>
 </body>
 </html>
- 

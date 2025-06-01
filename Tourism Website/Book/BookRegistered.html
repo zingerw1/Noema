@@ -14,92 +14,55 @@
     </style>
 </head>
 <body class="bg-white flex flex-col min-h-screen">
-    <header class="bg-black text-white shadow-md">
+    <header class="bg-black text-white shadow-md z-50">
         <div class="container mx-auto px-4 py-3 flex items-center justify-between">
             <div class="flex items-center">
                 <img src="../Logo1.png" alt="Tourism Logo" class="h-10 w-auto">
             </div>
             <nav class="hidden md:flex space-x-8">
-                <a href="../Home-Page/indexRegistered.html" class="relative hover:text-gray-300 transition duration-300 transform hover:scale-105 after:content-[''] after:absolute after:left-0 after:bottom-[-4px] after:w-0 after:h-[2px] after:bg-white after:transition-all after:duration-300 hover:after:w-full">Home</a>
-                <a href="../Book/BookRegistered.html" class="relative hover:text-gray-300 transition duration-300 transform hover:scale-105 after:content-[''] after:absolute after:left-0 after:bottom-[-4px] after:w-0 after:h-[2px] after:bg-white after:transition-all after:duration-300 hover:after:w-full">Book</a>
-                <a href="../Events/EventsRegistered.html" class="relative hover:text-gray-300 transition duration-300 transform hover:scale-105 after:content-[''] after:absolute after:left-0 after:bottom-[-4px] after:w-0 after:h-[2px] after:bg-white after:transition-all after:duration-300 hover:after:w-full">Events</a>
-                <a href="../Current-Affairs/newsRegistered.html" class="relative hover:text-gray-300 transition duration-300 transform hover:scale-105 after:content-[''] after:absolute after:left-0 after:bottom-[-4px] after:w-0 after:h-[2px] after:bg-white after:transition-all after:duration-300 hover:after:w-full">News</a>
-                <a href="../About-Us/AboutRegistered.html" class="relative hover:text-gray-300 transition duration-300 transform hover:scale-105 after:content-[''] after:absolute after:left-0 after:bottom-[-4px] after:w-0 after:h-[2px] after:bg-white after:transition-all after:duration-300 hover:after:w-full">About</a>
-                <a href="../Resources/ResourcesRegistered.html" class="relative hover:text-gray-300 transition duration-300 transform hover:scale-105 after:content-[''] after:absolute after:left-0 after:bottom-[-4px] after:w-0 after:h-[2px] after:bg-white after:transition-all after:duration-300 hover:after:w-full">Resources</a>
-                <a href="../Marketplace/MarketplaceRegistered.html" class="relative hover:text-gray-300 transition duration-300 transform hover:scale-105 after:content-[''] after:absolute after:left-0 after:bottom-[-4px] after:w-0 after:h-[2px] after:bg-white after:transition-all after:duration-300 hover:after:w-full">Marketplace</a>
-            </nav>
+              <a href="../Home-Page/indexRegistered.html" class="relative hover:text-gray-300 transition duration-300 transform hover:scale-105 after:content-[''] after:absolute after:left-0 after:bottom-[-4px] after:w-0 after:h-[2px] after:bg-white after:transition-all after:duration-300 hover:after:w-full">Home</a>
+              <a href="../Book/BookRegistered.html" class="relative hover:text-gray-300 transition duration-300 transform hover:scale-105 after:content-[''] after:absolute after:left-0 after:bottom-[-4px] after:w-0 after:h-[2px] after:bg-white after:transition-all after:duration-300 hover:after:w-full">Book</a>
+              <a href="../Events/EventsRegistered.html" class="relative hover:text-gray-300 transition duration-300 transform hover:scale-105 after:content-[''] after:absolute after:left-0 after:bottom-[-4px] after:w-0 after:h-[2px] after:bg-white after:transition-all after:duration-300 hover:after:w-full">Events</a>
+              <a href="../Current-Affairs/newsRegistered.html" class="relative hover:text-gray-300 transition duration-300 transform hover:scale-105 after:content-[''] after:absolute after:left-0 after:bottom-[-4px] after:w-0 after:h-[2px] after:bg-white after:transition-all after:duration-300 hover:after:w-full">News</a>
+              <a href="../About-Us/AboutRegistered.html" class="relative hover:text-gray-300 transition duration-300 transform hover:scale-105 after:content-[''] after:absolute after:left-0 after:bottom-[-4px] after:w-0 after:h-[2px] after:bg-white after:transition-all after:duration-300 hover:after:w-full">About</a>
+              <a href="../Resources/ResourcesRegistered.html" class="relative hover:text-gray-300 transition duration-300 transform hover:scale-105 after:content-[''] after:absolute after:left-0 after:bottom-[-4px] after:w-0 after:h-[2px] after:bg-white after:transition-all after:duration-300 hover:after:w-full">Resources</a>
+              <a href="../Marketplace/MarketplaceRegistered.html" class="relative hover:text-gray-300 transition duration-300 transform hover:scale-105 after:content-[''] after:absolute after:left-0 after:bottom-[-4px] after:w-0 after:h-[2px] after:bg-white after:transition-all after:duration-300 hover:after:w-full">Marketplace</a>
+          </nav>
             <div class="flex items-center space-x-4">
-              <!-- Search -->
-            <div class="relative">
-              <input 
-                type="text" 
-                placeholder="Search news..." 
-                class="bg-white text-gray-900 px-4 py-2 rounded-full w-64 focus:outline-none focus:ring-2 focus:ring-gray-400">
-              <button class="absolute right-3 top-2.5 text-gray-500 hover:text-black transition-transform duration-300 hover:translate-x-1 hover:scale-110">
-                <i class="fas fa-search"></i>
-              </button>
-            </div>
+                <!-- Search -->
+              <div class="relative">
+                <input 
+                  type="text" 
+                  placeholder="Search news..." 
+                  class="bg-white text-gray-900 px-4 py-2 rounded-full w-64 focus:outline-none focus:ring-2 focus:ring-gray-400">
+                <button class="absolute right-3 top-2.5 text-gray-500 hover:text-black transition-transform duration-300 hover:translate-x-1 hover:scale-110">
+                  <i class="fas fa-search"></i>
+                </button>
+              </div>
             
-            <!-- Cart Icon -->
-            <div class="relative">
+              <!-- Cart Icon -->
+              <div class="relative">
                 <a href="/cart.html" aria-label="Shopping Cart" class="text-white hover:text-gray-300 relative">
                   <i class="fas fa-shopping-cart fa-lg"></i>
                   <span class="absolute -top-2 -right-2 bg-red-600 text-white rounded-full text-xs w-5 h-5 flex items-center justify-center">0</span>
                 </a>
               </div>
               
-            <!-- Account Dropdown -->
+              <!-- Account Dropdown -->
               <div class="relative group">
-              <button class="bg-white text-black px-4 py-2 rounded-md hover:bg-gray-100 transition flex items-center space-x-2">
-                <i class="fas fa-user"></i>
-                <span id="usernameDisplay">Account</span>
-                <i class="fas fa-chevron-down text-sm transition-transform duration-300 group-hover:rotate-180"></i>
-              </button>
-              <div class="absolute right-0 mt-2 w-48 bg-white/90 backdrop-blur-xl shadow-lg rounded-lg border border-gray-300 opacity-0 invisible transform scale-95 -translate-y-4 transition-all duration-500 ease-out group-hover:opacity-100 group-hover:visible group-hover:scale-100 group-hover:translate-y-0">
-                <a href="#" class="block px-5 py-3 text-gray-700 font-medium transition-all duration-300 rounded-t-lg hover:bg-black hover:text-white hover:shadow-md hover:scale-105">Login</a>
-                <a href="#" class="block px-5 py-3 text-gray-700 font-medium transition-all duration-300 rounded-b-lg hover:bg-black hover:text-white hover:shadow-md hover:scale-105">Register</a>
+                <button id="accountButton" class="bg-white text-black px-4 py-2 rounded-md hover:bg-gray-100 transition flex items-center space-x-2">
+                  <i class="fas fa-user"></i>
+                  <span id="usernameDisplay">UserName</span>
+                  <i class="fas fa-chevron-down text-sm transition-transform duration-300 group-hover:rotate-180"></i>
+                </button>
+                <div class="absolute right-0 mt-2 w-48 bg-white/90 backdrop-blur-xl shadow-lg rounded-lg border border-gray-300 opacity-0 invisible transform scale-95 -translate-y-4 transition-all duration-500 ease-out group-hover:opacity-100 group-hover:visible group-hover:scale-100 group-hover:translate-y-0">
+                  <a href="../AccountSettings/AccountSettings.html" class="block px-5 py-3 text-gray-700 font-medium transition-all duration-300 rounded-t-lg hover:bg-black hover:text-white hover:shadow-md hover:scale-105">Account Settings</a>
+                  <a href="#" id="logoutBtn" class="block px-5 py-3 text-gray-700 font-medium transition-all duration-300 rounded-b-lg hover:bg-black hover:text-white hover:shadow-md hover:scale-105 cursor-pointer">Logout</a>
+                </div>
               </div>
-            </div>
-
-              <script>
-                // JavaScript to dynamically set the username in the account dropdown from backend profile API
-                document.addEventListener('DOMContentLoaded', () => {
-                  const usernameDisplay = document.getElementById('usernameDisplay');
-                  fetch('http://localhost:3000/user/profile', {
-                    method: 'GET',
-                    credentials: 'include'
-                  })
-                  .then(response => {
-                    if (!response.ok) {
-                      throw new Error('Not authenticated');
-                    }
-                    return response.json();
-                  })
-                  .then(data => {
-                    if (usernameDisplay) {
-                      const fullName = data.surname ? data.name + ' ' + data.surname : data.name;
-                      usernameDisplay.textContent = fullName;
-                    }
-                  })
-                  .catch(error => {
-                    console.error('Error fetching user profile:', error);
-                    if (usernameDisplay) {
-                      // Fallback to localStorage username if available
-                      const storedName = localStorage.getItem('loggedInUserName');
-                      const storedSurname = localStorage.getItem('loggedInUserSurname');
-                      if (storedName) {
-                        usernameDisplay.textContent = storedSurname ? storedName + ' ' + storedSurname : storedName;
-                      } else {
-                        usernameDisplay.textContent = 'Guest';
-                      }
-                    }
-                  });
-                });
-              </script>
-          </div>
-          
-      </div>
-  </header>
+            </div>   
+        </div>
+    </header>
     
   <main class="flex-grow container mx-auto px-4 py-10">
     <!-- Hero Banner -->
@@ -108,7 +71,6 @@
         <div class="relative z-10 text-center text-white pt-32">
             <h1 class="text-4xl md:text-5xl font-bold">Book Your Next Adventure</h1>
             <p class="mt-4 text-lg">Find the best places to stay, dine, and experience.</p>
-            <a href="#booking" class="mt-6 inline-block bg-yellow-500 text-white px-6 py-3 rounded-full font-semibold text-lg hover:bg-yellow-600 transition duration-300">Get Started</a>
         </div>
     </section>
 
@@ -122,7 +84,7 @@
           <h2 class="text-xl font-semibold">Hotels</h2>
           <div class="mt-2 text-sm">
               <p>Browse top-rated hotels and make your booking.</p>
-              <a href="#game-drive-booking-form" class="mt-4 inline-block bg-yellow-500 text-white px-6 py-3 rounded-full font-semibold text-sm transition-transform transform hover:scale-105 hover:bg-yellow-400"> Browse</a>
+              <a href="../Book/HotelCatalogueRegistered.html" class="mt-4 inline-block bg-yellow-500 text-white px-6 py-3 rounded-full font-semibold text-sm transition-transform transform hover:scale-105 hover:bg-yellow-400"> Browse</a>
           </div>
       </div>
   </div>
@@ -135,7 +97,7 @@
           <h2 class="text-xl font-semibold">Restaurants</h2>
           <div class="mt-2 text-sm">
               <p>Reserve your table at the finest restaurants.</p>
-              <a href="#game-drive-booking-form" class="mt-4 inline-block bg-yellow-500 text-white px-6 py-3 rounded-full font-semibold text-sm transition-transform transform hover:scale-105 hover:bg-yellow-400"> Browse</a>
+              <a href="../Book/RestaurantCatalogueRegistered.html" class="mt-4 inline-block bg-yellow-500 text-white px-6 py-3 rounded-full font-semibold text-sm transition-transform transform hover:scale-105 hover:bg-yellow-400"> Browse</a>
           </div>
       </div>
   </div>
@@ -148,7 +110,7 @@
           <h2 class="text-xl font-semibold">Game Drives</h2>
           <div class="mt-2 text-sm">
               <p>Experience thrilling safaris and wildlife adventures.</p>
-              <a href="#game-drive-booking-form" class="mt-4 inline-block bg-yellow-500 text-white px-6 py-3 rounded-full font-semibold text-sm transition-transform transform hover:scale-105 hover:bg-yellow-400"> Browse</a>
+              <a href="../Book/GameDriveCatalogueRegistered.html" class="mt-4 inline-block bg-yellow-500 text-white px-6 py-3 rounded-full font-semibold text-sm transition-transform transform hover:scale-105 hover:bg-yellow-400"> Browse</a>
           </div>
       </div>
   </div>
@@ -205,55 +167,29 @@
       </div>
   </section>
 
-    <!-- Booking Forms Section -->
-    <section class="py-16 bg-gray-100">
-        <div class="text-center mb-8">
-            <h2 class="text-3xl font-bold text-gray-800">Choose Your Booking Option</h2>
-            <p class="text-lg text-gray-600 mt-4 max-w-2xl mx-auto">Fill out the form below to reserve your spot for the perfect experience!</p>
-        </div>
+    <section class="mt-16 max-w-5xl mx-auto px-4">
+  <h2 class="text-3xl font-bold text-center mb-10">What Our Customers Say</h2>
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+    <blockquote class="bg-white p-6 rounded shadow">
+      <p class="italic mb-4">"Amazing experience with the game drives! Highly recommend."</p>
+      <footer class="text-sm font-semibold">— Motswasele K.</footer>
+    </blockquote>
+    <blockquote class="bg-white p-6 rounded shadow">
+      <p class="italic mb-4">"The hotel booking was super easy and the hotel was fantastic."</p>
+      <footer class="text-sm font-semibold">— Dimakatso M.</footer>
+    </blockquote>
+    <blockquote class="bg-white p-6 rounded shadow">
+      <p class="italic mb-4">"Loved the restaurant recommendations! Great food and atmosphere."</p>
+      <footer class="text-sm font-semibold">— Motheo R.</footer>
+    </blockquote>
+  </div>
+</section>
 
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12">
-            <!-- Hotel Booking Form -->
-            <div id="hotel-booking-form" class="bg-white p-8 shadow-lg rounded-lg">
-                <h3 class="text-xl font-semibold text-gray-800 mb-4">Hotel Booking</h3>
-                <form action="#" method="POST" class="space-y-4">
-                    <input type="text" placeholder="Full Name" class="w-full px-4 py-2 border border-gray-300 rounded-md">
-                    <input type="email" placeholder="Email" class="w-full px-4 py-2 border border-gray-300 rounded-md">
-                    <input type="date" class="w-full px-4 py-2 border border-gray-300 rounded-md">
-                    <input type="text" placeholder="Hotel Name" class="w-full px-4 py-2 border border-gray-300 rounded-md">
-                    <button type="submit" class="w-full bg-yellow-500 text-white py-3 rounded-full font-semibold text-lg hover:bg-yellow-600 transition duration-300">Book Now</button>
-                </form>
-            </div>
 
-            <!-- Restaurant Booking Form -->
-            <div id="restaurant-booking-form" class="bg-white p-8 shadow-lg rounded-lg">
-                <h3 class="text-xl font-semibold text-gray-800 mb-4">Restaurant Booking</h3>
-                <form action="#" method="POST" class="space-y-4">
-                    <input type="text" placeholder="Full Name" class="w-full px-4 py-2 border border-gray-300 rounded-md">
-                    <input type="email" placeholder="Email" class="w-full px-4 py-2 border border-gray-300 rounded-md">
-                    <input type="date" class="w-full px-4 py-2 border border-gray-300 rounded-md">
-                    <input type="text" placeholder="Restaurant Name" class="w-full px-4 py-2 border border-gray-300 rounded-md">
-                    <button type="submit" class="w-full bg-yellow-500 text-white py-3 rounded-full font-semibold text-lg hover:bg-yellow-600 transition duration-300">Book Now</button>
-                </form>
-            </div>
 
-            <!-- Game Drive Booking Form -->
-            <div id="game-drive-booking-form" class="bg-white p-8 shadow-lg rounded-lg">
-                <h3 class="text-xl font-semibold text-gray-800 mb-4">Game Drive Booking</h3>
-                <form action="#" method="POST" class="space-y-4">
-                    <input type="text" placeholder="Full Name" class="w-full px-4 py-2 border border-gray-300 rounded-md">
-                    <input type="email" placeholder="Email" class="w-full px-4 py-2 border border-gray-300 rounded-md">
-                    <input type="date" class="w-full px-4 py-2 border border-gray-300 rounded-md">
-                    <input type="text" placeholder="Game Drive Location" class="w-full px-4 py-2 border border-gray-300 rounded-md">
-                    <button type="submit" class="w-full bg-yellow-500 text-white py-3 rounded-full font-semibold text-lg hover:bg-yellow-600 transition duration-300">Book Now</button>
-                </form>
-            </div>
-        </div>
-    </section>
 </main>
-
     
-    <footer class="bg-black text-gray-300 py-10 px-6 mt-auto">
+  <footer class="bg-black text-gray-300 py-10 px-6 mt-auto">
         <div class="container mx-auto grid grid-cols-1 md:grid-cols-4 gap-8 items-start">
       
           <!-- Logo -->
@@ -264,12 +200,12 @@
       
           <!-- Support -->
           <div>
-            <h4 class="text-white font-semibold mb-2 relative pb-1 after:content-[''] after:block after:w-16 after:h-[2px] after:bg-white after:mt-1">Support</h4>
+            <h4 class="text-white font-semibold mb-2 relative pb-1 after:content-[''] after:block after:w-16 after:h-[2px] after:bg-white after:mt-1">Resources</h4>
             <ul class="space-y-1 text-sm">
-              <li><a href="#" class="hover:text-white transition">About Us</a></li>
-              <li><a href="#" class="hover:text-white transition">Our Services</a></li>
-              <li><a href="#" class="hover:text-white transition">Privacy Policy</a></li>
-              <li><a href="#" class="hover:text-white transition">Terms & Conditions</a></li>
+              <li><a href="../Resources/ResourcesRegistered.html" class="hover:text-white transition">Currency Guide</a></li>
+              <li><a href="../Resources/ResourcesRegistered.html" class="hover:text-white transition">Transportation Guide</a></li>
+              <li><a href="../Resources/ResourcesRegistered.html" class="hover:text-white transition">Safari & Wildlife Guide</a></li>
+              <li><a href="../Resources/ResourcesRegistered.html" class="hover:text-white transition">Travel Documents & Visa Guide</a></li>
             </ul>
           </div>
       
@@ -277,13 +213,14 @@
           <div>
             <h4 class="text-white font-semibold mb-2 relative pb-1 after:content-[''] after:block after:w-16 after:h-[2px] after:bg-white after:mt-1">Explore</h4>
             <ul class="space-y-1 text-sm">
-              <li><a href="#" class="hover:text-white transition">Collaboration</a></li>
-              <li><a href="#" class="hover:text-white transition">Connect</a></li>
-              <li><a href="#" class="hover:text-white transition">Refunds</a></li>
-              <li><a href="#" class="hover:text-white transition">Accommodation Feedback</a></li>
-              <li><a href="#" class="hover:text-white transition">Payment Options</a></li>
+              <li><a href="../Marketplace/MarketplaceRegistered.html" class="hover:text-white transition">Marketplace</a></li>
+              <li><a href="../Current-Affairs/newsRegistered.html" class="hover:text-white transition">News</a></li>
+              <li><a href="../Book/BookRegistered.html" class="hover:text-white transition">Booking</a></li>
+              <li><a href="../About-Us/AboutRegistered.html" class="hover:text-white transition">About-Us</a></li>
+              <li><a href="../Events/EventsRegistered.html" class="hover:text-white transition">Events</a></li>
             </ul>
           </div>
+      
       
           <!-- Contact & Social -->
           <div>
@@ -310,5 +247,40 @@
         </div>
       </footer>  
     <script src="../Login&Register/Fetch.js"></script>
+    <script>
+                // JavaScript to dynamically set the username in the account dropdown from backend profile API
+                document.addEventListener('DOMContentLoaded', () => {
+                  const usernameDisplay = document.getElementById('usernameDisplay');
+                  fetch('http://localhost:3000/user/profile', {
+                    method: 'GET',
+                    credentials: 'include'
+                  })
+                  .then(response => {
+                    if (!response.ok) {
+                      throw new Error('Not authenticated');
+                    }
+                    return response.json();
+                  })
+                  .then(data => {
+                    if (usernameDisplay) {
+                      const fullName = data.surname ? data.name + ' ' + data.surname : data.name;
+                      usernameDisplay.textContent = fullName;
+                    }
+                  })
+                  .catch(error => {
+                    console.error('Error fetching user profile:', error);
+                    if (usernameDisplay) {
+                      // Fallback to localStorage username if available
+                      const storedName = localStorage.getItem('loggedInUserName');
+                      const storedSurname = localStorage.getItem('loggedInUserSurname');
+                      if (storedName) {
+                        usernameDisplay.textContent = storedSurname ? storedName + ' ' + storedSurname : storedName;
+                      } else {
+                        usernameDisplay.textContent = 'Guest';
+                      }
+                    }
+                  });
+                });
+              </script>
 </body>
 </html>
