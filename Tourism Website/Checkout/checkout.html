@@ -14,7 +14,7 @@
     </style>
 </head>
 <body class="bg-white flex flex-col min-h-screen">
-    <header class="bg-black text-white shadow-md z-50">
+    <header class="bg-black text-white shadow-md">
         <div class="container mx-auto px-4 py-3 flex items-center justify-between">
             <div class="flex items-center">
                 <img src="../Logo1.png" alt="Tourism Logo" class="h-10 w-auto">
@@ -46,7 +46,7 @@
             
               <!-- Cart Icon -->
               <div class="relative">
-                <a href="/cart.html" aria-label="Shopping Cart" class="text-white hover:text-gray-300 relative">
+                <a href="../Cart/cart.html" aria-label="Shopping Cart" class="text-white hover:text-gray-300 relative">
                   <i class="fas fa-shopping-cart fa-lg"></i>
                   <span class="absolute -top-2 -right-2 bg-red-600 text-white rounded-full text-xs w-5 h-5 flex items-center justify-center">0</span>
                 </a>
@@ -67,133 +67,36 @@
             </div>   
         </div>
     </header>
-    
-  <main class="flex-grow container mx-auto px-4 py-10">
-    <!-- Hero Banner -->
-    <section class="relative bg-cover bg-center h-96 mb-12" style="background-image: url('https://images.unsplash.com/photo-1506929562872-bb421503ef21?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2560&q=80');">
-        <div class="absolute inset-0 bg-black opacity-50"></div>
-        <div class="relative z-10 text-center text-white pt-32">
-            <h1 class="text-4xl md:text-5xl font-bold">Book Your Next Adventure</h1>
-            <p class="mt-4 text-lg">Find the best places to stay, dine, and experience.</p>
-        </div>
-    </section>
 
-    <!-- Booking Options -->
-<section id="booking" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 mb-16">
-  <!-- Hotels -->
-  <div class="relative group">
-      <img src="https://cf.bstatic.com/xdata/images/hotel/max1024x768/144517935.jpg?k=9d3e11e4dc01b867dfeb4c0edd5e4546c1aae6d6acd6f8f04a2816729094c32f&o=&hp=1" alt="Hotel Booking" class="w-full h-80 object-cover rounded-lg shadow-lg">
-      <div class="absolute inset-0 bg-black opacity-40"></div>
-      <div class="absolute inset-0 flex items-center justify-center text-center text-white px-4 py-6 flex-col">
-          <h2 class="text-xl font-semibold">Hotels</h2>
-          <div class="mt-2 text-sm">
-              <p>Browse top-rated hotels and make your booking.</p>
-              <a href="../Book/HotelCatalogueRegistered.html" class="mt-4 inline-block bg-yellow-500 text-white px-6 py-3 rounded-full font-semibold text-sm transition-transform transform hover:scale-105 hover:bg-yellow-400"> Browse</a>
-          </div>
-      </div>
-  </div>
+  <main class="flex-grow container mx-auto px-4 py-10 max-w-3xl">
+    <h1 class="text-3xl font-bold mb-6">Checkout</h1>
 
-  <!-- Restaurants -->
-  <div class="relative group">
-      <img src="https://images.myguide-cdn.com/botswana/companies/mahoganys-restaurant/large/mahoganys-restaurant-475009.jpg" alt="Restaurant Booking" class="w-full h-80 object-cover rounded-lg shadow-lg">
-      <div class="absolute inset-0 bg-black opacity-40"></div>
-      <div class="absolute inset-0 flex items-center justify-center text-center text-white px-4 py-6 flex-col">
-          <h2 class="text-xl font-semibold">Restaurants</h2>
-          <div class="mt-2 text-sm">
-              <p>Reserve your table at the finest restaurants.</p>
-              <a href="../Book/RestaurantCatalogueRegistered.html" class="mt-4 inline-block bg-yellow-500 text-white px-6 py-3 rounded-full font-semibold text-sm transition-transform transform hover:scale-105 hover:bg-yellow-400"> Browse</a>
-          </div>
-      </div>
-  </div>
+    <div id="cartSummary" class="mb-6">
+      <!-- Cart items summary will be inserted here -->
+    </div>
 
-  <!-- Game Drives -->
-  <div class="relative group">
-      <img src="https://www.matriarchafrica.com/wp-content/uploads/2018/07/Chobe-National-Park-Game-Drives.jpg" alt="Game Drive Booking" class="w-full h-80 object-cover rounded-lg shadow-lg">
-      <div class="absolute inset-0 bg-black opacity-40"></div>
-      <div class="absolute inset-0 flex items-center justify-center text-center text-white px-4 py-6 flex-col">
-          <h2 class="text-xl font-semibold">Game Drives</h2>
-          <div class="mt-2 text-sm">
-              <p>Experience thrilling safaris and wildlife adventures.</p>
-              <a href="../Book/GameDriveCatalogueRegistered.html" class="mt-4 inline-block bg-yellow-500 text-white px-6 py-3 rounded-full font-semibold text-sm transition-transform transform hover:scale-105 hover:bg-yellow-400"> Browse</a>
-          </div>
-      </div>
-  </div>
-</section>
+    <form id="checkoutForm" class="space-y-4">
+      <label for="email" class="block font-semibold">Enter your email to receive receipt:</label>
+      <input
+        type="email"
+        id="email"
+        name="email"
+        required
+        placeholder="you@example.com"
+        class="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-400"
+      />
+      <button
+        type="submit"
+        class="bg-blue-600 text-white px-6 py-2 rounded hover:bg-blue-700 transition"
+      >
+        Complete Purchase
+      </button>
+    </form>
 
-    <!-- How It Works -->
-    <section class="bg-gray-50 py-16">
-        <div class="text-center mb-12">
-            <h2 class="text-3xl font-bold text-gray-800">How It Works</h2>
-            <p class="text-lg text-gray-600 mt-4 max-w-2xl mx-auto">Booking your next experience is easy and hassle-free. Follow these simple steps to get started!</p>
-        </div>
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12">
-            <!-- Step 1 -->
-            <div class="text-center p-8 bg-white shadow-lg rounded-lg">
-                <div class="text-4xl text-yellow-500 mb-4">
-                    <i class="fas fa-search"></i>
-                </div>
-                <h3 class="text-xl font-semibold text-gray-800 mb-2">Search</h3>
-                <p class="text-gray-600">Use our search bar to find hotels, restaurants, and game drives that match your preferences.</p>
-            </div>
-            <!-- Step 2 -->
-            <div class="text-center p-8 bg-white shadow-lg rounded-lg">
-                <div class="text-4xl text-yellow-500 mb-4">
-                    <i class="fas fa-calendar-alt"></i>
-                </div>
-                <h3 class="text-xl font-semibold text-gray-800 mb-2">Select Dates</h3>
-                <p class="text-gray-600">Choose your preferred dates for your booking and check availability.</p>
-            </div>
-            <!-- Step 3 -->
-            <div class="text-center p-8 bg-white shadow-lg rounded-lg">
-                <div class="text-4xl text-yellow-500 mb-4">
-                    <i class="fas fa-credit-card"></i>
-                </div>
-                <h3 class="text-xl font-semibold text-gray-800 mb-2">Pay Securely</h3>
-                <p class="text-gray-600">Make your payment through our secure platform and confirm your booking.</p>
-            </div>
-        </div>
-    </section>
+    <div id="message" class="mt-4 text-green-600 font-semibold hidden"></div>
+  </main>
 
-     <!-- Video Section -->
-     <section class="mb-16">
-      <div class="text-center mb-8">
-          <h2 class="text-3xl font-bold text-gray-800">Experience the Adventure</h2>
-          <p class="text-lg text-gray-600 mt-4 max-w-2xl mx-auto">Watch our quick video and get a glimpse of the exciting experiences waiting for you!</p>
-      </div>
-      <div class="relative">
-          <div class="relative w-full h-80 md:h-[450px] bg-black">
-              <!-- Video from Unsplash -->
-              <video autoplay loop muted class="w-full h-full object-cover">
-                  <source src="https://videos.pexels.com/video-files/4275176/4275176-uhd_2560_1440_30fps.mp4" type="video/mp4">
-                  Your browser does not support the video tag.
-              </video>
-          </div>
-      </div>
-  </section>
-
-    <section class="mt-16 max-w-5xl mx-auto px-4">
-  <h2 class="text-3xl font-bold text-center mb-10">What Our Customers Say</h2>
-  <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-    <blockquote class="bg-white p-6 rounded shadow">
-      <p class="italic mb-4">"Amazing experience with the game drives! Highly recommend."</p>
-      <footer class="text-sm font-semibold">— Motswasele K.</footer>
-    </blockquote>
-    <blockquote class="bg-white p-6 rounded shadow">
-      <p class="italic mb-4">"The hotel booking was super easy and the hotel was fantastic."</p>
-      <footer class="text-sm font-semibold">— Dimakatso M.</footer>
-    </blockquote>
-    <blockquote class="bg-white p-6 rounded shadow">
-      <p class="italic mb-4">"Loved the restaurant recommendations! Great food and atmosphere."</p>
-      <footer class="text-sm font-semibold">— Motheo R.</footer>
-    </blockquote>
-  </div>
-</section>
-
-
-
-</main>
-    
-  <footer class="bg-black text-gray-300 py-10 px-6 mt-auto">
+ <footer class="bg-black text-gray-300 py-10 px-6 mt-auto">
         <div class="container mx-auto grid grid-cols-1 md:grid-cols-4 gap-8 items-start">
       
           <!-- Logo -->
@@ -249,42 +152,150 @@
         <div class="mt-8 text-center text-xs text-gray-500 border-t border-gray-700 pt-4">
           &copy; 2025 <span class="text-white font-semibold">Noema Tourism Services Inc.</span> All rights reserved.
         </div>
-      </footer>  
-    <script src="../Login&Register/Fetch.js"></script>
-    <script>
-                // JavaScript to dynamically set the username in the account dropdown from backend profile API
-                document.addEventListener('DOMContentLoaded', () => {
-                  const usernameDisplay = document.getElementById('usernameDisplay');
-                  fetch('http://localhost:3000/user/profile', {
-                    method: 'GET',
-                    credentials: 'include'
-                  })
-                  .then(response => {
-                    if (!response.ok) {
-                      throw new Error('Not authenticated');
-                    }
-                    return response.json();
-                  })
-                  .then(data => {
-                    if (usernameDisplay) {
-                      const fullName = data.surname ? data.name + ' ' + data.surname : data.name;
-                      usernameDisplay.textContent = fullName;
-                    }
-                  })
-                  .catch(error => {
-                    console.error('Error fetching user profile:', error);
-                    if (usernameDisplay) {
-                      // Fallback to localStorage username if available
-                      const storedName = localStorage.getItem('loggedInUserName');
-                      const storedSurname = localStorage.getItem('loggedInUserSurname');
-                      if (storedName) {
-                        usernameDisplay.textContent = storedSurname ? storedName + ' ' + storedSurname : storedName;
-                      } else {
-                        usernameDisplay.textContent = 'Guest';
-                      }
-                    }
-                  });
-                });
-              </script>
+      </footer>   
+
+  <script>
+    // Display username from backend or fallback
+    document.addEventListener("DOMContentLoaded", () => {
+      const usernameDisplay = document.getElementById("usernameDisplay");
+      fetch("http://localhost:3000/user/profile", {
+        method: "GET",
+        credentials: "include",
+      })
+        .then((response) => {
+          if (!response.ok) {
+            throw new Error("Not authenticated");
+          }
+          return response.json();
+        })
+        .then((data) => {
+          if (usernameDisplay) {
+            const fullName = data.surname
+              ? data.name + " " + data.surname
+              : data.name;
+            usernameDisplay.textContent = fullName;
+          }
+        })
+        .catch((error) => {
+          console.error("Error fetching user profile:", error);
+          if (usernameDisplay) {
+            const storedName = localStorage.getItem("loggedInUserName");
+            const storedSurname = localStorage.getItem("loggedInUserSurname");
+            if (storedName) {
+              usernameDisplay.textContent = storedSurname
+                ? storedName + " " + storedSurname
+                : storedName;
+            } else {
+              usernameDisplay.textContent = "Guest";
+            }
+          }
+        });
+    });
+
+    // Cart summary rendering
+    function renderCartSummary() {
+      const cartSummary = document.getElementById("cartSummary");
+      const cart = JSON.parse(localStorage.getItem("cart")) || [];
+      if (cart.length === 0) {
+        cartSummary.innerHTML = "<p>Your cart is empty.</p>";
+        return;
+      }
+      let html = "<ul class='space-y-2'>";
+      let total = 0;
+      cart.forEach((item) => {
+        total += item.price * item.quantity;
+        html += `<li class="flex justify-between">
+          <span>${item.name} x ${item.quantity}</span>
+          <span>BWP ${(item.price * item.quantity).toFixed(2)}</span>
+        </li>`;
+      });
+      html += `</ul><p class="mt-4 font-semibold text-right">Total: BWP ${total.toFixed(
+        2
+      )}</p>`;
+      cartSummary.innerHTML = html;
+    }
+
+    // Email validation helper
+    function validateEmail(email) {
+      const re =
+        /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+      return re.test(email);
+    }
+
+        // Form submission handler
+        document
+          .getElementById("checkoutForm")
+          .addEventListener("submit", async function (e) {
+            e.preventDefault();
+            const emailInput = document.getElementById("email");
+            const email = emailInput.value.trim();
+            const messageDiv = document.getElementById("message");
+            const cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+            if (!validateEmail(email)) {
+              messageDiv.textContent = "Please enter a valid email address.";
+              messageDiv.classList.remove("hidden");
+              messageDiv.classList.add("text-red-600");
+              return;
+            }
+
+            if (cart.length === 0) {
+              messageDiv.textContent = "Your cart is empty.";
+              messageDiv.classList.remove("hidden");
+              messageDiv.classList.add("text-red-600");
+              return;
+            }
+
+            messageDiv.textContent = "Sending receipt to " + email + "...";
+            messageDiv.classList.remove("hidden");
+            messageDiv.classList.remove("text-red-600");
+            messageDiv.classList.add("text-green-600");
+
+            try {
+              const response = await fetch("http://localhost:3000/send-receipt", {
+                method: "POST",
+                headers: {
+                  "Content-Type": "application/json",
+                },
+                body: JSON.stringify({ email, cart }),
+              });
+
+              if (!response.ok) {
+                throw new Error("Failed to send receipt email");
+              }
+
+              const data = await response.json();
+              messageDiv.textContent = data.message || "Receipt sent successfully.";
+              // Clear cart after successful purchase
+              localStorage.removeItem("cart");
+              updateCartCount();
+              renderCartSummary();
+              emailInput.value = "";
+            } catch (error) {
+              messageDiv.textContent =
+                "Error sending receipt email. Please try again later.";
+              messageDiv.classList.remove("text-green-600");
+              messageDiv.classList.add("text-red-600");
+              console.error(error);
+            }
+          });
+
+    // Update cart count in header
+    function updateCartCount() {
+      const cart = JSON.parse(localStorage.getItem("cart")) || [];
+      const count = cart.reduce((acc, item) => acc + item.quantity, 0);
+      const cartCountSpan = document.querySelector(
+        'a[aria-label="Shopping Cart"] span'
+      );
+      if (cartCountSpan) {
+        cartCountSpan.textContent = count;
+      }
+    }
+
+    document.addEventListener("DOMContentLoaded", () => {
+      renderCartSummary();
+      updateCartCount();
+    });
+  </script>
 </body>
 </html>

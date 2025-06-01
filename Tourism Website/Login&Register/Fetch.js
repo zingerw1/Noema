@@ -80,13 +80,8 @@ function showModal(event) {
       setTimeout(() => {
         window.location.href = '/Home-Page/index.html';
       }, 2000);
-    } else {
-      alert(result.message || 'Registration failed.');
-    }
-  })
-  .catch(error => {
-    console.error('Registration error:', error);
-    alert('An error occurred. Please try again.');
+    } 
+    
   })
   .finally(() => {
     submitBtn.disabled = false;
@@ -204,4 +199,26 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     }
   });
+});
+
+// Cart count update function
+function updateCartCount() {
+  const cart = JSON.parse(localStorage.getItem('cart')) || [];
+  const count = cart.reduce((acc, item) => acc + item.quantity, 0);
+  const cartCountSpan = document.querySelector('a[aria-label="Shopping Cart"] span');
+  if (cartCountSpan) {
+    cartCountSpan.textContent = count;
+  }
+}
+
+// Update cart count on DOMContentLoaded
+document.addEventListener('DOMContentLoaded', () => {
+  updateCartCount();
+});
+
+// Update cart count when page becomes visible (e.g., when switching tabs)
+document.addEventListener('visibilitychange', () => {
+  if (!document.hidden) {
+    updateCartCount();
+  }
 });

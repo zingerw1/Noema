@@ -3,8 +3,8 @@ const mysql = require('mysql2');
 const bodyParser = require('body-parser');
 const bcrypt = require('bcrypt');
 const cors = require('cors');
-const session = require('express-session');
 const nodemailer = require('nodemailer');
+const session = require('express-session');
 const app = express();
 const port = 3000;
 app.use(express.json());
@@ -272,7 +272,61 @@ app.post("/logout", (req, res) => {
 });
 
 
+// Nodemailer email sending setup
+require('dotenv').config();
+
+// Configure your SMTP transporter here (example uses Gmail SMTP)
+const transporter = nodemailer.createTransport({
+  service: 'gmail',
+  auth: {
+    user: process.env.GMAIL_USER, // Your Gmail address
+    pass: process.env.GMAIL_PASS, // Your Gmail app password or actual password
+  },
+});
+
+// Send receipt email endpoint
+app.post('/send-receipt', async (req, res) => {
+  const { email, cart } = req.body;
+
+  if (!email || !cart || !Array.isArray(cart) || cart.length === 0) {
+    return res.status(400).json({ error: 'Invalid request data' });
+  }
+
+  let total = 0;
+  let itemsHtml = '';
+  cart.forEach(item => {
+    const itemTotal = item.price * item.quantity;
+    total += itemTotal;
+    itemsHtml += `<li>${item.name} x ${item.quantity} - BWP ${itemTotal.toFixed(2)}</li>`;
+  });
+
+  const mailOptions = {
+    from: process.env.GMAIL_USER,
+    to: email,
+    subject: 'Your Noema Tourism Purchase Receipt',
+    html: `
+      <h2>Thank you for your purchase!</h2>
+      <p>Here is your receipt:</p>
+      <ul>${itemsHtml}</ul>
+      <p><strong>Total: BWP ${total.toFixed(2)}</strong></p>
+      <p>We appreciate your support for local artisans.</p>
+    `,
+  };
+
+  try {
+    await transporter.sendMail(mailOptions);
+    res.json({ message: 'Receipt sent successfully' });
+  } catch (error) {
+    console.error('Error sending email:', error);
+    res.status(500).json({ error: 'Failed to send receipt email' });
+  }
+});
+
 // Start Server
 app.listen(port, () => {
   console.log(`Server running on http://localhost:${port}`);
 });
+
+
+
+

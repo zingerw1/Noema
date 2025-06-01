@@ -30,19 +30,23 @@
           </nav>
             <div class="flex items-center space-x-4">
                 <!-- Search -->
-              <div class="relative">
+              <div class="relative" id="search-container">
                 <input 
                   type="text" 
-                  placeholder="Search news..." 
+                  id="navSearchInput"
+                  placeholder="Search..." 
+                  autocomplete="off"
                   class="bg-white text-gray-900 px-4 py-2 rounded-full w-64 focus:outline-none focus:ring-2 focus:ring-gray-400">
-                <button class="absolute right-3 top-2.5 text-gray-500 hover:text-black transition-transform duration-300 hover:translate-x-1 hover:scale-110">
+                <button id="navSearchButton" class="absolute right-3 top-2.5 text-gray-500 hover:text-black transition-transform duration-300 hover:translate-x-1 hover:scale-110" type="button">
                   <i class="fas fa-search"></i>
                 </button>
+                <div id="searchDropdown" class="absolute z-50 bg-white border border-gray-300 rounded shadow-md mt-1 w-full max-h-60 overflow-y-auto hidden"></div>
               </div>
+              <script src="./searchDropdown.js"></script>
             
               <!-- Cart Icon -->
               <div class="relative">
-                <a href="/cart.html" aria-label="Shopping Cart" class="text-white hover:text-gray-300 relative">
+                <a href="../Cart/cart.html" aria-label="Shopping Cart" class="text-white hover:text-gray-300 relative">
                   <i class="fas fa-shopping-cart fa-lg"></i>
                   <span class="absolute -top-2 -right-2 bg-red-600 text-white rounded-full text-xs w-5 h-5 flex items-center justify-center">0</span>
                 </a>
@@ -89,12 +93,18 @@
 <div class="event-card bg-white shadow-lg rounded-lg overflow-hidden">
   <img src="https://img.freepik.com/premium-photo/full-frame-shot-colorful-beaded-decoration_1048944-9962280.jpg?w=1060" alt="Beaded Necklace" class="w-full h-48 object-cover">
   <div class="p-4">
-    <h3 class="event-title font-semibold text-lg">Handmade Beaded Necklace</h3>
+    <h3 id="handmade-beaded-necklace" class="event-title font-semibold text-lg">Handmade Beaded Necklace</h3>
     <p class="text-gray-600 mt-1">Beautiful multicolor design using traditional patterns.</p>
-    <div class="mt-4 flex justify-between items-center">
+      <div class="mt-4 flex justify-between items-center">
       <span class="text-black font-bold">BWP 150</span>
-      <button onclick="openModal('modal1')" class="bg-black text-white px-3 py-1 text-sm rounded hover:bg-gray-800">
-        Buy Now
+      <button
+        onclick="addToCart(this)"
+        class="bg-black text-white px-3 py-1 text-sm rounded hover:bg-gray-800"
+        data-name="Handmade Beaded Necklace"
+        data-price="150"
+        data-image="https://img.freepik.com/premium-photo/full-frame-shot-colorful-beaded-decoration_1048944-9962280.jpg?w=1060"
+      >
+        Add To Cart
       </button>
     </div>
   </div>
@@ -114,10 +124,13 @@
 
       <!-- Buy Now inside modal triggers error message -->
       <button
-        onclick="showError(this)"
+        onclick="addToCart(this)"
         class="buy-ticket-btn bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition"
+        data-name="Handmade Beaded Necklace"
+        data-price="150"
+        data-image="https://img.freepik.com/premium-photo/full-frame-shot-colorful-beaded-decoration_1048944-9962280.jpg?w=1060"
       >
-        Buy Now
+        Add To Cart
       </button>
 
       <!-- Error message hidden by default -->
@@ -156,9 +169,17 @@
   <div class="p-4">
     <h3 class="event-title font-semibold text-lg">Decorated Ostrich Egg</h3>
     <p class="text-gray-600 mt-1">Locally sourced and hand-painted egg with heritage symbols.</p>
-    <div class="mt-4 flex justify-between items-center">
+      <div class="mt-4 flex justify-between items-center">
       <span class="text-black font-bold">BWP 320</span>
-      <button onclick="openModal('modal2')" class="bg-black text-white px-3 py-1 text-sm rounded hover:bg-gray-800">Buy Now</button>
+      <button
+        onclick="addToCart(this)"
+        class="bg-black text-white px-3 py-1 text-sm rounded hover:bg-gray-800"
+        data-name="Decorated Ostrich Egg"
+        data-price="320"
+        data-image="https://cdn.pixabay.com/photo/2016/05/08/19/07/ostrich-egg-1379646_1280.jpg"
+      >
+        Add To Cart
+      </button>
     </div>
   </div>
 </div>
@@ -183,9 +204,17 @@
   <div class="p-4">
     <h3 class="event-title font-semibold text-lg">Recycled Bottle Ornament</h3>
     <p class="text-gray-600 mt-1">Made from glass bottles, shaped into stunning animal figures.</p>
-    <div class="mt-4 flex justify-between items-center">
+      <div class="mt-4 flex justify-between items-center">
       <span class="text-black font-bold">BWP 90</span>
-      <button onclick="openModal('modal3')" class="bg-black text-white px-3 py-1 text-sm rounded hover:bg-gray-800">Buy Now</button>
+      <button
+        onclick="addToCart(this)"
+        class="bg-black text-white px-3 py-1 text-sm rounded hover:bg-gray-800"
+        data-name="Recycled Bottle Ornament"
+        data-price="90"
+        data-image="https://img.freepik.com/free-photo/reggae-kiosk-green-yellow-red-rasta-man-items_169016-1978.jpg?t=st=1745419122~exp=1745422722~hmac=1a25b49127355be0cf2a3decade2e3ffe2e156597f958fb9a442e380a5ee1ba9&w=996"
+      >
+        Add To Cart
+      </button>
     </div>
   </div>
 </div>
@@ -210,9 +239,17 @@
   <div class="p-4">
     <h3 class="event-title font-semibold text-lg">Woven Basket</h3>
     <p class="text-gray-600 mt-1">Durable handmade basket perfect for décor or storage.</p>
-    <div class="mt-4 flex justify-between items-center">
+      <div class="mt-4 flex justify-between items-center">
       <span class="text-black font-bold">BWP 200</span>
-      <button onclick="openModal('modal4')" class="bg-black text-white px-3 py-1 text-sm rounded hover:bg-gray-800">Buy Now</button>
+      <button
+        onclick="addToCart(this)"
+        class="bg-black text-white px-3 py-1 text-sm rounded hover:bg-gray-800"
+        data-name="Woven Basket"
+        data-price="200"
+        data-image="https://cdn.pixabay.com/photo/2018/08/08/00/46/baskets-3591132_1280.jpg"
+      >
+        Add To Cart
+      </button>
     </div>
   </div>
 </div>
@@ -238,9 +275,17 @@
   <div class="p-4">
     <h3 class="event-title font-semibold text-lg">Painted Tribal Drum</h3>
     <p class="text-gray-600 mt-1">Decorative and playable drum painted with native patterns.</p>
-    <div class="mt-4 flex justify-between items-center">
+      <div class="mt-4 flex justify-between items-center">
       <span class="text-black font-bold">BWP 500</span>
-      <button onclick="openModal('modal5')" class="bg-black text-white px-3 py-1 text-sm rounded hover:bg-gray-800">Buy Now</button>
+      <button
+        onclick="addToCart(this)"
+        class="bg-black text-white px-3 py-1 text-sm rounded hover:bg-gray-800"
+        data-name="Painted Tribal Drum"
+        data-price="500"
+        data-image="https://img.freepik.com/free-photo/percussion-instruments-alongside-multicolored-stripes-wall-with-copy-space_23-2148289149.jpg?t=st=1744790009~exp=1744793609~hmac=994fb13a1f93e56d8e291268cf9aa7dcd5c6a77eac2736d3a71c86d5bd29b99f&w=1060"
+      >
+        Add To Cart
+      </button>
     </div>
   </div>
 </div>
@@ -289,9 +334,17 @@
   <div class="p-4">
     <h3 class="event-title font-semibold text-lg">Traditional Clay Pot</h3>
     <p class="text-gray-600 mt-1">Handcrafted clay pot ideal for kitchen use or decoration.</p>
-    <div class="mt-4 flex justify-between items-center">
+      <div class="mt-4 flex justify-between items-center">
       <span class="text-black font-bold">BWP 180</span>
-      <button onclick="openModal('modal7')" class="bg-black text-white px-3 py-1 text-sm rounded hover:bg-gray-800">Buy Now</button>
+      <button
+        onclick="addToCart(this)"
+        class="bg-black text-white px-3 py-1 text-sm rounded hover:bg-gray-800"
+        data-name="Traditional Clay Pot"
+        data-price="180"
+        data-image="https://img.freepik.com/free-photo/ceramic-pottery-tools-still-life_23-2150197281.jpg?ga=GA1.1.1365096714.1744789789&semt=ais_hybrid&w=740"
+      >
+        Add To Cart
+      </button>
     </div>
   </div>
 </div>
@@ -316,9 +369,17 @@
   <div class="p-4">
     <h3 class="event-title font-semibold text-lg">African Wooden Mask</h3>
     <p class="text-gray-600 mt-1">Intricate figure carved from indigenous hardwood.</p>
-    <div class="mt-4 flex justify-between items-center">
+      <div class="mt-4 flex justify-between items-center">
       <span class="text-black font-bold">BWP 275</span>
-      <button onclick="openModal('modal8')" class="bg-black text-white px-3 py-1 text-sm rounded hover:bg-gray-800">Buy Now</button>
+      <button
+        onclick="addToCart(this)"
+        class="bg-black text-white px-3 py-1 text-sm rounded hover:bg-gray-800"
+        data-name="African Wooden Mask"
+        data-price="275"
+        data-image="https://cdn.pixabay.com/photo/2017/07/26/22/35/wooden-mask-2543403_1280.jpg"
+      >
+        Add To Cart
+      </button>
     </div>
   </div>
 </div>
@@ -343,9 +404,17 @@
   <div class="p-4">
     <h3 class="event-title font-semibold text-lg">Tswana Pottery</h3>
     <p class="text-gray-600 mt-1">Intricate figure crafted from clay and natural pigments.</p>
-    <div class="mt-4 flex justify-between items-center">
+      <div class="mt-4 flex justify-between items-center">
       <span class="text-black font-bold">BWP 275</span>
-      <button onclick="openModal('modal9')" class="bg-black text-white px-3 py-1 text-sm rounded hover:bg-gray-800">Buy Now</button>
+      <button
+        onclick="addToCart(this)"
+        class="bg-black text-white px-3 py-1 text-sm rounded hover:bg-gray-800"
+        data-name="Tswana Pottery"
+        data-price="275"
+        data-image="https://img.freepik.com/free-photo/antique-vase-with-indigenous-pattern_23-2151585806.jpg?t=st=1745418747~exp=1745422347~hmac=84e40934ee7734da1bf92cd93a7d00991935186cab9e6cce55b5f4a0727ea5c0&w=740"
+      >
+        Add To Cart
+      </button>
     </div>
   </div>
 </div>
@@ -424,41 +493,46 @@
       </footer>   
 
 
-      <script>
-        // JavaScript to dynamically set the username in the account dropdown from backend profile API
-        document.addEventListener('DOMContentLoaded', () => {
-          const usernameDisplay = document.getElementById('usernameDisplay');
-          fetch('http://localhost:3000/user/profile', {
-            method: 'GET',
-            credentials: 'include'
-          })
-          .then(response => {
-            if (!response.ok) {
-              throw new Error('Not authenticated');
-            }
-            return response.json();
-          })
-          .then(data => {
-            if (usernameDisplay) {
-              const fullName = data.surname ? data.name + ' ' + data.surname : data.name;
-              usernameDisplay.textContent = fullName;
-            }
-          })
-          .catch(error => {
-            console.error('Error fetching user profile:', error);
-            if (usernameDisplay) {
-              // Fallback to localStorage username if available
-              const storedName = localStorage.getItem('loggedInUserName');
-              const storedSurname = localStorage.getItem('loggedInUserSurname');
-              if (storedName) {
-                usernameDisplay.textContent = storedSurname ? storedName + ' ' + storedSurname : storedName;
-              } else {
-                usernameDisplay.textContent = 'Guest';
-              }
-            }
-          });
-        });
-      </script>
+  <script>
+    // Cart management functions
+    function addToCart(button) {
+      const name = button.getAttribute('data-name');
+      const price = parseFloat(button.getAttribute('data-price'));
+      const image = button.getAttribute('data-image');
+
+      if (!name || !price) {
+        alert('Invalid product data');
+        return;
+      }
+
+      let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+      // Check if item already in cart
+      const existingItem = cart.find(item => item.name === name);
+      if (existingItem) {
+        existingItem.quantity += 1;
+      } else {
+        cart.push({ name, price, image, quantity: 1 });
+      }
+
+      localStorage.setItem('cart', JSON.stringify(cart));
+      updateCartCount();
+      alert(name + ' added to cart');
+    }
+
+    function updateCartCount() {
+      const cart = JSON.parse(localStorage.getItem('cart')) || [];
+      const count = cart.reduce((acc, item) => acc + item.quantity, 0);
+      const cartCountSpan = document.querySelector('a[aria-label="Shopping Cart"] span');
+      if (cartCountSpan) {
+        cartCountSpan.textContent = count;
+      }
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      updateCartCount();
+    });
+  </script>
 
       <script>
   document.addEventListener("DOMContentLoaded", () => {

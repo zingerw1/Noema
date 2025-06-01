@@ -20,29 +20,33 @@
                 <img src="../Logo1.png" alt="Tourism Logo" class="h-10 w-auto">
             </div>
             <nav class="hidden md:flex space-x-8">
-                <a href="../Home-Page/indexRegistered.html" class="relative hover:text-gray-300 transition duration-300 transform hover:scale-105 after:content-[''] after:absolute after:left-0 after:bottom-[-4px] after:w-0 after:h-[2px] after:bg-white after:transition-all after:duration-300 hover:after:w-full">Home</a>
-                <a href="../Book/Book.html" class="relative hover:text-gray-300 transition duration-300 transform hover:scale-105 after:content-[''] after:absolute after:left-0 after:bottom-[-4px] after:w-0 after:h-[2px] after:bg-white after:transition-all after:duration-300 hover:after:w-full">Book</a>
-                <a href="../Events/EventsRegistered.html" class="relative hover:text-gray-300 transition duration-300 transform hover:scale-105 after:content-[''] after:absolute after:left-0 after:bottom-[-4px] after:w-0 after:h-[2px] after:bg-white after:transition-all after:duration-300 hover:after:w-full">Events</a>
-                <a href="../Current-Affairs/news.html" class="relative hover:text-gray-300 transition duration-300 transform hover:scale-105 after:content-[''] after:absolute after:left-0 after:bottom-[-4px] after:w-0 after:h-[2px] after:bg-white after:transition-all after:duration-300 hover:after:w-full">News</a>
-                <a href="../About-Us/About.html" class="relative hover:text-gray-300 transition duration-300 transform hover:scale-105 after:content-[''] after:absolute after:left-0 after:bottom-[-4px] after:w-0 after:h-[2px] after:bg-white after:transition-all after:duration-300 hover:after:w-full">About</a>
-                <a href="../Resources/Resources.html" class="relative hover:text-gray-300 transition duration-300 transform hover:scale-105 after:content-[''] after:absolute after:left-0 after:bottom-[-4px] after:w-0 after:h-[2px] after:bg-white after:transition-all after:duration-300 hover:after:w-full">Resources</a>
-                <a href="../Marketplace/Marketplace.html" class="relative hover:text-gray-300 transition duration-300 transform hover:scale-105 after:content-[''] after:absolute after:left-0 after:bottom-[-4px] after:w-0 after:h-[2px] after:bg-white after:transition-all after:duration-300 hover:after:w-full">Marketplace</a>
-            </nav>
+              <a href="../Home-Page/indexRegistered.html" class="relative hover:text-gray-300 transition duration-300 transform hover:scale-105 after:content-[''] after:absolute after:left-0 after:bottom-[-4px] after:w-0 after:h-[2px] after:bg-white after:transition-all after:duration-300 hover:after:w-full">Home</a>
+              <a href="../Book/BookRegistered.html" class="relative hover:text-gray-300 transition duration-300 transform hover:scale-105 after:content-[''] after:absolute after:left-0 after:bottom-[-4px] after:w-0 after:h-[2px] after:bg-white after:transition-all after:duration-300 hover:after:w-full">Book</a>
+              <a href="../Events/EventsRegistered.html" class="relative hover:text-gray-300 transition duration-300 transform hover:scale-105 after:content-[''] after:absolute after:left-0 after:bottom-[-4px] after:w-0 after:h-[2px] after:bg-white after:transition-all after:duration-300 hover:after:w-full">Events</a>
+              <a href="../Current-Affairs/newsRegistered.html" class="relative hover:text-gray-300 transition duration-300 transform hover:scale-105 after:content-[''] after:absolute after:left-0 after:bottom-[-4px] after:w-0 after:h-[2px] after:bg-white after:transition-all after:duration-300 hover:after:w-full">News</a>
+              <a href="../About-Us/AboutRegistered.html" class="relative hover:text-gray-300 transition duration-300 transform hover:scale-105 after:content-[''] after:absolute after:left-0 after:bottom-[-4px] after:w-0 after:h-[2px] after:bg-white after:transition-all after:duration-300 hover:after:w-full">About</a>
+              <a href="../Resources/ResourcesRegistered.html" class="relative hover:text-gray-300 transition duration-300 transform hover:scale-105 after:content-[''] after:absolute after:left-0 after:bottom-[-4px] after:w-0 after:h-[2px] after:bg-white after:transition-all after:duration-300 hover:after:w-full">Resources</a>
+              <a href="../Marketplace/MarketplaceRegistered.html" class="relative hover:text-gray-300 transition duration-300 transform hover:scale-105 after:content-[''] after:absolute after:left-0 after:bottom-[-4px] after:w-0 after:h-[2px] after:bg-white after:transition-all after:duration-300 hover:after:w-full">Marketplace</a>
+          </nav>
             <div class="flex items-center space-x-4">
                 <!-- Search -->
-              <div class="relative">
+              <div class="relative" id="search-container">
                 <input 
                   type="text" 
-                  placeholder="Search news..." 
+                  id="navSearchInput"
+                  placeholder="Search..." 
+                  autocomplete="off"
                   class="bg-white text-gray-900 px-4 py-2 rounded-full w-64 focus:outline-none focus:ring-2 focus:ring-gray-400">
-                <button class="absolute right-3 top-2.5 text-gray-500 hover:text-black transition-transform duration-300 hover:translate-x-1 hover:scale-110">
+                <button id="navSearchButton" class="absolute right-3 top-2.5 text-gray-500 hover:text-black transition-transform duration-300 hover:translate-x-1 hover:scale-110" type="button">
                   <i class="fas fa-search"></i>
                 </button>
+                <div id="searchDropdown" class="absolute z-50 bg-white border border-gray-300 rounded shadow-md mt-1 w-full max-h-60 overflow-y-auto hidden"></div>
               </div>
+              <script src="./searchDropdown.js"></script>
             
               <!-- Cart Icon -->
               <div class="relative">
-                <a href="cart.html" aria-label="Shopping Cart" class="text-white hover:text-gray-300 relative">
+                <a href="../Cart/cart.html" aria-label="Shopping Cart" class="text-white hover:text-gray-300 relative">
                   <i class="fas fa-shopping-cart fa-lg"></i>
                   <span class="absolute -top-2 -right-2 bg-red-600 text-white rounded-full text-xs w-5 h-5 flex items-center justify-center">0</span>
                 </a>
@@ -56,18 +60,27 @@
                   <i class="fas fa-chevron-down text-sm transition-transform duration-300 group-hover:rotate-180"></i>
                 </button>
                 <div class="absolute right-0 mt-2 w-48 bg-white/90 backdrop-blur-xl shadow-lg rounded-lg border border-gray-300 opacity-0 invisible transform scale-95 -translate-y-4 transition-all duration-500 ease-out group-hover:opacity-100 group-hover:visible group-hover:scale-100 group-hover:translate-y-0">
-                  <a href="/account-settings.html" class="block px-5 py-3 text-gray-700 font-medium transition-all duration-300 rounded-t-lg hover:bg-black hover:text-white hover:shadow-md hover:scale-105">Account Settings</a>
-                  <a href="/logout.html" class="block px-5 py-3 text-gray-700 font-medium transition-all duration-300 rounded-b-lg hover:bg-black hover:text-white hover:shadow-md hover:scale-105">Logout</a>
+                  <a href="../AccountSettings/AccountSettings.html" class="block px-5 py-3 text-gray-700 font-medium transition-all duration-300 rounded-t-lg hover:bg-black hover:text-white hover:shadow-md hover:scale-105">Account Settings</a>
+                  <a href="#" id="logoutBtn" class="block px-5 py-3 text-gray-700 font-medium transition-all duration-300 rounded-b-lg hover:bg-black hover:text-white hover:shadow-md hover:scale-105 cursor-pointer">Logout</a>
                 </div>
               </div>
-            </div>
-            
+            </div>   
         </div>
     </header>
     
+    
     <main class="flex-grow container mx-auto px-4 py-10">
-        <!-- Content Goes Here -->
-         
+        <!-- Cart Content -->
+        <h1 class="text-3xl font-bold mb-6">Shopping Cart</h1>
+        <div id="cartContainer" class="space-y-4">
+          <!-- Cart items will be dynamically inserted here -->
+        </div>
+        <div id="cartSummary" class="mt-6 text-right text-lg font-semibold">
+          <!-- Total price will be displayed here -->
+        </div>
+        <div class="mt-6 text-right">
+          <button id="checkoutBtn" class="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition">Checkout</button>
+        </div>
     </main>
   
     
@@ -157,5 +170,140 @@
           });
         });
       </script>
+
+<script>
+  // Cart page JavaScript to display and manage cart items
+  document.addEventListener('DOMContentLoaded', () => {
+    const cartContainer = document.getElementById('cartContainer');
+    const cartSummary = document.getElementById('cartSummary');
+    const checkoutBtn = document.getElementById('checkoutBtn');
+
+    function renderCart() {
+      let cart = JSON.parse(localStorage.getItem('cart')) || [];
+      cartContainer.innerHTML = '';
+
+      if (cart.length === 0) {
+        cartContainer.innerHTML = '<p>Your cart is empty.</p>';
+        cartSummary.textContent = '';
+        checkoutBtn.disabled = true;
+        return;
+      }
+
+      checkoutBtn.disabled = false;
+
+      let total = 0;
+
+      cart.forEach((item, index) => {
+        total += item.price * item.quantity;
+
+        const itemDiv = document.createElement('div');
+        itemDiv.className = 'flex items-center space-x-4 border-b border-gray-300 pb-4';
+
+        itemDiv.innerHTML = `
+          <img src="${item.image}" alt="${item.name}" class="w-20 h-20 object-cover rounded" />
+          <div class="flex-1">
+            <h3 class="font-semibold">${item.name}</h3>
+            <p class="text-gray-600">Price: BWP ${item.price.toFixed(2)}</p>
+            <div class="flex items-center space-x-2 mt-2">
+              <label for="qty-${index}" class="text-sm">Quantity:</label>
+              <input type="number" id="qty-${index}" min="1" value="${item.quantity}" class="w-16 border border-gray-300 rounded px-2 py-1" />
+            </div>
+          </div>
+          <button data-index="${index}" class="remove-btn bg-red-600 text-white px-3 py-1 rounded hover:bg-red-700 transition">Remove</button>
+        `;
+
+        cartContainer.appendChild(itemDiv);
+
+        // Add event listener for quantity change
+        const qtyInput = itemDiv.querySelector(`#qty-${index}`);
+        qtyInput.addEventListener('change', (e) => {
+          const newQty = parseInt(e.target.value);
+          if (isNaN(newQty) || newQty < 1) {
+            e.target.value = item.quantity;
+            return;
+          }
+          cart[index].quantity = newQty;
+          localStorage.setItem('cart', JSON.stringify(cart));
+          renderCart();
+        });
+
+        // Add event listener for remove button
+        const removeBtn = itemDiv.querySelector('.remove-btn');
+        removeBtn.addEventListener('click', () => {
+          cart.splice(index, 1);
+          localStorage.setItem('cart', JSON.stringify(cart));
+          renderCart();
+        });
+      });
+
+      cartSummary.textContent = `Total: BWP ${total.toFixed(2)}`;
+    }
+
+    checkoutBtn.addEventListener('click', () => {
+      // Navigate to the checkout page
+      window.location.href = '../Checkout/checkout.html';
+    });
+
+    renderCart();
+  });
+</script>
+
+        <script>
+        // JavaScript to dynamically set the username in the account dropdown from backend profile API
+        document.addEventListener('DOMContentLoaded', () => {
+          const usernameDisplay = document.getElementById('usernameDisplay');
+          fetch('http://localhost:3000/user/profile', {
+            method: 'GET',
+            credentials: 'include'
+          })
+          .then(response => {
+            if (!response.ok) {
+              throw new Error('Not authenticated');
+            }
+            return response.json();
+          })
+          .then(data => {
+            if (usernameDisplay) {
+              const fullName = data.surname ? data.name + ' ' + data.surname : data.name;
+              usernameDisplay.textContent = fullName;
+            }
+          })
+          .catch(error => {
+            console.error('Error fetching user profile:', error);
+            if (usernameDisplay) {
+              // Fallback to localStorage username if available
+              const storedName = localStorage.getItem('loggedInUserName');
+              const storedSurname = localStorage.getItem('loggedInUserSurname');
+              if (storedName) {
+                usernameDisplay.textContent = storedSurname ? storedName + ' ' + storedSurname : storedName;
+              } else {
+                usernameDisplay.textContent = 'Guest';
+              }
+            }
+          });
+        });
+
+        // Cart count update function
+        function updateCartCount() {
+          const cart = JSON.parse(localStorage.getItem('cart')) || [];
+          const count = cart.reduce((acc, item) => acc + item.quantity, 0);
+          const cartCountSpan = document.querySelector('a[aria-label="Shopping Cart"] span');
+          if (cartCountSpan) {
+            cartCountSpan.textContent = count;
+          }
+        }
+
+        // Update cart count on DOMContentLoaded
+        document.addEventListener('DOMContentLoaded', () => {
+          updateCartCount();
+        });
+
+        // Update cart count when page becomes visible (e.g., when switching tabs)
+        document.addEventListener('visibilitychange', () => {
+          if (!document.hidden) {
+            updateCartCount();
+          }
+        });
+        </script>
 </body>
 </html>
