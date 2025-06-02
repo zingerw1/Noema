@@ -103,7 +103,7 @@ style="background-image: url('https://images.unsplash.com/photo-1611892440504-42
     </p>
 </div>
  
-<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 px-6">
+<<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 px-6">
    <!-- Hotel Card with Modal -->
 <div class="bg-white/90 backdrop-blur-lg rounded-2xl shadow-xl overflow-hidden transition hover:shadow-2xl hover:-translate-y-1 duration-300 border border-gray-200">
   <img src="https://timbuktutravel.imgix.net/lodges/kodak_images/000/000/171/original/exterior-pool-restaurant-view-of-river-belmond-savute-elephant-lodge-chobe-botswana-timbuktu-travel.jpg?w=1420&h=946&auto=format&crop=fit&fit=min&dpr=1&q=50"
@@ -185,8 +185,39 @@ style="background-image: url('https://images.unsplash.com/photo-1611892440504-42
         <h3 class="text-xl font-semibold mt-6 mb-3">Rates & Availability</h3>
         <p>Starting from <strong>BWP 2,500 per night</strong> (includes meals and safari drives).</p>
 
+        <div class="mt-4 space-y-4">
+          <div>
+            <label for="checkin-hotel" class="block text-sm font-medium text-gray-700">Check-in Time</label>
+            <select id="checkin-hotel" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">
+              <option value="">Select check-in time</option>
+              <option value="12:00 PM">12:00 PM</option>
+              <option value="1:00 PM">1:00 PM</option>
+              <option value="2:00 PM">2:00 PM</option>
+              <option value="3:00 PM">3:00 PM</option>
+            </select>
+          </div>
+          <div>
+            <label for="days-hotel" class="block text-sm font-medium text-gray-700">Days of Booking</label>
+            <input type="number" id="days-hotel" min="1" max="30" value="1" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm" />
+          </div>
+          <div>
+            <label for="rooms-hotel" class="block text-sm font-medium text-gray-700">Number of Rooms</label>
+            <input type="number" id="rooms-hotel" min="1" max="10" value="1" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm" />
+          </div>
+          <div>
+            <label for="roomtype-hotel" class="block text-sm font-medium text-gray-700">Room Type</label>
+            <select id="roomtype-hotel" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">
+              <option value="">Select room type</option>
+              <option value="Deluxe">Deluxe</option>
+              <option value="Family">Family</option>
+              <option value="Suite">Suite</option>
+              <option value="Standard">Standard</option>
+            </select>
+          </div>
+        </div>
+
         <button
-          onclick="addToCart(this)"
+          onclick="bookHotel(this)"
           class="buy-ticket-btn bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition mt-6"
           data-name="Belmond Savute Elephant Lodge"
           data-price="2500"
@@ -200,7 +231,6 @@ style="background-image: url('https://images.unsplash.com/photo-1611892440504-42
     </div>
   </div>
 </div>
-
 <script>
   // Open modal
   function openModal(id) {
@@ -220,9 +250,71 @@ style="background-image: url('https://images.unsplash.com/photo-1611892440504-42
       errorMsg.classList.add('hidden');
     }
   }
+
+  // New function to handle hotel booking with validation
+  function bookHotel(button) {
+    const name = button.getAttribute('data-name');
+    const price = parseFloat(button.getAttribute('data-price'));
+    const image = button.getAttribute('data-image');
+
+    const checkin = document.getElementById('checkin-hotel').value;
+    const days = parseInt(document.getElementById('days-hotel').value);
+    const rooms = parseInt(document.getElementById('rooms-hotel').value);
+    const roomType = document.getElementById('roomtype-hotel').value;
+
+    if (!checkin) {
+      alert('Please select a check-in time.');
+      return;
+    }
+    if (!days || days < 1) {
+      alert('Please enter a valid number of days for booking.');
+      return;
+    }
+    if (!rooms || rooms < 1) {
+      alert('Please enter a valid number of rooms.');
+      return;
+    }
+    if (!roomType) {
+      alert('Please select a room type.');
+      return;
+    }
+
+    addToCartExtended({ name, price, image, quantity: rooms, checkin, days, roomType });
+
+    // Close modal after booking
+    closeModal('hotelModal');
+  }
+
+  // Extended addToCart to accept hotel booking details
+  function addToCartExtended({ name, price, image, quantity, checkin, days, roomType }) {
+    if (!name || !price || !quantity || !checkin || !days || !roomType) {
+      alert('Invalid booking data');
+      return;
+    }
+
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+    // Check if item with same name, checkin, days, rooms, and roomType already in cart
+    const existingItem = cart.find(item =>
+      item.name === name &&
+      item.checkin === checkin &&
+      item.days === days &&
+      item.quantity === quantity &&
+      item.roomType === roomType
+    );
+    if (existingItem) {
+      existingItem.quantity += quantity;
+    } else {
+      cart.push({ name, price, image, quantity, checkin, days, roomType });
+    }
+
+    localStorage.setItem('cart', JSON.stringify(cart));
+    updateCartCount();
+    alert(`${name} (${quantity} rooms, ${days} days, check-in at ${checkin}, room type: ${roomType}) added to cart`);
+  }
 </script>
  
-    <!-- Hotel Card: Xigera Safari Lodge -->
+<!-- Hotel Card: Xigera Safari Lodge -->
 <div class="bg-white/90 backdrop-blur-lg rounded-2xl shadow-xl overflow-hidden transition hover:shadow-2xl hover:-translate-y-1 duration-300 border border-gray-200">
   <img src="https://i.pinimg.com/736x/9b/cc/10/9bcc10e5b667c4091b65cfeabef7401e.jpg"
        alt="Xigera Safari Lodge"
@@ -268,9 +360,11 @@ style="background-image: url('https://images.unsplash.com/photo-1611892440504-42
 <!-- Modal: Xigera Safari Lodge -->
 <div id="xigeraModal" class="modal-overlay fixed inset-0 bg-black bg-opacity-50 hidden flex items-center justify-center z-50 p-4">
   <div class="bg-white rounded-xl max-w-4xl w-full max-h-[90vh] overflow-y-auto relative">
+    <!-- Close button -->
     <button onclick="closeModal('xigeraModal')" class="absolute top-4 right-4 text-gray-500 hover:text-gray-700 transition">
       <i class="fas fa-times text-xl"></i>
     </button>
+    <!-- Modal content -->
     <div class="p-8">
       <span class="text-yellow-500 font-medium text-sm uppercase tracking-wider">Designer Wilderness Lodge</span>
       <h2 class="text-3xl font-bold mt-2 mb-4">Xigera Safari Lodge</h2>
@@ -295,8 +389,39 @@ style="background-image: url('https://images.unsplash.com/photo-1611892440504-42
         <h3 class="text-xl font-semibold mt-6 mb-3">Rates & Availability</h3>
         <p>Starting from <strong>BWP 3,200 per night</strong> (includes meals, safaris, and spa access).</p>
 
+        <div class="mt-4 space-y-4">
+          <div>
+            <label for="checkin-xigera" class="block text-sm font-medium text-gray-700">Check-in Time</label>
+            <select id="checkin-xigera" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">
+              <option value="">Select check-in time</option>
+              <option value="12:00 PM">12:00 PM</option>
+              <option value="1:00 PM">1:00 PM</option>
+              <option value="2:00 PM">2:00 PM</option>
+              <option value="3:00 PM">3:00 PM</option>
+            </select>
+          </div>
+          <div>
+            <label for="days-xigera" class="block text-sm font-medium text-gray-700">Days of Booking</label>
+            <input type="number" id="days-xigera" min="1" max="30" value="1" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm" />
+          </div>
+          <div>
+            <label for="rooms-xigera" class="block text-sm font-medium text-gray-700">Number of Rooms</label>
+            <input type="number" id="rooms-xigera" min="1" max="10" value="1" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm" />
+          </div>
+          <div>
+            <label for="roomtype-xigera" class="block text-sm font-medium text-gray-700">Room Type</label>
+            <select id="roomtype-xigera" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">
+              <option value="">Select room type</option>
+              <option value="Deluxe">Deluxe</option>
+              <option value="Family">Family</option>
+              <option value="Suite">Suite</option>
+              <option value="Standard">Standard</option>
+            </select>
+          </div>
+        </div>
+
         <button
-          onclick="addToCart(this)"
+          onclick="bookHotelXigera(this)"
           class="buy-ticket-btn bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition mt-6"
           data-name="Xigera Safari Lodge"
           data-price="3200"
@@ -310,6 +435,41 @@ style="background-image: url('https://images.unsplash.com/photo-1611892440504-42
     </div>
   </div>
 </div>
+
+<script>
+  function bookHotelXigera(button) {
+    const name = button.getAttribute('data-name');
+    const price = parseFloat(button.getAttribute('data-price'));
+    const image = button.getAttribute('data-image');
+
+    const checkin = document.getElementById('checkin-xigera').value;
+    const days = parseInt(document.getElementById('days-xigera').value);
+    const rooms = parseInt(document.getElementById('rooms-xigera').value);
+    const roomType = document.getElementById('roomtype-xigera').value;
+
+    if (!checkin) {
+      alert('Please select a check-in time.');
+      return;
+    }
+    if (!days || days < 1) {
+      alert('Please enter a valid number of days for booking.');
+      return;
+    }
+    if (!rooms || rooms < 1) {
+      alert('Please enter a valid number of rooms.');
+      return;
+    }
+    if (!roomType) {
+      alert('Please select a room type.');
+      return;
+    }
+
+    addToCartExtended({ name, price, image, quantity: rooms, checkin, days, roomType });
+
+    // Close modal after booking
+    closeModal('xigeraModal');
+  }
+</script>
 
  
     <!-- Hotel Card: Qorokwe Camp -->
@@ -678,84 +838,6 @@ style="background-image: url('https://images.unsplash.com/photo-1611892440504-42
 
  
 </div>
-</section>
- 
- 
-  <!-- Modal Popup -->
-  <div id="popupModal" class="hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
-    <div class="bg-white p-6 rounded-lg shadow-lg text-center max-w-sm">
-      <img src="Photos/Screenshot 2025-03-22 153746.png" alt="Logo" class="w-24 mx-auto mb-4" />
-      <p id="popupMessage" class="text-lg font-semibold"></p>
-      <button onclick="closePopup()" class="mt-4 bg-black text-white px-4 py-2 rounded-full">OK</button>
-    </div>
-  </div>
- 
-  <script>
-    const form = document.getElementById("stayBookingForm");
-    const popupModal = document.getElementById("popupModal");
-    const popupMessage = document.getElementById("popupMessage");
- 
-    form.addEventListener("submit", function (e) {
-      e.preventDefault();
-     
-      // Simulate sending email (replace this with backend logic if needed)
-      const email = form.querySelector('input[type="email"]').value;
-      console.log(`Sending confirmation email to ${email}...`);
- 
-      showPopup("Booking Successful! A confirmation email has been sent.");
-      form.reset();
-    });
- 
-    function cancelBooking() {
-      form.reset();
-      showPopup("Booking Cancelled.");
-    }
- 
-    function showPopup(message) {
-      popupMessage.textContent = message;
-      popupModal.classList.remove("hidden");
-    }
- 
-    function closePopup() {
-      popupModal.classList.add("hidden");
-    }
-  </script>
- 
-  <script>
-        // JavaScript to dynamically set the username in the account dropdown from backend profile API
-        document.addEventListener('DOMContentLoaded', () => {
-          const usernameDisplay = document.getElementById('usernameDisplay');
-          fetch('http://localhost:3000/user/profile', {
-            method: 'GET',
-            credentials: 'include'
-          })
-          .then(response => {
-            if (!response.ok) {
-              throw new Error('Not authenticated');
-            }
-            return response.json();
-          })
-          .then(data => {
-            if (usernameDisplay) {
-              const fullName = data.surname ? data.name + ' ' + data.surname : data.name;
-              usernameDisplay.textContent = fullName;
-            }
-          })
-          .catch(error => {
-            console.error('Error fetching user profile:', error);
-            if (usernameDisplay) {
-              // Fallback to localStorage username if available
-              const storedName = localStorage.getItem('loggedInUserName');
-              const storedSurname = localStorage.getItem('loggedInUserSurname');
-              if (storedName) {
-                usernameDisplay.textContent = storedSurname ? storedName + ' ' + storedSurname : storedName;
-              } else {
-                usernameDisplay.textContent = 'Guest';
-              }
-            }
-          });
-        });
-      </script>
 </section>
  
   <footer class="bg-black text-gray-300 py-10 px-6 mt-auto">

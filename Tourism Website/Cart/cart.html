@@ -178,39 +178,55 @@
     const cartSummary = document.getElementById('cartSummary');
     const checkoutBtn = document.getElementById('checkoutBtn');
 
-    function renderCart() {
-      let cart = JSON.parse(localStorage.getItem('cart')) || [];
-      cartContainer.innerHTML = '';
+        function renderCart() {
+          let cart = JSON.parse(localStorage.getItem('cart')) || [];
+          cartContainer.innerHTML = '';
 
-      if (cart.length === 0) {
-        cartContainer.innerHTML = '<p>Your cart is empty.</p>';
-        cartSummary.textContent = '';
-        checkoutBtn.disabled = true;
-        return;
-      }
+          if (cart.length === 0) {
+            cartContainer.innerHTML = '<p>Your cart is empty.</p>';
+            cartSummary.textContent = '';
+            checkoutBtn.disabled = true;
+            return;
+          }
 
-      checkoutBtn.disabled = false;
+          checkoutBtn.disabled = false;
 
-      let total = 0;
+          let total = 0;
 
-      cart.forEach((item, index) => {
-        total += item.price * item.quantity;
+          cart.forEach((item, index) => {
+            // Only add to total if price exists (exclude restaurant bookings without price)
+            if (item.price !== undefined && item.price !== null) {
+              total += item.price * item.quantity;
+            }
 
-        const itemDiv = document.createElement('div');
-        itemDiv.className = 'flex items-center space-x-4 border-b border-gray-300 pb-4';
+            const itemDiv = document.createElement('div');
+            itemDiv.className = 'flex items-center space-x-4 border-b border-gray-300 pb-4';
 
-        itemDiv.innerHTML = `
-          <img src="${item.image}" alt="${item.name}" class="w-20 h-20 object-cover rounded" />
-          <div class="flex-1">
-            <h3 class="font-semibold">${item.name}</h3>
-            <p class="text-gray-600">Price: BWP ${item.price.toFixed(2)}</p>
-            <div class="flex items-center space-x-2 mt-2">
-              <label for="qty-${index}" class="text-sm">Quantity:</label>
-              <input type="number" id="qty-${index}" min="1" value="${item.quantity}" class="w-16 border border-gray-300 rounded px-2 py-1" />
-            </div>
-          </div>
-          <button data-index="${index}" class="remove-btn bg-red-600 text-white px-3 py-1 rounded hover:bg-red-700 transition">Remove</button>
-        `;
+            // Prepare additional details for hotel bookings
+            let additionalDetails = '';
+            if (item.checkin || item.days || item.roomType) {
+              additionalDetails += '<p class="text-gray-600 text-sm">';
+              if (item.checkin) additionalDetails += `Check-in Time: ${item.checkin} <br/>`;
+              if (item.days) additionalDetails += `Days: ${item.days} <br/>`;
+              if (item.roomType) additionalDetails += `Room Type: ${item.roomType} <br/>`;
+              additionalDetails += '</p>';
+            }
+
+            itemDiv.innerHTML = `
+              <img src="${item.image}" alt="${item.name}" class="w-20 h-20 object-cover rounded" />
+              <div class="flex-1">
+                <h3 class="font-semibold">${item.name}${item.time ? ' at ' + item.time : ''}</h3>
+                ${item.price !== undefined && item.price !== null ? `<p class="text-gray-600">Price: BWP ${item.price.toFixed(2)}</p>` : ''}
+                ${additionalDetails}
+                <div class="flex items-center space-x-2 mt-2">
+                <label for="qty-${index}" class="text-sm">${
+                  item.time ? 'Seats reserved:' : (item.checkinTime || item.days || item.roomType) ? 'Rooms Booked:' : 'Quantity:'
+                }</label>
+                <input type="number" id="qty-${index}" min="1" value="${item.quantity}" class="w-16 border border-gray-300 rounded px-2 py-1" />
+                </div>
+              </div>
+              <button data-index="${index}" class="remove-btn bg-red-600 text-white px-3 py-1 rounded hover:bg-red-700 transition">Remove</button>
+            `;
 
         cartContainer.appendChild(itemDiv);
 

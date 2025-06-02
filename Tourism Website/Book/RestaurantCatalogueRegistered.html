@@ -178,12 +178,31 @@
         <p>Average dish price: <strong>BWP 50 - 120</strong></p>
         <p>Open daily from 8AM to 6PM.</p>
 
+        <div class="mt-4 space-y-4">
+          <div>
+            <label for="time-sanitas" class="block text-sm font-medium text-gray-700">Select Time</label>
+            <select id="time-sanitas" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">
+              <option value="">Select a time</option>
+              <option value="08:00 AM">08:00 AM</option>
+              <option value="10:00 AM">10:00 AM</option>
+              <option value="12:00 PM">12:00 PM</option>
+              <option value="02:00 PM">02:00 PM</option>
+              <option value="04:00 PM">04:00 PM</option>
+              <option value="06:00 PM">06:00 PM</option>
+            </select>
+          </div>
+          <div>
+            <label for="seats-sanitas" class="block text-sm font-medium text-gray-700">Seats to Reserve</label>
+            <input type="number" id="seats-sanitas" min="1" max="10" value="1" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm" />
+          </div>
+        </div>
         <button
-          onclick="addToCart(this)"
+          onclick="bookRestaurant(this, 'sanitasModal')"
           class="buy-ticket-btn bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition mt-6"
           data-name="Sanitas Tea Garden"
           data-price="50"
           data-image="https://d1bb1mccaihlpl.cloudfront.net/variants/7rlinit8hhsu740k2tbmalesu82n/9013f13587dd8661ba8afec2e753cfb4d81ef785d0a2ed63f5292f1f4cb21fb6"
+          data-modal-id="sanitasModal"
         >
           Book Now
         </button>
@@ -296,12 +315,31 @@
         <p>Average price: <strong>BWP 60 - 150 per dish</strong></p>
         <p>Open daily from 11AM to 11PM.</p>
 
+        <div class="mt-4 space-y-4">
+          <div>
+            <label for="time-bullBush" class="block text-sm font-medium text-gray-700">Select Time</label>
+            <select id="time-bullBush" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">
+              <option value="">Select a time</option>
+              <option value="11:00 AM">11:00 AM</option>
+              <option value="01:00 PM">01:00 PM</option>
+              <option value="03:00 PM">03:00 PM</option>
+              <option value="05:00 PM">05:00 PM</option>
+              <option value="07:00 PM">07:00 PM</option>
+              <option value="09:00 PM">09:00 PM</option>
+            </select>
+          </div>
+          <div>
+            <label for="seats-bullBush" class="block text-sm font-medium text-gray-700">Seats to Reserve</label>
+            <input type="number" id="seats-bullBush" min="1" max="10" value="1" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm" />
+          </div>
+        </div>
         <button
-          onclick="addToCart(this)"
+          onclick="bookRestaurant(this, 'bullBushModal')"
           class="buy-ticket-btn bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition mt-6"
           data-name="Bull & Bush Pub"
           data-price="60"
           data-image="https://winecountry-media.s3.amazonaws.com/wp-content/uploads/sites/4/2024/07/11110433/shutterstock_1678594945-1880x880-1.jpg"
+          data-modal-id="bullBushModal"
         >
           Book Now
         </button>
@@ -394,12 +432,31 @@
         <h3 class="text-xl font-semibold mt-6 mb-3">Pricing & Hours</h3>
         <p>Meals start at <strong>BWP 150</strong>. Open from 12PM to 10PM.</p>
 
+        <div class="mt-4 space-y-4">
+          <div>
+            <label for="time-moremi" class="block text-sm font-medium text-gray-700">Select Time</label>
+            <select id="time-moremi" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">
+              <option value="">Select a time</option>
+              <option value="12:00 PM">12:00 PM</option>
+              <option value="02:00 PM">02:00 PM</option>
+              <option value="04:00 PM">04:00 PM</option>
+              <option value="06:00 PM">06:00 PM</option>
+              <option value="08:00 PM">08:00 PM</option>
+              <option value="10:00 PM">10:00 PM</option>
+            </select>
+          </div>
+          <div>
+            <label for="seats-moremi" class="block text-sm font-medium text-gray-700">Seats to Reserve</label>
+            <input type="number" id="seats-moremi" min="1" max="10" value="1" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm" />
+          </div>
+        </div>
         <button
-          onclick="addToCart(this)"
+          onclick="bookRestaurant(this, 'moremiModal')"
           class="buy-ticket-btn bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition mt-6"
           data-name="Moremi Dining Room"
           data-price="150"
           data-image="https://fairgroundholdingsbw.com/wp-content/uploads/2018/03/Fairground-Holdings-1-1.jpg"
+          data-modal-id="moremiModal"
         >
           Book Now
         </button>
@@ -488,12 +545,31 @@
         <p>Average dish price: <strong>BWP 70 - 160</strong></p>
         <p>Open daily from 12PM to 10PM.</p>
 
+        <div class="mt-4 space-y-4">
+          <div>
+            <label for="time-savanna" class="block text-sm font-medium text-gray-700">Select Time</label>
+            <select id="time-savanna" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">
+              <option value="">Select a time</option>
+              <option value="12:00 PM">12:00 PM</option>
+              <option value="02:00 PM">02:00 PM</option>
+              <option value="04:00 PM">04:00 PM</option>
+              <option value="06:00 PM">06:00 PM</option>
+              <option value="08:00 PM">08:00 PM</option>
+              <option value="10:00 PM">10:00 PM</option>
+            </select>
+          </div>
+          <div>
+            <label for="seats-savanna" class="block text-sm font-medium text-gray-700">Seats to Reserve</label>
+            <input type="number" id="seats-savanna" min="1" max="10" value="1" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm" />
+          </div>
+        </div>
         <button
-          onclick="addToCart(this)"
+          onclick="bookRestaurant(this, 'savannaModal')"
           class="buy-ticket-btn bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition mt-6"
           data-name="The Savanna Grill"
           data-price="70"
           data-image="https://images.myguide-cdn.com/auckland/companies/botswana-butchery/large/botswana-butchery-1357339.jpg"
+          data-modal-id="savannaModal"
         >
           Book Now
         </button>
@@ -582,12 +658,31 @@
         <p>Average dish price: <strong>BWP 80 - 180</strong></p>
         <p>Open daily from 10AM to 9PM.</p>
 
+        <div class="mt-4 space-y-4">
+          <div>
+            <label for="time-kalahari" class="block text-sm font-medium text-gray-700">Select Time</label>
+            <select id="time-kalahari" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">
+              <option value="">Select a time</option>
+              <option value="10:00 AM">10:00 AM</option>
+              <option value="12:00 PM">12:00 PM</option>
+              <option value="02:00 PM">02:00 PM</option>
+              <option value="04:00 PM">04:00 PM</option>
+              <option value="06:00 PM">06:00 PM</option>
+              <option value="08:00 PM">08:00 PM</option>
+            </select>
+          </div>
+          <div>
+            <label for="seats-kalahari" class="block text-sm font-medium text-gray-700">Seats to Reserve</label>
+            <input type="number" id="seats-kalahari" min="1" max="10" value="1" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm" />
+          </div>
+        </div>
         <button
-          onclick="addToCart(this)"
+          onclick="bookRestaurant(this, 'kalahariModal')"
           class="buy-ticket-btn bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition mt-6"
           data-name="Kalahari Bistro"
           data-price="80"
           data-image="https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=800&q=80"
+          data-modal-id="kalahariModal"
         >
           Book Now
         </button>
@@ -675,12 +770,31 @@
         <p>Average dish price: <strong>BWP 90 - 200</strong></p>
         <p>Open daily from 11AM to 10PM.</p>
 
+        <div class="mt-4 space-y-4">
+          <div>
+            <label for="time-okavango" class="block text-sm font-medium text-gray-700">Select Time</label>
+            <select id="time-okavango" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">
+              <option value="">Select a time</option>
+              <option value="11:00 AM">11:00 AM</option>
+              <option value="01:00 PM">01:00 PM</option>
+              <option value="03:00 PM">03:00 PM</option>
+              <option value="05:00 PM">05:00 PM</option>
+              <option value="07:00 PM">07:00 PM</option>
+              <option value="09:00 PM">09:00 PM</option>
+            </select>
+          </div>
+          <div>
+            <label for="seats-okavango" class="block text-sm font-medium text-gray-700">Seats to Reserve</label>
+            <input type="number" id="seats-okavango" min="1" max="10" value="1" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm" />
+          </div>
+        </div>
         <button
-          onclick="addToCart(this)"
+          onclick="bookRestaurant(this, 'okavangoModal')"
           class="buy-ticket-btn bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition mt-6"
           data-name="Okavango Seafood House"
           data-price="90"
           data-image="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=800&q=80"
+          data-modal-id="okavangoModal"
         >
           Book Now
         </button>
@@ -840,24 +954,52 @@
 
 <script>
   // Cart management functions
+
+  // Helper function to get selected time and seats from modal by id selectors
+  function getModalInputs(modalId) {
+    const baseId = modalId.replace('Modal', '');
+    const timeSelect = document.getElementById(`time-${baseId}`);
+    const seatsInput = document.getElementById(`seats-${baseId}`);
+    const time = timeSelect ? timeSelect.value : null;
+    const seats = seatsInput ? seatsInput.value : null;
+    return { time, seats };
+  }
+
   function addToCart(button) {
     const name = button.getAttribute('data-name');
-    const price = parseFloat(button.getAttribute('data-price'));
     const image = button.getAttribute('data-image');
+    const modalId = button.getAttribute('data-modal-id');
 
-    if (!name || !price) {
+    if (!name) {
       alert('Invalid product data');
       return;
     }
 
+    // Get time and seats from modal inputs
+    let time = null;
+    let seats = null;
+    if (modalId) {
+      const inputs = getModalInputs(modalId);
+      time = inputs.time;
+      seats = inputs.seats;
+      if (!time) {
+        alert('Please select a reservation time.');
+        return;
+      }
+      if (!seats) {
+        alert('Please select number of seats.');
+        return;
+      }
+    }
+
     let cart = JSON.parse(localStorage.getItem('cart')) || [];
 
-    // Check if item already in cart
-    const existingItem = cart.find(item => item.name === name);
+    // Check if item with same name, time, and seats already in cart
+    const existingItem = cart.find(item => item.name === name && item.time === time && item.seats === seats);
     if (existingItem) {
-      existingItem.quantity += 1;
+      existingItem.quantity = parseInt(existingItem.quantity) + 1;
     } else {
-      cart.push({ name, price, image, quantity: 1 });
+      cart.push({ name, image, quantity: 1, time, seats });
     }
 
     localStorage.setItem('cart', JSON.stringify(cart));
@@ -867,7 +1009,7 @@
 
   function updateCartCount() {
     const cart = JSON.parse(localStorage.getItem('cart')) || [];
-    const count = cart.reduce((acc, item) => acc + item.quantity, 0);
+    const count = cart.reduce((acc, item) => acc + parseInt(item.quantity), 0);
     const cartCountSpan = document.querySelector('a[aria-label="Shopping Cart"] span');
     if (cartCountSpan) {
       cartCountSpan.textContent = count;
@@ -877,6 +1019,62 @@
   document.addEventListener('DOMContentLoaded', () => {
     updateCartCount();
   });
+
+  // New function to handle booking with time and seats validation
+  function bookRestaurant(button, modalId) {
+    const name = button.getAttribute('data-name');
+    const image = button.getAttribute('data-image');
+    // Do not include price for restaurant bookings as user does not pay now
+
+    const timeSelect = document.getElementById(`time-${modalId.replace('Modal', '')}`);
+    const seatsInput = document.getElementById(`seats-${modalId.replace('Modal', '')}`);
+
+    if (!timeSelect || !seatsInput) {
+      alert('Booking inputs not found.');
+      return;
+    }
+
+    const selectedTime = timeSelect.value;
+    const seats = parseInt(seatsInput.value);
+
+    if (!selectedTime) {
+      alert('Please select a reservation time.');
+      return;
+    }
+
+    if (!seats || seats < 1) {
+      alert('Please enter a valid number of seats to reserve.');
+      return;
+    }
+
+    // Add to cart with additional info, excluding price
+    addToCartExtended({ name, image, quantity: seats, time: selectedTime });
+
+    // Close modal after booking
+    closeModal(modalId);
+  }
+
+  // Extended addToCart to accept time, quantity, and price
+  function addToCartExtended({ name, image, quantity, time, price }) {
+    if (!name || !quantity || !time) {
+      alert('Invalid product data');
+      return;
+    }
+
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+    // Check if item with same name and time already in cart
+    const existingItem = cart.find(item => item.name === name && item.time === time);
+    if (existingItem) {
+      existingItem.quantity += quantity;
+    } else {
+      cart.push({ name, image, quantity, time, price });
+    }
+
+    localStorage.setItem('cart', JSON.stringify(cart));
+    updateCartCount();
+    alert(`${name} (${quantity} seats at ${time}) added to cart`);
+  }
 </script>
 </body>
 </html>

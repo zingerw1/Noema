@@ -179,8 +179,25 @@
         <h3 class="text-xl font-semibold mt-6 mb-3">Rates & Availability</h3>
         <p>Starting from <strong>BWP 2,500 per person</strong> (includes transport, meals, and guided tours).</p>
 
+        <!-- Added inputs for time and seats -->
+        <div class="mt-4 space-y-4">
+          <div>
+            <label for="time-okavango" class="block text-sm font-medium text-gray-700">Select Time</label>
+            <select id="time-okavango" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">
+              <option value="">Select a time</option>
+              <option value="06:00 AM">06:00 AM</option>
+              <option value="09:00 AM">09:00 AM</option>
+              <option value="12:00 PM">12:00 PM</option>
+              <option value="03:00 PM">03:00 PM</option>
+            </select>
+          </div>
+          <div>
+            <label for="seats-okavango" class="block text-sm font-medium text-gray-700">Seats to Reserve</label>
+            <input type="number" id="seats-okavango" min="1" max="10" value="1" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm" />
+          </div>
+        </div>
         <button
-          onclick="addToCart(this)"
+          onclick="bookGameDrive(this, 'okavango')"
           class="buy-ticket-btn bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition mt-6"
           data-name="Okavango Delta Safari"
           data-price="2500"
@@ -298,8 +315,25 @@
         <h3 class="text-xl font-semibold mt-6 mb-3">Rates & Availability</h3>
         <p>Starting from <strong>BWP 2,200 per person</strong> (includes game drives and river cruise).</p>
 
+        <!-- Added inputs for time and seats -->
+        <div class="mt-4 space-y-4">
+          <div>
+            <label for="time-chobe" class="block text-sm font-medium text-gray-700">Select Time</label>
+            <select id="time-chobe" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">
+              <option value="">Select a time</option>
+              <option value="06:00 AM">06:00 AM</option>
+              <option value="09:00 AM">09:00 AM</option>
+              <option value="12:00 PM">12:00 PM</option>
+              <option value="03:00 PM">03:00 PM</option>
+            </select>
+          </div>
+          <div>
+            <label for="seats-chobe" class="block text-sm font-medium text-gray-700">Seats to Reserve</label>
+            <input type="number" id="seats-chobe" min="1" max="10" value="1" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm" />
+          </div>
+        </div>
         <button
-          onclick="addToCart(this)"
+          onclick="bookGameDrive(this, 'chobe')"
           class="buy-ticket-btn bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition mt-6"
           data-name="Chobe National Park Adventure"
           data-price="2200"
@@ -379,8 +413,25 @@
         <h3 class="text-xl font-semibold mt-6 mb-3">Rates & Availability</h3>
         <p>Starting from <strong>BWP 1,800 per person</strong> (includes transport and cultural guide).</p>
 
+        <!-- Added inputs for time and seats -->
+        <div class="mt-4 space-y-4">
+          <div>
+            <label for="time-makgadikgadi" class="block text-sm font-medium text-gray-700">Select Time</label>
+            <select id="time-makgadikgadi" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">
+              <option value="">Select a time</option>
+              <option value="06:00 AM">06:00 AM</option>
+              <option value="09:00 AM">09:00 AM</option>
+              <option value="12:00 PM">12:00 PM</option>
+              <option value="03:00 PM">03:00 PM</option>
+            </select>
+          </div>
+          <div>
+            <label for="seats-makgadikgadi" class="block text-sm font-medium text-gray-700">Seats to Reserve</label>
+            <input type="number" id="seats-makgadikgadi" min="1" max="10" value="1" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm" />
+          </div>
+        </div>
         <button
-          onclick="addToCart(this)"
+          onclick="bookGameDrive(this, 'makgadikgadi')"
           class="buy-ticket-btn bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition mt-6"
           data-name="Makgadikgadi Pans Exploration"
           data-price="1800"
@@ -455,8 +506,25 @@
           <li>Floodplains, lagoons, and mopane forests</li>
         </ul>
         <p class="mt-4">Rate: <strong>BWP 2,500 per person</strong></p>
+        <!-- Added inputs for time and seats -->
+        <div class="mt-4 space-y-4">
+          <div>
+            <label for="time-moremi" class="block text-sm font-medium text-gray-700">Select Time</label>
+            <select id="time-moremi" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">
+              <option value="">Select a time</option>
+              <option value="06:00 AM">06:00 AM</option>
+              <option value="09:00 AM">09:00 AM</option>
+              <option value="12:00 PM">12:00 PM</option>
+              <option value="03:00 PM">03:00 PM</option>
+            </select>
+          </div>
+          <div>
+            <label for="seats-moremi" class="block text-sm font-medium text-gray-700">Seats to Reserve</label>
+            <input type="number" id="seats-moremi" min="1" max="10" value="1" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm" />
+          </div>
+        </div>
         <button
-          onclick="addToCart(this)"
+          onclick="bookGameDrive(this, 'moremi')"
           class="buy-ticket-btn bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition mt-6"
           data-name="Moremi Game Reserve Encounter"
           data-price="2500"
@@ -531,8 +599,25 @@
           <li>Floodplains, lagoons, and mopane forests</li>
         </ul>
         <p class="mt-4">Rate: <strong>BWP 2,500 per person</strong></p>
+        <!-- Added inputs for time and seats -->
+        <div class="mt-4 space-y-4">
+          <div>
+            <label for="time-savute" class="block text-sm font-medium text-gray-700">Select Time</label>
+            <select id="time-savute" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">
+              <option value="">Select a time</option>
+              <option value="06:00 AM">06:00 AM</option>
+              <option value="09:00 AM">09:00 AM</option>
+              <option value="12:00 PM">12:00 PM</option>
+              <option value="03:00 PM">03:00 PM</option>
+            </select>
+          </div>
+          <div>
+            <label for="seats-savute" class="block text-sm font-medium text-gray-700">Seats to Reserve</label>
+            <input type="number" id="seats-savute" min="1" max="10" value="1" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm" />
+          </div>
+        </div>
         <button
-          onclick="addToCart(this)"
+          onclick="bookGameDrive(this, 'savute')"
           class="buy-ticket-btn bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition mt-6"
           data-name="Savute Game Drive"
           data-price="2500"
@@ -607,8 +692,25 @@
           <li>Giraffes, springboks, and cheetahs</li>
         </ul>
         <p class="mt-4">Rate: <strong>BWP 1,900 per person</strong></p>
+        <!-- Added inputs for time and seats -->
+        <div class="mt-4 space-y-4">
+          <div>
+            <label for="time-nxai" class="block text-sm font-medium text-gray-700">Select Time</label>
+            <select id="time-nxai" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">
+              <option value="">Select a time</option>
+              <option value="06:00 AM">06:00 AM</option>
+              <option value="09:00 AM">09:00 AM</option>
+              <option value="12:00 PM">12:00 PM</option>
+              <option value="03:00 PM">03:00 PM</option>
+            </select>
+          </div>
+          <div>
+            <label for="seats-nxai" class="block text-sm font-medium text-gray-700">Seats to Reserve</label>
+            <input type="number" id="seats-nxai" min="1" max="10" value="1" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm" />
+          </div>
+        </div>
         <button
-          onclick="addToCart(this)"
+          onclick="bookGameDrive(this, 'nxai')"
           class="buy-ticket-btn bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition mt-6"
           data-name="Nxai Pan Safari Trail"
           data-price="1900"
@@ -809,6 +911,64 @@
   document.addEventListener('DOMContentLoaded', () => {
     updateCartCount();
   });
+  </script>
+
+<script>
+  // New function to handle booking with time and seats validation
+  function bookGameDrive(button, idPrefix) {
+    const name = button.getAttribute('data-name');
+    const price = parseFloat(button.getAttribute('data-price'));
+    const image = button.getAttribute('data-image');
+
+    const timeSelect = document.getElementById(`time-${idPrefix}`);
+    const seatsInput = document.getElementById(`seats-${idPrefix}`);
+
+    if (!timeSelect || !seatsInput) {
+      alert('Booking inputs not found.');
+      return;
+    }
+
+    const selectedTime = timeSelect.value;
+    const seats = parseInt(seatsInput.value);
+
+    if (!selectedTime) {
+      alert('Please select a time for your game drive.');
+      return;
+    }
+
+    if (!seats || seats < 1) {
+      alert('Please enter a valid number of seats to reserve.');
+      return;
+    }
+
+    // Add to cart with additional info
+    addToCartExtended({ name, price, image, quantity: seats, time: selectedTime });
+
+    // Close modal after booking
+    closeModal(`${idPrefix}Modal`);
+  }
+
+  // Extended addToCart to accept time and quantity
+  function addToCartExtended({ name, price, image, quantity, time }) {
+    if (!name || !price || !quantity || !time) {
+      alert('Invalid product data');
+      return;
+    }
+
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+    // Check if item with same name and time already in cart
+    const existingItem = cart.find(item => item.name === name && item.time === time);
+    if (existingItem) {
+      existingItem.quantity += quantity;
+    } else {
+      cart.push({ name, price, image, quantity, time });
+    }
+
+    localStorage.setItem('cart', JSON.stringify(cart));
+    updateCartCount();
+    alert(`${name} (${quantity} seats at ${time}) added to cart`);
+  }
 </script>
 </body>
 </html>

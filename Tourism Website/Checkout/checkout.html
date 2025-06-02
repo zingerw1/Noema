@@ -204,8 +204,12 @@
       let total = 0;
       cart.forEach((item) => {
         total += item.price * item.quantity;
-        html += `<li class="flex justify-between">
-          <span>${item.name} x ${item.quantity}</span>
+        let details = '';
+        if (item.checkin) details += `Check-in: ${item.checkin} `;
+        if (item.days) details += `| Days: ${item.days} `;
+        if (item.roomType) details += `| Room Type: ${item.roomType} `;
+        html += `<li class="flex justify-between flex-col sm:flex-row sm:items-center">
+          <span>${item.name} x ${item.quantity} ${details}</span>
           <span>BWP ${(item.price * item.quantity).toFixed(2)}</span>
         </li>`;
       });

@@ -309,7 +309,7 @@ app.post('/send-receipt', async (req, res) => {
       <p>Here is your receipt:</p>
       <ul>${itemsHtml}</ul>
       <p><strong>Total: BWP ${total.toFixed(2)}</strong></p>
-      <p>We appreciate your support for local artisans.</p>
+      <p>We appreciate your support.</p>
     `,
   };
 
