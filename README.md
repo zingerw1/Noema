@@ -7,22 +7,16 @@ Built for both desktop and mobile users, Noema combines elegant design with intu
 
 ## 📸 Screenshots
 
-![Home Page](Photos/Home-Page.png)  
+![Home Page](LandingPage.png)  
 *Explore destinations and navigate the website.*
 
-![About Us](Photos/About-Us.png)  
-*Learn about the platform and the team behind it.*
-
-![Events Page](Photos/Events.png)  
+![Booking Page](BookingHotel.png)  
 *See upcoming events and activities.*
 
-![Cart & Checkout](Photos/Cart.png)  
-*Add items to the cart and proceed to checkout.*
-
-![Login & Register](Photos/Login&Register.png)  
+![Login Page](Login.png)  
 *Secure login and registration for users.*
 
-![Marketplace](Photos/Marketplace.png)  
+![Marketplace](marketplace.png)  
 *Browse and purchase products.*
 
 ---
