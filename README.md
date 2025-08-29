@@ -7,7 +7,7 @@ Built for both desktop and mobile users, Noema combines elegant design with intu
 
 ## 📸 Screenshots
 
-![Home Page](LandingPage.png)  
+![Home Page](LandingPage.jpg)  
 *Explore destinations and navigate the website.*
 
 ![Booking Page](BookingHotel.png)  
